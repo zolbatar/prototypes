@@ -1,0 +1,24 @@
+<?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org / Graphics / SVG / 1.1 / DTD / svg11.dtd" >
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+<circle cx="47.706632" cy="142.888375" r="5" stroke="black" stroke-width="1" fill="blue" />
+<circle cx="488.848782" cy="219.593669" r="5" stroke="black" stroke-width="1" fill="blue" />
+<circle cx="270.743823" cy="206.063841" r="5" stroke="black" stroke-width="1" fill="blue" />
+<circle cx="175.764919" cy="38.538750" r="5" stroke="black" stroke-width="1" fill="blue" />
+<circle cx="264.867238" cy="208.166822" r="5" stroke="black" stroke-width="1" fill="blue" />
+<circle cx="85.509927" cy="254.651595" r="5" stroke="black" stroke-width="1" fill="blue" />
+<polyline points ="196.914166678,66.092279545 47.7066315462,142.88837503 488.84878197,219.593668931 270.743822809,206.063840753 175.764918752,38.5387503335 264.867238071,208.166822105 85.5099270317,254.651595254 196.914166678,66.092279545 " style="fill:none;stroke:crimson;stroke-width:2" />
+<circle cx="234.441823" cy="60.994530" r="5" stroke="black" stroke-width="1" fill="blue" />
+<circle cx="445.036612" cy="269.167333" r="5" stroke="black" stroke-width="1" fill="blue" />
+<circle cx="429.458163" cy="82.037124" r="5" stroke="black" stroke-width="1" fill="blue" />
+<polyline points ="422.463102762,89.4888686167 234.4418233,60.9945300585 445.036611697,269.167333195 429.45816306,82.0371235756 422.463102762,89.4888686167 " style="fill:none;stroke:lightgreen;stroke-width:2" />
+<circle cx="60.388948" cy="365.805315" r="5" stroke="black" stroke-width="1" fill="blue" />
+<circle cx="104.206781" cy="461.461250" r="5" stroke="black" stroke-width="1" fill="blue" />
+<circle cx="308.389780" cy="184.362915" r="5" stroke="black" stroke-width="1" fill="blue" />
+<circle cx="122.867457" cy="166.465880" r="5" stroke="black" stroke-width="1" fill="blue" />
+<circle cx="200.650898" cy="291.269100" r="5" stroke="black" stroke-width="1" fill="blue" />
+<circle cx="124.376146" cy="424.637997" r="5" stroke="black" stroke-width="1" fill="blue" />
+<polyline points ="330.889907502,177.416559075 60.3889481625,365.805314635 104.206780562,461.461249667 308.389779506,184.362915016 122.86745716,166.465880473 200.650898211,291.269100153 124.376145792,424.637997087 330.889907502,177.416559075 " style="fill:none;stroke:brown;stroke-width:2" />
+<circle cx="196.914167" cy="66.092280" r="5" stroke="black" stroke-width="1" fill="pink" />
+<circle cx="330.889908" cy="177.416559" r="5" stroke="black" stroke-width="1" fill="pink" />
+<circle cx="422.463103" cy="89.488869" r="5" stroke="black" stroke-width="1" fill="pink" />
+</svg>

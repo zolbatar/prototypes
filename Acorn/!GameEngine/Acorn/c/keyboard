@@ -1,0 +1,8 @@
+#include <stdlib.h>
+#include <stdio.h>
+#include "swis.h"
+#include "kernel.h"
+
+BYTE check_for_key() {
+	return _kernel_osbyte(121, 0, 0);    
+}

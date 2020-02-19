@@ -1,0 +1,15 @@
+name:           Planner
+version:        0.1.0.0
+cabal-version:  >=1.8
+build-type:     Simple
+maintainer:     daryljdudey@googlemail.com
+description:  
+author:         Daryl Dudey
+ 
+executable planner
+    build-depends:    base ==4.5.*, geocode-google -any, hashtables -any
+    main-is:          Main.hs
+    buildable:        True
+    hs-source-dirs:   .
+    ghc-options:      -Wall -O2 -with-rtsopts=-N -with-rtsopts=-A4M -with-rtsopts=-H512M
+ 

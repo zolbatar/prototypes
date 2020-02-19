@@ -1,0 +1,494 @@
+	.file	"perlin.c"
+	.text
+	.align	2
+	.global	noise2
+	.ascii	"noise2\000"
+	.align	2
+	.word	4278190088
+	.type	noise2, %function
+noise2:
+	@ args = 0, pretend = 0, frame = 0, outgoing = 0
+	@ frame_needed = 0, uses_anonymous_args = 0
+	@ link register save eliminated.
+	mov	r2, r1, asr #31
+	mov	r2, r2, lsr #24
+	add	r1, r1, r2
+	ldr	r3, .L2
+	uxtb	r1, r1
+	rsb	r2, r2, r1
+	ldr	r2, [r3, r2, asl #2]
+	add	r0, r0, r2
+	mov	r2, r0, asr #31
+	mov	r2, r2, lsr #24
+	add	r0, r0, r2
+	uxtb	r0, r0
+	rsb	r2, r2, r0
+	ldr	r0, [r3, r2, asl #2]
+	bx	lr
+.L3:
+	.align	2
+.L2:
+	.word	.LANCHOR0
+	.size	noise2, .-noise2
+	.align	2
+	.global	lin_inter
+	.ascii	"lin_inter\000"
+	.align	2
+	.word	4278190092
+	.type	lin_inter, %function
+lin_inter:
+	@ args = 0, pretend = 0, frame = 0, outgoing = 0
+	@ frame_needed = 0, uses_anonymous_args = 0
+	@ link register save eliminated.
+	fmsr	s13, r1
+	fmsr	s14, r0
+	fsubs	s15, s13, s14
+	fmsr	s13, r2
+	fmacs	s14, s15, s13
+	fmrs	r0, s14
+	bx	lr
+	.size	lin_inter, .-lin_inter
+	.align	2
+	.global	smooth_inter
+	.ascii	"smooth_inter\000"
+	.align	2
+	.word	4278190096
+	.type	smooth_inter, %function
+smooth_inter:
+	@ args = 0, pretend = 0, frame = 0, outgoing = 0
+	@ frame_needed = 0, uses_anonymous_args = 0
+	@ link register save eliminated.
+	fmsr	s15, r2
+	flds	s13, .L6
+	fadds	s14, s15, s15
+	fmsr	s12, r0
+	fsubs	s13, s13, s14
+	fmsr	s11, r1
+	fmuls	s15, s15, s15
+	fsubs	s14, s11, s12
+	fmuls	s15, s15, s13
+	fmacs	s12, s14, s15
+	fmrs	r0, s12
+	bx	lr
+.L7:
+	.align	2
+.L6:
+	.word	1077936128
+	.size	smooth_inter, .-smooth_inter
+	.align	2
+	.global	noise2d
+	.ascii	"noise2d\000"
+	.align	2
+	.word	4278190088
+	.type	noise2d, %function
+noise2d:
+	@ args = 0, pretend = 0, frame = 0, outgoing = 0
+	@ frame_needed = 0, uses_anonymous_args = 0
+	@ link register save eliminated.
+	fmsr	s14, r0
+	fmsr	s15, r1
+	ftosizs	s12, s14
+	fmrs	r2, s12	@ int
+	fsitos	s13, s12
+	ftosizs	s12, s15
+	fmrs	r3, s12	@ int
+	fsubs	s14, s14, s13
+	add	ip, r3, #1
+	mov	r0, r3, asr #31
+	mov	r1, ip, asr #31
+	mov	r0, r0, lsr #24
+	mov	r1, r1, lsr #24
+	stmfd	sp!, {r4, r5, r6, r7}
+	add	ip, ip, r1
+	add	r4, r3, r0
+	uxtb	r4, r4
+	ldr	r3, .L9+4
+	uxtb	ip, ip
+	rsb	r0, r0, r4
+	rsb	r1, r1, ip
+	ldr	r6, [r3, r0, asl #2]
+	ldr	r1, [r3, r1, asl #2]
+	add	r5, r2, #1
+	add	r7, r2, r6
+	add	r6, r5, r6
+	add	r2, r2, r1
+	add	r5, r5, r1
+	mov	r4, r7, asr #31
+	mov	ip, r6, asr #31
+	mov	r0, r2, asr #31
+	mov	r1, r5, asr #31
+	mov	r4, r4, lsr #24
+	mov	ip, ip, lsr #24
+	mov	r0, r0, lsr #24
+	mov	r1, r1, lsr #24
+	add	r7, r7, r4
+	add	r6, r6, ip
+	add	r2, r2, r0
+	add	r5, r5, r1
+	uxtb	r7, r7
+	uxtb	r6, r6
+	uxtb	r2, r2
+	uxtb	r5, r5
+	rsb	r4, r4, r7
+	rsb	ip, ip, r6
+	rsb	r0, r0, r2
+	rsb	r1, r1, r5
+	ldr	r0, [r3, r0, asl #2]
+	ldr	r4, [r3, r4, asl #2]
+	ldr	ip, [r3, ip, asl #2]
+	ldr	r1, [r3, r1, asl #2]
+	fsitos	s7, s12
+	flds	s11, .L9
+	fadds	s9, s14, s14
+	fmsr	s13, r4	@ int
+	fmsr	s8, ip	@ int
+	fmsr	s12, r0	@ int
+	fmsr	s10, r1	@ int
+	fsubs	s15, s15, s7
+	fsubs	s9, s11, s9
+	fsitos	s13, s13
+	fsitos	s12, s12
+	fmuls	s14, s14, s14
+	fsitos	s8, s8
+	fsitos	s10, s10
+	fmuls	s14, s14, s9
+	fsubs	s8, s8, s13
+	fadds	s9, s15, s15
+	fsubs	s10, s10, s12
+	fmacs	s13, s14, s8
+	fsubs	s11, s11, s9
+	fmacs	s12, s14, s10
+	fmuls	s15, s15, s15
+	fsubs	s12, s12, s13
+	fmuls	s15, s15, s11
+	fmacs	s13, s15, s12
+	fmrs	r0, s13
+	ldmfd	sp!, {r4, r5, r6, r7}
+	bx	lr
+.L10:
+	.align	2
+.L9:
+	.word	1077936128
+	.word	.LANCHOR0
+	.size	noise2d, .-noise2d
+	.align	2
+	.global	perlin2d
+	.ascii	"perlin2d\000"
+	.align	2
+	.word	4278190092
+	.type	perlin2d, %function
+perlin2d:
+	@ args = 0, pretend = 0, frame = 0, outgoing = 0
+	@ frame_needed = 1, uses_anonymous_args = 0
+	mov	ip, sp
+	stmfd	sp!, {r4, r5, fp, ip, lr, pc}
+	fstmfdd	sp!, {d8, d9, d10, d11}
+	sub	fp, ip, #4
+	cmp	sp, sl
+	bllt	__rt_stkovf_split_small
+	fmsr	s16, r2
+	fmsr	s15, r0
+	fmuls	s17, s15, s16
+	fmsr	s15, r1
+	subs	r5, r3, #0
+	flds	s19, .L17
+	fmuls	s16, s15, s16
+	ble	.L14
+	flds	s18, .L17+4
+	fcpys	s20, s19
+	flds	s22, .L17+8
+	flds	s21, .L17+12
+	mov	r4, #0
+.L13:
+	fmrs	r0, s17
+	fmrs	r1, s16
+	bl	noise2d
+	fmsr	s15, r0
+	add	r4, r4, #1
+	cmp	r4, r5
+	fmacs	s19, s18, s22
+	fmacs	s20, s15, s18
+	fadds	s17, s17, s17
+	fmuls	s18, s18, s21
+	fadds	s16, s16, s16
+	bne	.L13
+.L12:
+	fdivs	s20, s20, s19
+	fmrs	r0, s20
+	sub	ip, fp, #52
+	fldmfdd	ip!, {d8, d9, d10, d11}
+	ldmea	fp, {r4, r5, fp, sp, pc}
+.L14:
+	fcpys	s20, s19
+	b	.L12
+.L18:
+	.align	2
+.L17:
+	.word	0
+	.word	1065353216
+	.word	1132462080
+	.word	1056964608
+	.size	perlin2d, .-perlin2d
+	.section	.rodata
+	.align	2
+.LANCHOR0 = . + 0
+	.type	hash, %object
+	.size	hash, 1024
+hash:
+	.word	208
+	.word	34
+	.word	231
+	.word	213
+	.word	32
+	.word	248
+	.word	233
+	.word	56
+	.word	161
+	.word	78
+	.word	24
+	.word	140
+	.word	71
+	.word	48
+	.word	140
+	.word	254
+	.word	245
+	.word	255
+	.word	247
+	.word	247
+	.word	40
+	.word	185
+	.word	248
+	.word	251
+	.word	245
+	.word	28
+	.word	124
+	.word	204
+	.word	204
+	.word	76
+	.word	36
+	.word	1
+	.word	107
+	.word	28
+	.word	234
+	.word	163
+	.word	202
+	.word	224
+	.word	245
+	.word	128
+	.word	167
+	.word	204
+	.word	9
+	.word	92
+	.word	217
+	.word	54
+	.word	239
+	.word	174
+	.word	173
+	.word	102
+	.word	193
+	.word	189
+	.word	190
+	.word	121
+	.word	100
+	.word	108
+	.word	167
+	.word	44
+	.word	43
+	.word	77
+	.word	180
+	.word	204
+	.word	8
+	.word	81
+	.word	70
+	.word	223
+	.word	11
+	.word	38
+	.word	24
+	.word	254
+	.word	210
+	.word	210
+	.word	177
+	.word	32
+	.word	81
+	.word	195
+	.word	243
+	.word	125
+	.word	8
+	.word	169
+	.word	112
+	.word	32
+	.word	97
+	.word	53
+	.word	195
+	.word	13
+	.word	203
+	.word	9
+	.word	47
+	.word	104
+	.word	125
+	.word	117
+	.word	114
+	.word	124
+	.word	165
+	.word	203
+	.word	181
+	.word	235
+	.word	193
+	.word	206
+	.word	70
+	.word	180
+	.word	174
+	.word	0
+	.word	167
+	.word	181
+	.word	41
+	.word	164
+	.word	30
+	.word	116
+	.word	127
+	.word	198
+	.word	245
+	.word	146
+	.word	87
+	.word	224
+	.word	149
+	.word	206
+	.word	57
+	.word	4
+	.word	192
+	.word	210
+	.word	65
+	.word	210
+	.word	129
+	.word	240
+	.word	178
+	.word	105
+	.word	228
+	.word	108
+	.word	245
+	.word	148
+	.word	140
+	.word	40
+	.word	35
+	.word	195
+	.word	38
+	.word	58
+	.word	65
+	.word	207
+	.word	215
+	.word	253
+	.word	65
+	.word	85
+	.word	208
+	.word	76
+	.word	62
+	.word	3
+	.word	237
+	.word	55
+	.word	89
+	.word	232
+	.word	50
+	.word	217
+	.word	64
+	.word	244
+	.word	157
+	.word	199
+	.word	121
+	.word	252
+	.word	90
+	.word	17
+	.word	212
+	.word	203
+	.word	149
+	.word	152
+	.word	140
+	.word	187
+	.word	234
+	.word	177
+	.word	73
+	.word	174
+	.word	193
+	.word	100
+	.word	192
+	.word	143
+	.word	97
+	.word	53
+	.word	145
+	.word	135
+	.word	19
+	.word	103
+	.word	13
+	.word	90
+	.word	135
+	.word	151
+	.word	199
+	.word	91
+	.word	239
+	.word	247
+	.word	33
+	.word	39
+	.word	145
+	.word	101
+	.word	120
+	.word	99
+	.word	3
+	.word	186
+	.word	86
+	.word	99
+	.word	41
+	.word	237
+	.word	203
+	.word	111
+	.word	79
+	.word	220
+	.word	135
+	.word	158
+	.word	42
+	.word	30
+	.word	154
+	.word	120
+	.word	67
+	.word	87
+	.word	167
+	.word	135
+	.word	176
+	.word	183
+	.word	191
+	.word	253
+	.word	115
+	.word	184
+	.word	21
+	.word	233
+	.word	58
+	.word	129
+	.word	233
+	.word	142
+	.word	39
+	.word	128
+	.word	211
+	.word	118
+	.word	137
+	.word	139
+	.word	255
+	.word	114
+	.word	20
+	.word	218
+	.word	113
+	.word	154
+	.word	27
+	.word	127
+	.word	246
+	.word	250
+	.word	1
+	.word	8
+	.word	198
+	.word	250
+	.word	209
+	.word	92
+	.word	222
+	.word	173
+	.word	21
+	.word	88
+	.word	102
+	.word	219
+	.ident	"GCC: (GCCSDK GCC 4.7.4 Release 3) 4.7.4"

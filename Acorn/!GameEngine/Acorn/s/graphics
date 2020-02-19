@@ -1,0 +1,1834 @@
+	.file	"graphics.c"
+	.text
+	.align	2
+	.global	graphics_shadow_state_on
+	.ascii	"graphics_shadow_state_on\000"
+	.align	2
+	.word	4278190108
+	.type	graphics_shadow_state_on, %function
+graphics_shadow_state_on:
+	@ args = 0, pretend = 0, frame = 0, outgoing = 0
+	@ frame_needed = 1, uses_anonymous_args = 0
+	mov	ip, sp
+	stmfd	sp!, {fp, ip, lr, pc}
+	sub	fp, ip, #4
+	cmp	sp, sl
+	bllt	__rt_stkovf_split_small
+	mov	r1, #0
+	mov	r2, r1
+	mov	r0, #114
+	bl	_kernel_osbyte
+	ldmea	fp, {fp, sp, pc}
+	.size	graphics_shadow_state_on, .-graphics_shadow_state_on
+	.align	2
+	.global	graphics_shadow_state_off
+	.ascii	"graphics_shadow_state_off\000"
+	.align	2
+	.word	4278190108
+	.type	graphics_shadow_state_off, %function
+graphics_shadow_state_off:
+	@ args = 0, pretend = 0, frame = 0, outgoing = 0
+	@ frame_needed = 1, uses_anonymous_args = 0
+	mov	ip, sp
+	stmfd	sp!, {fp, ip, lr, pc}
+	sub	fp, ip, #4
+	cmp	sp, sl
+	bllt	__rt_stkovf_split_small
+	mov	r1, #1
+	mov	r2, #0
+	mov	r0, #114
+	bl	_kernel_osbyte
+	ldmea	fp, {fp, sp, pc}
+	.size	graphics_shadow_state_off, .-graphics_shadow_state_off
+	.align	2
+	.global	graphics_set_vdu_bank
+	.ascii	"graphics_set_vdu_bank\000"
+	.align	2
+	.word	4278190104
+	.type	graphics_set_vdu_bank, %function
+graphics_set_vdu_bank:
+	@ args = 0, pretend = 0, frame = 0, outgoing = 0
+	@ frame_needed = 1, uses_anonymous_args = 0
+	mov	ip, sp
+	stmfd	sp!, {fp, ip, lr, pc}
+	sub	fp, ip, #4
+	cmp	sp, sl
+	bllt	__rt_stkovf_split_small
+	mov	r2, #0
+	mov	r1, r0
+	mov	r0, #112
+	bl	_kernel_osbyte
+	ldmea	fp, {fp, sp, pc}
+	.size	graphics_set_vdu_bank, .-graphics_set_vdu_bank
+	.align	2
+	.global	graphics_set_display_bank
+	.ascii	"graphics_set_display_bank\000"
+	.align	2
+	.word	4278190108
+	.type	graphics_set_display_bank, %function
+graphics_set_display_bank:
+	@ args = 0, pretend = 0, frame = 0, outgoing = 0
+	@ frame_needed = 1, uses_anonymous_args = 0
+	mov	ip, sp
+	stmfd	sp!, {fp, ip, lr, pc}
+	sub	fp, ip, #4
+	cmp	sp, sl
+	bllt	__rt_stkovf_split_small
+	mov	r2, #0
+	mov	r1, r0
+	mov	r0, #113
+	bl	_kernel_osbyte
+	ldmea	fp, {fp, sp, pc}
+	.size	graphics_set_display_bank, .-graphics_set_display_bank
+	.align	2
+	.global	end_frame
+	.ascii	"end_frame\000"
+	.align	2
+	.word	4278190092
+	.type	end_frame, %function
+end_frame:
+	@ args = 0, pretend = 0, frame = 0, outgoing = 0
+	@ frame_needed = 1, uses_anonymous_args = 0
+	mov	ip, sp
+	stmfd	sp!, {r4, fp, ip, lr, pc}
+	sub	fp, ip, #4
+	cmp	sp, sl
+	bllt	__rt_stkovf_split_small
+	ldr	r4, .L6
+	ldr	r0, [r4, #0]
+	bl	graphics_set_display_bank
+	ldr	r3, [r4, #0]
+	ldr	r2, .L6+4
+	smull	r1, r2, r2, r3
+	sub	r2, r2, r3, asr #31
+	add	r2, r2, r2, asl #1
+	rsb	r3, r2, r3
+	add	r3, r3, #1
+	mov	r0, r3
+	str	r3, [r4, #0]
+	bl	graphics_set_vdu_bank
+	mov	r0, #30
+	bl	_kernel_oswrch
+	ldmea	fp, {r4, fp, sp, pc}
+.L7:
+	.align	2
+.L6:
+	.word	.LANCHOR0
+	.word	1431655766
+	.size	end_frame, .-end_frame
+	.align	2
+	.global	graphics_setup
+	.ascii	"graphics_setup\000"
+	.align	2
+	.word	4278190096
+	.type	graphics_setup, %function
+graphics_setup:
+	@ args = 0, pretend = 0, frame = 52, outgoing = 0
+	@ frame_needed = 1, uses_anonymous_args = 0
+	mov	ip, sp
+	stmfd	sp!, {r4, r5, r6, r7, r8, r9, fp, ip, lr, pc}
+	sub	fp, ip, #4
+	cmp	sp, sl
+	bllt	__rt_stkovf_split_small
+	mov	r3, #149
+	sub	sp, sp, #52
+	str	r3, [sp, #40]
+	mvn	r3, #0
+	str	r3, [sp, #44]
+	bl	graphics_shadow_state_on
+	mov	r3, #15
+	str	r3, [sp, #0]
+	ldr	r3, .L15
+	mov	r1, sp
+	mov	r2, sp
+	mov	r0, #101
+	str	r3, [sp, #4]
+	bl	_kernel_swi
+	ldr	r3, .L15+4
+	mov	r2, #512
+	str	r2, [r3, #0]
+	ldr	r3, .L15+8
+	mov	r2, #384
+	str	r2, [r3, #0]
+	ldr	r3, .L15+12
+	mov	r2, #786432
+	str	r2, [r3, #0]
+	ldr	r3, .L15+16
+	mov	r2, #196608
+	str	r2, [r3, #0]
+	ldr	r3, .L15+20
+	mov	r6, #0
+	str	r6, [r3, #0]
+	ldr	r2, .L15+24
+	ldr	r3, .L15+28
+	ldr	r4, .L15+32
+	str	r2, [r3, #0]
+	ldr	r3, .L15+36
+	ldr	r7, .L15+40
+	str	r6, [r3, #0]
+	ldr	r3, .L15+44
+	sub	r2, r2, #256
+	mov	r8, #1024
+	mov	r5, #768
+	mov	r0, #3072
+	str	r2, [r3, #0]
+	str	r5, [r4, #0]
+	str	r8, [r7, #0]
+	bl	malloc
+	ldr	r3, .L15+48
+	str	r0, [r3, #0]
+	mov	r0, #3072
+	bl	malloc
+	ldr	r3, .L15+52
+	mov	r1, r8
+	mov	r2, r5
+	str	r0, [r3, #0]
+	ldr	r0, .L15+56
+	bl	printf
+	ldr	r8, [r4, #0]
+	mov	r4, r8, asl #2
+	mov	r0, r4
+	bl	malloc
+	ldr	r3, .L15+60
+	mov	r5, r0
+	mov	r0, r4
+	str	r5, [r3, #0]
+	bl	malloc
+	ldr	r3, .L15+64
+	cmp	r8, r6
+	str	r0, [r3, #0]
+	ble	.L11
+	ldr	ip, [r7, #0]
+	mov	r3, r6
+	mov	r2, r6
+.L10:
+	mov	r1, r2, asl #2
+	str	r2, [r5, r3]
+	str	r1, [r0, r3]
+	add	r3, r3, #4
+	cmp	r4, r3
+	add	r2, r2, ip
+	bne	.L10
+.L11:
+	mov	r0, #23
+	bl	_kernel_oswrch
+	mov	r0, #1
+	bl	_kernel_oswrch
+	mov	r0, #0
+	bl	_kernel_oswrch
+	mov	r0, #0
+	bl	_kernel_oswrch
+	mov	r0, #0
+	bl	_kernel_oswrch
+	mov	r0, #0
+	bl	_kernel_oswrch
+	mov	r0, #0
+	bl	_kernel_oswrch
+	mov	r0, #0
+	bl	_kernel_oswrch
+	mov	r0, #0
+	bl	_kernel_oswrch
+	mov	r0, #0
+	bl	_kernel_oswrch
+	mov	r9, sp
+	add	r3, sp, #40
+	str	r3, [r9], #48
+	mov	r0, #3
+	str	r9, [sp, #4]
+	bl	graphics_set_display_bank
+	mov	r0, #3
+	bl	graphics_set_vdu_bank
+	mov	r1, sp
+	mov	r2, sp
+	mov	r0, #49
+	bl	_kernel_swi
+	ldr	r4, .L15+68
+	ldr	r3, [sp, #48]
+	mov	r0, #2
+	str	r3, [r4, #8]
+	bl	graphics_set_display_bank
+	mov	r0, #2
+	bl	graphics_set_vdu_bank
+	mov	r1, sp
+	mov	r2, sp
+	mov	r0, #49
+	bl	_kernel_swi
+	ldr	r3, [sp, #48]
+	mov	r0, #1
+	str	r3, [r4, #4]
+	bl	graphics_set_display_bank
+	mov	r0, #1
+	bl	graphics_set_vdu_bank
+	mov	r2, sp
+	mov	r1, sp
+	mov	r0, #49
+	bl	_kernel_swi
+	ldr	r3, [sp, #48]
+	ldr	r0, .L15+72
+	mov	r1, r3
+	str	r3, [r4, #0]
+	bl	printf
+	ldr	r1, [r4, #4]
+	ldr	r0, .L15+76
+	bl	printf
+	ldr	r1, [r4, #8]
+	ldr	r0, .L15+80
+	bl	printf
+	mov	r3, #0
+	mov	r1, sp
+	mov	r2, sp
+	mov	ip, #-2147483648
+	mov	lr, #32
+	ldr	r0, .L15+84
+	str	r3, [sp, #8]
+	str	r3, [sp, #12]
+	stmia	sp, {ip, lr}
+	bl	_kernel_swi
+	ldr	r3, [sp, #0]
+	ldr	r2, .L15+88
+	mov	r1, r3
+	ldr	r0, .L15+92
+	str	r3, [r2, #0]
+	bl	printf
+	ldmea	fp, {r4, r5, r6, r7, r8, r9, fp, sp, pc}
+.L16:
+	.align	2
+.L15:
+	.word	.LC0
+	.word	x_origin
+	.word	y_origin
+	.word	size16m
+	.word	size
+	.word	minX
+	.word	1023
+	.word	maxX
+	.word	screen_height
+	.word	minY
+	.word	screen_width
+	.word	maxY
+	.word	poly_min_x
+	.word	poly_max_x
+	.word	.LC1
+	.word	line_address
+	.word	line_address_16m
+	.word	bank_address
+	.word	.LC2
+	.word	.LC3
+	.word	.LC4
+	.word	364225
+	.word	VFP_context
+	.word	.LC5
+	.size	graphics_setup, .-graphics_setup
+	.align	2
+	.global	graphics_end
+	.ascii	"graphics_end\000"
+	.align	2
+	.word	4278190096
+	.type	graphics_end, %function
+graphics_end:
+	@ args = 0, pretend = 0, frame = 40, outgoing = 0
+	@ frame_needed = 1, uses_anonymous_args = 0
+	mov	ip, sp
+	stmfd	sp!, {r4, fp, ip, lr, pc}
+	sub	fp, ip, #4
+	cmp	sp, sl
+	bllt	__rt_stkovf_split_small
+	sub	sp, sp, #40
+	bl	graphics_shadow_state_off
+	mov	r0, #1
+	bl	graphics_set_display_bank
+	mov	r0, #1
+	bl	graphics_set_vdu_bank
+	mov	r0, #23
+	bl	_kernel_oswrch
+	mov	r0, #1
+	bl	_kernel_oswrch
+	mov	r0, #1
+	bl	_kernel_oswrch
+	mov	r0, #0
+	bl	_kernel_oswrch
+	mov	r0, #0
+	bl	_kernel_oswrch
+	mov	r0, #0
+	bl	_kernel_oswrch
+	mov	r0, #0
+	bl	_kernel_oswrch
+	mov	r0, #0
+	bl	_kernel_oswrch
+	ldr	r4, .L18
+	mov	r0, #0
+	bl	_kernel_oswrch
+	mov	r0, #0
+	bl	_kernel_oswrch
+	ldr	r3, [r4, #0]
+	mov	r1, sp
+	str	r3, [sp, #0]
+	mov	r2, sp
+	mov	r3, #0
+	ldr	r0, .L18+4
+	str	r3, [sp, #4]
+	bl	_kernel_swi
+	ldr	r1, [r4, #0]
+	ldr	r0, .L18+8
+	bl	printf
+	ldmea	fp, {r4, fp, sp, pc}
+.L19:
+	.align	2
+.L18:
+	.word	VFP_context
+	.word	364226
+	.word	.LC6
+	.size	graphics_end, .-graphics_end
+	.align	2
+	.global	get_bank_address
+	.ascii	"get_bank_address\000"
+	.align	2
+	.word	4278190100
+	.type	get_bank_address, %function
+get_bank_address:
+	@ args = 0, pretend = 0, frame = 0, outgoing = 0
+	@ frame_needed = 0, uses_anonymous_args = 0
+	@ link register save eliminated.
+	ldr	r3, .L21
+	ldr	r2, [r3, #0]
+	ldr	r3, .L21+4
+	sub	r2, r2, #1
+	ldr	r0, [r3, r2, asl #2]
+	bx	lr
+.L22:
+	.align	2
+.L21:
+	.word	.LANCHOR0
+	.word	bank_address
+	.size	get_bank_address, .-get_bank_address
+	.align	2
+	.global	get_bank_address_byte
+	.ascii	"get_bank_address_byte\000"
+	.align	2
+	.word	4278190104
+	.type	get_bank_address_byte, %function
+get_bank_address_byte:
+	@ args = 0, pretend = 0, frame = 0, outgoing = 0
+	@ frame_needed = 0, uses_anonymous_args = 0
+	@ link register save eliminated.
+	ldr	r3, .L24
+	ldr	r2, [r3, #0]
+	ldr	r3, .L24+4
+	sub	r2, r2, #1
+	ldr	r0, [r3, r2, asl #2]
+	bx	lr
+.L25:
+	.align	2
+.L24:
+	.word	.LANCHOR0
+	.word	bank_address
+	.size	get_bank_address_byte, .-get_bank_address_byte
+	.align	2
+	.global	clear_screen
+	.ascii	"clear_screen\000"
+	.align	2
+	.word	4278190096
+	.type	clear_screen, %function
+clear_screen:
+	@ args = 0, pretend = 0, frame = 0, outgoing = 0
+	@ frame_needed = 0, uses_anonymous_args = 0
+	@ link register save eliminated.
+	ldr	ip, .L31
+	ldr	r3, .L31+4
+	uxtb	r0, r0
+	ldr	r2, [ip, #0]
+	ldr	r1, [r3, #0]
+	mov	r3, r0, asl #16
+	orr	r3, r3, r0, asl #8
+	cmp	r2, #0
+	ldr	r2, .L31+8
+	sub	r1, r1, #1
+	orr	r3, r3, r0
+	ldr	r2, [r2, r1, asl #2]
+	orr	r0, r3, r0, asl #24
+	bxle	lr
+	sub	r2, r2, #4
+	mov	r3, #0
+.L28:
+	str	r0, [r2, #4]!
+	ldr	r1, [ip, #0]
+	add	r3, r3, #1
+	cmp	r1, r3
+	bgt	.L28
+	bx	lr
+.L32:
+	.align	2
+.L31:
+	.word	size
+	.word	.LANCHOR0
+	.word	bank_address
+	.size	clear_screen, .-clear_screen
+	.align	2
+	.global	clear_screen_16m
+	.ascii	"clear_screen_16m\000"
+	.align	2
+	.word	4278190100
+	.type	clear_screen_16m, %function
+clear_screen_16m:
+	@ args = 0, pretend = 0, frame = 0, outgoing = 0
+	@ frame_needed = 0, uses_anonymous_args = 0
+	@ link register save eliminated.
+	ldr	ip, .L38
+	ldr	r3, .L38+4
+	ldr	r2, [ip, #0]
+	ldr	r3, [r3, #0]
+	cmp	r2, #0
+	ldr	r2, .L38+8
+	sub	r3, r3, #1
+	ldr	r2, [r2, r3, asl #2]
+	bxle	lr
+	sub	r2, r2, #4
+	mov	r3, #0
+.L35:
+	str	r0, [r2, #4]!
+	ldr	r1, [ip, #0]
+	add	r3, r3, #1
+	cmp	r1, r3
+	bgt	.L35
+	bx	lr
+.L39:
+	.align	2
+.L38:
+	.word	size16m
+	.word	.LANCHOR0
+	.word	bank_address
+	.size	clear_screen_16m, .-clear_screen_16m
+	.align	2
+	.global	set_clip
+	.ascii	"set_clip\000"
+	.align	2
+	.word	4278190092
+	.type	set_clip, %function
+set_clip:
+	@ args = 0, pretend = 0, frame = 0, outgoing = 0
+	@ frame_needed = 0, uses_anonymous_args = 0
+	@ link register save eliminated.
+	ldr	ip, .L41
+	str	r0, [ip, #0]
+	ldr	r0, .L41+4
+	str	r2, [r0, #0]
+	ldr	r2, .L41+8
+	str	r1, [r2, #0]
+	ldr	r2, .L41+12
+	str	r3, [r2, #0]
+	bx	lr
+.L42:
+	.align	2
+.L41:
+	.word	minX
+	.word	maxX
+	.word	minY
+	.word	maxY
+	.size	set_clip, .-set_clip
+	.align	2
+	.global	draw_horz_line
+	.ascii	"draw_horz_line\000"
+	.align	2
+	.word	4278190096
+	.type	draw_horz_line, %function
+draw_horz_line:
+	@ args = 0, pretend = 0, frame = 0, outgoing = 0
+	@ frame_needed = 0, uses_anonymous_args = 0
+	@ link register save eliminated.
+	cmp	r0, r1
+	stmfd	sp!, {r4, r5, r6, r7}
+	uxtb	r3, r3
+	bge	.L43
+	ldr	ip, .L56
+	ldr	ip, [ip, #0]
+	cmp	ip, r2
+	bgt	.L43
+	ldr	ip, .L56+4
+	ldr	ip, [ip, #0]
+	cmp	r2, ip
+	bgt	.L43
+	ldr	ip, .L56+8
+	ldr	r4, [ip, #0]
+	ldr	ip, .L56+12
+	cmp	r0, r4
+	movlt	r0, r4
+	ldr	ip, [ip, #0]
+	and	r6, r0, #3
+	cmp	r1, ip
+	rsble	r1, r0, r1
+	rsbgt	r1, r0, ip
+	ldr	ip, .L56+16
+	rsb	r6, r6, #4
+	ldr	r4, [ip, #0]
+	ldr	ip, .L56+20
+	cmp	r1, r6
+	movlt	r6, r1
+	movge	r6, r6
+	ldr	r7, [ip, #0]
+	ldr	ip, .L56+24
+	ldr	r4, [r4, r2, asl #2]
+	ldr	r5, [ip, #0]
+	mov	ip, r3, asl #16
+	orr	ip, ip, r3, asl #8
+	cmp	r6, r7
+	movge	r6, r7
+	ldr	r2, .L56+28
+	sub	r5, r5, #1
+	orr	ip, ip, r3
+	cmp	r6, #0
+	ldr	r5, [r2, r5, asl #2]
+	orr	ip, ip, r3, asl #24
+	add	r4, r0, r4
+	blt	.L46
+	sub	r2, r5, #1
+	add	r0, r6, r5
+	add	r2, r2, r4
+	add	r0, r4, r0
+.L47:
+	strb	r3, [r2, #1]!
+	cmp	r2, r0
+	bne	.L47
+	add	r4, r4, #1
+	add	r4, r4, r6
+.L46:
+	rsb	r6, r6, r1
+	mov	r1, r6, asr #2
+	cmp	r1, #0
+	mov	r2, r4, asr #2
+	addgt	r0, r1, r2
+	addgt	r0, r5, r0, asl #2
+	addgt	r2, r5, r2, asl #2
+	ble	.L51
+.L50:
+	str	ip, [r2], #4
+	cmp	r2, r0
+	bne	.L50
+.L51:
+	mov	r2, r1, asl #2
+	subs	r6, r6, r2
+	add	r4, r4, r2
+	addpl	r6, r6, r5
+	subpl	r2, r5, #1
+	addpl	r2, r2, r4
+	addpl	r1, r4, r6
+	bmi	.L43
+.L52:
+	strb	r3, [r2], #1
+	cmp	r2, r1
+	bne	.L52
+.L43:
+	ldmfd	sp!, {r4, r5, r6, r7}
+	bx	lr
+.L57:
+	.align	2
+.L56:
+	.word	minY
+	.word	maxY
+	.word	minX
+	.word	maxX
+	.word	line_address
+	.word	screen_width
+	.word	.LANCHOR0
+	.word	bank_address
+	.size	draw_horz_line, .-draw_horz_line
+	.align	2
+	.global	draw_horz_line_16m
+	.ascii	"draw_horz_line_16m\000"
+	.align	2
+	.word	4278190100
+	.type	draw_horz_line_16m, %function
+draw_horz_line_16m:
+	@ args = 0, pretend = 0, frame = 0, outgoing = 0
+	@ frame_needed = 0, uses_anonymous_args = 0
+	@ link register save eliminated.
+	ldr	ip, .L63
+	str	r4, [sp, #-4]!
+	ldr	r4, [ip, #0]
+	ldr	ip, .L63+4
+	ldr	r2, [r4, r2, asl #2]
+	ldr	ip, [ip, #0]
+	ldr	r4, .L63+8
+	sub	ip, ip, #1
+	cmp	r0, r1
+	ldr	ip, [r4, ip, asl #2]
+	add	r2, r0, r2
+	bge	.L58
+	rsb	r1, r0, r1
+	add	r1, r2, r1
+	add	r1, ip, r1, asl #2
+	add	r2, ip, r2, asl #2
+.L60:
+	str	r3, [r2], #4
+	cmp	r2, r1
+	bne	.L60
+.L58:
+	ldmfd	sp!, {r4}
+	bx	lr
+.L64:
+	.align	2
+.L63:
+	.word	line_address
+	.word	.LANCHOR0
+	.word	bank_address
+	.size	draw_horz_line_16m, .-draw_horz_line_16m
+	.align	2
+	.global	draw_box
+	.ascii	"draw_box\000"
+	.align	2
+	.word	4278190092
+	.type	draw_box, %function
+draw_box:
+	@ args = 4, pretend = 0, frame = 0, outgoing = 0
+	@ frame_needed = 1, uses_anonymous_args = 0
+	mov	ip, sp
+	stmfd	sp!, {r4, r5, r6, r7, r8, fp, ip, lr, pc}
+	sub	fp, ip, #4
+	cmp	sp, sl
+	bllt	__rt_stkovf_split_small
+	cmp	r1, r3
+	mov	r5, r3
+	mov	r6, r0
+	mov	r7, r2
+	ldrb	r8, [fp, #4]	@ zero_extendqisi2
+	ldmgeea	fp, {r4, r5, r6, r7, r8, fp, sp, pc}
+	mov	r4, r1
+.L67:
+	mov	r2, r4
+	mov	r0, r6
+	mov	r1, r7
+	mov	r3, r8
+	add	r4, r4, #1
+	bl	draw_horz_line
+	cmp	r4, r5
+	bne	.L67
+	ldmea	fp, {r4, r5, r6, r7, r8, fp, sp, pc}
+	.size	draw_box, .-draw_box
+	.align	2
+	.global	draw_box_16m
+	.ascii	"draw_box_16m\000"
+	.align	2
+	.word	4278190096
+	.type	draw_box_16m, %function
+draw_box_16m:
+	@ args = 4, pretend = 0, frame = 0, outgoing = 0
+	@ frame_needed = 0, uses_anonymous_args = 0
+	@ link register save eliminated.
+	stmfd	sp!, {r4, r5, r6, r7, r8, r9}
+	cmp	r1, r3
+	ldr	ip, [sp, #24]
+	bge	.L70
+	ldr	r4, .L79
+	ldr	r7, .L79+4
+	ldr	r5, [r4, #0]
+	ldr	r6, .L79+8
+	add	r4, r5, r1, asl #2
+	rsb	r8, r0, r2
+	add	r5, r5, r3, asl #2
+.L73:
+	ldr	r1, [r6, #0]
+	ldr	r3, [r4], #4
+	sub	r1, r1, #1
+	cmp	r0, r2
+	ldr	r1, [r7, r1, asl #2]
+	add	r3, r0, r3
+	addlt	r9, r3, r8
+	addlt	r3, r1, r3, asl #2
+	addlt	r1, r1, r9, asl #2
+	bge	.L76
+.L75:
+	str	ip, [r3], #4
+	cmp	r3, r1
+	bne	.L75
+.L76:
+	cmp	r4, r5
+	bne	.L73
+.L70:
+	ldmfd	sp!, {r4, r5, r6, r7, r8, r9}
+	bx	lr
+.L80:
+	.align	2
+.L79:
+	.word	line_address
+	.word	bank_address
+	.word	.LANCHOR0
+	.size	draw_box_16m, .-draw_box_16m
+	.align	2
+	.global	plot_pixel
+	.ascii	"plot_pixel\000"
+	.align	2
+	.word	4278190092
+	.type	plot_pixel, %function
+plot_pixel:
+	@ args = 0, pretend = 0, frame = 0, outgoing = 0
+	@ frame_needed = 0, uses_anonymous_args = 0
+	@ link register save eliminated.
+	ldr	ip, .L82
+	ldr	r3, .L82+4
+	ldr	ip, [ip, #0]
+	ldr	r3, [r3, #0]
+	ldr	r1, [ip, r1, asl #2]
+	ldr	ip, .L82+8
+	sub	r3, r3, #1
+	ldr	r3, [ip, r3, asl #2]
+	add	r0, r0, r1
+	strb	r2, [r0, r3]
+	bx	lr
+.L83:
+	.align	2
+.L82:
+	.word	line_address
+	.word	.LANCHOR0
+	.word	bank_address
+	.size	plot_pixel, .-plot_pixel
+	.align	2
+	.global	plot_pixel_16m
+	.ascii	"plot_pixel_16m\000"
+	.align	2
+	.word	4278190096
+	.type	plot_pixel_16m, %function
+plot_pixel_16m:
+	@ args = 0, pretend = 0, frame = 0, outgoing = 0
+	@ frame_needed = 0, uses_anonymous_args = 0
+	@ link register save eliminated.
+	ldr	ip, .L85
+	ldr	r3, .L85+4
+	ldr	ip, [ip, #0]
+	ldr	r3, [r3, #0]
+	ldr	r1, [ip, r1, asl #2]
+	ldr	ip, .L85+8
+	sub	r3, r3, #1
+	ldr	r3, [ip, r3, asl #2]
+	add	r0, r0, r1
+	str	r2, [r3, r0, asl #2]
+	bx	lr
+.L86:
+	.align	2
+.L85:
+	.word	line_address
+	.word	.LANCHOR0
+	.word	bank_address
+	.size	plot_pixel_16m, .-plot_pixel_16m
+	.align	2
+	.global	draw_line_raw
+	.ascii	"draw_line_raw\000"
+	.align	2
+	.word	4278190096
+	.type	draw_line_raw, %function
+draw_line_raw:
+	@ args = 4, pretend = 0, frame = 16, outgoing = 0
+	@ frame_needed = 0, uses_anonymous_args = 0
+	@ link register save eliminated.
+	stmfd	sp!, {r4, r5, r6, r7, r8, r9}
+	rsb	ip, r0, r2
+	eor	r4, ip, ip, asr #31
+	sub	r4, r4, ip, asr #31
+	rsb	r6, r1, r3
+	cmp	r2, r0
+	movgt	r5, #1
+	mvnle	r5, #0
+	cmp	r6, #0
+	rsblt	r6, r6, #0
+	cmp	r3, r1
+	sub	sp, sp, #16
+	movgt	r9, #1
+	mvnle	r9, #0
+	cmp	r4, r6
+	str	r4, [sp, #4]
+	str	r5, [sp, #8]
+	str	r9, [sp, #12]
+	bgt	.L90
+	add	ip, r6, r6, lsr #31
+	mov	ip, ip, asr #1
+	rsb	ip, ip, #0
+.L92:
+	ldr	r4, .L101
+	ldr	r7, .L101+4
+	ldr	r8, [r4, #0]
+	ldr	r4, [sp, #4]
+	rsb	r4, r4, #0
+	str	r4, [sp, #0]
+.L100:
+	ldr	r4, [r7, #0]
+	ldr	r9, .L101+8
+	ldr	r5, [r8, r1, asl #2]
+	sub	r4, r4, #1
+	ldr	r4, [r9, r4, asl #2]
+	ldr	r9, [sp, #40]
+	add	r5, r0, r5
+	cmp	r1, r3
+	cmpeq	r0, r2
+	str	r9, [r4, r5, asl #2]
+	beq	.L87
+	ldr	r4, [sp, #0]
+	cmp	ip, r4
+	ldrgt	r5, [sp, #8]
+	rsbgt	r4, r6, ip
+	movle	r4, ip
+	addgt	r0, r0, r5
+	cmp	ip, r6
+	movge	ip, r4
+	ldrlt	r9, [sp, #4]
+	addlt	ip, r4, r9
+	ldrlt	r4, [sp, #12]
+	addlt	r1, r1, r4
+	b	.L100
+.L87:
+	add	sp, sp, #16
+	ldmfd	sp!, {r4, r5, r6, r7, r8, r9}
+	bx	lr
+.L90:
+	ldr	r5, [sp, #4]
+	mov	ip, r5, asr #1
+	b	.L92
+.L102:
+	.align	2
+.L101:
+	.word	line_address
+	.word	.LANCHOR0
+	.word	bank_address
+	.size	draw_line_raw, .-draw_line_raw
+	.align	2
+	.global	ComputeOutCode
+	.ascii	"ComputeOutCode\000"
+	.align	2
+	.word	4278190096
+	.type	ComputeOutCode, %function
+ComputeOutCode:
+	@ args = 0, pretend = 0, frame = 0, outgoing = 0
+	@ frame_needed = 0, uses_anonymous_args = 0
+	@ link register save eliminated.
+	ldr	r3, .L110
+	ldr	r3, [r3, #0]
+	cmp	r3, r0
+	movgt	r0, #1
+	bgt	.L104
+	ldr	r3, .L110+4
+	ldr	r3, [r3, #0]
+	cmp	r0, r3
+	movgt	r0, #2
+	movle	r0, #0
+.L104:
+	ldr	r3, .L110+8
+	ldr	r3, [r3, #0]
+	cmp	r3, r1
+	bgt	.L109
+	ldr	r3, .L110+12
+	ldr	r3, [r3, #0]
+	cmp	r1, r3
+	orrgt	r0, r0, #8
+	bx	lr
+.L109:
+	orr	r0, r0, #4
+	bx	lr
+.L111:
+	.align	2
+.L110:
+	.word	minX
+	.word	maxX
+	.word	minY
+	.word	maxY
+	.size	ComputeOutCode, .-ComputeOutCode
+	.global	__divsi3
+	.align	2
+	.global	draw_line
+	.ascii	"draw_line\000"
+	.align	2
+	.word	4278190092
+	.type	draw_line, %function
+draw_line:
+	@ args = 4, pretend = 0, frame = 20, outgoing = 4
+	@ frame_needed = 1, uses_anonymous_args = 0
+	mov	ip, sp
+	stmfd	sp!, {r4, r5, r6, r7, r8, r9, fp, ip, lr, pc}
+	sub	fp, ip, #4
+	cmp	sp, sl
+	bllt	__rt_stkovf_split_small
+	sub	sp, sp, #24
+	mov	r8, r0
+	ldr	r0, .L152
+	ldr	r0, [r0, #0]
+	mov	r7, r1
+	cmp	r8, r0
+	str	r0, [sp, #12]
+	ldr	r1, .L152+4
+	mov	r9, r3
+	movlt	r4, #1
+	blt	.L113
+	ldr	r4, [r1, #0]
+	cmp	r8, r4
+	movgt	r4, #2
+	movle	r4, #0
+.L113:
+	ldr	r0, .L152+8
+	ldr	r0, [r0, #0]
+	cmp	r7, r0
+	str	r0, [sp, #4]
+	bge	.L114
+	ldr	r0, .L152+12
+	orr	r4, r4, #4
+.L115:
+	ldr	r3, [sp, #12]
+	cmp	r2, r3
+	movlt	r5, #1
+	blt	.L116
+	ldr	r5, [r1, #0]
+	cmp	r2, r5
+	movgt	r5, #2
+	movle	r5, #0
+.L116:
+	ldr	r3, [sp, #4]
+	cmp	r9, r3
+	bge	.L117
+	orr	r5, r5, #4
+.L119:
+	ldr	r0, [r0, #0]
+	ldr	r1, [r1, #0]
+	mov	ip, r9
+	str	r0, [sp, #8]
+	mov	r9, r7
+	str	r1, [sp, #16]
+	mov	r7, r2
+.L148:
+	orrs	r1, r5, r4
+	beq	.L120
+.L151:
+	tst	r5, r4
+	bne	.L112
+	cmp	r4, #0
+	movne	r6, r4
+	moveq	r6, r5
+	tst	r6, #8
+	beq	.L123
+	ldr	r2, [sp, #8]
+	rsb	r3, r8, r7
+	rsb	r0, r9, r2
+	rsb	r1, r9, ip
+	mul	r0, r0, r3
+	str	ip, [sp, #20]
+	bl	__divsi3
+	ldr	r3, [sp, #8]
+	ldr	ip, [sp, #20]
+	add	r1, r0, r8
+.L124:
+	cmp	r4, r6
+	ldr	r2, [sp, #12]
+	beq	.L150
+.L129:
+	cmp	r1, r2
+	movlt	r5, #1
+	blt	.L133
+.L128:
+	ldr	r2, [sp, #16]
+	cmp	r2, r1
+	movlt	r5, #2
+	movge	r5, #0
+.L133:
+	ldr	r2, [sp, #4]
+	cmp	r2, r3
+	ble	.L134
+	orr	r5, r5, #4
+	mov	r7, r1
+	orrs	r1, r5, r4
+	mov	ip, r3
+	bne	.L151
+.L120:
+	ldr	r1, [fp, #4]
+	mov	r2, r7
+	mov	r7, r9
+	str	r1, [sp, #0]
+	mov	r9, ip
+	mov	r0, r8
+	mov	r1, r7
+	mov	r3, ip
+	bl	draw_line_raw
+.L112:
+	ldmea	fp, {r4, r5, r6, r7, r8, r9, fp, sp, pc}
+.L123:
+	tst	r6, #4
+	beq	.L125
+	ldr	r2, [sp, #4]
+	rsb	r3, r8, r7
+	rsb	r0, r9, r2
+	rsb	r1, r9, ip
+	mul	r0, r0, r3
+	str	ip, [sp, #20]
+	bl	__divsi3
+	cmp	r4, r6
+	ldr	r3, [sp, #4]
+	add	r1, r0, r8
+	ldr	ip, [sp, #20]
+	ldr	r2, [sp, #12]
+	bne	.L129
+.L150:
+	cmp	r1, r2
+	movlt	r4, #1
+	bge	.L127
+.L130:
+	ldr	r2, [sp, #4]
+	cmp	r2, r3
+	ble	.L131
+	orr	r4, r4, #4
+	mov	r9, r3
+	mov	r8, r1
+	b	.L148
+.L134:
+	ldr	r2, [sp, #8]
+	cmp	r2, r3
+	movge	ip, r3
+	movge	r7, r1
+	orrlt	r5, r5, #8
+	movlt	ip, r3
+	movlt	r7, r1
+	b	.L148
+.L125:
+	tst	r6, #2
+	beq	.L126
+	ldr	r2, [sp, #16]
+	rsb	r3, r9, ip
+	rsb	r0, r8, r2
+	mul	r0, r0, r3
+	rsb	r1, r8, r7
+	str	ip, [sp, #20]
+	bl	__divsi3
+	ldr	r1, [sp, #16]
+	add	r3, r0, r9
+	ldr	ip, [sp, #20]
+	b	.L124
+.L131:
+	ldr	r2, [sp, #8]
+	mov	r9, r3
+	cmp	r2, r3
+	orrlt	r4, r4, #8
+	mov	r8, r1
+	b	.L148
+.L126:
+	ands	r3, r6, #1
+	beq	.L140
+	ldr	r1, [sp, #12]
+	rsb	r3, r9, ip
+	rsb	r0, r8, r1
+	mul	r0, r0, r3
+	rsb	r1, r8, r7
+	str	ip, [sp, #20]
+	bl	__divsi3
+	cmp	r4, r6
+	ldr	r1, [sp, #12]
+	add	r3, r0, r9
+	ldr	ip, [sp, #20]
+	bne	.L128
+.L127:
+	ldr	r2, [sp, #16]
+	cmp	r2, r1
+	movlt	r4, #2
+	movge	r4, #0
+	b	.L130
+.L140:
+	mov	r1, r3
+	b	.L124
+.L117:
+	ldr	ip, [r0, #0]
+	cmp	r9, ip
+	orrgt	r5, r5, #8
+	b	.L119
+.L114:
+	ldr	r0, .L152+12
+	ldr	ip, [r0, #0]
+	cmp	r7, ip
+	orrgt	r4, r4, #8
+	b	.L115
+.L153:
+	.align	2
+.L152:
+	.word	minX
+	.word	maxX
+	.word	minY
+	.word	maxY
+	.size	draw_line, .-draw_line
+	.align	2
+	.global	draw_polygon_line
+	.ascii	"draw_polygon_line\000"
+	.align	2
+	.word	4278190100
+	.type	draw_polygon_line, %function
+draw_polygon_line:
+	@ args = 8, pretend = 0, frame = 16, outgoing = 0
+	@ frame_needed = 0, uses_anonymous_args = 0
+	@ link register save eliminated.
+	stmfd	sp!, {r4, r5, r6, r7, r8, r9}
+	rsb	ip, r0, r2
+	eor	r4, ip, ip, asr #31
+	sub	r4, r4, ip, asr #31
+	rsb	r5, r1, r3
+	cmp	r2, r0
+	mvnle	r7, #0
+	movgt	r7, #1
+	cmp	r5, #0
+	rsblt	r5, r5, #0
+	cmp	r3, r1
+	sub	sp, sp, #16
+	mvnle	ip, #0
+	movgt	ip, #1
+	cmp	r4, r5
+	str	r4, [sp, #0]
+	str	r7, [sp, #4]
+	str	ip, [sp, #8]
+	ldr	r6, [sp, #40]
+	bgt	.L157
+	add	ip, r5, r5, lsr #31
+	mov	ip, ip, asr #1
+	rsb	ip, ip, #0
+.L159:
+	ldr	r4, .L172
+	ldr	r9, [r4, #0]
+	ldr	r4, .L172+4
+	ldr	r8, [r4, #0]
+	ldr	r4, [sp, #0]
+	rsb	r7, r4, #0
+	str	r7, [sp, #12]
+.L171:
+	ldr	r7, [sp, #44]
+	cmp	r1, r7
+	movgt	r4, #0
+	movle	r4, #1
+	cmp	r1, r6
+	movlt	r4, #0
+	cmp	r4, #0
+	beq	.L161
+	rsb	r4, r6, r1
+	ldr	r7, [r9, r4, asl #2]
+	cmp	r0, r7
+	strlt	r0, [r9, r4, asl #2]
+	ldr	r7, [r8, r4, asl #2]
+	cmp	r0, r7
+	strgt	r0, [r8, r4, asl #2]
+.L161:
+	cmp	r1, r3
+	cmpeq	r0, r2
+	beq	.L154
+	ldr	r4, [sp, #12]
+	cmp	ip, r4
+	ldrgt	r7, [sp, #4]
+	rsbgt	r4, r5, ip
+	movle	r4, ip
+	addgt	r0, r0, r7
+	cmp	ip, r5
+	movge	ip, r4
+	ldrlt	r7, [sp, #0]
+	addlt	ip, r4, r7
+	ldrlt	r4, [sp, #8]
+	addlt	r1, r1, r4
+	b	.L171
+.L154:
+	add	sp, sp, #16
+	ldmfd	sp!, {r4, r5, r6, r7, r8, r9}
+	bx	lr
+.L157:
+	ldr	r7, [sp, #0]
+	mov	ip, r7, asr #1
+	b	.L159
+.L173:
+	.align	2
+.L172:
+	.word	poly_min_x
+	.word	poly_max_x
+	.size	draw_polygon_line, .-draw_polygon_line
+	.align	2
+	.global	draw_polygon
+	.ascii	"draw_polygon\000"
+	.align	2
+	.word	4278190096
+	.type	draw_polygon, %function
+draw_polygon:
+	@ args = 0, pretend = 0, frame = 12, outgoing = 8
+	@ frame_needed = 1, uses_anonymous_args = 0
+	mov	ip, sp
+	stmfd	sp!, {r4, r5, r6, r7, r8, r9, fp, ip, lr, pc}
+	sub	fp, ip, #4
+	cmp	sp, sl
+	bllt	__rt_stkovf_split_small
+	ldr	r3, .L195
+	sub	sp, sp, #20
+	cmp	r1, #0
+	uxtb	r2, r2
+	str	r1, [sp, #12]
+	str	r0, [sp, #8]
+	str	r2, [sp, #16]
+	ldr	r1, [r3, #0]
+	ble	.L186
+	ldr	r2, [sp, #12]
+	mov	r3, r0
+	add	ip, r0, r2, asl #3
+	mov	r0, #0
+.L176:
+	ldr	r2, [r3, #4]
+	add	r3, r3, #8
+	cmp	r1, r2
+	movge	r1, r2
+	cmp	r0, r2
+	movlt	r0, r2
+	cmp	r3, ip
+	bne	.L176
+.L175:
+	ldr	r3, .L195+4
+	ldr	r5, [r3, #0]
+	ldr	r3, .L195+8
+	cmp	r1, r5
+	movge	r5, r1
+	movlt	r5, r5
+	ldr	r6, [r3, #0]
+	cmp	r0, r6
+	movlt	r6, r0
+	movge	r6, r6
+	subs	r7, r6, r5
+	bmi	.L181
+	ldr	ip, .L195+12
+	ldr	r3, .L195+16
+	add	r1, r7, #1
+	ldr	ip, [ip, #0]
+	ldr	r9, .L195+20
+	ldr	r0, [r3, #0]
+	mov	r1, r1, asl #2
+	mov	r3, #0
+	mvn	r2, #0
+.L180:
+	ldr	lr, [r9, #0]
+	str	lr, [ip, r3]
+	str	r2, [r0, r3]
+	add	r3, r3, #4
+	cmp	r3, r1
+	bne	.L180
+.L181:
+	ldr	ip, [sp, #12]
+	sub	r9, ip, #1
+	cmp	r9, #0
+	movle	r3, #4
+	movle	r2, #0
+	ble	.L179
+	ldr	r4, [sp, #8]
+	mov	r8, #0
+.L182:
+	ldmia	r4, {r0, r1, r2, r3}
+	add	r8, r8, #1
+	stmia	sp, {r5, r6}
+	bl	draw_polygon_line
+	cmp	r8, r9
+	add	r4, r4, #8
+	bne	.L182
+	ldr	ip, [sp, #12]
+	sub	r3, ip, #-2147483646
+	mov	r3, r3, asl #1
+	add	r2, r3, #2
+	add	r3, r3, #3
+	mov	r2, r2, asl #2
+	mov	r3, r3, asl #2
+.L179:
+	ldr	ip, [sp, #8]
+	ldr	r0, [ip, r2]
+	ldr	r1, [ip, r3]
+	ldmia	ip, {r2, r3}
+	stmia	sp, {r5, r6}
+	bl	draw_polygon_line
+	cmp	r7, #0
+	blt	.L174
+	ldr	ip, .L195+12
+	str	r5, [sp, #8]
+	ldr	r9, .L195+20
+	ldr	r6, .L195+16
+	ldr	r5, [sp, #16]
+	mov	r4, #0
+	mov	r8, ip
+.L183:
+	ldr	r2, [r8, #0]
+	ldr	r3, [r9, #0]
+	ldr	r0, [r2, r4, asl #2]
+	cmp	r0, r3
+	beq	.L184
+	ldr	r3, [r6, #0]
+	ldr	r1, [r3, r4, asl #2]
+	mov	r3, r5
+	cmn	r1, #1
+	beq	.L184
+	ldr	ip, .L195+4
+	ldr	r2, [ip, #0]
+	ldr	ip, [sp, #8]
+	add	r2, ip, r2
+	add	r2, r2, r4
+	bl	draw_horz_line
+.L184:
+	add	r4, r4, #1
+	cmp	r7, r4
+	bge	.L183
+.L174:
+	ldmea	fp, {r4, r5, r6, r7, r8, r9, fp, sp, pc}
+.L186:
+	mov	r0, #0
+	b	.L175
+.L196:
+	.align	2
+.L195:
+	.word	screen_height
+	.word	minY
+	.word	maxY
+	.word	poly_min_x
+	.word	poly_max_x
+	.word	maxX
+	.size	draw_polygon, .-draw_polygon
+	.align	2
+	.global	orient2d
+	.ascii	"orient2d\000"
+	.align	2
+	.word	4278190092
+	.type	orient2d, %function
+orient2d:
+	@ args = 0, pretend = 0, frame = 0, outgoing = 0
+	@ frame_needed = 0, uses_anonymous_args = 0
+	@ link register save eliminated.
+	ldr	ip, [r0, #0]
+	ldr	r3, [r0, #4]
+	str	r4, [sp, #-4]!
+	ldr	r0, [r1, #4]
+	ldr	r4, [r2, #0]
+	rsb	r0, r3, r0
+	rsb	r4, r4, ip
+	mul	r0, r4, r0
+	ldr	r1, [r1, #0]
+	ldr	r2, [r2, #4]
+	rsb	ip, ip, r1
+	rsb	r3, r3, r2
+	mla	r0, r3, ip, r0
+	ldmfd	sp!, {r4}
+	bx	lr
+	.size	orient2d, .-orient2d
+	.align	2
+	.global	fast_draw_triangle
+	.ascii	"fast_draw_triangle\000"
+	.align	2
+	.word	4278190100
+	.type	fast_draw_triangle, %function
+fast_draw_triangle:
+	@ args = 12, pretend = 0, frame = 80, outgoing = 0
+	@ frame_needed = 0, uses_anonymous_args = 0
+	@ link register save eliminated.
+	stmfd	sp!, {r4, r5, r6, r7, r8, r9}
+	fstmfdd	sp!, {d8, d9}
+	ldr	r9, [r3, #0]
+	ldr	r5, [r2, #0]
+	ldr	ip, [r3, #4]
+	ldr	r2, [r2, #4]
+	ldr	r4, [r1, #0]
+	ldr	r3, [r1, #4]
+	cmp	r2, ip
+	movlt	r8, r2
+	movge	r8, ip
+	cmp	r5, r9
+	movlt	r1, r5
+	movge	r1, r9
+	cmp	r5, r9
+	movge	r7, r5
+	movlt	r7, r9
+	cmp	r2, ip
+	movge	r6, r2
+	movlt	r6, ip
+	cmp	r6, r3
+	movlt	r6, r3
+	cmp	r1, r4
+	movge	r1, r4
+	cmp	r8, r3
+	movge	r8, r3
+	cmp	r7, r4
+	movlt	r7, r4
+	sub	sp, sp, #80
+	uxtb	r0, r0
+	cmp	r1, r7
+	cmpne	r8, r6
+	str	r6, [sp, #0]
+	str	r0, [sp, #12]
+	beq	.L198
+	ldr	r0, .L211+8
+	rsb	r6, ip, r3
+	ldr	r0, [r0, #0]
+	str	r6, [sp, #28]
+	cmp	r1, r0
+	movlt	r1, r0
+	str	r1, [sp, #36]
+	rsb	r1, r1, r5
+	str	r1, [sp, #20]
+	rsb	r1, r3, r2
+	rsb	r0, r2, ip
+	str	r1, [sp, #32]
+	ldr	r1, .L211+12
+	str	r0, [sp, #8]
+	ldr	r0, [sp, #36]
+	ldr	r6, [sp, #36]
+	ldr	r1, [r1, #0]
+	rsb	r0, r0, r9
+	str	r0, [sp, #24]
+	str	r1, [sp, #4]
+	rsb	r0, r6, r4
+	ldr	r1, [sp, #20]
+	ldr	r6, [sp, #8]
+	mul	r1, r1, r6
+	ldr	r6, [sp, #28]
+	str	r1, [sp, #20]
+	ldr	r1, [sp, #24]
+	mul	r1, r1, r6
+	str	r1, [sp, #24]
+	ldr	r1, [sp, #32]
+	ldr	r6, [sp, #4]
+	mul	r0, r0, r1
+	ldr	r1, .L211+16
+	str	r0, [sp, #32]
+	ldr	r0, [r1, #0]
+	ldr	r1, .L211+20
+	cmp	r7, r0
+	movge	r7, r0
+	ldr	r1, [r1, #0]
+	rsb	r0, r4, r5
+	str	r7, [sp, #52]
+	rsb	r5, r5, r9
+	ldr	r7, [sp, #0]
+	cmp	r8, r6
+	movlt	r8, r6
+	str	r5, [sp, #44]
+	rsb	r4, r9, r4
+	rsb	r6, r2, r3
+	cmp	r7, r1
+	movge	r7, r1
+	str	r0, [sp, #40]
+	str	r4, [sp, #48]
+	rsb	r0, ip, r8
+	rsb	r4, r2, r8
+	rsb	r1, r3, r8
+	rsb	r2, ip, r2
+	rsb	r3, r3, ip
+	ldr	r9, [sp, #44]
+	ldr	ip, [sp, #20]
+	ldr	r5, [sp, #12]
+	mla	r4, r4, r9, ip
+	str	r2, [sp, #4]
+	str	r3, [sp, #8]
+	cmp	r5, #0
+	str	r6, [sp, #64]
+	str	r4, [sp, #28]
+	ldr	r3, [sp, #24]
+	ldr	r5, [sp, #32]
+	ldr	r2, [sp, #48]
+	ldr	r4, [sp, #40]
+	mla	r0, r0, r2, r3
+	mla	r1, r1, r4, r5
+	str	r0, [sp, #24]
+	str	r1, [sp, #32]
+	bne	.L200
+	ldr	r6, [sp, #124]
+	ldr	r9, [sp, #120]
+	and	r3, r6, #65280
+	mov	r3, r3, lsr #8
+	fmsr	s10, r3	@ int
+	and	r2, r6, #16711680
+	mov	r2, r2, lsr #16
+	and	r3, r9, #65280
+	fmsr	s8, r2	@ int
+	mov	r3, r3, lsr #8
+	fldd	d7, .L211
+	fmsr	s18, r3	@ int
+	fsitod	d5, s10
+	uxtb	r6, r6
+	fmsr	s12, r6	@ int
+	and	r2, r9, #16711680
+	mov	r2, r2, lsr #16
+	fmsr	s5, r2	@ int
+	fsitod	d4, s8
+	fsitod	d3, s18
+	fmuld	d5, d5, d7
+	uxtb	r9, r9
+	fsitod	d6, s12
+	fmsr	s0, r9	@ int
+	ldr	r1, [sp, #128]
+	fsitod	d8, s5
+	and	r2, r1, #16711680
+	and	r3, r1, #65280
+	mov	r2, r2, lsr #16
+	fmsr	s5, r2	@ int
+	fmuld	d4, d4, d7
+	mov	r3, r3, lsr #8
+	fmacd	d5, d3, d7
+	uxtb	r1, r1
+	fmsr	s7, r3	@ int
+	fmuld	d6, d6, d7
+	fsitod	d0, s0
+	fmsr	s6, r1	@ int
+	fmacd	d4, d8, d7
+	fsitod	d1, s5
+	fsitod	d2, s7
+	fmacd	d6, d0, d7
+	fsitod	d3, s6
+	fmacd	d4, d1, d7
+	fmacd	d5, d2, d7
+	fmacd	d6, d3, d7
+	ftosizd	s14, d4
+	ftosizd	s10, d5
+	ftosizd	s12, d6
+	fmrs	r2, s14	@ int
+	fmrs	r0, s10	@ int
+	fmrs	r4, s12	@ int
+	mov	r2, r2, asl #8
+	add	r3, r2, r0, asl #16
+	add	r4, r3, r4
+	str	r4, [sp, #16]
+.L200:
+	cmp	r8, r7
+	bgt	.L198
+	ldr	r3, .L211+24
+	ldr	r5, [sp, #120]
+	ldr	r6, [sp, #124]
+	ldr	r3, [r3, #0]
+	and	r5, r5, #65280
+	str	r5, [sp, #20]
+	ldr	r9, [sp, #128]
+	str	r3, [sp, #0]
+	ldr	ip, [sp, #120]
+	and	r3, r6, #65280
+	and	r0, r6, #16711680
+	ldr	r5, [sp, #44]
+	ldr	r6, [sp, #48]
+	and	r2, r9, #65280
+	add	r4, r5, r6
+	and	r1, ip, #16711680
+	ldr	r6, [sp, #24]
+	and	ip, r9, #16711680
+	mov	r0, r0, lsr #16
+	ldr	r9, [sp, #28]
+	mov	r1, r1, lsr #16
+	fmsr	s2, r0	@ int
+	ldr	r0, [sp, #32]
+	add	r5, r9, r6
+	add	r7, r7, #1
+	fmsr	s1, r1	@ int
+	ldr	r1, [sp, #0]
+	rsb	r7, r8, r7
+	mov	r3, r3, lsr #8
+	add	r5, r5, r0
+	ldr	r9, [sp, #20]
+	fmsr	s16, r3	@ int
+	str	r5, [sp, #20]
+	str	r7, [sp, #60]
+	add	r5, r1, r8, asl #2
+	ldr	r3, [sp, #120]
+	ldr	r7, [sp, #124]
+	ldr	r8, [sp, #128]
+	uxtb	r3, r3
+	uxtb	r7, r7
+	uxtb	r8, r8
+	fmsr	s4, r3	@ int
+	fmsr	s5, r7	@ int
+	fmsr	s6, r8	@ int
+	mov	ip, ip, lsr #16
+	mov	r2, r2, lsr #8
+	fmsr	s3, ip	@ int
+	ldr	ip, [sp, #40]
+	mov	r9, r9, lsr #8
+	fmsr	s0, r2	@ int
+	ldr	r2, [sp, #52]
+	add	r4, r4, ip
+	fmsr	s17, r9	@ int
+	ldr	r6, .L211+28
+	ldr	r9, [sp, #64]
+	str	r4, [sp, #56]
+	mov	ip, #0
+	add	r4, r2, #1
+.L203:
+	flds	s7, [sp, #20]	@ int
+	ldr	r0, [sp, #36]
+	ldr	r1, [sp, #52]
+	fsitos	s10, s7
+	cmp	r0, r1
+	bgt	.L207
+	ldr	r3, [sp, #36]
+	ldr	r0, [sp, #32]
+	ldr	r1, [sp, #24]
+	ldr	r2, [sp, #28]
+	str	r4, [sp, #76]
+	b	.L206
+.L210:
+	fmsr	s7, r1	@ int
+	fmsr	s9, r2	@ int
+	fsitos	s15, s7
+	fsitos	s13, s2
+	fsitos	s14, s16
+	fdivs	s15, s15, s10
+	fsitos	s12, s5
+	fsitos	s11, s9
+	fmsr	s18, r0	@ int
+	fsitos	s8, s1
+	fmuls	s13, s13, s15
+	fsitos	s9, s17
+	fmuls	s14, s14, s15
+	fdivs	s11, s11, s10
+	fmuls	s15, s12, s15
+	fsitos	s12, s18
+	fmacs	s13, s8, s11
+	fsitos	s8, s3
+	fmacs	s14, s9, s11
+	fsitos	s7, s4
+	fsitos	s9, s0
+	fdivs	s12, s12, s10
+	fmacs	s13, s8, s12
+	fmacs	s15, s7, s11
+	fmacs	s14, s9, s12
+	fsitos	s11, s6
+	ftosizs	s13, s13
+	fmacs	s15, s11, s12
+	ftosizs	s14, s14
+	ldr	r4, [r6, #0]
+	ldr	r7, .L211+32
+	fmrs	r8, s13	@ int
+	sub	r4, r4, #1
+	ldr	r4, [r7, r4, asl #2]
+	ftosizs	s15, s15
+	fmrs	r7, s14	@ int
+	mov	r8, r8, asl #8
+	str	r4, [sp, #64]
+	add	r4, r8, r7, asl #16
+	fmrs	r7, s15	@ int
+	ldr	r8, [r5, ip, asl #2]
+	add	r7, r4, r7
+	ldr	r4, [sp, #64]
+	add	r8, r3, r8
+	str	r7, [r4, r8, asl #2]
+.L204:
+	ldr	r4, [sp, #76]
+	add	r3, r3, #1
+	ldr	r7, [sp, #4]
+	ldr	r8, [sp, #8]
+	cmp	r3, r4
+	add	r2, r2, r7
+	add	r1, r1, r8
+	add	r0, r0, r9
+	beq	.L207
+.L206:
+	orr	r7, r1, r2
+	orrs	r7, r7, r0
+	bmi	.L204
+	ldr	r4, [sp, #12]
+	cmp	r4, #0
+	bne	.L210
+	ldr	r7, [r6, #0]
+	ldr	r8, .L211+32
+	ldr	r4, [r5, ip, asl #2]
+	sub	r7, r7, #1
+	ldr	r7, [r8, r7, asl #2]
+	ldr	r8, [sp, #16]
+	add	r4, r3, r4
+	str	r8, [r7, r4, asl #2]
+	b	.L204
+.L207:
+	ldr	r1, [sp, #28]
+	ldr	r2, [sp, #44]
+	ldr	r0, [sp, #60]
+	add	r1, r1, r2
+	add	ip, ip, #1
+	ldr	r3, [sp, #24]
+	ldr	r8, [sp, #32]
+	cmp	ip, r0
+	str	r1, [sp, #28]
+	ldr	r7, [sp, #48]
+	ldr	r1, [sp, #20]
+	ldr	r0, [sp, #40]
+	ldr	r2, [sp, #56]
+	add	r3, r3, r7
+	add	r8, r8, r0
+	add	r1, r1, r2
+	str	r3, [sp, #24]
+	str	r8, [sp, #32]
+	str	r1, [sp, #20]
+	bne	.L203
+.L198:
+	add	sp, sp, #80
+	fldmfdd	sp!, {d8, d9}
+	ldmfd	sp!, {r4, r5, r6, r7, r8, r9}
+	bx	lr
+.L212:
+	.align	2
+.L211:
+	.word	1374389535
+	.word	1070931640
+	.word	minX
+	.word	minY
+	.word	maxX
+	.word	maxY
+	.word	line_address
+	.word	.LANCHOR0
+	.word	bank_address
+	.size	fast_draw_triangle, .-fast_draw_triangle
+	.global	TOP
+	.global	BOTTOM
+	.global	RIGHT
+	.global	LEFT
+	.global	INSIDE
+	.comm	poly_max_x,4,4
+	.comm	poly_min_x,4,4
+	.comm	maxY,4,4
+	.comm	minY,4,4
+	.comm	maxX,4,4
+	.comm	minX,4,4
+	.global	bank
+	.comm	bank_address,12,4
+	.comm	line_address_16m,4,4
+	.comm	line_address,4,4
+	.comm	size16m,4,4
+	.comm	size,4,4
+	.comm	y_origin,4,4
+	.comm	x_origin,4,4
+	.comm	screen_height,4,4
+	.comm	screen_width,4,4
+	.comm	VFP_context,4,4
+	.section	.rodata
+	.align	2
+	.type	TOP, %object
+	.size	TOP, 4
+TOP:
+	.word	8
+	.type	BOTTOM, %object
+	.size	BOTTOM, 4
+BOTTOM:
+	.word	4
+	.type	RIGHT, %object
+	.size	RIGHT, 4
+RIGHT:
+	.word	2
+	.type	LEFT, %object
+	.size	LEFT, 4
+LEFT:
+	.word	1
+	.type	INSIDE, %object
+	.size	INSIDE, 4
+INSIDE:
+	.space	4
+	.data
+	.align	2
+.LANCHOR0 = . + 0
+	.type	bank, %object
+	.size	bank, 4
+bank:
+	.word	1
+	.section	.rodata.str1.4,"aMS",%progbits,1
+	.align	2
+.LC0:
+	.ascii	"X1024 Y768 C16M\000"
+.LC1:
+	.ascii	"Screen: %d x %d\012\000"
+	.space	3
+.LC2:
+	.ascii	"Bank 0:%X\012\000"
+	.space	1
+.LC3:
+	.ascii	"Bank 1:%X\012\000"
+	.space	1
+.LC4:
+	.ascii	"Bank 2:%X\012\000"
+	.space	1
+.LC5:
+	.ascii	"VFP Context:%X\012\000"
+.LC6:
+	.ascii	"Destroying VFP Context:%X\012\000"
+	.ident	"GCC: (GCCSDK GCC 4.7.4 Release 3) 4.7.4"

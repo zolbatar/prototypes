@@ -1,0 +1,4 @@
+Set Game$Dir <Obey$Dir>
+Iconsprites <Game$Dir>.!Sprites
+WimpSlot -min 512k -max 512k
+*<Game$Dir>.!RunImage %*0

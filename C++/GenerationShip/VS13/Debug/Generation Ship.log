@@ -1,0 +1,26 @@
+﻿Build started 09/02/2015 13:33:12.
+     1>Project "C:\Data\Development\Prototypes\C++\GenerationShip\VS13\Generation Ship.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\Data\Development\SFML-2.2\include" /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D GLEW_STATIC /D SFML_STATIC /D UNICODE /D WIN32 /D _DEBUG /D _WINDOWS /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ..\Src\assets\assets.cpp ..\Src\game\game.cpp
+         game.cpp
+         Generating Code...
+         Skipping... (no relevant changes detected)
+         assets.cpp
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Data\Development\Prototypes\C++\GenerationShip\VS13\Debug\Generation Ship.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\Data\Development\SFML-2.2\lib" opengl32.lib winmm.lib sndfile.lib openal32.lib freetype.lib jpeg.lib glew.lib "sfml-audio-s-d.lib" "sfml-graphics-s-d.lib" "sfml-window-s-d.lib" "sfml-system-s-d.lib" "sfml-main-d.lib" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Data\Development\Prototypes\C++\GenerationShip\VS13\Debug\Generation Ship.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Data\Development\Prototypes\C++\GenerationShip\VS13\Debug\Generation Ship.lib" /MACHINE:X86 Debug\assets.obj
+         Debug\game.obj
+         Debug\maths.obj
+         Debug\random.obj
+         Debug\main.obj
+         Debug\soundtrack.obj
+         Debug\galaxies.obj
+         Debug\galaxy.obj
+     1>assets.obj : error LNK2019: unresolved external symbol "class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl resourcePath(void)" (?resourcePath@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ) referenced in function "private: void __thiscall Assets::LoadMusicSet(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,int,class std::unordered_map<int,class sf::Music *,struct std::hash<int>,struct std::equal_to<int>,class std::allocator<struct std::pair<int const ,class sf::Music *> > > &)" (?LoadMusicSet@Assets@@AAEXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAAV?$unordered_map@HPAVMusic@sf@@U?$hash@H@std@@U?$equal_to@H@4@V?$allocator@U?$pair@$$CBHPAVMusic@sf@@@std@@@4@@3@@Z)
+     1>game.obj : error LNK2001: unresolved external symbol "class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl resourcePath(void)" (?resourcePath@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ)
+     1>main.obj : error LNK2001: unresolved external symbol "class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl resourcePath(void)" (?resourcePath@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ)
+     1>C:\Data\Development\Prototypes\C++\GenerationShip\VS13\Debug\Generation Ship.exe : fatal error LNK1120: 1 unresolved externals
+     1>Done Building Project "C:\Data\Development\Prototypes\C++\GenerationShip\VS13\Generation Ship.vcxproj" (Build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:01.43

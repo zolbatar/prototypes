@@ -1,0 +1,7 @@
+#ifndef H_PALETTE
+#define H_PALETTE
+
+void generate_palette();
+void test_palette();
+
+#endif

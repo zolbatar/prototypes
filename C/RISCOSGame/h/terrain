@@ -1,0 +1,9 @@
+#ifndef H_TERRAIN
+#define H_TERRAIN
+
+#include "engine.h"
+
+shape_type *generate_terrain();
+void render_terrain(shape_type *terrain);
+
+#endif

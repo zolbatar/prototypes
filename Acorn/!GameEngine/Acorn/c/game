@@ -1,0 +1,76 @@
+#include <stdlib.h>
+#include <stdio.h>
+#include <math.h>
+#include "swis.h"
+#include "kernel.h"
+#include "graphics.h"
+#include "terrain.h"
+#include "palette.h"
+
+void game_loop() {
+
+	// Camera position
+	float camera_x = 0.0, camera_y = 15.0, camera_z = TERRAIN_SIZE_HEIGHT * TERRAIN_SEGMENT / 2;
+
+	float frac = 0.1 / (screen_height / 2);
+	while(true) {
+		clear_screen_16m(0);
+		set_clip(0, 0, screen_width - 1, screen_height - 1);
+
+		// Shaded sky
+		for (int i = 0; i < screen_height / 2; i++) {
+			UINT colour = mix_colour(0x7, 0x0B, 0x34, 0xFF, 0xFF, 0xFF, i * frac);
+			draw_horz_line_16m(0, screen_width - 1,i, colour);
+		}
+
+		// Shaded ground
+/*		for (int i = 0 ; i < (screen_height / 2); i++) {
+			UINT colour = mix_colour(0x60, 0x60, 0x60, 0xFF, 0xFF, 0xFF, (screen_height / 2 - (i * 2)) * frac);
+			draw_horz_line_16m(0, screen_width - 1, (screen_height / 2) + i, colour);
+		}*/
+
+		render_terrain(camera_x, camera_y, camera_z);
+
+		// Keys
+		BYTE res = _kernel_osbyte(121, 0, 0);
+		switch (res) {
+			case 112:		// Escape, quit
+				return;
+			case 16:		// Q = wireframe off
+				wireframe = false;
+				break;
+			case 33:		// W = wireframe on
+				wireframe = true;
+				break;
+			case 34:		// E = gouraud off
+				gouraud = false;
+				break;
+			case 51:		// R = gouraud on
+				gouraud = true;
+				break;
+
+			case 25:
+				camera_x += 1.0;
+				break;
+			case 121:
+				camera_x -= 1.0;
+				break;
+
+			case 57:
+				camera_z -= 1.0;
+				break;
+			case 41:
+				camera_z += 1.0;
+				break;
+
+			case 63:
+				camera_y += 1.0;
+				break;
+			case 78:
+				camera_y -= 1.0;
+				break;
+		}
+
+		end_frame();
+	}
+}

@@ -1,0 +1,96 @@
+#include <stdlib.h>
+#include <stdio.h>
+#include "oslib/os.h"
+#include "types.h"
+#include "graphics.h"
+
+void set_colour(BYTE c, BYTE r, BYTE g, BYTE b, BYTE mr, BYTE mg, BYTE mb, float ratio) {
+
+	// Mix in other colour
+	if (ratio > 1.0) ratio = 1.0;
+    else if (ratio < 0.0) ratio = 0.0;
+    float iRatio = 1.0 - ratio;
+
+    BYTE rc = ((r * iRatio) + (mr * ratio));
+    BYTE gc = ((g * iRatio) + (mg * ratio));
+    BYTE bc = ((b * iRatio) + (mb * ratio));
+//	printf("%d %x %x %x\n", c, rc, gc, bc);
+
+	os_writec(os_VDU_SET_PALETTE);
+	os_writec(c);
+	os_writec(16);
+	os_writec(rc);
+	os_writec(gc);
+	os_writec(bc);
+}
+
+void generate_palette_block(BYTE bl, BYTE r, BYTE g, BYTE b) {
+	BYTE block = bl * 16;
+	set_colour(block + 0, r, g, b, 0, 0, 0, 0.7);
+	set_colour(block + 1, r, g, b, 0, 0, 0, 0.6);
+	set_colour(block + 2, r, g, b, 0, 0, 0, 0.5);
+	set_colour(block + 3, r, g, b, 0, 0, 0, 0.4);
+	set_colour(block + 4, r, g, b, 0, 0, 0, 0.3);
+	set_colour(block + 5, r, g, b, 0, 0, 0, 0.2);
+	set_colour(block + 6, r, g, b, 0, 0, 0, 0.1);
+	set_colour(block + 7, r, g, b, 0, 0, 0, 0.0);
+	set_colour(block + 8, r, g, b, 255, 255, 255, 0.1);
+	set_colour(block + 9, r, g, b, 255, 255, 255, 0.2);
+	set_colour(block + 10, r, g, b, 255, 255, 255, 0.3);
+	set_colour(block + 11, r, g, b, 255, 255, 255, 0.4);
+	set_colour(block + 12, r, g, b, 255, 255, 255, 0.5);
+	set_colour(block + 13, r, g, b, 255, 255, 255, 0.6);
+	set_colour(block + 14, r, g, b, 255, 255, 255, 0.7);
+	set_colour(block + 15, r, g, b, 255, 255, 255, 0.8);
+}
+
+void generate_palette_block_full(BYTE bl, BYTE r, BYTE g, BYTE b) {
+	BYTE block = bl * 16;
+	set_colour(block + 0, r, g, b, 0, 0, 0, 1.0);
+	set_colour(block + 1, r, g, b, 0, 0, 0, 0.85);
+	set_colour(block + 2, r, g, b, 0, 0, 0, 0.75);
+	set_colour(block + 3, r, g, b, 0, 0, 0, 0.6);
+	set_colour(block + 4, r, g, b, 0, 0, 0, 0.45);
+	set_colour(block + 5, r, g, b, 0, 0, 0, 0.3);
+	set_colour(block + 6, r, g, b, 0, 0, 0, 0.15);
+	set_colour(block + 7, r, g, b, 0, 0, 0, 0.0);
+	set_colour(block + 8, r, g, b, 255, 255, 255, 0.1);
+	set_colour(block + 9, r, g, b, 255, 255, 255, 0.15);
+	set_colour(block + 10, r, g, b, 255, 255, 255, 0.3);
+	set_colour(block + 11, r, g, b, 255, 255, 255, 0.45);
+	set_colour(block + 12, r, g, b, 255, 255, 255, 0.6);
+	set_colour(block + 13, r, g, b, 255, 255, 255, 0.75);
+	set_colour(block + 14, r, g, b, 255, 255, 255, 0.85);
+	set_colour(block + 15, r, g, b, 255, 255, 255, 1.0);
+}
+
+void generate_palette() {
+	generate_palette_block_full(0, 0x80, 0x80, 0x80);
+	generate_palette_block(1, 0x3c, 0x35, 0x1f);
+	generate_palette_block(2, 0x31, 0x33, 0x90);
+	generate_palette_block(3, 0x15, 0x59, 0xdb);
+	generate_palette_block(4, 0xa7, 0x32, 0x11);
+	generate_palette_block(5, 0xd8, 0x55, 0x25);
+	generate_palette_block(6, 0x15, 0x55, 0x89);
+	generate_palette_block(7, 0xcd, 0x7a, 0x50);
+	generate_palette_block(8, 0x62, 0x9a, 0x31);
+	generate_palette_block(9, 0x9c, 0xd3, 0x3c);
+	generate_palette_block(10, 0x27, 0xa4, 0xcb);
+	generate_palette_block(11, 0x65, 0xdc, 0xd6);
+	generate_palette_block(12, 0xd8, 0xbc, 0x50);
+	generate_palette_block(13, 0xf1, 0xe7, 0x82);
+	generate_palette_block(14, 0xbf, 0xbf, 0xbd);
+	generate_palette_block(15, 0xf2, 0xf1, 0xed);
+}
+
+void test_palette() {
+	int centreX = (width / 2) - (8 * 8);
+	int centreY = (height / 2) - (8 * 8);
+	for (int y = 0; y < 16; y++) {
+		for (int x = 0; x < 16; x++) {
+			int x1 = (x * 8) + centreX;
+			int y1 = (y * 8) + centreY;
+			draw_box(x1, y1, x1 + 8, y1 + 8, (y * 16) + x);
+		}
+	}
+}

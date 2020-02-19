@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" stylesheets="@../Theme.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bz.panels.menu.FXMLMenuController">
+   <children>
+      <ImageView fx:id="img" fitHeight="111.0" fitWidth="128.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="25.0" AnchorPane.rightAnchor="25.0">
+         <image>
+            <Image url="@../../assets/images/BeeZombie.png" />
+         </image>
+      </ImageView>
+      <StackPane style="-fx-background-color: transparent;" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <children>
+            <Group>
+               <children>
+                  <Label fx:id="lbLoading" styleClass="label-section" text="Loading" />
+               </children>
+               <StackPane.margin>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </StackPane.margin>
+            </Group>
+         </children>
+      </StackPane>
+      <StackPane style="-fx-background-color: transparent;" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <children>
+            <Group>
+               <children>
+                  <ProgressBar fx:id="pbLoading" focusTraversable="false" prefWidth="350.0" progress="0.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+               </children>
+               <StackPane.margin>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </StackPane.margin>
+            </Group>
+         </children>
+      </StackPane>
+      <StackPane style="-fx-background-color: transparent;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Group>
+               <children>
+                  <VBox layoutX="195.0" layoutY="192.0">
+                     <children>
+                        <Label layoutX="195.0" layoutY="192.0" styleClass="label-title" text="The Corolis Sector" />
+                     </children>
+                  </VBox>
+               </children>
+            </Group>
+         </children>
+      </StackPane>
+      <StackPane fx:id="spMenu" style="-fx-background-color: transparent;" visible="false" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="200.0">
+         <children>
+            <Group>
+               <children>
+                  <VBox layoutX="290.0" layoutY="155.0" spacing="15.0">
+                     <children>
+                        <Button focusTraversable="false" mnemonicParsing="false" onAction="#playGame" styleClass="buttonbig" text="Start New Game" />
+                        <Button focusTraversable="false" mnemonicParsing="false" onAction="#quitGame" styleClass="buttonbig" text="Quit" />
+                     </children>
+                  </VBox>
+               </children>
+            </Group>
+         </children>
+      </StackPane>
+      <StackPane fx:id="spStartGame" layoutX="10.0" layoutY="10.0" style="-fx-background-color: transparent;" visible="false" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="200.0">
+         <children>
+            <Group>
+               <children>
+                  <VBox layoutX="290.0" layoutY="155.0" spacing="15.0">
+                     <children>
+                        <Group>
+                           <children>
+                              <HBox alignment="CENTER" prefHeight="30.0" prefWidth="700.0" spacing="4.0">
+                                 <children>
+                                    <ToggleButton fx:id="tbEasy" mnemonicParsing="false" prefWidth="100.0" text="easy">
+                                       <toggleGroup>
+                                          <ToggleGroup fx:id="Difficulty" />
+                                       </toggleGroup>
+                                    </ToggleButton>
+                                    <ToggleButton fx:id="tbMedium" mnemonicParsing="false" prefWidth="100.0" selected="true" text="medium" toggleGroup="$Difficulty" />
+                                    <ToggleButton fx:id="tbHard" mnemonicParsing="false" prefWidth="100.0" text="hard" toggleGroup="$Difficulty" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </Group>
+                        <Group>
+                           <children>
+                              <HBox alignment="CENTER" prefHeight="30.0" prefWidth="700.0" spacing="4.0">
+                                 <children>
+                                    <ToggleButton fx:id="tbSmall" mnemonicParsing="false" prefWidth="100.0" text="quick">
+                                       <toggleGroup>
+                                          <ToggleGroup fx:id="Size" />
+                                       </toggleGroup>
+                                    </ToggleButton>
+                                    <ToggleButton fx:id="tbMediumSize" mnemonicParsing="false" prefWidth="100.0" selected="true" text="normal" toggleGroup="$Size" />
+                                    <ToggleButton fx:id="tbLarge" mnemonicParsing="false" prefWidth="100.0" text="long" toggleGroup="$Size" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </Group>
+                        <Button focusTraversable="false" mnemonicParsing="false" onAction="#choosePlay" styleClass="buttonbig" text="Play!" />
+                        <Button focusTraversable="false" mnemonicParsing="false" onAction="#chooseCancel" styleClass="buttonbig" text="Cancel" />
+                     </children>
+                  </VBox>
+               </children>
+            </Group>
+         </children>
+      </StackPane>
+   </children>
+</AnchorPane>

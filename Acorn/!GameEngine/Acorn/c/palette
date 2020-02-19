@@ -1,0 +1,123 @@
+#include <stdlib.h>
+#include <stdio.h>
+#include "kernel.h"
+#include "types.h"
+#include "graphics.h"
+
+void set_colour_vidc(BYTE c, BYTE rc, BYTE gc, BYTE bc) {
+	_kernel_oswrch(19);
+	_kernel_oswrch(c);
+	_kernel_oswrch(16);
+	_kernel_oswrch(rc);
+	_kernel_oswrch(gc);
+	_kernel_oswrch(bc);
+}
+
+UINT mix_colour(BYTE r, BYTE g, BYTE b, BYTE mr, BYTE mg, BYTE mb, float ratio) {
+	// Mix in other colour
+	if (ratio > 1.0) ratio = 1.0;
+    else if (ratio < 0.0) ratio = 0.0;
+    float iRatio = 1.0 - ratio;
+
+    BYTE rc = ((r * iRatio) + (mr * ratio));
+    BYTE gc = ((g * iRatio) + (mg * ratio));
+    BYTE bc = ((b * iRatio) + (mb * ratio));
+    return (bc << 16) + (gc << 8) + rc;
+}
+
+void set_colour(BYTE c, BYTE r, BYTE g, BYTE b, BYTE mr, BYTE mg, BYTE mb, float ratio) {
+
+	// Mix in other colour
+	if (ratio > 1.0) ratio = 1.0;
+    else if (ratio < 0.0) ratio = 0.0;
+    float iRatio = 1.0 - ratio;
+
+    BYTE rc = ((r * iRatio) + (mr * ratio));
+    BYTE gc = ((g * iRatio) + (mg * ratio));
+    BYTE bc = ((b * iRatio) + (mb * ratio));
+
+	set_colour_vidc(c, rc, gc, bc);
+}
+
+void generate_palette_block_full(int bl, BYTE r, BYTE g, BYTE b, int c) {
+	BYTE block = bl * c;
+	int half_c = c >> 1;
+	float frac = 1.0 / half_c;
+	for (int i = 0; i < half_c; i++) {
+		set_colour(block + i, r, g, b, 0, 0, 0, (half_c - i) * frac);
+	}
+	for (int i = 0; i < half_c; i++) {
+		set_colour(block + half_c + i, r, g, b, 255, 255, 255, i * frac);
+	}
+}
+
+void generate_palette_block_weighted(int bl, BYTE r, BYTE g, BYTE b, int c) {
+	BYTE block = bl * c;
+	int quarter_c = c * 0.25;
+	int half_c = c * 0.5;
+	int threequarter_c = c * 0.75;
+	float frac_quarter = 1.0 / half_c;
+	float frac_threequarter = 1.0 / threequarter_c;
+	for (int i = 0; i < quarter_c; i++) {
+		set_colour(block + i, r, g, b, 0, 0, 0, (quarter_c - i) * frac_quarter);
+	}
+	for (int i = 0; i < threequarter_c; i++) {
+		set_colour(block + quarter_c + i, r, g, b, 255, 255, 255, i * frac_threequarter);
+	}
+}
+
+void generate_palette_block_lighten(int bl, BYTE r, BYTE g, BYTE b, int c, float adj) {
+	BYTE block = bl * c;
+	float frac = (0.75 / c) * adj;
+	for (int i = 0; i < c; i++) {
+		set_colour(block + i, r, g, b, 255, 255, 255, i * frac);
+	}
+}
+
+void generate_palette() {
+	set_colour_vidc(0, 0, 0, 0);
+	set_colour_vidc(1, 0, 0, 170);
+	set_colour_vidc(2, 0, 170, 0);
+	set_colour_vidc(3, 0, 170, 170);
+	set_colour_vidc(4, 170, 0, 0);
+	set_colour_vidc(5, 170, 0, 170);
+	set_colour_vidc(6, 170, 85, 0);
+	set_colour_vidc(7, 170, 170, 170);
+	set_colour_vidc(8, 85, 85, 85);
+	set_colour_vidc(9, 85, 85, 255);
+	set_colour_vidc(10, 85, 255, 85);
+	set_colour_vidc(11, 85, 255, 255);
+	set_colour_vidc(12, 255, 85, 85);
+	set_colour_vidc(13, 255, 85, 255);
+	set_colour_vidc(14, 255, 255, 85);
+	set_colour_vidc(15, 255, 255, 255);
+	generate_palette_block_lighten(1, 0x60, 0x60, 0x60, 16, 1);		// Snow 0xD0D0D0
+	generate_palette_block_lighten(2, 0x20, 0x20, 0x20, 16, 0.5);		// Rock 0x808080
+	generate_palette_block_lighten(3, 0x9B, 0x76, 0x53, 16, 0.5);	// Ground (Raw (9B7653)
+//	generate_palette_block_lighten(4, 0x87, 0xce, 0xeb, 16, 1);		// Sky blue
+	generate_palette_block_lighten(4, 0x07, 0x0b, 0x34, 16, 0.5);	// Night sky
+}
+
+void test_palette() {
+	int centreX = (screen_width / 2) - (8 * 8);
+	int centreY = (screen_height / 2) - (8 * 8);
+	for (int y = 0; y < 16; y++) {
+		for (int x = 0; x < 16; x++) {
+			int x1 = (x * 8) + centreX;
+			int y1 = (y * 8) + centreY;
+			draw_box(x1, y1, x1 + 8, y1 + 8, (y * 16) + x);
+		}
+	}
+}
+
+void test_palette_wide() {
+	int centreX = (screen_width / 2) - (16 * 8);
+	int centreY = (screen_height / 2) - (4 * 8);
+	for (int y = 0; y < 8; y++) {
+		for (int x = 0; x < 32; x++) {
+			int x1 = (x * 8) + centreX;
+			int y1 = (y * 8) + centreY;
+			draw_box(x1, y1, x1 + 8, y1 + 8, (y * 32) + x);
+		}
+	}
+}

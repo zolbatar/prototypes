@@ -1,0 +1,11 @@
+App.Properties	Resources.Designer.cs	/^namespace App.Properties {$/;"	n
+Resources	Resources.Designer.cs	/^    internal class Resources {$/;"	c	namespace:App.Properties
+resourceMan	Resources.Designer.cs	/^        private static global::System.Resources.ResourceManager resourceMan;$/;"	f	class:App.Properties.Resources	file:
+resourceCulture	Resources.Designer.cs	/^        private static global::System.Globalization.CultureInfo resourceCulture;$/;"	f	class:App.Properties.Resources	file:
+Resources	Resources.Designer.cs	/^        internal Resources() {$/;"	m	class:App.Properties.Resources	file:
+ResourceManager	Resources.Designer.cs	/^        internal static global::System.Resources.ResourceManager ResourceManager {$/;"	p	class:App.Properties.Resources
+Culture	Resources.Designer.cs	/^        internal static global::System.Globalization.CultureInfo Culture {$/;"	p	class:App.Properties.Resources
+App.Properties	Settings.Designer.cs	/^namespace App.Properties {$/;"	n
+Settings	Settings.Designer.cs	/^    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {$/;"	c	namespace:App.Properties
+defaultInstance	Settings.Designer.cs	/^        private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));$/;"	f	class:App.Properties.Settings	file:
+Default	Settings.Designer.cs	/^        public static Settings Default {$/;"	p	class:App.Properties.Settings

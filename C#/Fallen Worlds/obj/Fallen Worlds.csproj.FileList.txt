@@ -1,0 +1,14 @@
+bin\Debug\Fallen Worlds.exe
+bin\Debug\Fallen Worlds.pdb
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\Fallen Worlds.csproj.GenerateResource.Cache
+obj\Debug\Fallen Worlds.exe
+obj\Debug\Fallen Worlds.pdb
+obj\Debug\App.Properties.Resources.resources
+bin\Release\Fallen Worlds.exe
+bin\Release\Fallen Worlds.pdb
+obj\Release\ResolveAssemblyReference.cache
+obj\Release\App.Properties.Resources.resources
+obj\Release\Fallen Worlds.csproj.GenerateResource.Cache
+obj\Release\Fallen Worlds.exe
+obj\Release\Fallen Worlds.pdb

@@ -1,0 +1,2259 @@
+
+Keyboard/Keyboard:     file format elf32-i386
+Keyboard/Keyboard
+architecture: i386, flags 0x00000011:
+HAS_RELOC, HAS_SYMS
+start address 0x00000700
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         00002000  00000000  00000000  00000040  2**4
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+  1 .rodata       000001c0  00002000  00002000  00002040  2**0
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+  2 .data         0000013c  000021c0  000021c0  00002200  2**5
+                  CONTENTS, ALLOC, LOAD, RELOC, DATA
+  3 .bss          000001a4  00002300  00002300  00002340  2**5
+                  ALLOC
+  4 .comment      00000090  00000000  00000000  00002340  2**0
+                  CONTENTS, READONLY
+SYMBOL TABLE:
+00000000 l    d  .text	00000000 
+00000000 l    d  *ABS*	00000000 
+00002000 l    d  .rodata	00000000 
+000021c0 l    d  .data	00000000 
+00000000 l    d  *ABS*	00000000 
+00002300 l    d  .bss	00000000 
+00000000 l    d  .comment	00000000 
+00000000 l    d  *ABS*	00000000 
+00000000 l    d  *ABS*	00000000 
+00000000 l    d  *ABS*	00000000 
+00000f20 g     F .text	0000005c _ZN2os11MessagePortC1Ev
+000008a0 g     F .text	0000003c _ZN2os7Console5PrintEPc
+00000320 g     F .text	000002c7 _Z22Keyboard_MessageThreadv
+00000cc0 g     F .text	00000037 _ZN2os13DeviceManagerC1Ev
+000021cc g       .data	00000000 _CTOR_END_
+00000820 g     F .text	00000005 _ZN2os7ConsoleD1Ev
+00000d20 g     F .text	0000003b _ZN2os13DeviceManager14RegisterDeviceEPc
+00000ae0 g     F .text	0000003c _ZN2os14ProcessManager5SleepEj
+00000830 g     F .text	00000010 _ZN2os7Console5ClearEv
+000005f0 g     F .text	00000045 _Z18Keyboard_InterruptP12sCallStack_t
+000008e0 g     F .text	0000004c _ZN2os7Console8LogPrintEPcS1_
+00002300 g     O .bss	00000004 pcConsole
+00000840 g     F .text	0000003d _ZN2os7Console14WriteCharacterEh
+00000bc0 g     F .text	00000005 _ZN2os16InterruptManagerD2Ev
+00000e60 g     F .text	00000010 _ZN2os14MessageManager17CreateMessagePortEv
+000010e0 g     F .text	00000037 _ZN2os13ModuleManagerC2Ev
+00001160 g     F .text	00000005 _ZN2os13ModuleManagerD2Ev
+00002304 g     O .bss	00000004 pcProcessManager
+00000e50 g     F .text	00000005 _ZN2os14MessageManagerD1Ev
+00000dc0 g     F .text	00000037 _ZN2os14MessageManagerC2Ev
+00001170 g     F .text	00000005 _ZN2os13ModuleManagerD1Ev
+00000680 g     F .text	0000003a _Z5_mainv
+00000bd0 g     F .text	00000005 _ZN2os16InterruptManagerD1Ev
+000022e0 g     O .data	00000004 g_nKeyboardBufferPos
+000011c0 g     F .text	00000059 _ZN2os13ModuleManager16CreateModuleCallEPcS1_PFjP12sCallStack_tP19sParameterPackage_tE
+00000640 g     F .text	00000012 _Z26Keyboard_Call_RequestFocusP12sCallStack_tP19sParameterPackage_t
+00002310 g     O .bss	00000004 pcMessageManager
+000021c0 g       .data	00000000 _CTOR_LIST_
+000024a4 g       *ABS*	00000000 end
+00000990 g     F .text	0000005b _ZN2os14ProcessManagerC1Ev
+00002260 g     O .data	00000080 g_nKeyCodesShift
+000009f0 g     F .text	00000005 _ZN2os14ProcessManagerD2Ev
+00000ff0 g     F .text	00000011 _ZN2os11MessagePort16MessageProcessedEv
+000010a0 g     F .text	0000003c _ZN2os11MessagePort21GetMessageQueueLengthEPj
+00000700 g     F .text	0000004a _start
+00000b20 g     F .text	00000011 _ZN2os14ProcessManager10RelinquishEv
+00002320 g     O .bss	00000100 g_pcKeyboardBuffer
+00000f80 g     F .text	00000005 _ZN2os11MessagePortD2Ev
+000022e4 g     O .data	00000004 g_nKeyboardBufferEnd
+00000c40 g     F .text	0000003b _ZN2os16InterruptManager15EnableInterruptEj
+00002300 g       .bss	00000000 bss
+00000b80 g     F .text	00000037 _ZN2os16InterruptManagerC1Ev
+00000d60 g     F .text	00000059 _ZN2os13DeviceManager14AttachResourceEPcjj
+000021cc g       .data	00000000 _DTOR_LIST_
+000021d4 g       .data	00000000 data
+00000100 g     F .text	0000016c main
+000024a0 g     O .bss	00000004 g_nWorkerTID
+00000a10 g     F .text	0000004b _ZN2os14ProcessManager12CreateThreadEPvPj
+00000be0 g     F .text	00000059 _ZN2os16InterruptManager13AttachHandlerEPcjPFjP12sCallStack_tE
+000021d4 g       .data	00000000 _DTOR_END_
+00001120 g     F .text	00000037 _ZN2os13ModuleManagerC1Ev
+00000880 g     F .text	00000011 _ZN2os7Console15DeleteCharacterEv
+00000c80 g     F .text	00000037 _ZN2os13DeviceManagerC2Ev
+00000aa0 g     F .text	0000003c _ZN2os14ProcessManager12AwakenThreadEj
+00000e40 g     F .text	00000005 _ZN2os14MessageManagerD2Ev
+00000e70 g     F .text	0000004c _ZN2os14MessageManager22GetMessagePortThreadIDEPcPj
+00000e00 g     F .text	00000037 _ZN2os14MessageManagerC1Ev
+00000810 g     F .text	00000005 _ZN2os7ConsoleD2Ev
+0000230c g     O .bss	00000004 pcDeviceManager
+00000a60 g     F .text	0000003c _ZN2os14ProcessManager9RunThreadEj
+00000f90 g     F .text	00000005 _ZN2os11MessagePortD1Ev
+00001180 g     F .text	0000003b _ZN2os13ModuleManager12CreateModuleEPc
+00001060 g     F .text	0000003c _ZN2os11MessagePort11SendMessageEj
+00000d00 g     F .text	00000005 _ZN2os13DeviceManagerD2Ev
+000007b0 g     F .text	0000005b _ZN2os7ConsoleC1Ev
+00000fa0 g     F .text	00000049 _ZN2os11MessagePort10GetMessageEv
+00000ec0 g     F .text	0000005c _ZN2os11MessagePortC2Ev
+00000000 g       .text	00000000 code
+000022e8 g     O .data	00000004 g_nThreadFocusID
+00000930 g     F .text	0000005b _ZN2os14ProcessManagerC2Ev
+00000d10 g     F .text	00000005 _ZN2os13DeviceManagerD1Ev
+00002000 g       .rodata	00000000 rodata
+00001010 g     F .text	0000004c _ZN2os11MessagePort13CreateMessageEjj
+00000a00 g     F .text	00000005 _ZN2os14ProcessManagerD1Ev
+00000270 g     F .text	000000a1 _Z8Shutdownv
+00002314 g     O .bss	00000004 pcModuleManager
+00002308 g     O .bss	00000004 pcInterruptManager
+000006c0 g     F .text	0000003a _Z7_atexitv
+00000b40 g     F .text	00000037 _ZN2os16InterruptManagerC2Ev
+00000750 g     F .text	0000005b _ZN2os7ConsoleC2Ev
+00002420 g     O .bss	00000080 g_nKeyStates
+000021e0 g     O .data	00000080 g_nKeyCodes
+
+
+Disassembly of section .text:
+
+00000000 <code>:
+       0:	55                   	push   %ebp
+       1:	89 e5                	mov    %esp,%ebp
+       3:	83 ec 18             	sub    $0x18,%esp
+       6:	81 7d 0c ff ff 00 00 	cmpl   $0xffff,0xc(%ebp)
+       d:	89 75 fc             	mov    %esi,0xfffffffc(%ebp)
+      10:	8b 75 08             	mov    0x8(%ebp),%esi
+      13:	89 5d f8             	mov    %ebx,0xfffffff8(%ebp)
+      16:	74 18                	je     30 <code+0x30>
+      18:	8b 5d f8             	mov    0xfffffff8(%ebp),%ebx
+      1b:	8b 75 fc             	mov    0xfffffffc(%ebp),%esi
+      1e:	89 ec                	mov    %ebp,%esp
+      20:	5d                   	pop    %ebp
+      21:	c3                   	ret    
+      22:	8d b4 26 00 00 00 00 	lea    0x0(%esi,1),%esi
+      29:	8d bc 27 00 00 00 00 	lea    0x0(%edi,1),%edi
+      30:	83 fe 01             	cmp    $0x1,%esi
+      33:	0f 84 a1 00 00 00    	je     da <code+0xda>
+      39:	83 fe 01             	cmp    $0x1,%esi
+      3c:	74 7e                	je     bc <code+0xbc>
+      3e:	83 fe 01             	cmp    $0x1,%esi
+      41:	74 5e                	je     a1 <code+0xa1>
+      43:	83 fe 01             	cmp    $0x1,%esi
+      46:	74 3e                	je     86 <code+0x86>
+      48:	83 fe 01             	cmp    $0x1,%esi
+      4b:	74 1e                	je     6b <code+0x6b>
+      4d:	4e                   	dec    %esi
+      4e:	75 c8                	jne    18 <code+0x18>
+      50:	ba 08 00 00 00       	mov    $0x8,%edx
+      55:	89 d0                	mov    %edx,%eax
+      57:	cd 90                	int    $0x90
+      59:	89 04 24             	mov    %eax,(%esp,1)
+      5c:	89 c6                	mov    %eax,%esi
+      5e:	e8 fc ff ff ff       	call   5f <code+0x5f>
+			5f: R_386_PC32	_ZN2os13ModuleManagerC1Ev
+      63:	89 35 00 00 00 00    	mov    %esi,0x0
+			65: R_386_32	pcModuleManager
+      69:	eb ad                	jmp    18 <code+0x18>
+      6b:	b9 08 00 00 00       	mov    $0x8,%ecx
+      70:	89 c8                	mov    %ecx,%eax
+      72:	cd 90                	int    $0x90
+      74:	89 04 24             	mov    %eax,(%esp,1)
+      77:	89 c3                	mov    %eax,%ebx
+      79:	e8 fc ff ff ff       	call   7a <code+0x7a>
+			7a: R_386_PC32	_ZN2os14MessageManagerC1Ev
+      7e:	89 1d 00 00 00 00    	mov    %ebx,0x0
+			80: R_386_32	pcMessageManager
+      84:	eb c7                	jmp    4d <code+0x4d>
+      86:	ba 08 00 00 00       	mov    $0x8,%edx
+      8b:	89 d0                	mov    %edx,%eax
+      8d:	cd 90                	int    $0x90
+      8f:	89 04 24             	mov    %eax,(%esp,1)
+      92:	89 c3                	mov    %eax,%ebx
+      94:	e8 fc ff ff ff       	call   95 <code+0x95>
+			95: R_386_PC32	_ZN2os13DeviceManagerC1Ev
+      99:	89 1d 00 00 00 00    	mov    %ebx,0x0
+			9b: R_386_32	pcDeviceManager
+      9f:	eb a7                	jmp    48 <code+0x48>
+      a1:	b9 08 00 00 00       	mov    $0x8,%ecx
+      a6:	89 c8                	mov    %ecx,%eax
+      a8:	cd 90                	int    $0x90
+      aa:	89 04 24             	mov    %eax,(%esp,1)
+      ad:	89 c3                	mov    %eax,%ebx
+      af:	e8 fc ff ff ff       	call   b0 <code+0xb0>
+			b0: R_386_PC32	_ZN2os16InterruptManagerC1Ev
+      b4:	89 1d 00 00 00 00    	mov    %ebx,0x0
+			b6: R_386_32	pcInterruptManager
+      ba:	eb 87                	jmp    43 <code+0x43>
+      bc:	ba 14 00 00 00       	mov    $0x14,%edx
+      c1:	89 d0                	mov    %edx,%eax
+      c3:	cd 90                	int    $0x90
+      c5:	89 04 24             	mov    %eax,(%esp,1)
+      c8:	89 c3                	mov    %eax,%ebx
+      ca:	e8 fc ff ff ff       	call   cb <code+0xcb>
+			cb: R_386_PC32	_ZN2os14ProcessManagerC1Ev
+      cf:	89 1d 00 00 00 00    	mov    %ebx,0x0
+			d1: R_386_32	pcProcessManager
+      d5:	e9 64 ff ff ff       	jmp    3e <code+0x3e>
+      da:	ba 14 00 00 00       	mov    $0x14,%edx
+      df:	89 d0                	mov    %edx,%eax
+      e1:	cd 90                	int    $0x90
+      e3:	89 04 24             	mov    %eax,(%esp,1)
+      e6:	89 c3                	mov    %eax,%ebx
+      e8:	e8 fc ff ff ff       	call   e9 <code+0xe9>
+			e9: R_386_PC32	_ZN2os7ConsoleC1Ev
+      ed:	89 1d 00 00 00 00    	mov    %ebx,0x0
+			ef: R_386_32	pcConsole
+      f3:	e9 41 ff ff ff       	jmp    39 <code+0x39>
+      f8:	90                   	nop    
+      f9:	8d b4 26 00 00 00 00 	lea    0x0(%esi,1),%esi
+
+00000100 <main>:
+     100:	55                   	push   %ebp
+     101:	89 e5                	mov    %esp,%ebp
+     103:	83 ec 18             	sub    $0x18,%esp
+     106:	83 e4 f0             	and    $0xfffffff0,%esp
+     109:	31 c0                	xor    %eax,%eax
+     10b:	90                   	nop    
+     10c:	8d 74 26 00          	lea    0x0(%esi,1),%esi
+     110:	c6 80 00 00 00 00 00 	movb   $0x0,0x0(%eax)
+			112: R_386_32	g_nKeyStates
+     117:	40                   	inc    %eax
+     118:	83 f8 7f             	cmp    $0x7f,%eax
+     11b:	76 f3                	jbe    110 <main+0x10>
+     11d:	c7 44 24 04 00 00 00 	movl   $0x0,0x4(%esp,1)
+     124:	00 
+			121: R_386_32	.rodata
+     125:	a1 00 00 00 00       	mov    0x0,%eax
+			126: R_386_32	pcDeviceManager
+     12a:	89 04 24             	mov    %eax,(%esp,1)
+     12d:	e8 fc ff ff ff       	call   12e <main+0x2e>
+			12e: R_386_PC32	_ZN2os13DeviceManager14RegisterDeviceEPc
+     132:	a1 00 00 00 00       	mov    0x0,%eax
+			133: R_386_32	pcDeviceManager
+     137:	c7 44 24 0c 60 00 00 	movl   $0x60,0xc(%esp,1)
+     13e:	00 
+     13f:	c7 44 24 08 00 00 00 	movl   $0x0,0x8(%esp,1)
+     146:	00 
+     147:	c7 44 24 04 00 00 00 	movl   $0x0,0x4(%esp,1)
+     14e:	00 
+			14b: R_386_32	.rodata
+     14f:	89 04 24             	mov    %eax,(%esp,1)
+     152:	e8 fc ff ff ff       	call   153 <main+0x53>
+			153: R_386_PC32	_ZN2os13DeviceManager14AttachResourceEPcjj
+     157:	a1 00 00 00 00       	mov    0x0,%eax
+			158: R_386_32	pcDeviceManager
+     15c:	c7 44 24 0c 64 00 00 	movl   $0x64,0xc(%esp,1)
+     163:	00 
+     164:	c7 44 24 08 00 00 00 	movl   $0x0,0x8(%esp,1)
+     16b:	00 
+     16c:	c7 44 24 04 00 00 00 	movl   $0x0,0x4(%esp,1)
+     173:	00 
+			170: R_386_32	.rodata
+     174:	89 04 24             	mov    %eax,(%esp,1)
+     177:	e8 fc ff ff ff       	call   178 <main+0x78>
+			178: R_386_PC32	_ZN2os13DeviceManager14AttachResourceEPcjj
+     17c:	a1 00 00 00 00       	mov    0x0,%eax
+			17d: R_386_32	pcDeviceManager
+     181:	c7 44 24 0c 01 00 00 	movl   $0x1,0xc(%esp,1)
+     188:	00 
+     189:	c7 44 24 08 01 00 00 	movl   $0x1,0x8(%esp,1)
+     190:	00 
+     191:	c7 44 24 04 00 00 00 	movl   $0x0,0x4(%esp,1)
+     198:	00 
+			195: R_386_32	.rodata
+     199:	89 04 24             	mov    %eax,(%esp,1)
+     19c:	e8 fc ff ff ff       	call   19d <main+0x9d>
+			19d: R_386_PC32	_ZN2os13DeviceManager14AttachResourceEPcjj
+     1a1:	a1 00 00 00 00       	mov    0x0,%eax
+			1a2: R_386_32	pcModuleManager
+     1a6:	c7 44 24 04 00 00 00 	movl   $0x0,0x4(%esp,1)
+     1ad:	00 
+			1aa: R_386_32	.rodata
+     1ae:	89 04 24             	mov    %eax,(%esp,1)
+     1b1:	e8 fc ff ff ff       	call   1b2 <main+0xb2>
+			1b2: R_386_PC32	_ZN2os13ModuleManager12CreateModuleEPc
+     1b6:	a1 00 00 00 00       	mov    0x0,%eax
+			1b7: R_386_32	pcModuleManager
+     1bb:	c7 44 24 0c 00 00 00 	movl   $0x0,0xc(%esp,1)
+     1c2:	00 
+			1bf: R_386_32	_Z26Keyboard_Call_RequestFocusP12sCallStack_tP19sParameterPackage_t
+     1c3:	c7 44 24 08 09 00 00 	movl   $0x9,0x8(%esp,1)
+     1ca:	00 
+			1c7: R_386_32	.rodata
+     1cb:	c7 44 24 04 00 00 00 	movl   $0x0,0x4(%esp,1)
+     1d2:	00 
+			1cf: R_386_32	.rodata
+     1d3:	89 04 24             	mov    %eax,(%esp,1)
+     1d6:	e8 fc ff ff ff       	call   1d7 <main+0xd7>
+			1d7: R_386_PC32	_ZN2os13ModuleManager16CreateModuleCallEPcS1_PFjP12sCallStack_tP19sParameterPackage_tE
+     1db:	a1 00 00 00 00       	mov    0x0,%eax
+			1dc: R_386_32	pcInterruptManager
+     1e0:	c7 44 24 0c 00 00 00 	movl   $0x0,0xc(%esp,1)
+     1e7:	00 
+			1e4: R_386_32	_Z18Keyboard_InterruptP12sCallStack_t
+     1e8:	c7 44 24 08 01 00 00 	movl   $0x1,0x8(%esp,1)
+     1ef:	00 
+     1f0:	c7 44 24 04 00 00 00 	movl   $0x0,0x4(%esp,1)
+     1f7:	00 
+			1f4: R_386_32	.rodata
+     1f8:	89 04 24             	mov    %eax,(%esp,1)
+     1fb:	e8 fc ff ff ff       	call   1fc <main+0xfc>
+			1fc: R_386_PC32	_ZN2os16InterruptManager13AttachHandlerEPcjPFjP12sCallStack_tE
+     200:	a1 00 00 00 00       	mov    0x0,%eax
+			201: R_386_32	pcInterruptManager
+     205:	c7 44 24 04 01 00 00 	movl   $0x1,0x4(%esp,1)
+     20c:	00 
+     20d:	89 04 24             	mov    %eax,(%esp,1)
+     210:	e8 fc ff ff ff       	call   211 <main+0x111>
+			211: R_386_PC32	_ZN2os16InterruptManager15EnableInterruptEj
+     215:	a1 00 00 00 00       	mov    0x0,%eax
+			216: R_386_32	pcProcessManager
+     21a:	c7 44 24 08 00 00 00 	movl   $0x0,0x8(%esp,1)
+     221:	00 
+			21e: R_386_32	g_nWorkerTID
+     222:	c7 44 24 04 00 00 00 	movl   $0x0,0x4(%esp,1)
+     229:	00 
+			226: R_386_32	_Z22Keyboard_MessageThreadv
+     22a:	89 04 24             	mov    %eax,(%esp,1)
+     22d:	e8 fc ff ff ff       	call   22e <main+0x12e>
+			22e: R_386_PC32	_ZN2os14ProcessManager12CreateThreadEPvPj
+     232:	a1 00 00 00 00       	mov    0x0,%eax
+			233: R_386_32	g_nWorkerTID
+     237:	89 44 24 04          	mov    %eax,0x4(%esp,1)
+     23b:	a1 00 00 00 00       	mov    0x0,%eax
+			23c: R_386_32	pcProcessManager
+     240:	89 04 24             	mov    %eax,(%esp,1)
+     243:	e8 fc ff ff ff       	call   244 <main+0x144>
+			244: R_386_PC32	_ZN2os14ProcessManager9RunThreadEj
+     248:	a1 00 00 00 00       	mov    0x0,%eax
+			249: R_386_32	pcConsole
+     24d:	c7 44 24 08 16 00 00 	movl   $0x16,0x8(%esp,1)
+     254:	00 
+			251: R_386_32	.rodata
+     255:	c7 44 24 04 2c 00 00 	movl   $0x2c,0x4(%esp,1)
+     25c:	00 
+			259: R_386_32	.rodata
+     25d:	89 04 24             	mov    %eax,(%esp,1)
+     260:	e8 fc ff ff ff       	call   261 <main+0x161>
+			261: R_386_PC32	_ZN2os7Console8LogPrintEPcS1_
+     265:	c9                   	leave  
+     266:	b8 01 00 00 00       	mov    $0x1,%eax
+     26b:	c3                   	ret    
+     26c:	8d 74 26 00          	lea    0x0(%esi,1),%esi
+
+00000270 <_Z8Shutdownv>:
+     270:	55                   	push   %ebp
+     271:	89 e5                	mov    %esp,%ebp
+     273:	83 ec 08             	sub    $0x8,%esp
+     276:	89 5d fc             	mov    %ebx,0xfffffffc(%ebp)
+     279:	8b 1d 00 00 00 00    	mov    0x0,%ebx
+			27b: R_386_32	pcConsole
+     27f:	85 db                	test   %ebx,%ebx
+     281:	75 7d                	jne    300 <_Z8Shutdownv+0x90>
+     283:	8b 1d 00 00 00 00    	mov    0x0,%ebx
+			285: R_386_32	pcProcessManager
+     289:	85 db                	test   %ebx,%ebx
+     28b:	75 63                	jne    2f0 <_Z8Shutdownv+0x80>
+     28d:	8b 1d 00 00 00 00    	mov    0x0,%ebx
+			28f: R_386_32	pcInterruptManager
+     293:	85 db                	test   %ebx,%ebx
+     295:	75 49                	jne    2e0 <_Z8Shutdownv+0x70>
+     297:	8b 1d 00 00 00 00    	mov    0x0,%ebx
+			299: R_386_32	pcDeviceManager
+     29d:	85 db                	test   %ebx,%ebx
+     29f:	75 2f                	jne    2d0 <_Z8Shutdownv+0x60>
+     2a1:	8b 1d 00 00 00 00    	mov    0x0,%ebx
+			2a3: R_386_32	pcMessageManager
+     2a7:	85 db                	test   %ebx,%ebx
+     2a9:	75 15                	jne    2c0 <_Z8Shutdownv+0x50>
+     2ab:	8b 5d fc             	mov    0xfffffffc(%ebp),%ebx
+     2ae:	89 ec                	mov    %ebp,%esp
+     2b0:	5d                   	pop    %ebp
+     2b1:	c3                   	ret    
+     2b2:	8d b4 26 00 00 00 00 	lea    0x0(%esi,1),%esi
+     2b9:	8d bc 27 00 00 00 00 	lea    0x0(%edi,1),%edi
+     2c0:	89 1c 24             	mov    %ebx,(%esp,1)
+     2c3:	e8 fc ff ff ff       	call   2c4 <_Z8Shutdownv+0x54>
+			2c4: R_386_PC32	_ZN2os14MessageManagerD1Ev
+     2c8:	89 d8                	mov    %ebx,%eax
+     2ca:	cd 91                	int    $0x91
+     2cc:	eb dd                	jmp    2ab <_Z8Shutdownv+0x3b>
+     2ce:	89 f6                	mov    %esi,%esi
+     2d0:	89 1c 24             	mov    %ebx,(%esp,1)
+     2d3:	e8 fc ff ff ff       	call   2d4 <_Z8Shutdownv+0x64>
+			2d4: R_386_PC32	_ZN2os13DeviceManagerD1Ev
+     2d8:	89 d8                	mov    %ebx,%eax
+     2da:	cd 91                	int    $0x91
+     2dc:	eb c3                	jmp    2a1 <_Z8Shutdownv+0x31>
+     2de:	89 f6                	mov    %esi,%esi
+     2e0:	89 1c 24             	mov    %ebx,(%esp,1)
+     2e3:	e8 fc ff ff ff       	call   2e4 <_Z8Shutdownv+0x74>
+			2e4: R_386_PC32	_ZN2os16InterruptManagerD1Ev
+     2e8:	89 d8                	mov    %ebx,%eax
+     2ea:	cd 91                	int    $0x91
+     2ec:	eb a9                	jmp    297 <_Z8Shutdownv+0x27>
+     2ee:	89 f6                	mov    %esi,%esi
+     2f0:	89 1c 24             	mov    %ebx,(%esp,1)
+     2f3:	e8 fc ff ff ff       	call   2f4 <_Z8Shutdownv+0x84>
+			2f4: R_386_PC32	_ZN2os14ProcessManagerD1Ev
+     2f8:	89 d8                	mov    %ebx,%eax
+     2fa:	cd 91                	int    $0x91
+     2fc:	eb 8f                	jmp    28d <_Z8Shutdownv+0x1d>
+     2fe:	89 f6                	mov    %esi,%esi
+     300:	89 1c 24             	mov    %ebx,(%esp,1)
+     303:	e8 fc ff ff ff       	call   304 <_Z8Shutdownv+0x94>
+			304: R_386_PC32	_ZN2os7ConsoleD1Ev
+     308:	89 d8                	mov    %ebx,%eax
+     30a:	cd 91                	int    $0x91
+     30c:	e9 72 ff ff ff       	jmp    283 <_Z8Shutdownv+0x13>
+     311:	90                   	nop    
+     312:	8d b4 26 00 00 00 00 	lea    0x0(%esi,1),%esi
+     319:	8d bc 27 00 00 00 00 	lea    0x0(%edi,1),%edi
+
+00000320 <_Z22Keyboard_MessageThreadv>:
+     320:	55                   	push   %ebp
+     321:	89 e5                	mov    %esp,%ebp
+     323:	57                   	push   %edi
+     324:	56                   	push   %esi
+     325:	53                   	push   %ebx
+     326:	83 ec 1c             	sub    $0x1c,%esp
+     329:	a1 00 00 00 00       	mov    0x0,%eax
+			32a: R_386_32	pcMessageManager
+     32e:	89 04 24             	mov    %eax,(%esp,1)
+     331:	e8 fc ff ff ff       	call   332 <_Z22Keyboard_MessageThreadv+0x12>
+			332: R_386_PC32	_ZN2os14MessageManager17CreateMessagePortEv
+     336:	b9 1c 00 00 00       	mov    $0x1c,%ecx
+     33b:	89 c8                	mov    %ecx,%eax
+     33d:	cd 90                	int    $0x90
+     33f:	89 45 f0             	mov    %eax,0xfffffff0(%ebp)
+     342:	89 04 24             	mov    %eax,(%esp,1)
+     345:	e8 fc ff ff ff       	call   346 <_Z22Keyboard_MessageThreadv+0x26>
+			346: R_386_PC32	_ZN2os11MessagePortC1Ev
+     34a:	a1 00 00 00 00       	mov    0x0,%eax
+			34b: R_386_32	g_nThreadFocusID
+     34f:	85 c0                	test   %eax,%eax
+     351:	75 23                	jne    376 <_Z22Keyboard_MessageThreadv+0x56>
+     353:	8d b6 00 00 00 00    	lea    0x0(%esi),%esi
+     359:	8d bc 27 00 00 00 00 	lea    0x0(%edi,1),%edi
+     360:	a1 00 00 00 00       	mov    0x0,%eax
+			361: R_386_32	pcProcessManager
+     365:	89 04 24             	mov    %eax,(%esp,1)
+     368:	e8 fc ff ff ff       	call   369 <_Z22Keyboard_MessageThreadv+0x49>
+			369: R_386_PC32	_ZN2os14ProcessManager10RelinquishEv
+     36d:	a1 00 00 00 00       	mov    0x0,%eax
+			36e: R_386_32	g_nThreadFocusID
+     372:	85 c0                	test   %eax,%eax
+     374:	74 ea                	je     360 <_Z22Keyboard_MessageThreadv+0x40>
+     376:	a1 00 00 00 00       	mov    0x0,%eax
+			377: R_386_32	g_nKeyboardBufferEnd
+     37b:	a3 00 00 00 00       	mov    %eax,0x0
+			37c: R_386_32	g_nKeyboardBufferPos
+     380:	c7 44 24 04 00 00 00 	movl   $0x0,0x4(%esp,1)
+     387:	00 
+     388:	a1 00 00 00 00       	mov    0x0,%eax
+			389: R_386_32	pcProcessManager
+     38d:	89 04 24             	mov    %eax,(%esp,1)
+     390:	e8 fc ff ff ff       	call   391 <_Z22Keyboard_MessageThreadv+0x71>
+			391: R_386_PC32	_ZN2os14ProcessManager5SleepEj
+     395:	8b 3d 00 00 00 00    	mov    0x0,%edi
+			397: R_386_32	g_nKeyboardBufferEnd
+     39b:	8b 15 00 00 00 00    	mov    0x0,%edx
+			39d: R_386_32	g_nKeyboardBufferPos
+     3a1:	39 fa                	cmp    %edi,%edx
+     3a3:	74 db                	je     380 <_Z22Keyboard_MessageThreadv+0x60>
+     3a5:	8d 74 26 00          	lea    0x0(%esi,1),%esi
+     3a9:	8d bc 27 00 00 00 00 	lea    0x0(%edi,1),%edi
+     3b0:	0f b6 8a 00 00 00 00 	movzbl 0x0(%edx),%ecx
+			3b3: R_386_32	g_pcKeyboardBuffer
+     3b7:	31 db                	xor    %ebx,%ebx
+     3b9:	42                   	inc    %edx
+     3ba:	0f b6 05 2c 01 00 00 	movzbl 0x12c,%eax
+			3bd: R_386_32	.data
+     3c1:	81 fa 00 01 00 00    	cmp    $0x100,%edx
+     3c7:	0f 94 c3             	sete   %bl
+     3ca:	4b                   	dec    %ebx
+     3cb:	21 d3                	and    %edx,%ebx
+     3cd:	31 d2                	xor    %edx,%edx
+     3cf:	84 c0                	test   %al,%al
+     3d1:	89 1d 00 00 00 00    	mov    %ebx,0x0
+			3d3: R_386_32	g_nKeyboardBufferPos
+     3d7:	0f 85 d3 01 00 00    	jne    5b0 <_Z22Keyboard_MessageThreadv+0x290>
+     3dd:	80 f9 e0             	cmp    $0xe0,%cl
+     3e0:	0f 84 ba 01 00 00    	je     5a0 <_Z22Keyboard_MessageThreadv+0x280>
+     3e6:	89 c8                	mov    %ecx,%eax
+     3e8:	83 e0 7f             	and    $0x7f,%eax
+     3eb:	80 f9 7f             	cmp    $0x7f,%cl
+     3ee:	0f 86 9c 01 00 00    	jbe    590 <_Z22Keyboard_MessageThreadv+0x270>
+     3f4:	c6 80 00 00 00 00 00 	movb   $0x0,0x0(%eax)
+			3f6: R_386_32	g_nKeyStates
+     3fb:	80 f9 7f             	cmp    $0x7f,%cl
+     3fe:	76 1b                	jbe    41b <_Z22Keyboard_MessageThreadv+0xfb>
+     400:	80 f9 ba             	cmp    $0xba,%cl
+     403:	0f 84 6e 01 00 00    	je     577 <_Z22Keyboard_MessageThreadv+0x257>
+     409:	80 f9 c5             	cmp    $0xc5,%cl
+     40c:	0f 84 4b 01 00 00    	je     55d <_Z22Keyboard_MessageThreadv+0x23d>
+     412:	80 f9 c6             	cmp    $0xc6,%cl
+     415:	0f 84 36 01 00 00    	je     551 <_Z22Keyboard_MessageThreadv+0x231>
+     41b:	8b 1d 30 01 00 00    	mov    0x130,%ebx
+			41d: R_386_32	.data
+     421:	8b 35 38 01 00 00    	mov    0x138,%esi
+			423: R_386_32	.data
+     427:	80 3d 2a 00 00 00 01 	cmpb   $0x1,0x2a
+			429: R_386_32	g_nKeyStates
+     42e:	0f 84 0c 01 00 00    	je     540 <_Z22Keyboard_MessageThreadv+0x220>
+     434:	80 3d 36 00 00 00 01 	cmpb   $0x1,0x36
+			436: R_386_32	g_nKeyStates
+     43b:	0f 84 ff 00 00 00    	je     540 <_Z22Keyboard_MessageThreadv+0x220>
+     441:	89 c8                	mov    %ecx,%eax
+     443:	83 e0 7f             	and    $0x7f,%eax
+     446:	0f b6 90 00 00 00 00 	movzbl 0x0(%eax),%edx
+			449: R_386_32	g_nKeyCodes
+     44d:	4b                   	dec    %ebx
+     44e:	0f 84 cc 00 00 00    	je     520 <_Z22Keyboard_MessageThreadv+0x200>
+     454:	4e                   	dec    %esi
+     455:	74 59                	je     4b0 <_Z22Keyboard_MessageThreadv+0x190>
+     457:	84 d2                	test   %dl,%dl
+     459:	74 39                	je     494 <_Z22Keyboard_MessageThreadv+0x174>
+     45b:	80 f9 7f             	cmp    $0x7f,%cl
+     45e:	77 34                	ja     494 <_Z22Keyboard_MessageThreadv+0x174>
+     460:	c7 44 24 04 02 00 00 	movl   $0x2,0x4(%esp,1)
+     467:	00 
+     468:	8b 45 f0             	mov    0xfffffff0(%ebp),%eax
+     46b:	0f b6 f2             	movzbl %dl,%esi
+     46e:	89 74 24 08          	mov    %esi,0x8(%esp,1)
+     472:	89 04 24             	mov    %eax,(%esp,1)
+     475:	e8 fc ff ff ff       	call   476 <_Z22Keyboard_MessageThreadv+0x156>
+			476: R_386_PC32	_ZN2os11MessagePort13CreateMessageEjj
+     47a:	a1 00 00 00 00       	mov    0x0,%eax
+			47b: R_386_32	g_nThreadFocusID
+     47f:	89 44 24 04          	mov    %eax,0x4(%esp,1)
+     483:	8b 45 f0             	mov    0xfffffff0(%ebp),%eax
+     486:	89 04 24             	mov    %eax,(%esp,1)
+     489:	e8 fc ff ff ff       	call   48a <_Z22Keyboard_MessageThreadv+0x16a>
+			48a: R_386_PC32	_ZN2os11MessagePort11SendMessageEj
+     48e:	8b 3d 00 00 00 00    	mov    0x0,%edi
+			490: R_386_32	g_nKeyboardBufferEnd
+     494:	8b 15 00 00 00 00    	mov    0x0,%edx
+			496: R_386_32	g_nKeyboardBufferPos
+     49a:	39 fa                	cmp    %edi,%edx
+     49c:	0f 85 0e ff ff ff    	jne    3b0 <_Z22Keyboard_MessageThreadv+0x90>
+     4a2:	e9 d9 fe ff ff       	jmp    380 <_Z22Keyboard_MessageThreadv+0x60>
+     4a7:	89 f6                	mov    %esi,%esi
+     4a9:	8d bc 27 00 00 00 00 	lea    0x0(%edi,1),%edi
+     4b0:	80 fa c8             	cmp    $0xc8,%dl
+     4b3:	74 64                	je     519 <_Z22Keyboard_MessageThreadv+0x1f9>
+     4b5:	80 fa c9             	cmp    $0xc9,%dl
+     4b8:	74 58                	je     512 <_Z22Keyboard_MessageThreadv+0x1f2>
+     4ba:	80 fa ca             	cmp    $0xca,%dl
+     4bd:	74 4c                	je     50b <_Z22Keyboard_MessageThreadv+0x1eb>
+     4bf:	80 fa cb             	cmp    $0xcb,%dl
+     4c2:	74 40                	je     504 <_Z22Keyboard_MessageThreadv+0x1e4>
+     4c4:	80 fa cc             	cmp    $0xcc,%dl
+     4c7:	74 34                	je     4fd <_Z22Keyboard_MessageThreadv+0x1dd>
+     4c9:	80 fa cd             	cmp    $0xcd,%dl
+     4cc:	74 28                	je     4f6 <_Z22Keyboard_MessageThreadv+0x1d6>
+     4ce:	80 fa ce             	cmp    $0xce,%dl
+     4d1:	74 1c                	je     4ef <_Z22Keyboard_MessageThreadv+0x1cf>
+     4d3:	80 fa cf             	cmp    $0xcf,%dl
+     4d6:	74 10                	je     4e8 <_Z22Keyboard_MessageThreadv+0x1c8>
+     4d8:	80 fa d0             	cmp    $0xd0,%dl
+     4db:	0f 85 76 ff ff ff    	jne    457 <_Z22Keyboard_MessageThreadv+0x137>
+     4e1:	b2 30                	mov    $0x30,%dl
+     4e3:	e9 6f ff ff ff       	jmp    457 <_Z22Keyboard_MessageThreadv+0x137>
+     4e8:	b2 33                	mov    $0x33,%dl
+     4ea:	e9 68 ff ff ff       	jmp    457 <_Z22Keyboard_MessageThreadv+0x137>
+     4ef:	b2 32                	mov    $0x32,%dl
+     4f1:	e9 61 ff ff ff       	jmp    457 <_Z22Keyboard_MessageThreadv+0x137>
+     4f6:	b2 31                	mov    $0x31,%dl
+     4f8:	e9 5a ff ff ff       	jmp    457 <_Z22Keyboard_MessageThreadv+0x137>
+     4fd:	b2 36                	mov    $0x36,%dl
+     4ff:	e9 53 ff ff ff       	jmp    457 <_Z22Keyboard_MessageThreadv+0x137>
+     504:	b2 35                	mov    $0x35,%dl
+     506:	e9 4c ff ff ff       	jmp    457 <_Z22Keyboard_MessageThreadv+0x137>
+     50b:	b2 34                	mov    $0x34,%dl
+     50d:	e9 45 ff ff ff       	jmp    457 <_Z22Keyboard_MessageThreadv+0x137>
+     512:	b2 38                	mov    $0x38,%dl
+     514:	e9 3e ff ff ff       	jmp    457 <_Z22Keyboard_MessageThreadv+0x137>
+     519:	b2 37                	mov    $0x37,%dl
+     51b:	e9 37 ff ff ff       	jmp    457 <_Z22Keyboard_MessageThreadv+0x137>
+     520:	88 d3                	mov    %dl,%bl
+     522:	80 eb 61             	sub    $0x61,%bl
+     525:	80 fb 19             	cmp    $0x19,%bl
+     528:	0f 87 26 ff ff ff    	ja     454 <_Z22Keyboard_MessageThreadv+0x134>
+     52e:	80 ea 20             	sub    $0x20,%dl
+     531:	e9 1e ff ff ff       	jmp    454 <_Z22Keyboard_MessageThreadv+0x134>
+     536:	8d 76 00             	lea    0x0(%esi),%esi
+     539:	8d bc 27 00 00 00 00 	lea    0x0(%edi,1),%edi
+     540:	89 c8                	mov    %ecx,%eax
+     542:	83 e0 7f             	and    $0x7f,%eax
+     545:	0f b6 90 00 00 00 00 	movzbl 0x0(%eax),%edx
+			548: R_386_32	g_nKeyCodesShift
+     54c:	e9 fc fe ff ff       	jmp    44d <_Z22Keyboard_MessageThreadv+0x12d>
+     551:	83 35 34 01 00 00 01 	xorl   $0x1,0x134
+			553: R_386_32	.data
+     558:	e9 be fe ff ff       	jmp    41b <_Z22Keyboard_MessageThreadv+0xfb>
+     55d:	8b 35 38 01 00 00    	mov    0x138,%esi
+			55f: R_386_32	.data
+     563:	8b 1d 30 01 00 00    	mov    0x130,%ebx
+			565: R_386_32	.data
+     569:	83 f6 01             	xor    $0x1,%esi
+     56c:	89 35 38 01 00 00    	mov    %esi,0x138
+			56e: R_386_32	.data
+     572:	e9 b0 fe ff ff       	jmp    427 <_Z22Keyboard_MessageThreadv+0x107>
+     577:	8b 1d 30 01 00 00    	mov    0x130,%ebx
+			579: R_386_32	.data
+     57d:	83 f3 01             	xor    $0x1,%ebx
+     580:	89 1d 30 01 00 00    	mov    %ebx,0x130
+			582: R_386_32	.data
+     586:	e9 96 fe ff ff       	jmp    421 <_Z22Keyboard_MessageThreadv+0x101>
+     58b:	90                   	nop    
+     58c:	8d 74 26 00          	lea    0x0(%esi,1),%esi
+     590:	0f b6 d1             	movzbl %cl,%edx
+     593:	c6 82 00 00 00 00 01 	movb   $0x1,0x0(%edx)
+			595: R_386_32	g_nKeyStates
+     59a:	e9 5c fe ff ff       	jmp    3fb <_Z22Keyboard_MessageThreadv+0xdb>
+     59f:	90                   	nop    
+     5a0:	c6 05 2c 01 00 00 01 	movb   $0x1,0x12c
+			5a2: R_386_32	.data
+     5a7:	e9 ab fe ff ff       	jmp    457 <_Z22Keyboard_MessageThreadv+0x137>
+     5ac:	8d 74 26 00          	lea    0x0(%esi,1),%esi
+     5b0:	fe c8                	dec    %al
+     5b2:	0f 85 9f fe ff ff    	jne    457 <_Z22Keyboard_MessageThreadv+0x137>
+     5b8:	c6 05 2c 01 00 00 00 	movb   $0x0,0x12c
+			5ba: R_386_32	.data
+     5bf:	80 f9 5b             	cmp    $0x5b,%cl
+     5c2:	74 1c                	je     5e0 <_Z22Keyboard_MessageThreadv+0x2c0>
+     5c4:	80 f9 5c             	cmp    $0x5c,%cl
+     5c7:	74 10                	je     5d9 <_Z22Keyboard_MessageThreadv+0x2b9>
+     5c9:	80 f9 5d             	cmp    $0x5d,%cl
+     5cc:	0f 85 85 fe ff ff    	jne    457 <_Z22Keyboard_MessageThreadv+0x137>
+     5d2:	b2 88                	mov    $0x88,%dl
+     5d4:	e9 7e fe ff ff       	jmp    457 <_Z22Keyboard_MessageThreadv+0x137>
+     5d9:	b2 87                	mov    $0x87,%dl
+     5db:	e9 77 fe ff ff       	jmp    457 <_Z22Keyboard_MessageThreadv+0x137>
+     5e0:	b2 86                	mov    $0x86,%dl
+     5e2:	e9 70 fe ff ff       	jmp    457 <_Z22Keyboard_MessageThreadv+0x137>
+     5e7:	90                   	nop    
+     5e8:	90                   	nop    
+     5e9:	8d b4 26 00 00 00 00 	lea    0x0(%esi,1),%esi
+
+000005f0 <_Z18Keyboard_InterruptP12sCallStack_t>:
+     5f0:	55                   	push   %ebp
+     5f1:	89 e5                	mov    %esp,%ebp
+     5f3:	83 ec 08             	sub    $0x8,%esp
+     5f6:	e4 60                	in     $0x60,%al
+     5f8:	8b 0d 00 00 00 00    	mov    0x0,%ecx
+			5fa: R_386_32	g_nKeyboardBufferEnd
+     5fe:	31 d2                	xor    %edx,%edx
+     600:	88 81 00 00 00 00    	mov    %al,0x0(%ecx)
+			602: R_386_32	g_pcKeyboardBuffer
+     606:	a1 00 00 00 00       	mov    0x0,%eax
+			607: R_386_32	g_nWorkerTID
+     60b:	41                   	inc    %ecx
+     60c:	81 f9 00 01 00 00    	cmp    $0x100,%ecx
+     612:	0f 94 c2             	sete   %dl
+     615:	89 44 24 04          	mov    %eax,0x4(%esp,1)
+     619:	a1 00 00 00 00       	mov    0x0,%eax
+			61a: R_386_32	pcProcessManager
+     61e:	4a                   	dec    %edx
+     61f:	89 04 24             	mov    %eax,(%esp,1)
+     622:	21 d1                	and    %edx,%ecx
+     624:	89 0d 00 00 00 00    	mov    %ecx,0x0
+			626: R_386_32	g_nKeyboardBufferEnd
+     62a:	e8 fc ff ff ff       	call   62b <_Z18Keyboard_InterruptP12sCallStack_t+0x3b>
+			62b: R_386_PC32	_ZN2os14ProcessManager12AwakenThreadEj
+     62f:	89 ec                	mov    %ebp,%esp
+     631:	31 c0                	xor    %eax,%eax
+     633:	5d                   	pop    %ebp
+     634:	c3                   	ret    
+     635:	90                   	nop    
+     636:	8d 76 00             	lea    0x0(%esi),%esi
+     639:	8d bc 27 00 00 00 00 	lea    0x0(%edi,1),%edi
+
+00000640 <_Z26Keyboard_Call_RequestFocusP12sCallStack_tP19sParameterPackage_t>:
+     640:	55                   	push   %ebp
+     641:	89 e5                	mov    %esp,%ebp
+     643:	8b 45 0c             	mov    0xc(%ebp),%eax
+     646:	5d                   	pop    %ebp
+     647:	8b 40 04             	mov    0x4(%eax),%eax
+     64a:	a3 00 00 00 00       	mov    %eax,0x0
+			64b: R_386_32	g_nThreadFocusID
+     64f:	31 c0                	xor    %eax,%eax
+     651:	c3                   	ret    
+     652:	8d b4 26 00 00 00 00 	lea    0x0(%esi,1),%esi
+     659:	8d bc 27 00 00 00 00 	lea    0x0(%edi,1),%edi
+     660:	55                   	push   %ebp
+     661:	89 e5                	mov    %esp,%ebp
+     663:	83 ec 08             	sub    $0x8,%esp
+     666:	c7 44 24 04 ff ff 00 	movl   $0xffff,0x4(%esp,1)
+     66d:	00 
+     66e:	c7 04 24 01 00 00 00 	movl   $0x1,(%esp,1)
+     675:	e8 86 f9 ff ff       	call   0 <code>
+     67a:	89 ec                	mov    %ebp,%esp
+     67c:	5d                   	pop    %ebp
+     67d:	c3                   	ret    
+	...
+
+00000680 <_Z5_mainv>:
+     680:	55                   	push   %ebp
+     681:	89 e5                	mov    %esp,%ebp
+     683:	83 ec 08             	sub    $0x8,%esp
+     686:	89 1c 24             	mov    %ebx,(%esp,1)
+     689:	8b 1d 00 00 00 00    	mov    0x0,%ebx
+			68b: R_386_32	_CTOR_LIST_
+     68f:	89 74 24 04          	mov    %esi,0x4(%esp,1)
+     693:	be 04 00 00 00       	mov    $0x4,%esi
+			694: R_386_32	_CTOR_LIST_
+     698:	85 db                	test   %ebx,%ebx
+     69a:	75 14                	jne    6b0 <_Z5_mainv+0x30>
+     69c:	8b 1c 24             	mov    (%esp,1),%ebx
+     69f:	8b 74 24 04          	mov    0x4(%esp,1),%esi
+     6a3:	89 ec                	mov    %ebp,%esp
+     6a5:	5d                   	pop    %ebp
+     6a6:	c3                   	ret    
+     6a7:	89 f6                	mov    %esi,%esi
+     6a9:	8d bc 27 00 00 00 00 	lea    0x0(%edi,1),%edi
+     6b0:	ff 16                	call   *(%esi)
+     6b2:	83 c6 04             	add    $0x4,%esi
+     6b5:	4b                   	dec    %ebx
+     6b6:	75 f8                	jne    6b0 <_Z5_mainv+0x30>
+     6b8:	eb e2                	jmp    69c <_Z5_mainv+0x1c>
+     6ba:	8d b6 00 00 00 00    	lea    0x0(%esi),%esi
+
+000006c0 <_Z7_atexitv>:
+     6c0:	55                   	push   %ebp
+     6c1:	89 e5                	mov    %esp,%ebp
+     6c3:	83 ec 08             	sub    $0x8,%esp
+     6c6:	89 1c 24             	mov    %ebx,(%esp,1)
+     6c9:	8b 1d 00 00 00 00    	mov    0x0,%ebx
+			6cb: R_386_32	_DTOR_LIST_
+     6cf:	89 74 24 04          	mov    %esi,0x4(%esp,1)
+     6d3:	be 04 00 00 00       	mov    $0x4,%esi
+			6d4: R_386_32	_DTOR_LIST_
+     6d8:	85 db                	test   %ebx,%ebx
+     6da:	75 14                	jne    6f0 <_Z7_atexitv+0x30>
+     6dc:	8b 1c 24             	mov    (%esp,1),%ebx
+     6df:	8b 74 24 04          	mov    0x4(%esp,1),%esi
+     6e3:	89 ec                	mov    %ebp,%esp
+     6e5:	5d                   	pop    %ebp
+     6e6:	c3                   	ret    
+     6e7:	89 f6                	mov    %esi,%esi
+     6e9:	8d bc 27 00 00 00 00 	lea    0x0(%edi,1),%edi
+     6f0:	ff 16                	call   *(%esi)
+     6f2:	83 c6 04             	add    $0x4,%esi
+     6f5:	4b                   	dec    %ebx
+     6f6:	75 f8                	jne    6f0 <_Z7_atexitv+0x30>
+     6f8:	eb e2                	jmp    6dc <_Z7_atexitv+0x1c>
+     6fa:	8d b6 00 00 00 00    	lea    0x0(%esi),%esi
+
+00000700 <_start>:
+     700:	55                   	push   %ebp
+     701:	89 e5                	mov    %esp,%ebp
+     703:	56                   	push   %esi
+     704:	be 04 00 00 00       	mov    $0x4,%esi
+			705: R_386_32	_CTOR_LIST_
+     709:	53                   	push   %ebx
+     70a:	8b 1d 00 00 00 00    	mov    0x0,%ebx
+			70c: R_386_32	_CTOR_LIST_
+     710:	85 db                	test   %ebx,%ebx
+     712:	75 2c                	jne    740 <_start+0x40>
+     714:	e8 fc ff ff ff       	call   715 <_start+0x15>
+			715: R_386_PC32	main
+     719:	8b 1d 00 00 00 00    	mov    0x0,%ebx
+			71b: R_386_32	_DTOR_LIST_
+     71f:	be 04 00 00 00       	mov    $0x4,%esi
+			720: R_386_32	_DTOR_LIST_
+     724:	85 db                	test   %ebx,%ebx
+     726:	75 08                	jne    730 <_start+0x30>
+     728:	5b                   	pop    %ebx
+     729:	5e                   	pop    %esi
+     72a:	5d                   	pop    %ebp
+     72b:	c3                   	ret    
+     72c:	8d 74 26 00          	lea    0x0(%esi,1),%esi
+     730:	ff 16                	call   *(%esi)
+     732:	83 c6 04             	add    $0x4,%esi
+     735:	4b                   	dec    %ebx
+     736:	75 f8                	jne    730 <_start+0x30>
+     738:	eb ee                	jmp    728 <_start+0x28>
+     73a:	8d b6 00 00 00 00    	lea    0x0(%esi),%esi
+     740:	ff 16                	call   *(%esi)
+     742:	83 c6 04             	add    $0x4,%esi
+     745:	4b                   	dec    %ebx
+     746:	75 f8                	jne    740 <_start+0x40>
+     748:	eb ca                	jmp    714 <_start+0x14>
+     74a:	90                   	nop    
+     74b:	90                   	nop    
+     74c:	90                   	nop    
+     74d:	90                   	nop    
+     74e:	90                   	nop    
+     74f:	90                   	nop    
+
+00000750 <_ZN2os7ConsoleC2Ev>:
+     750:	55                   	push   %ebp
+     751:	89 e5                	mov    %esp,%ebp
+     753:	83 ec 08             	sub    $0x8,%esp
+     756:	89 74 24 04          	mov    %esi,0x4(%esp,1)
+     75a:	8b 4d 08             	mov    0x8(%ebp),%ecx
+     75d:	be 35 00 00 00       	mov    $0x35,%esi
+			75e: R_386_32	.rodata
+     762:	89 1c 24             	mov    %ebx,(%esp,1)
+     765:	89 f0                	mov    %esi,%eax
+     767:	bb 3d 00 00 00       	mov    $0x3d,%ebx
+			768: R_386_32	.rodata
+     76c:	cd 80                	int    $0x80
+     76e:	bb 43 00 00 00       	mov    $0x43,%ebx
+			76f: R_386_32	.rodata
+     773:	89 01                	mov    %eax,(%ecx)
+     775:	89 f0                	mov    %esi,%eax
+     777:	cd 80                	int    $0x80
+     779:	bb 52 00 00 00       	mov    $0x52,%ebx
+			77a: R_386_32	.rodata
+     77e:	89 41 04             	mov    %eax,0x4(%ecx)
+     781:	89 f0                	mov    %esi,%eax
+     783:	cd 80                	int    $0x80
+     785:	bb 62 00 00 00       	mov    $0x62,%ebx
+			786: R_386_32	.rodata
+     78a:	89 41 08             	mov    %eax,0x8(%ecx)
+     78d:	89 f0                	mov    %esi,%eax
+     78f:	cd 80                	int    $0x80
+     791:	bb 68 00 00 00       	mov    $0x68,%ebx
+			792: R_386_32	.rodata
+     796:	89 41 0c             	mov    %eax,0xc(%ecx)
+     799:	89 f0                	mov    %esi,%eax
+     79b:	cd 80                	int    $0x80
+     79d:	89 41 10             	mov    %eax,0x10(%ecx)
+     7a0:	8b 1c 24             	mov    (%esp,1),%ebx
+     7a3:	8b 74 24 04          	mov    0x4(%esp,1),%esi
+     7a7:	89 ec                	mov    %ebp,%esp
+     7a9:	5d                   	pop    %ebp
+     7aa:	c3                   	ret    
+     7ab:	90                   	nop    
+     7ac:	8d 74 26 00          	lea    0x0(%esi,1),%esi
+
+000007b0 <_ZN2os7ConsoleC1Ev>:
+     7b0:	55                   	push   %ebp
+     7b1:	89 e5                	mov    %esp,%ebp
+     7b3:	83 ec 08             	sub    $0x8,%esp
+     7b6:	89 74 24 04          	mov    %esi,0x4(%esp,1)
+     7ba:	8b 4d 08             	mov    0x8(%ebp),%ecx
+     7bd:	be 35 00 00 00       	mov    $0x35,%esi
+			7be: R_386_32	.rodata
+     7c2:	89 1c 24             	mov    %ebx,(%esp,1)
+     7c5:	89 f0                	mov    %esi,%eax
+     7c7:	bb 3d 00 00 00       	mov    $0x3d,%ebx
+			7c8: R_386_32	.rodata
+     7cc:	cd 80                	int    $0x80
+     7ce:	bb 43 00 00 00       	mov    $0x43,%ebx
+			7cf: R_386_32	.rodata
+     7d3:	89 01                	mov    %eax,(%ecx)
+     7d5:	89 f0                	mov    %esi,%eax
+     7d7:	cd 80                	int    $0x80
+     7d9:	bb 52 00 00 00       	mov    $0x52,%ebx
+			7da: R_386_32	.rodata
+     7de:	89 41 04             	mov    %eax,0x4(%ecx)
+     7e1:	89 f0                	mov    %esi,%eax
+     7e3:	cd 80                	int    $0x80
+     7e5:	bb 62 00 00 00       	mov    $0x62,%ebx
+			7e6: R_386_32	.rodata
+     7ea:	89 41 08             	mov    %eax,0x8(%ecx)
+     7ed:	89 f0                	mov    %esi,%eax
+     7ef:	cd 80                	int    $0x80
+     7f1:	bb 68 00 00 00       	mov    $0x68,%ebx
+			7f2: R_386_32	.rodata
+     7f6:	89 41 0c             	mov    %eax,0xc(%ecx)
+     7f9:	89 f0                	mov    %esi,%eax
+     7fb:	cd 80                	int    $0x80
+     7fd:	89 41 10             	mov    %eax,0x10(%ecx)
+     800:	8b 1c 24             	mov    (%esp,1),%ebx
+     803:	8b 74 24 04          	mov    0x4(%esp,1),%esi
+     807:	89 ec                	mov    %ebp,%esp
+     809:	5d                   	pop    %ebp
+     80a:	c3                   	ret    
+     80b:	90                   	nop    
+     80c:	8d 74 26 00          	lea    0x0(%esi,1),%esi
+
+00000810 <_ZN2os7ConsoleD2Ev>:
+     810:	55                   	push   %ebp
+     811:	89 e5                	mov    %esp,%ebp
+     813:	5d                   	pop    %ebp
+     814:	c3                   	ret    
+     815:	90                   	nop    
+     816:	8d 76 00             	lea    0x0(%esi),%esi
+     819:	8d bc 27 00 00 00 00 	lea    0x0(%edi,1),%edi
+
+00000820 <_ZN2os7ConsoleD1Ev>:
+     820:	55                   	push   %ebp
+     821:	89 e5                	mov    %esp,%ebp
+     823:	5d                   	pop    %ebp
+     824:	c3                   	ret    
+     825:	90                   	nop    
+     826:	8d 76 00             	lea    0x0(%esi),%esi
+     829:	8d bc 27 00 00 00 00 	lea    0x0(%edi,1),%edi
+
+00000830 <_ZN2os7Console5ClearEv>:
+     830:	55                   	push   %ebp
+     831:	89 e5                	mov    %esp,%ebp
+     833:	53                   	push   %ebx
+     834:	8b 45 08             	mov    0x8(%ebp),%eax
+     837:	31 db                	xor    %ebx,%ebx
+     839:	8b 00                	mov    (%eax),%eax
+     83b:	cd 81                	int    $0x81
+     83d:	5b                   	pop    %ebx
+     83e:	5d                   	pop    %ebp
+     83f:	c3                   	ret    
+
+00000840 <_ZN2os7Console14WriteCharacterEh>:
+     840:	55                   	push   %ebp
+     841:	89 e5                	mov    %esp,%ebp
+     843:	81 ec 98 00 00 00    	sub    $0x98,%esp
+     849:	0f b6 55 0c          	movzbl 0xc(%ebp),%edx
+     84d:	b8 01 00 00 00       	mov    $0x1,%eax
+     852:	89 85 70 ff ff ff    	mov    %eax,0xffffff70(%ebp)
+     858:	8b 45 08             	mov    0x8(%ebp),%eax
+     85b:	89 5d fc             	mov    %ebx,0xfffffffc(%ebp)
+     85e:	8d 9d 68 ff ff ff    	lea    0xffffff68(%ebp),%ebx
+     864:	89 95 78 ff ff ff    	mov    %edx,0xffffff78(%ebp)
+     86a:	c7 45 b8 01 00 00 00 	movl   $0x1,0xffffffb8(%ebp)
+     871:	8b 40 04             	mov    0x4(%eax),%eax
+     874:	cd 81                	int    $0x81
+     876:	8b 5d fc             	mov    0xfffffffc(%ebp),%ebx
+     879:	89 ec                	mov    %ebp,%esp
+     87b:	5d                   	pop    %ebp
+     87c:	c3                   	ret    
+     87d:	90                   	nop    
+     87e:	89 f6                	mov    %esi,%esi
+
+00000880 <_ZN2os7Console15DeleteCharacterEv>:
+     880:	55                   	push   %ebp
+     881:	89 e5                	mov    %esp,%ebp
+     883:	53                   	push   %ebx
+     884:	8b 45 08             	mov    0x8(%ebp),%eax
+     887:	31 db                	xor    %ebx,%ebx
+     889:	8b 40 08             	mov    0x8(%eax),%eax
+     88c:	cd 81                	int    $0x81
+     88e:	5b                   	pop    %ebx
+     88f:	5d                   	pop    %ebp
+     890:	c3                   	ret    
+     891:	90                   	nop    
+     892:	8d b4 26 00 00 00 00 	lea    0x0(%esi,1),%esi
+     899:	8d bc 27 00 00 00 00 	lea    0x0(%edi,1),%edi
+
+000008a0 <_ZN2os7Console5PrintEPc>:
+     8a0:	55                   	push   %ebp
+     8a1:	89 e5                	mov    %esp,%ebp
+     8a3:	81 ec 98 00 00 00    	sub    $0x98,%esp
+     8a9:	89 5d fc             	mov    %ebx,0xfffffffc(%ebp)
+     8ac:	8b 45 0c             	mov    0xc(%ebp),%eax
+     8af:	8d 9d 68 ff ff ff    	lea    0xffffff68(%ebp),%ebx
+     8b5:	c7 45 b8 03 00 00 00 	movl   $0x3,0xffffffb8(%ebp)
+     8bc:	89 85 78 ff ff ff    	mov    %eax,0xffffff78(%ebp)
+     8c2:	b8 01 00 00 00       	mov    $0x1,%eax
+     8c7:	89 85 70 ff ff ff    	mov    %eax,0xffffff70(%ebp)
+     8cd:	8b 45 08             	mov    0x8(%ebp),%eax
+     8d0:	8b 40 0c             	mov    0xc(%eax),%eax
+     8d3:	cd 81                	int    $0x81
+     8d5:	8b 5d fc             	mov    0xfffffffc(%ebp),%ebx
+     8d8:	89 ec                	mov    %ebp,%esp
+     8da:	5d                   	pop    %ebp
+     8db:	c3                   	ret    
+     8dc:	8d 74 26 00          	lea    0x0(%esi,1),%esi
+
+000008e0 <_ZN2os7Console8LogPrintEPcS1_>:
+     8e0:	55                   	push   %ebp
+     8e1:	89 e5                	mov    %esp,%ebp
+     8e3:	81 ec 98 00 00 00    	sub    $0x98,%esp
+     8e9:	89 5d fc             	mov    %ebx,0xfffffffc(%ebp)
+     8ec:	8b 45 0c             	mov    0xc(%ebp),%eax
+     8ef:	8d 9d 68 ff ff ff    	lea    0xffffff68(%ebp),%ebx
+     8f5:	c7 45 b8 03 00 00 00 	movl   $0x3,0xffffffb8(%ebp)
+     8fc:	89 85 78 ff ff ff    	mov    %eax,0xffffff78(%ebp)
+     902:	8b 45 10             	mov    0x10(%ebp),%eax
+     905:	c7 45 bc 03 00 00 00 	movl   $0x3,0xffffffbc(%ebp)
+     90c:	89 85 7c ff ff ff    	mov    %eax,0xffffff7c(%ebp)
+     912:	b8 02 00 00 00       	mov    $0x2,%eax
+     917:	89 85 70 ff ff ff    	mov    %eax,0xffffff70(%ebp)
+     91d:	8b 45 08             	mov    0x8(%ebp),%eax
+     920:	8b 40 10             	mov    0x10(%eax),%eax
+     923:	cd 81                	int    $0x81
+     925:	8b 5d fc             	mov    0xfffffffc(%ebp),%ebx
+     928:	89 ec                	mov    %ebp,%esp
+     92a:	5d                   	pop    %ebp
+     92b:	c3                   	ret    
+     92c:	90                   	nop    
+     92d:	90                   	nop    
+     92e:	90                   	nop    
+     92f:	90                   	nop    
+
+00000930 <_ZN2os14ProcessManagerC2Ev>:
+     930:	55                   	push   %ebp
+     931:	89 e5                	mov    %esp,%ebp
+     933:	83 ec 08             	sub    $0x8,%esp
+     936:	89 74 24 04          	mov    %esi,0x4(%esp,1)
+     93a:	8b 4d 08             	mov    0x8(%ebp),%ecx
+     93d:	be 71 00 00 00       	mov    $0x71,%esi
+			93e: R_386_32	.rodata
+     942:	89 1c 24             	mov    %ebx,(%esp,1)
+     945:	89 f0                	mov    %esi,%eax
+     947:	bb 80 00 00 00       	mov    $0x80,%ebx
+			948: R_386_32	.rodata
+     94c:	cd 80                	int    $0x80
+     94e:	bb 8d 00 00 00       	mov    $0x8d,%ebx
+			94f: R_386_32	.rodata
+     953:	89 01                	mov    %eax,(%ecx)
+     955:	89 f0                	mov    %esi,%eax
+     957:	cd 80                	int    $0x80
+     959:	bb 97 00 00 00       	mov    $0x97,%ebx
+			95a: R_386_32	.rodata
+     95e:	89 41 04             	mov    %eax,0x4(%ecx)
+     961:	89 f0                	mov    %esi,%eax
+     963:	cd 80                	int    $0x80
+     965:	bb a4 00 00 00       	mov    $0xa4,%ebx
+			966: R_386_32	.rodata
+     96a:	89 41 08             	mov    %eax,0x8(%ecx)
+     96d:	89 f0                	mov    %esi,%eax
+     96f:	cd 80                	int    $0x80
+     971:	bb aa 00 00 00       	mov    $0xaa,%ebx
+			972: R_386_32	.rodata
+     976:	89 41 0c             	mov    %eax,0xc(%ecx)
+     979:	89 f0                	mov    %esi,%eax
+     97b:	cd 80                	int    $0x80
+     97d:	89 41 10             	mov    %eax,0x10(%ecx)
+     980:	8b 1c 24             	mov    (%esp,1),%ebx
+     983:	8b 74 24 04          	mov    0x4(%esp,1),%esi
+     987:	89 ec                	mov    %ebp,%esp
+     989:	5d                   	pop    %ebp
+     98a:	c3                   	ret    
+     98b:	90                   	nop    
+     98c:	8d 74 26 00          	lea    0x0(%esi,1),%esi
+
+00000990 <_ZN2os14ProcessManagerC1Ev>:
+     990:	55                   	push   %ebp
+     991:	89 e5                	mov    %esp,%ebp
+     993:	83 ec 08             	sub    $0x8,%esp
+     996:	89 74 24 04          	mov    %esi,0x4(%esp,1)
+     99a:	8b 4d 08             	mov    0x8(%ebp),%ecx
+     99d:	be 71 00 00 00       	mov    $0x71,%esi
+			99e: R_386_32	.rodata
+     9a2:	89 1c 24             	mov    %ebx,(%esp,1)
+     9a5:	89 f0                	mov    %esi,%eax
+     9a7:	bb 80 00 00 00       	mov    $0x80,%ebx
+			9a8: R_386_32	.rodata
+     9ac:	cd 80                	int    $0x80
+     9ae:	bb 8d 00 00 00       	mov    $0x8d,%ebx
+			9af: R_386_32	.rodata
+     9b3:	89 01                	mov    %eax,(%ecx)
+     9b5:	89 f0                	mov    %esi,%eax
+     9b7:	cd 80                	int    $0x80
+     9b9:	bb 97 00 00 00       	mov    $0x97,%ebx
+			9ba: R_386_32	.rodata
+     9be:	89 41 04             	mov    %eax,0x4(%ecx)
+     9c1:	89 f0                	mov    %esi,%eax
+     9c3:	cd 80                	int    $0x80
+     9c5:	bb a4 00 00 00       	mov    $0xa4,%ebx
+			9c6: R_386_32	.rodata
+     9ca:	89 41 08             	mov    %eax,0x8(%ecx)
+     9cd:	89 f0                	mov    %esi,%eax
+     9cf:	cd 80                	int    $0x80
+     9d1:	bb aa 00 00 00       	mov    $0xaa,%ebx
+			9d2: R_386_32	.rodata
+     9d6:	89 41 0c             	mov    %eax,0xc(%ecx)
+     9d9:	89 f0                	mov    %esi,%eax
+     9db:	cd 80                	int    $0x80
+     9dd:	89 41 10             	mov    %eax,0x10(%ecx)
+     9e0:	8b 1c 24             	mov    (%esp,1),%ebx
+     9e3:	8b 74 24 04          	mov    0x4(%esp,1),%esi
+     9e7:	89 ec                	mov    %ebp,%esp
+     9e9:	5d                   	pop    %ebp
+     9ea:	c3                   	ret    
+     9eb:	90                   	nop    
+     9ec:	8d 74 26 00          	lea    0x0(%esi,1),%esi
+
+000009f0 <_ZN2os14ProcessManagerD2Ev>:
+     9f0:	55                   	push   %ebp
+     9f1:	89 e5                	mov    %esp,%ebp
+     9f3:	5d                   	pop    %ebp
+     9f4:	c3                   	ret    
+     9f5:	90                   	nop    
+     9f6:	8d 76 00             	lea    0x0(%esi),%esi
+     9f9:	8d bc 27 00 00 00 00 	lea    0x0(%edi,1),%edi
+
+00000a00 <_ZN2os14ProcessManagerD1Ev>:
+     a00:	55                   	push   %ebp
+     a01:	89 e5                	mov    %esp,%ebp
+     a03:	5d                   	pop    %ebp
+     a04:	c3                   	ret    
+     a05:	90                   	nop    
+     a06:	8d 76 00             	lea    0x0(%esi),%esi
+     a09:	8d bc 27 00 00 00 00 	lea    0x0(%edi,1),%edi
+
+00000a10 <_ZN2os14ProcessManager12CreateThreadEPvPj>:
+     a10:	55                   	push   %ebp
+     a11:	89 e5                	mov    %esp,%ebp
+     a13:	81 ec 98 00 00 00    	sub    $0x98,%esp
+     a19:	89 5d fc             	mov    %ebx,0xfffffffc(%ebp)
+     a1c:	8b 45 0c             	mov    0xc(%ebp),%eax
+     a1f:	8d 9d 68 ff ff ff    	lea    0xffffff68(%ebp),%ebx
+     a25:	c7 45 b8 04 00 00 00 	movl   $0x4,0xffffffb8(%ebp)
+     a2c:	89 85 78 ff ff ff    	mov    %eax,0xffffff78(%ebp)
+     a32:	8b 45 10             	mov    0x10(%ebp),%eax
+     a35:	c7 45 bc 02 00 00 00 	movl   $0x2,0xffffffbc(%ebp)
+     a3c:	89 85 7c ff ff ff    	mov    %eax,0xffffff7c(%ebp)
+     a42:	b8 02 00 00 00       	mov    $0x2,%eax
+     a47:	89 85 70 ff ff ff    	mov    %eax,0xffffff70(%ebp)
+     a4d:	8b 45 08             	mov    0x8(%ebp),%eax
+     a50:	8b 00                	mov    (%eax),%eax
+     a52:	cd 81                	int    $0x81
+     a54:	8b 5d fc             	mov    0xfffffffc(%ebp),%ebx
+     a57:	89 ec                	mov    %ebp,%esp
+     a59:	5d                   	pop    %ebp
+     a5a:	c3                   	ret    
+     a5b:	90                   	nop    
+     a5c:	8d 74 26 00          	lea    0x0(%esi,1),%esi
+
+00000a60 <_ZN2os14ProcessManager9RunThreadEj>:
+     a60:	55                   	push   %ebp
+     a61:	89 e5                	mov    %esp,%ebp
+     a63:	81 ec 98 00 00 00    	sub    $0x98,%esp
+     a69:	89 5d fc             	mov    %ebx,0xfffffffc(%ebp)
+     a6c:	8b 45 0c             	mov    0xc(%ebp),%eax
+     a6f:	8d 9d 68 ff ff ff    	lea    0xffffff68(%ebp),%ebx
+     a75:	c7 45 b8 01 00 00 00 	movl   $0x1,0xffffffb8(%ebp)
+     a7c:	89 85 78 ff ff ff    	mov    %eax,0xffffff78(%ebp)
+     a82:	b8 01 00 00 00       	mov    $0x1,%eax
+     a87:	89 85 70 ff ff ff    	mov    %eax,0xffffff70(%ebp)
+     a8d:	8b 45 08             	mov    0x8(%ebp),%eax
+     a90:	8b 40 04             	mov    0x4(%eax),%eax
+     a93:	cd 81                	int    $0x81
+     a95:	8b 5d fc             	mov    0xfffffffc(%ebp),%ebx
+     a98:	89 ec                	mov    %ebp,%esp
+     a9a:	5d                   	pop    %ebp
+     a9b:	c3                   	ret    
+     a9c:	8d 74 26 00          	lea    0x0(%esi,1),%esi
+
+00000aa0 <_ZN2os14ProcessManager12AwakenThreadEj>:
+     aa0:	55                   	push   %ebp
+     aa1:	89 e5                	mov    %esp,%ebp
+     aa3:	81 ec 98 00 00 00    	sub    $0x98,%esp
+     aa9:	89 5d fc             	mov    %ebx,0xfffffffc(%ebp)
+     aac:	8b 45 0c             	mov    0xc(%ebp),%eax
+     aaf:	8d 9d 68 ff ff ff    	lea    0xffffff68(%ebp),%ebx
+     ab5:	c7 45 b8 01 00 00 00 	movl   $0x1,0xffffffb8(%ebp)
+     abc:	89 85 78 ff ff ff    	mov    %eax,0xffffff78(%ebp)
+     ac2:	b8 01 00 00 00       	mov    $0x1,%eax
+     ac7:	89 85 70 ff ff ff    	mov    %eax,0xffffff70(%ebp)
+     acd:	8b 45 08             	mov    0x8(%ebp),%eax
+     ad0:	8b 40 08             	mov    0x8(%eax),%eax
+     ad3:	cd 81                	int    $0x81
+     ad5:	8b 5d fc             	mov    0xfffffffc(%ebp),%ebx
+     ad8:	89 ec                	mov    %ebp,%esp
+     ada:	5d                   	pop    %ebp
+     adb:	c3                   	ret    
+     adc:	8d 74 26 00          	lea    0x0(%esi,1),%esi
+
+00000ae0 <_ZN2os14ProcessManager5SleepEj>:
+     ae0:	55                   	push   %ebp
+     ae1:	89 e5                	mov    %esp,%ebp
+     ae3:	81 ec 98 00 00 00    	sub    $0x98,%esp
+     ae9:	89 5d fc             	mov    %ebx,0xfffffffc(%ebp)
+     aec:	8b 45 0c             	mov    0xc(%ebp),%eax
+     aef:	8d 9d 68 ff ff ff    	lea    0xffffff68(%ebp),%ebx
+     af5:	c7 45 b8 01 00 00 00 	movl   $0x1,0xffffffb8(%ebp)
+     afc:	89 85 78 ff ff ff    	mov    %eax,0xffffff78(%ebp)
+     b02:	b8 01 00 00 00       	mov    $0x1,%eax
+     b07:	89 85 70 ff ff ff    	mov    %eax,0xffffff70(%ebp)
+     b0d:	8b 45 08             	mov    0x8(%ebp),%eax
+     b10:	8b 40 0c             	mov    0xc(%eax),%eax
+     b13:	cd 81                	int    $0x81
+     b15:	8b 5d fc             	mov    0xfffffffc(%ebp),%ebx
+     b18:	89 ec                	mov    %ebp,%esp
+     b1a:	5d                   	pop    %ebp
+     b1b:	c3                   	ret    
+     b1c:	8d 74 26 00          	lea    0x0(%esi,1),%esi
+
+00000b20 <_ZN2os14ProcessManager10RelinquishEv>:
+     b20:	55                   	push   %ebp
+     b21:	89 e5                	mov    %esp,%ebp
+     b23:	53                   	push   %ebx
+     b24:	8b 45 08             	mov    0x8(%ebp),%eax
+     b27:	31 db                	xor    %ebx,%ebx
+     b29:	8b 40 10             	mov    0x10(%eax),%eax
+     b2c:	cd 81                	int    $0x81
+     b2e:	5b                   	pop    %ebx
+     b2f:	5d                   	pop    %ebp
+     b30:	c3                   	ret    
+     b31:	90                   	nop    
+     b32:	90                   	nop    
+     b33:	90                   	nop    
+     b34:	90                   	nop    
+     b35:	90                   	nop    
+     b36:	90                   	nop    
+     b37:	90                   	nop    
+     b38:	90                   	nop    
+     b39:	90                   	nop    
+     b3a:	90                   	nop    
+     b3b:	90                   	nop    
+     b3c:	90                   	nop    
+     b3d:	90                   	nop    
+     b3e:	90                   	nop    
+     b3f:	90                   	nop    
+
+00000b40 <_ZN2os16InterruptManagerC2Ev>:
+     b40:	55                   	push   %ebp
+     b41:	89 e5                	mov    %esp,%ebp
+     b43:	83 ec 08             	sub    $0x8,%esp
+     b46:	89 74 24 04          	mov    %esi,0x4(%esp,1)
+     b4a:	8b 4d 08             	mov    0x8(%ebp),%ecx
+     b4d:	be b5 00 00 00       	mov    $0xb5,%esi
+			b4e: R_386_32	.rodata
+     b52:	89 1c 24             	mov    %ebx,(%esp,1)
+     b55:	89 f0                	mov    %esi,%eax
+     b57:	bb c6 00 00 00       	mov    $0xc6,%ebx
+			b58: R_386_32	.rodata
+     b5c:	cd 80                	int    $0x80
+     b5e:	bb d6 00 00 00       	mov    $0xd6,%ebx
+			b5f: R_386_32	.rodata
+     b63:	89 01                	mov    %eax,(%ecx)
+     b65:	89 f0                	mov    %esi,%eax
+     b67:	cd 80                	int    $0x80
+     b69:	89 41 04             	mov    %eax,0x4(%ecx)
+     b6c:	8b 1c 24             	mov    (%esp,1),%ebx
+     b6f:	8b 74 24 04          	mov    0x4(%esp,1),%esi
+     b73:	89 ec                	mov    %ebp,%esp
+     b75:	5d                   	pop    %ebp
+     b76:	c3                   	ret    
+     b77:	90                   	nop    
+     b78:	90                   	nop    
+     b79:	8d b4 26 00 00 00 00 	lea    0x0(%esi,1),%esi
+
+00000b80 <_ZN2os16InterruptManagerC1Ev>:
+     b80:	55                   	push   %ebp
+     b81:	89 e5                	mov    %esp,%ebp
+     b83:	83 ec 08             	sub    $0x8,%esp
+     b86:	89 74 24 04          	mov    %esi,0x4(%esp,1)
+     b8a:	8b 4d 08             	mov    0x8(%ebp),%ecx
+     b8d:	be b5 00 00 00       	mov    $0xb5,%esi
+			b8e: R_386_32	.rodata
+     b92:	89 1c 24             	mov    %ebx,(%esp,1)
+     b95:	89 f0                	mov    %esi,%eax
+     b97:	bb c6 00 00 00       	mov    $0xc6,%ebx
+			b98: R_386_32	.rodata
+     b9c:	cd 80                	int    $0x80
+     b9e:	bb d6 00 00 00       	mov    $0xd6,%ebx
+			b9f: R_386_32	.rodata
+     ba3:	89 01                	mov    %eax,(%ecx)
+     ba5:	89 f0                	mov    %esi,%eax
+     ba7:	cd 80                	int    $0x80
+     ba9:	89 41 04             	mov    %eax,0x4(%ecx)
+     bac:	8b 1c 24             	mov    (%esp,1),%ebx
+     baf:	8b 74 24 04          	mov    0x4(%esp,1),%esi
+     bb3:	89 ec                	mov    %ebp,%esp
+     bb5:	5d                   	pop    %ebp
+     bb6:	c3                   	ret    
+     bb7:	90                   	nop    
+     bb8:	90                   	nop    
+     bb9:	8d b4 26 00 00 00 00 	lea    0x0(%esi,1),%esi
+
+00000bc0 <_ZN2os16InterruptManagerD2Ev>:
+     bc0:	55                   	push   %ebp
+     bc1:	89 e5                	mov    %esp,%ebp
+     bc3:	5d                   	pop    %ebp
+     bc4:	c3                   	ret    
+     bc5:	90                   	nop    
+     bc6:	8d 76 00             	lea    0x0(%esi),%esi
+     bc9:	8d bc 27 00 00 00 00 	lea    0x0(%edi,1),%edi
+
+00000bd0 <_ZN2os16InterruptManagerD1Ev>:
+     bd0:	55                   	push   %ebp
+     bd1:	89 e5                	mov    %esp,%ebp
+     bd3:	5d                   	pop    %ebp
+     bd4:	c3                   	ret    
+     bd5:	90                   	nop    
+     bd6:	8d 76 00             	lea    0x0(%esi),%esi
+     bd9:	8d bc 27 00 00 00 00 	lea    0x0(%edi,1),%edi
+
+00000be0 <_ZN2os16InterruptManager13AttachHandlerEPcjPFjP12sCallStack_tE>:
+     be0:	55                   	push   %ebp
+     be1:	89 e5                	mov    %esp,%ebp
+     be3:	81 ec 98 00 00 00    	sub    $0x98,%esp
+     be9:	89 5d fc             	mov    %ebx,0xfffffffc(%ebp)
+     bec:	8b 45 0c             	mov    0xc(%ebp),%eax
+     bef:	8d 9d 68 ff ff ff    	lea    0xffffff68(%ebp),%ebx
+     bf5:	c7 45 b8 03 00 00 00 	movl   $0x3,0xffffffb8(%ebp)
+     bfc:	89 85 78 ff ff ff    	mov    %eax,0xffffff78(%ebp)
+     c02:	8b 45 10             	mov    0x10(%ebp),%eax
+     c05:	c7 45 bc 01 00 00 00 	movl   $0x1,0xffffffbc(%ebp)
+     c0c:	c7 45 c0 04 00 00 00 	movl   $0x4,0xffffffc0(%ebp)
+     c13:	89 85 7c ff ff ff    	mov    %eax,0xffffff7c(%ebp)
+     c19:	8b 45 14             	mov    0x14(%ebp),%eax
+     c1c:	89 45 80             	mov    %eax,0xffffff80(%ebp)
+     c1f:	b8 03 00 00 00       	mov    $0x3,%eax
+     c24:	89 85 70 ff ff ff    	mov    %eax,0xffffff70(%ebp)
+     c2a:	8b 45 08             	mov    0x8(%ebp),%eax
+     c2d:	8b 40 04             	mov    0x4(%eax),%eax
+     c30:	cd 81                	int    $0x81
+     c32:	8b 5d fc             	mov    0xfffffffc(%ebp),%ebx
+     c35:	89 ec                	mov    %ebp,%esp
+     c37:	5d                   	pop    %ebp
+     c38:	c3                   	ret    
+     c39:	90                   	nop    
+     c3a:	8d b6 00 00 00 00    	lea    0x0(%esi),%esi
+
+00000c40 <_ZN2os16InterruptManager15EnableInterruptEj>:
+     c40:	55                   	push   %ebp
+     c41:	89 e5                	mov    %esp,%ebp
+     c43:	81 ec 98 00 00 00    	sub    $0x98,%esp
+     c49:	89 5d fc             	mov    %ebx,0xfffffffc(%ebp)
+     c4c:	8b 45 0c             	mov    0xc(%ebp),%eax
+     c4f:	8d 9d 68 ff ff ff    	lea    0xffffff68(%ebp),%ebx
+     c55:	c7 45 b8 01 00 00 00 	movl   $0x1,0xffffffb8(%ebp)
+     c5c:	89 85 78 ff ff ff    	mov    %eax,0xffffff78(%ebp)
+     c62:	b8 01 00 00 00       	mov    $0x1,%eax
+     c67:	89 85 70 ff ff ff    	mov    %eax,0xffffff70(%ebp)
+     c6d:	8b 45 08             	mov    0x8(%ebp),%eax
+     c70:	8b 00                	mov    (%eax),%eax
+     c72:	cd 81                	int    $0x81
+     c74:	8b 5d fc             	mov    0xfffffffc(%ebp),%ebx
+     c77:	89 ec                	mov    %ebp,%esp
+     c79:	5d                   	pop    %ebp
+     c7a:	c3                   	ret    
+     c7b:	90                   	nop    
+     c7c:	90                   	nop    
+     c7d:	90                   	nop    
+     c7e:	90                   	nop    
+     c7f:	90                   	nop    
+
+00000c80 <_ZN2os13DeviceManagerC2Ev>:
+     c80:	55                   	push   %ebp
+     c81:	89 e5                	mov    %esp,%ebp
+     c83:	83 ec 08             	sub    $0x8,%esp
+     c86:	89 74 24 04          	mov    %esi,0x4(%esp,1)
+     c8a:	8b 4d 08             	mov    0x8(%ebp),%ecx
+     c8d:	be e4 00 00 00       	mov    $0xe4,%esi
+			c8e: R_386_32	.rodata
+     c92:	89 1c 24             	mov    %ebx,(%esp,1)
+     c95:	89 f0                	mov    %esi,%eax
+     c97:	bb f2 00 00 00       	mov    $0xf2,%ebx
+			c98: R_386_32	.rodata
+     c9c:	cd 80                	int    $0x80
+     c9e:	bb 01 01 00 00       	mov    $0x101,%ebx
+			c9f: R_386_32	.rodata
+     ca3:	89 01                	mov    %eax,(%ecx)
+     ca5:	89 f0                	mov    %esi,%eax
+     ca7:	cd 80                	int    $0x80
+     ca9:	89 41 04             	mov    %eax,0x4(%ecx)
+     cac:	8b 1c 24             	mov    (%esp,1),%ebx
+     caf:	8b 74 24 04          	mov    0x4(%esp,1),%esi
+     cb3:	89 ec                	mov    %ebp,%esp
+     cb5:	5d                   	pop    %ebp
+     cb6:	c3                   	ret    
+     cb7:	90                   	nop    
+     cb8:	90                   	nop    
+     cb9:	8d b4 26 00 00 00 00 	lea    0x0(%esi,1),%esi
+
+00000cc0 <_ZN2os13DeviceManagerC1Ev>:
+     cc0:	55                   	push   %ebp
+     cc1:	89 e5                	mov    %esp,%ebp
+     cc3:	83 ec 08             	sub    $0x8,%esp
+     cc6:	89 74 24 04          	mov    %esi,0x4(%esp,1)
+     cca:	8b 4d 08             	mov    0x8(%ebp),%ecx
+     ccd:	be e4 00 00 00       	mov    $0xe4,%esi
+			cce: R_386_32	.rodata
+     cd2:	89 1c 24             	mov    %ebx,(%esp,1)
+     cd5:	89 f0                	mov    %esi,%eax
+     cd7:	bb f2 00 00 00       	mov    $0xf2,%ebx
+			cd8: R_386_32	.rodata
+     cdc:	cd 80                	int    $0x80
+     cde:	bb 01 01 00 00       	mov    $0x101,%ebx
+			cdf: R_386_32	.rodata
+     ce3:	89 01                	mov    %eax,(%ecx)
+     ce5:	89 f0                	mov    %esi,%eax
+     ce7:	cd 80                	int    $0x80
+     ce9:	89 41 04             	mov    %eax,0x4(%ecx)
+     cec:	8b 1c 24             	mov    (%esp,1),%ebx
+     cef:	8b 74 24 04          	mov    0x4(%esp,1),%esi
+     cf3:	89 ec                	mov    %ebp,%esp
+     cf5:	5d                   	pop    %ebp
+     cf6:	c3                   	ret    
+     cf7:	90                   	nop    
+     cf8:	90                   	nop    
+     cf9:	8d b4 26 00 00 00 00 	lea    0x0(%esi,1),%esi
+
+00000d00 <_ZN2os13DeviceManagerD2Ev>:
+     d00:	55                   	push   %ebp
+     d01:	89 e5                	mov    %esp,%ebp
+     d03:	5d                   	pop    %ebp
+     d04:	c3                   	ret    
+     d05:	90                   	nop    
+     d06:	8d 76 00             	lea    0x0(%esi),%esi
+     d09:	8d bc 27 00 00 00 00 	lea    0x0(%edi,1),%edi
+
+00000d10 <_ZN2os13DeviceManagerD1Ev>:
+     d10:	55                   	push   %ebp
+     d11:	89 e5                	mov    %esp,%ebp
+     d13:	5d                   	pop    %ebp
+     d14:	c3                   	ret    
+     d15:	90                   	nop    
+     d16:	8d 76 00             	lea    0x0(%esi),%esi
+     d19:	8d bc 27 00 00 00 00 	lea    0x0(%edi,1),%edi
+
+00000d20 <_ZN2os13DeviceManager14RegisterDeviceEPc>:
+     d20:	55                   	push   %ebp
+     d21:	89 e5                	mov    %esp,%ebp
+     d23:	81 ec 98 00 00 00    	sub    $0x98,%esp
+     d29:	89 5d fc             	mov    %ebx,0xfffffffc(%ebp)
+     d2c:	8b 45 0c             	mov    0xc(%ebp),%eax
+     d2f:	8d 9d 68 ff ff ff    	lea    0xffffff68(%ebp),%ebx
+     d35:	c7 45 b8 03 00 00 00 	movl   $0x3,0xffffffb8(%ebp)
+     d3c:	89 85 78 ff ff ff    	mov    %eax,0xffffff78(%ebp)
+     d42:	b8 01 00 00 00       	mov    $0x1,%eax
+     d47:	89 85 70 ff ff ff    	mov    %eax,0xffffff70(%ebp)
+     d4d:	8b 45 08             	mov    0x8(%ebp),%eax
+     d50:	8b 00                	mov    (%eax),%eax
+     d52:	cd 81                	int    $0x81
+     d54:	8b 5d fc             	mov    0xfffffffc(%ebp),%ebx
+     d57:	89 ec                	mov    %ebp,%esp
+     d59:	5d                   	pop    %ebp
+     d5a:	c3                   	ret    
+     d5b:	90                   	nop    
+     d5c:	8d 74 26 00          	lea    0x0(%esi,1),%esi
+
+00000d60 <_ZN2os13DeviceManager14AttachResourceEPcjj>:
+     d60:	55                   	push   %ebp
+     d61:	89 e5                	mov    %esp,%ebp
+     d63:	81 ec 98 00 00 00    	sub    $0x98,%esp
+     d69:	89 5d fc             	mov    %ebx,0xfffffffc(%ebp)
+     d6c:	8b 45 0c             	mov    0xc(%ebp),%eax
+     d6f:	8d 9d 68 ff ff ff    	lea    0xffffff68(%ebp),%ebx
+     d75:	c7 45 b8 03 00 00 00 	movl   $0x3,0xffffffb8(%ebp)
+     d7c:	89 85 78 ff ff ff    	mov    %eax,0xffffff78(%ebp)
+     d82:	8b 45 10             	mov    0x10(%ebp),%eax
+     d85:	c7 45 bc 01 00 00 00 	movl   $0x1,0xffffffbc(%ebp)
+     d8c:	c7 45 c0 01 00 00 00 	movl   $0x1,0xffffffc0(%ebp)
+     d93:	89 85 7c ff ff ff    	mov    %eax,0xffffff7c(%ebp)
+     d99:	8b 45 14             	mov    0x14(%ebp),%eax
+     d9c:	89 45 80             	mov    %eax,0xffffff80(%ebp)
+     d9f:	b8 03 00 00 00       	mov    $0x3,%eax
+     da4:	89 85 70 ff ff ff    	mov    %eax,0xffffff70(%ebp)
+     daa:	8b 45 08             	mov    0x8(%ebp),%eax
+     dad:	8b 40 04             	mov    0x4(%eax),%eax
+     db0:	cd 81                	int    $0x81
+     db2:	8b 5d fc             	mov    0xfffffffc(%ebp),%ebx
+     db5:	89 ec                	mov    %ebp,%esp
+     db7:	5d                   	pop    %ebp
+     db8:	c3                   	ret    
+     db9:	90                   	nop    
+     dba:	90                   	nop    
+     dbb:	90                   	nop    
+     dbc:	90                   	nop    
+     dbd:	90                   	nop    
+     dbe:	90                   	nop    
+     dbf:	90                   	nop    
+
+00000dc0 <_ZN2os14MessageManagerC2Ev>:
+     dc0:	55                   	push   %ebp
+     dc1:	89 e5                	mov    %esp,%ebp
+     dc3:	83 ec 08             	sub    $0x8,%esp
+     dc6:	89 74 24 04          	mov    %esi,0x4(%esp,1)
+     dca:	8b 4d 08             	mov    0x8(%ebp),%ecx
+     dcd:	be 10 01 00 00       	mov    $0x110,%esi
+			dce: R_386_32	.rodata
+     dd2:	89 1c 24             	mov    %ebx,(%esp,1)
+     dd5:	89 f0                	mov    %esi,%eax
+     dd7:	bb 1f 01 00 00       	mov    $0x11f,%ebx
+			dd8: R_386_32	.rodata
+     ddc:	cd 80                	int    $0x80
+     dde:	bb 31 01 00 00       	mov    $0x131,%ebx
+			ddf: R_386_32	.rodata
+     de3:	89 01                	mov    %eax,(%ecx)
+     de5:	89 f0                	mov    %esi,%eax
+     de7:	cd 80                	int    $0x80
+     de9:	89 41 04             	mov    %eax,0x4(%ecx)
+     dec:	8b 1c 24             	mov    (%esp,1),%ebx
+     def:	8b 74 24 04          	mov    0x4(%esp,1),%esi
+     df3:	89 ec                	mov    %ebp,%esp
+     df5:	5d                   	pop    %ebp
+     df6:	c3                   	ret    
+     df7:	90                   	nop    
+     df8:	90                   	nop    
+     df9:	8d b4 26 00 00 00 00 	lea    0x0(%esi,1),%esi
+
+00000e00 <_ZN2os14MessageManagerC1Ev>:
+     e00:	55                   	push   %ebp
+     e01:	89 e5                	mov    %esp,%ebp
+     e03:	83 ec 08             	sub    $0x8,%esp
+     e06:	89 74 24 04          	mov    %esi,0x4(%esp,1)
+     e0a:	8b 4d 08             	mov    0x8(%ebp),%ecx
+     e0d:	be 10 01 00 00       	mov    $0x110,%esi
+			e0e: R_386_32	.rodata
+     e12:	89 1c 24             	mov    %ebx,(%esp,1)
+     e15:	89 f0                	mov    %esi,%eax
+     e17:	bb 1f 01 00 00       	mov    $0x11f,%ebx
+			e18: R_386_32	.rodata
+     e1c:	cd 80                	int    $0x80
+     e1e:	bb 31 01 00 00       	mov    $0x131,%ebx
+			e1f: R_386_32	.rodata
+     e23:	89 01                	mov    %eax,(%ecx)
+     e25:	89 f0                	mov    %esi,%eax
+     e27:	cd 80                	int    $0x80
+     e29:	89 41 04             	mov    %eax,0x4(%ecx)
+     e2c:	8b 1c 24             	mov    (%esp,1),%ebx
+     e2f:	8b 74 24 04          	mov    0x4(%esp,1),%esi
+     e33:	89 ec                	mov    %ebp,%esp
+     e35:	5d                   	pop    %ebp
+     e36:	c3                   	ret    
+     e37:	90                   	nop    
+     e38:	90                   	nop    
+     e39:	8d b4 26 00 00 00 00 	lea    0x0(%esi,1),%esi
+
+00000e40 <_ZN2os14MessageManagerD2Ev>:
+     e40:	55                   	push   %ebp
+     e41:	89 e5                	mov    %esp,%ebp
+     e43:	5d                   	pop    %ebp
+     e44:	c3                   	ret    
+     e45:	90                   	nop    
+     e46:	8d 76 00             	lea    0x0(%esi),%esi
+     e49:	8d bc 27 00 00 00 00 	lea    0x0(%edi,1),%edi
+
+00000e50 <_ZN2os14MessageManagerD1Ev>:
+     e50:	55                   	push   %ebp
+     e51:	89 e5                	mov    %esp,%ebp
+     e53:	5d                   	pop    %ebp
+     e54:	c3                   	ret    
+     e55:	90                   	nop    
+     e56:	8d 76 00             	lea    0x0(%esi),%esi
+     e59:	8d bc 27 00 00 00 00 	lea    0x0(%edi,1),%edi
+
+00000e60 <_ZN2os14MessageManager17CreateMessagePortEv>:
+     e60:	55                   	push   %ebp
+     e61:	89 e5                	mov    %esp,%ebp
+     e63:	53                   	push   %ebx
+     e64:	8b 45 08             	mov    0x8(%ebp),%eax
+     e67:	31 db                	xor    %ebx,%ebx
+     e69:	8b 00                	mov    (%eax),%eax
+     e6b:	cd 81                	int    $0x81
+     e6d:	5b                   	pop    %ebx
+     e6e:	5d                   	pop    %ebp
+     e6f:	c3                   	ret    
+
+00000e70 <_ZN2os14MessageManager22GetMessagePortThreadIDEPcPj>:
+     e70:	55                   	push   %ebp
+     e71:	89 e5                	mov    %esp,%ebp
+     e73:	81 ec 98 00 00 00    	sub    $0x98,%esp
+     e79:	89 5d fc             	mov    %ebx,0xfffffffc(%ebp)
+     e7c:	8b 45 0c             	mov    0xc(%ebp),%eax
+     e7f:	8d 9d 68 ff ff ff    	lea    0xffffff68(%ebp),%ebx
+     e85:	c7 45 b8 03 00 00 00 	movl   $0x3,0xffffffb8(%ebp)
+     e8c:	89 85 78 ff ff ff    	mov    %eax,0xffffff78(%ebp)
+     e92:	8b 45 10             	mov    0x10(%ebp),%eax
+     e95:	c7 45 bc 02 00 00 00 	movl   $0x2,0xffffffbc(%ebp)
+     e9c:	89 85 7c ff ff ff    	mov    %eax,0xffffff7c(%ebp)
+     ea2:	b8 02 00 00 00       	mov    $0x2,%eax
+     ea7:	89 85 70 ff ff ff    	mov    %eax,0xffffff70(%ebp)
+     ead:	8b 45 08             	mov    0x8(%ebp),%eax
+     eb0:	8b 40 04             	mov    0x4(%eax),%eax
+     eb3:	cd 81                	int    $0x81
+     eb5:	8b 5d fc             	mov    0xfffffffc(%ebp),%ebx
+     eb8:	89 ec                	mov    %ebp,%esp
+     eba:	5d                   	pop    %ebp
+     ebb:	c3                   	ret    
+     ebc:	8d 74 26 00          	lea    0x0(%esi,1),%esi
+
+00000ec0 <_ZN2os11MessagePortC2Ev>:
+     ec0:	55                   	push   %ebp
+     ec1:	89 e5                	mov    %esp,%ebp
+     ec3:	83 ec 08             	sub    $0x8,%esp
+     ec6:	89 74 24 04          	mov    %esi,0x4(%esp,1)
+     eca:	8b 4d 08             	mov    0x8(%ebp),%ecx
+     ecd:	be 10 01 00 00       	mov    $0x110,%esi
+			ece: R_386_32	.rodata
+     ed2:	89 1c 24             	mov    %ebx,(%esp,1)
+     ed5:	89 f0                	mov    %esi,%eax
+     ed7:	bb 48 01 00 00       	mov    $0x148,%ebx
+			ed8: R_386_32	.rodata
+     edc:	cd 80                	int    $0x80
+     ede:	bb 56 01 00 00       	mov    $0x156,%ebx
+			edf: R_386_32	.rodata
+     ee3:	89 41 10             	mov    %eax,0x10(%ecx)
+     ee6:	89 f0                	mov    %esi,%eax
+     ee8:	cd 80                	int    $0x80
+     eea:	bb 67 01 00 00       	mov    $0x167,%ebx
+			eeb: R_386_32	.rodata
+     eef:	89 41 0c             	mov    %eax,0xc(%ecx)
+     ef2:	89 f0                	mov    %esi,%eax
+     ef4:	cd 80                	int    $0x80
+     ef6:	bb 72 01 00 00       	mov    $0x172,%ebx
+			ef7: R_386_32	.rodata
+     efb:	89 41 08             	mov    %eax,0x8(%ecx)
+     efe:	89 f0                	mov    %esi,%eax
+     f00:	cd 80                	int    $0x80
+     f02:	bb 7e 01 00 00       	mov    $0x17e,%ebx
+			f03: R_386_32	.rodata
+     f07:	89 41 14             	mov    %eax,0x14(%ecx)
+     f0a:	89 f0                	mov    %esi,%eax
+     f0c:	cd 80                	int    $0x80
+     f0e:	89 41 18             	mov    %eax,0x18(%ecx)
+     f11:	8b 1c 24             	mov    (%esp,1),%ebx
+     f14:	8b 74 24 04          	mov    0x4(%esp,1),%esi
+     f18:	89 ec                	mov    %ebp,%esp
+     f1a:	5d                   	pop    %ebp
+     f1b:	c3                   	ret    
+     f1c:	8d 74 26 00          	lea    0x0(%esi,1),%esi
+
+00000f20 <_ZN2os11MessagePortC1Ev>:
+     f20:	55                   	push   %ebp
+     f21:	89 e5                	mov    %esp,%ebp
+     f23:	83 ec 08             	sub    $0x8,%esp
+     f26:	89 74 24 04          	mov    %esi,0x4(%esp,1)
+     f2a:	8b 4d 08             	mov    0x8(%ebp),%ecx
+     f2d:	be 10 01 00 00       	mov    $0x110,%esi
+			f2e: R_386_32	.rodata
+     f32:	89 1c 24             	mov    %ebx,(%esp,1)
+     f35:	89 f0                	mov    %esi,%eax
+     f37:	bb 48 01 00 00       	mov    $0x148,%ebx
+			f38: R_386_32	.rodata
+     f3c:	cd 80                	int    $0x80
+     f3e:	bb 56 01 00 00       	mov    $0x156,%ebx
+			f3f: R_386_32	.rodata
+     f43:	89 41 10             	mov    %eax,0x10(%ecx)
+     f46:	89 f0                	mov    %esi,%eax
+     f48:	cd 80                	int    $0x80
+     f4a:	bb 67 01 00 00       	mov    $0x167,%ebx
+			f4b: R_386_32	.rodata
+     f4f:	89 41 0c             	mov    %eax,0xc(%ecx)
+     f52:	89 f0                	mov    %esi,%eax
+     f54:	cd 80                	int    $0x80
+     f56:	bb 72 01 00 00       	mov    $0x172,%ebx
+			f57: R_386_32	.rodata
+     f5b:	89 41 08             	mov    %eax,0x8(%ecx)
+     f5e:	89 f0                	mov    %esi,%eax
+     f60:	cd 80                	int    $0x80
+     f62:	bb 7e 01 00 00       	mov    $0x17e,%ebx
+			f63: R_386_32	.rodata
+     f67:	89 41 14             	mov    %eax,0x14(%ecx)
+     f6a:	89 f0                	mov    %esi,%eax
+     f6c:	cd 80                	int    $0x80
+     f6e:	89 41 18             	mov    %eax,0x18(%ecx)
+     f71:	8b 1c 24             	mov    (%esp,1),%ebx
+     f74:	8b 74 24 04          	mov    0x4(%esp,1),%esi
+     f78:	89 ec                	mov    %ebp,%esp
+     f7a:	5d                   	pop    %ebp
+     f7b:	c3                   	ret    
+     f7c:	8d 74 26 00          	lea    0x0(%esi,1),%esi
+
+00000f80 <_ZN2os11MessagePortD2Ev>:
+     f80:	55                   	push   %ebp
+     f81:	89 e5                	mov    %esp,%ebp
+     f83:	5d                   	pop    %ebp
+     f84:	c3                   	ret    
+     f85:	90                   	nop    
+     f86:	8d 76 00             	lea    0x0(%esi),%esi
+     f89:	8d bc 27 00 00 00 00 	lea    0x0(%edi,1),%edi
+
+00000f90 <_ZN2os11MessagePortD1Ev>:
+     f90:	55                   	push   %ebp
+     f91:	89 e5                	mov    %esp,%ebp
+     f93:	5d                   	pop    %ebp
+     f94:	c3                   	ret    
+     f95:	90                   	nop    
+     f96:	8d 76 00             	lea    0x0(%esi),%esi
+     f99:	8d bc 27 00 00 00 00 	lea    0x0(%edi,1),%edi
+
+00000fa0 <_ZN2os11MessagePort10GetMessageEv>:
+     fa0:	55                   	push   %ebp
+     fa1:	89 e5                	mov    %esp,%ebp
+     fa3:	81 ec 98 00 00 00    	sub    $0x98,%esp
+     fa9:	89 5d fc             	mov    %ebx,0xfffffffc(%ebp)
+     fac:	8b 55 08             	mov    0x8(%ebp),%edx
+     faf:	b8 02 00 00 00       	mov    $0x2,%eax
+     fb4:	c7 45 b8 02 00 00 00 	movl   $0x2,0xffffffb8(%ebp)
+     fbb:	8d 9d 68 ff ff ff    	lea    0xffffff68(%ebp),%ebx
+     fc1:	c7 45 bc 02 00 00 00 	movl   $0x2,0xffffffbc(%ebp)
+     fc8:	8d 4a 04             	lea    0x4(%edx),%ecx
+     fcb:	89 95 78 ff ff ff    	mov    %edx,0xffffff78(%ebp)
+     fd1:	89 8d 7c ff ff ff    	mov    %ecx,0xffffff7c(%ebp)
+     fd7:	89 85 70 ff ff ff    	mov    %eax,0xffffff70(%ebp)
+     fdd:	8b 42 08             	mov    0x8(%edx),%eax
+     fe0:	cd 81                	int    $0x81
+     fe2:	8b 5d fc             	mov    0xfffffffc(%ebp),%ebx
+     fe5:	89 ec                	mov    %ebp,%esp
+     fe7:	5d                   	pop    %ebp
+     fe8:	c3                   	ret    
+     fe9:	90                   	nop    
+     fea:	8d b6 00 00 00 00    	lea    0x0(%esi),%esi
+
+00000ff0 <_ZN2os11MessagePort16MessageProcessedEv>:
+     ff0:	55                   	push   %ebp
+     ff1:	89 e5                	mov    %esp,%ebp
+     ff3:	53                   	push   %ebx
+     ff4:	8b 45 08             	mov    0x8(%ebp),%eax
+     ff7:	31 db                	xor    %ebx,%ebx
+     ff9:	8b 40 0c             	mov    0xc(%eax),%eax
+     ffc:	cd 81                	int    $0x81
+     ffe:	5b                   	pop    %ebx
+     fff:	5d                   	pop    %ebp
+    1000:	c3                   	ret    
+    1001:	90                   	nop    
+    1002:	8d b4 26 00 00 00 00 	lea    0x0(%esi,1),%esi
+    1009:	8d bc 27 00 00 00 00 	lea    0x0(%edi,1),%edi
+
+00001010 <_ZN2os11MessagePort13CreateMessageEjj>:
+    1010:	55                   	push   %ebp
+    1011:	89 e5                	mov    %esp,%ebp
+    1013:	81 ec 98 00 00 00    	sub    $0x98,%esp
+    1019:	89 5d fc             	mov    %ebx,0xfffffffc(%ebp)
+    101c:	8b 45 0c             	mov    0xc(%ebp),%eax
+    101f:	8d 9d 68 ff ff ff    	lea    0xffffff68(%ebp),%ebx
+    1025:	c7 45 b8 01 00 00 00 	movl   $0x1,0xffffffb8(%ebp)
+    102c:	89 85 78 ff ff ff    	mov    %eax,0xffffff78(%ebp)
+    1032:	8b 45 10             	mov    0x10(%ebp),%eax
+    1035:	c7 45 bc 01 00 00 00 	movl   $0x1,0xffffffbc(%ebp)
+    103c:	89 85 7c ff ff ff    	mov    %eax,0xffffff7c(%ebp)
+    1042:	b8 02 00 00 00       	mov    $0x2,%eax
+    1047:	89 85 70 ff ff ff    	mov    %eax,0xffffff70(%ebp)
+    104d:	8b 45 08             	mov    0x8(%ebp),%eax
+    1050:	8b 40 10             	mov    0x10(%eax),%eax
+    1053:	cd 81                	int    $0x81
+    1055:	8b 5d fc             	mov    0xfffffffc(%ebp),%ebx
+    1058:	89 ec                	mov    %ebp,%esp
+    105a:	5d                   	pop    %ebp
+    105b:	c3                   	ret    
+    105c:	8d 74 26 00          	lea    0x0(%esi,1),%esi
+
+00001060 <_ZN2os11MessagePort11SendMessageEj>:
+    1060:	55                   	push   %ebp
+    1061:	89 e5                	mov    %esp,%ebp
+    1063:	81 ec 98 00 00 00    	sub    $0x98,%esp
+    1069:	89 5d fc             	mov    %ebx,0xfffffffc(%ebp)
+    106c:	8b 45 0c             	mov    0xc(%ebp),%eax
+    106f:	8d 9d 68 ff ff ff    	lea    0xffffff68(%ebp),%ebx
+    1075:	c7 45 b8 01 00 00 00 	movl   $0x1,0xffffffb8(%ebp)
+    107c:	89 85 78 ff ff ff    	mov    %eax,0xffffff78(%ebp)
+    1082:	b8 01 00 00 00       	mov    $0x1,%eax
+    1087:	89 85 70 ff ff ff    	mov    %eax,0xffffff70(%ebp)
+    108d:	8b 45 08             	mov    0x8(%ebp),%eax
+    1090:	8b 40 14             	mov    0x14(%eax),%eax
+    1093:	cd 81                	int    $0x81
+    1095:	8b 5d fc             	mov    0xfffffffc(%ebp),%ebx
+    1098:	89 ec                	mov    %ebp,%esp
+    109a:	5d                   	pop    %ebp
+    109b:	c3                   	ret    
+    109c:	8d 74 26 00          	lea    0x0(%esi,1),%esi
+
+000010a0 <_ZN2os11MessagePort21GetMessageQueueLengthEPj>:
+    10a0:	55                   	push   %ebp
+    10a1:	89 e5                	mov    %esp,%ebp
+    10a3:	81 ec 98 00 00 00    	sub    $0x98,%esp
+    10a9:	89 5d fc             	mov    %ebx,0xfffffffc(%ebp)
+    10ac:	8b 45 0c             	mov    0xc(%ebp),%eax
+    10af:	8d 9d 68 ff ff ff    	lea    0xffffff68(%ebp),%ebx
+    10b5:	c7 45 b8 02 00 00 00 	movl   $0x2,0xffffffb8(%ebp)
+    10bc:	89 85 78 ff ff ff    	mov    %eax,0xffffff78(%ebp)
+    10c2:	b8 01 00 00 00       	mov    $0x1,%eax
+    10c7:	89 85 70 ff ff ff    	mov    %eax,0xffffff70(%ebp)
+    10cd:	8b 45 08             	mov    0x8(%ebp),%eax
+    10d0:	8b 40 18             	mov    0x18(%eax),%eax
+    10d3:	cd 81                	int    $0x81
+    10d5:	8b 5d fc             	mov    0xfffffffc(%ebp),%ebx
+    10d8:	89 ec                	mov    %ebp,%esp
+    10da:	5d                   	pop    %ebp
+    10db:	c3                   	ret    
+    10dc:	90                   	nop    
+    10dd:	90                   	nop    
+    10de:	90                   	nop    
+    10df:	90                   	nop    
+
+000010e0 <_ZN2os13ModuleManagerC2Ev>:
+    10e0:	55                   	push   %ebp
+    10e1:	89 e5                	mov    %esp,%ebp
+    10e3:	83 ec 08             	sub    $0x8,%esp
+    10e6:	89 74 24 04          	mov    %esi,0x4(%esp,1)
+    10ea:	8b 4d 08             	mov    0x8(%ebp),%ecx
+    10ed:	be 94 01 00 00       	mov    $0x194,%esi
+			10ee: R_386_32	.rodata
+    10f2:	89 1c 24             	mov    %ebx,(%esp,1)
+    10f5:	89 f0                	mov    %esi,%eax
+    10f7:	bb a2 01 00 00       	mov    $0x1a2,%ebx
+			10f8: R_386_32	.rodata
+    10fc:	cd 80                	int    $0x80
+    10fe:	bb af 01 00 00       	mov    $0x1af,%ebx
+			10ff: R_386_32	.rodata
+    1103:	89 01                	mov    %eax,(%ecx)
+    1105:	89 f0                	mov    %esi,%eax
+    1107:	cd 80                	int    $0x80
+    1109:	89 41 04             	mov    %eax,0x4(%ecx)
+    110c:	8b 1c 24             	mov    (%esp,1),%ebx
+    110f:	8b 74 24 04          	mov    0x4(%esp,1),%esi
+    1113:	89 ec                	mov    %ebp,%esp
+    1115:	5d                   	pop    %ebp
+    1116:	c3                   	ret    
+    1117:	90                   	nop    
+    1118:	90                   	nop    
+    1119:	8d b4 26 00 00 00 00 	lea    0x0(%esi,1),%esi
+
+00001120 <_ZN2os13ModuleManagerC1Ev>:
+    1120:	55                   	push   %ebp
+    1121:	89 e5                	mov    %esp,%ebp
+    1123:	83 ec 08             	sub    $0x8,%esp
+    1126:	89 74 24 04          	mov    %esi,0x4(%esp,1)
+    112a:	8b 4d 08             	mov    0x8(%ebp),%ecx
+    112d:	be 94 01 00 00       	mov    $0x194,%esi
+			112e: R_386_32	.rodata
+    1132:	89 1c 24             	mov    %ebx,(%esp,1)
+    1135:	89 f0                	mov    %esi,%eax
+    1137:	bb a2 01 00 00       	mov    $0x1a2,%ebx
+			1138: R_386_32	.rodata
+    113c:	cd 80                	int    $0x80
+    113e:	bb af 01 00 00       	mov    $0x1af,%ebx
+			113f: R_386_32	.rodata
+    1143:	89 01                	mov    %eax,(%ecx)
+    1145:	89 f0                	mov    %esi,%eax
+    1147:	cd 80                	int    $0x80
+    1149:	89 41 04             	mov    %eax,0x4(%ecx)
+    114c:	8b 1c 24             	mov    (%esp,1),%ebx
+    114f:	8b 74 24 04          	mov    0x4(%esp,1),%esi
+    1153:	89 ec                	mov    %ebp,%esp
+    1155:	5d                   	pop    %ebp
+    1156:	c3                   	ret    
+    1157:	90                   	nop    
+    1158:	90                   	nop    
+    1159:	8d b4 26 00 00 00 00 	lea    0x0(%esi,1),%esi
+
+00001160 <_ZN2os13ModuleManagerD2Ev>:
+    1160:	55                   	push   %ebp
+    1161:	89 e5                	mov    %esp,%ebp
+    1163:	5d                   	pop    %ebp
+    1164:	c3                   	ret    
+    1165:	90                   	nop    
+    1166:	8d 76 00             	lea    0x0(%esi),%esi
+    1169:	8d bc 27 00 00 00 00 	lea    0x0(%edi,1),%edi
+
+00001170 <_ZN2os13ModuleManagerD1Ev>:
+    1170:	55                   	push   %ebp
+    1171:	89 e5                	mov    %esp,%ebp
+    1173:	5d                   	pop    %ebp
+    1174:	c3                   	ret    
+    1175:	90                   	nop    
+    1176:	8d 76 00             	lea    0x0(%esi),%esi
+    1179:	8d bc 27 00 00 00 00 	lea    0x0(%edi,1),%edi
+
+00001180 <_ZN2os13ModuleManager12CreateModuleEPc>:
+    1180:	55                   	push   %ebp
+    1181:	89 e5                	mov    %esp,%ebp
+    1183:	81 ec 98 00 00 00    	sub    $0x98,%esp
+    1189:	89 5d fc             	mov    %ebx,0xfffffffc(%ebp)
+    118c:	8b 45 0c             	mov    0xc(%ebp),%eax
+    118f:	8d 9d 68 ff ff ff    	lea    0xffffff68(%ebp),%ebx
+    1195:	c7 45 b8 03 00 00 00 	movl   $0x3,0xffffffb8(%ebp)
+    119c:	89 85 78 ff ff ff    	mov    %eax,0xffffff78(%ebp)
+    11a2:	b8 01 00 00 00       	mov    $0x1,%eax
+    11a7:	89 85 70 ff ff ff    	mov    %eax,0xffffff70(%ebp)
+    11ad:	8b 45 08             	mov    0x8(%ebp),%eax
+    11b0:	8b 00                	mov    (%eax),%eax
+    11b2:	cd 81                	int    $0x81
+    11b4:	8b 5d fc             	mov    0xfffffffc(%ebp),%ebx
+    11b7:	89 ec                	mov    %ebp,%esp
+    11b9:	5d                   	pop    %ebp
+    11ba:	c3                   	ret    
+    11bb:	90                   	nop    
+    11bc:	8d 74 26 00          	lea    0x0(%esi,1),%esi
+
+000011c0 <_ZN2os13ModuleManager16CreateModuleCallEPcS1_PFjP12sCallStack_tP19sParameterPackage_tE>:
+    11c0:	55                   	push   %ebp
+    11c1:	89 e5                	mov    %esp,%ebp
+    11c3:	81 ec 98 00 00 00    	sub    $0x98,%esp
+    11c9:	89 5d fc             	mov    %ebx,0xfffffffc(%ebp)
+    11cc:	8b 45 0c             	mov    0xc(%ebp),%eax
+    11cf:	8d 9d 68 ff ff ff    	lea    0xffffff68(%ebp),%ebx
+    11d5:	c7 45 b8 03 00 00 00 	movl   $0x3,0xffffffb8(%ebp)
+    11dc:	89 85 78 ff ff ff    	mov    %eax,0xffffff78(%ebp)
+    11e2:	8b 45 10             	mov    0x10(%ebp),%eax
+    11e5:	c7 45 bc 03 00 00 00 	movl   $0x3,0xffffffbc(%ebp)
+    11ec:	c7 45 c0 04 00 00 00 	movl   $0x4,0xffffffc0(%ebp)
+    11f3:	89 85 7c ff ff ff    	mov    %eax,0xffffff7c(%ebp)
+    11f9:	8b 45 14             	mov    0x14(%ebp),%eax
+    11fc:	89 45 80             	mov    %eax,0xffffff80(%ebp)
+    11ff:	b8 03 00 00 00       	mov    $0x3,%eax
+    1204:	89 85 70 ff ff ff    	mov    %eax,0xffffff70(%ebp)
+    120a:	8b 45 08             	mov    0x8(%ebp),%eax
+    120d:	8b 40 04             	mov    0x4(%eax),%eax
+    1210:	cd 81                	int    $0x81
+    1212:	8b 5d fc             	mov    0xfffffffc(%ebp),%ebx
+    1215:	89 ec                	mov    %ebp,%esp
+    1217:	5d                   	pop    %ebp
+    1218:	c3                   	ret    
+	...
+Disassembly of section .rodata:
+
+00002000 <rodata>:
+    2000:	4b                   	dec    %ebx
+    2001:	65                   	gs
+    2002:	79 62                	jns    2066 <rodata+0x66>
+    2004:	6f                   	outsl  %ds:(%esi),(%dx)
+    2005:	61                   	popa   
+    2006:	72 64                	jb     206c <rodata+0x6c>
+    2008:	00 52 65             	add    %dl,0x65(%edx)
+    200b:	71 75                	jno    2082 <rodata+0x82>
+    200d:	65                   	gs
+    200e:	73 74                	jae    2084 <rodata+0x84>
+    2010:	46                   	inc    %esi
+    2011:	6f                   	outsl  %ds:(%esi),(%dx)
+    2012:	63 75 73             	arpl   %si,0x73(%ebp)
+    2015:	00 4b 65             	add    %cl,0x65(%ebx)
+    2018:	79 62                	jns    207c <rodata+0x7c>
+    201a:	6f                   	outsl  %ds:(%esi),(%dx)
+    201b:	61                   	popa   
+    201c:	72 64                	jb     2082 <rodata+0x82>
+    201e:	20 69 6e             	and    %ch,0x6e(%ecx)
+    2021:	69 74 69 61 6c 69 73 	imul   $0x6573696c,0x61(%ecx,%ebp,2),%esi
+    2028:	65 
+    2029:	64 0a 00             	or     %fs:(%eax),%al
+    202c:	4b                   	dec    %ebx
+    202d:	45                   	inc    %ebp
+    202e:	59                   	pop    %ecx
+    202f:	42                   	inc    %edx
+    2030:	4f                   	dec    %edi
+    2031:	41                   	inc    %ecx
+    2032:	52                   	push   %edx
+    2033:	44                   	inc    %esp
+    2034:	00 43 6f             	add    %al,0x6f(%ebx)
+    2037:	6e                   	outsb  %ds:(%esi),(%dx)
+    2038:	73 6f                	jae    20a9 <rodata+0xa9>
+    203a:	6c                   	insb   (%dx),%es:(%edi)
+    203b:	65 00 43 6c          	add    %al,%gs:0x6c(%ebx)
+    203f:	65                   	gs
+    2040:	61                   	popa   
+    2041:	72 00                	jb     2043 <rodata+0x43>
+    2043:	57                   	push   %edi
+    2044:	72 69                	jb     20af <rodata+0xaf>
+    2046:	74 65                	je     20ad <rodata+0xad>
+    2048:	43                   	inc    %ebx
+    2049:	68 61 72 61 63       	push   $0x63617261
+    204e:	74 65                	je     20b5 <rodata+0xb5>
+    2050:	72 00                	jb     2052 <rodata+0x52>
+    2052:	44                   	inc    %esp
+    2053:	65                   	gs
+    2054:	6c                   	insb   (%dx),%es:(%edi)
+    2055:	65                   	gs
+    2056:	74 65                	je     20bd <rodata+0xbd>
+    2058:	43                   	inc    %ebx
+    2059:	68 61 72 61 63       	push   $0x63617261
+    205e:	74 65                	je     20c5 <rodata+0xc5>
+    2060:	72 00                	jb     2062 <rodata+0x62>
+    2062:	50                   	push   %eax
+    2063:	72 69                	jb     20ce <rodata+0xce>
+    2065:	6e                   	outsb  %ds:(%esi),(%dx)
+    2066:	74 00                	je     2068 <rodata+0x68>
+    2068:	4c                   	dec    %esp
+    2069:	6f                   	outsl  %ds:(%esi),(%dx)
+    206a:	67 50                	addr16 push %eax
+    206c:	72 69                	jb     20d7 <rodata+0xd7>
+    206e:	6e                   	outsb  %ds:(%esi),(%dx)
+    206f:	74 00                	je     2071 <rodata+0x71>
+    2071:	50                   	push   %eax
+    2072:	72 6f                	jb     20e3 <rodata+0xe3>
+    2074:	63 65 73             	arpl   %sp,0x73(%ebp)
+    2077:	73 4d                	jae    20c6 <rodata+0xc6>
+    2079:	61                   	popa   
+    207a:	6e                   	outsb  %ds:(%esi),(%dx)
+    207b:	61                   	popa   
+    207c:	67                   	addr16
+    207d:	65                   	gs
+    207e:	72 00                	jb     2080 <rodata+0x80>
+    2080:	43                   	inc    %ebx
+    2081:	72 65                	jb     20e8 <rodata+0xe8>
+    2083:	61                   	popa   
+    2084:	74 65                	je     20eb <rodata+0xeb>
+    2086:	54                   	push   %esp
+    2087:	68 72 65 61 64       	push   $0x64616572
+    208c:	00 52 75             	add    %dl,0x75(%edx)
+    208f:	6e                   	outsb  %ds:(%esi),(%dx)
+    2090:	54                   	push   %esp
+    2091:	68 72 65 61 64       	push   $0x64616572
+    2096:	00 41 77             	add    %al,0x77(%ecx)
+    2099:	61                   	popa   
+    209a:	6b 65 6e 54          	imul   $0x54,0x6e(%ebp),%esp
+    209e:	68 72 65 61 64       	push   $0x64616572
+    20a3:	00 53 6c             	add    %dl,0x6c(%ebx)
+    20a6:	65                   	gs
+    20a7:	65                   	gs
+    20a8:	70 00                	jo     20aa <rodata+0xaa>
+    20aa:	52                   	push   %edx
+    20ab:	65                   	gs
+    20ac:	6c                   	insb   (%dx),%es:(%edi)
+    20ad:	69 6e 71 75 69 73 68 	imul   $0x68736975,0x71(%esi),%ebp
+    20b4:	00 49 6e             	add    %cl,0x6e(%ecx)
+    20b7:	74 65                	je     211e <rodata+0x11e>
+    20b9:	72 72                	jb     212d <rodata+0x12d>
+    20bb:	75 70                	jne    212d <rodata+0x12d>
+    20bd:	74 4d                	je     210c <rodata+0x10c>
+    20bf:	61                   	popa   
+    20c0:	6e                   	outsb  %ds:(%esi),(%dx)
+    20c1:	61                   	popa   
+    20c2:	67                   	addr16
+    20c3:	65                   	gs
+    20c4:	72 00                	jb     20c6 <rodata+0xc6>
+    20c6:	45                   	inc    %ebp
+    20c7:	6e                   	outsb  %ds:(%esi),(%dx)
+    20c8:	61                   	popa   
+    20c9:	62 6c 65 49          	bound  %ebp,0x49(%ebp,2)
+    20cd:	6e                   	outsb  %ds:(%esi),(%dx)
+    20ce:	74 65                	je     2135 <rodata+0x135>
+    20d0:	72 72                	jb     2144 <rodata+0x144>
+    20d2:	75 70                	jne    2144 <rodata+0x144>
+    20d4:	74 00                	je     20d6 <rodata+0xd6>
+    20d6:	41                   	inc    %ecx
+    20d7:	74 74                	je     214d <rodata+0x14d>
+    20d9:	61                   	popa   
+    20da:	63 68 48             	arpl   %bp,0x48(%eax)
+    20dd:	61                   	popa   
+    20de:	6e                   	outsb  %ds:(%esi),(%dx)
+    20df:	64                   	fs
+    20e0:	6c                   	insb   (%dx),%es:(%edi)
+    20e1:	65                   	gs
+    20e2:	72 00                	jb     20e4 <rodata+0xe4>
+    20e4:	44                   	inc    %esp
+    20e5:	65                   	gs
+    20e6:	76 69                	jbe    2151 <rodata+0x151>
+    20e8:	63 65 4d             	arpl   %sp,0x4d(%ebp)
+    20eb:	61                   	popa   
+    20ec:	6e                   	outsb  %ds:(%esi),(%dx)
+    20ed:	61                   	popa   
+    20ee:	67                   	addr16
+    20ef:	65                   	gs
+    20f0:	72 00                	jb     20f2 <rodata+0xf2>
+    20f2:	52                   	push   %edx
+    20f3:	65 67 69 73 74 65 72 	addr16 imul $0x65447265,%gs:116(%bp,%di),%esi
+    20fa:	44 65 
+    20fc:	76 69                	jbe    2167 <rodata+0x167>
+    20fe:	63 65 00             	arpl   %sp,0x0(%ebp)
+    2101:	41                   	inc    %ecx
+    2102:	74 74                	je     2178 <rodata+0x178>
+    2104:	61                   	popa   
+    2105:	63 68 52             	arpl   %bp,0x52(%eax)
+    2108:	65                   	gs
+    2109:	73 6f                	jae    217a <rodata+0x17a>
+    210b:	75 72                	jne    217f <rodata+0x17f>
+    210d:	63 65 00             	arpl   %sp,0x0(%ebp)
+    2110:	4d                   	dec    %ebp
+    2111:	65                   	gs
+    2112:	73 73                	jae    2187 <rodata+0x187>
+    2114:	61                   	popa   
+    2115:	67                   	addr16
+    2116:	65                   	gs
+    2117:	4d                   	dec    %ebp
+    2118:	61                   	popa   
+    2119:	6e                   	outsb  %ds:(%esi),(%dx)
+    211a:	61                   	popa   
+    211b:	67                   	addr16
+    211c:	65                   	gs
+    211d:	72 00                	jb     211f <rodata+0x11f>
+    211f:	43                   	inc    %ebx
+    2120:	72 65                	jb     2187 <rodata+0x187>
+    2122:	61                   	popa   
+    2123:	74 65                	je     218a <rodata+0x18a>
+    2125:	4d                   	dec    %ebp
+    2126:	65                   	gs
+    2127:	73 73                	jae    219c <rodata+0x19c>
+    2129:	61                   	popa   
+    212a:	67                   	addr16
+    212b:	65                   	gs
+    212c:	50                   	push   %eax
+    212d:	6f                   	outsl  %ds:(%esi),(%dx)
+    212e:	72 74                	jb     21a4 <rodata+0x1a4>
+    2130:	00 47 65             	add    %al,0x65(%edi)
+    2133:	74 4d                	je     2182 <rodata+0x182>
+    2135:	65                   	gs
+    2136:	73 73                	jae    21ab <rodata+0x1ab>
+    2138:	61                   	popa   
+    2139:	67                   	addr16
+    213a:	65                   	gs
+    213b:	50                   	push   %eax
+    213c:	6f                   	outsl  %ds:(%esi),(%dx)
+    213d:	72 74                	jb     21b3 <rodata+0x1b3>
+    213f:	54                   	push   %esp
+    2140:	68 72 65 61 64       	push   $0x64616572
+    2145:	49                   	dec    %ecx
+    2146:	44                   	inc    %esp
+    2147:	00 43 72             	add    %al,0x72(%ebx)
+    214a:	65                   	gs
+    214b:	61                   	popa   
+    214c:	74 65                	je     21b3 <rodata+0x1b3>
+    214e:	4d                   	dec    %ebp
+    214f:	65                   	gs
+    2150:	73 73                	jae    21c5 <_CTOR_LIST_+0x5>
+    2152:	61                   	popa   
+    2153:	67 65 00 4d 65       	addr16 add %cl,%gs:101(%di)
+    2158:	73 73                	jae    21cd <_CTOR_END_+0x1>
+    215a:	61                   	popa   
+    215b:	67                   	addr16
+    215c:	65                   	gs
+    215d:	50                   	push   %eax
+    215e:	72 6f                	jb     21cf <_CTOR_END_+0x3>
+    2160:	63 65 73             	arpl   %sp,0x73(%ebp)
+    2163:	73 65                	jae    21ca <_CTOR_LIST_+0xa>
+    2165:	64 00 47 65          	add    %al,%fs:0x65(%edi)
+    2169:	74 4d                	je     21b8 <rodata+0x1b8>
+    216b:	65                   	gs
+    216c:	73 73                	jae    21e1 <g_nKeyCodes+0x1>
+    216e:	61                   	popa   
+    216f:	67 65 00 53 65       	addr16 add %dl,%gs:101(%bp,%di)
+    2174:	6e                   	outsb  %ds:(%esi),(%dx)
+    2175:	64                   	fs
+    2176:	4d                   	dec    %ebp
+    2177:	65                   	gs
+    2178:	73 73                	jae    21ed <g_nKeyCodes+0xd>
+    217a:	61                   	popa   
+    217b:	67 65 00 47 65       	addr16 add %al,%gs:101(%bx)
+    2180:	74 4d                	je     21cf <_CTOR_END_+0x3>
+    2182:	65                   	gs
+    2183:	73 73                	jae    21f8 <g_nKeyCodes+0x18>
+    2185:	61                   	popa   
+    2186:	67                   	addr16
+    2187:	65                   	gs
+    2188:	51                   	push   %ecx
+    2189:	75 65                	jne    21f0 <g_nKeyCodes+0x10>
+    218b:	75 65                	jne    21f2 <g_nKeyCodes+0x12>
+    218d:	4c                   	dec    %esp
+    218e:	65 6e                	outsb  %gs:(%esi),(%dx)
+    2190:	67 74 68             	addr16 je 21fb <g_nKeyCodes+0x1b>
+    2193:	00 4d 6f             	add    %cl,0x6f(%ebp)
+    2196:	64                   	fs
+    2197:	75 6c                	jne    2205 <g_nKeyCodes+0x25>
+    2199:	65                   	gs
+    219a:	4d                   	dec    %ebp
+    219b:	61                   	popa   
+    219c:	6e                   	outsb  %ds:(%esi),(%dx)
+    219d:	61                   	popa   
+    219e:	67                   	addr16
+    219f:	65                   	gs
+    21a0:	72 00                	jb     21a2 <rodata+0x1a2>
+    21a2:	43                   	inc    %ebx
+    21a3:	72 65                	jb     220a <g_nKeyCodes+0x2a>
+    21a5:	61                   	popa   
+    21a6:	74 65                	je     220d <g_nKeyCodes+0x2d>
+    21a8:	4d                   	dec    %ebp
+    21a9:	6f                   	outsl  %ds:(%esi),(%dx)
+    21aa:	64                   	fs
+    21ab:	75 6c                	jne    2219 <g_nKeyCodes+0x39>
+    21ad:	65 00 43 72          	add    %al,%gs:0x72(%ebx)
+    21b1:	65                   	gs
+    21b2:	61                   	popa   
+    21b3:	74 65                	je     221a <g_nKeyCodes+0x3a>
+    21b5:	4d                   	dec    %ebp
+    21b6:	6f                   	outsl  %ds:(%esi),(%dx)
+    21b7:	64                   	fs
+    21b8:	75 6c                	jne    2226 <g_nKeyCodes+0x46>
+    21ba:	65                   	gs
+    21bb:	43                   	inc    %ebx
+    21bc:	61                   	popa   
+    21bd:	6c                   	insb   (%dx),%es:(%edi)
+    21be:	6c                   	insb   (%dx),%es:(%edi)
+	...
+Disassembly of section .data:
+
+000021c0 <_CTOR_LIST_>:
+    21c0:	01 00                	add    %eax,(%eax)
+    21c2:	00 00                	add    %al,(%eax)
+    21c4:	60                   	pusha  
+			21c4: R_386_32	.text
+    21c5:	06                   	push   %es
+    21c6:	00 00                	add    %al,(%eax)
+    21c8:	00 00                	add    %al,(%eax)
+	...
+
+000021cc <_CTOR_END_>:
+	...
+
+000021d4 <_DTOR_END_>:
+	...
+
+000021e0 <g_nKeyCodes>:
+    21e0:	00 89 31 32 33 34    	add    %cl,0x34333231(%ecx)
+    21e6:	35 36 37 38 39       	xor    $0x39383736,%eax
+    21eb:	30 2d 3d 09 08 71    	xor    %ch,0x7108093d
+    21f1:	77 65                	ja     2258 <g_nKeyCodes+0x78>
+    21f3:	72 74                	jb     2269 <g_nKeyCodesShift+0x9>
+    21f5:	79 75                	jns    226c <g_nKeyCodesShift+0xc>
+    21f7:	69 6f 70 5b 5d 00 00 	imul   $0x5d5b,0x70(%edi),%ebp
+    21fe:	61                   	popa   
+    21ff:	73 64                	jae    2265 <g_nKeyCodesShift+0x5>
+    2201:	66 67 68 6a 6b       	addr16 pushw $0x6b6a
+    2206:	6c                   	insb   (%dx),%es:(%edi)
+    2207:	3b 27                	cmp    (%edi),%esp
+    2209:	0d 80 23 7a 78       	or     $0x787a2380,%eax
+    220e:	63 76 62             	arpl   %si,0x62(%esi)
+    2211:	6e                   	outsb  %ds:(%esi),(%dx)
+    2212:	6d                   	insl   (%dx),%es:(%edi)
+    2213:	2c 2e                	sub    $0x2e,%al
+    2215:	2f                   	das    
+    2216:	81 2a 82 20 84 00    	subl   $0x842082,(%edx)
+	...
+    2224:	00 00                	add    %al,(%eax)
+    2226:	00 c8                	add    %cl,%al
+    2228:	c9                   	leave  
+    2229:	c9                   	leave  
+    222a:	2d ca cb cc 2b       	sub    $0x2bcccbca,%eax
+    222f:	cd ce                	int    $0xce
+    2231:	cf                   	iret   
+    2232:	00 00                	add    %al,(%eax)
+    2234:	00 00                	add    %al,(%eax)
+    2236:	5c                   	pop    %esp
+	...
+
+00002260 <g_nKeyCodesShift>:
+    2260:	00 89 21 22 a3 24    	add    %cl,0x24a32221(%ecx)
+    2266:	25 5e 26 2a 28       	and    $0x282a265e,%eax
+    226b:	29 5f 2b             	sub    %ebx,0x2b(%edi)
+    226e:	09 08                	or     %ecx,(%eax)
+    2270:	51                   	push   %ecx
+    2271:	57                   	push   %edi
+    2272:	45                   	inc    %ebp
+    2273:	52                   	push   %edx
+    2274:	54                   	push   %esp
+    2275:	59                   	pop    %ecx
+    2276:	55                   	push   %ebp
+    2277:	49                   	dec    %ecx
+    2278:	4f                   	dec    %edi
+    2279:	50                   	push   %eax
+    227a:	7b 7d                	jnp    22f9 <g_nThreadFocusID+0x11>
+    227c:	00 00                	add    %al,(%eax)
+    227e:	41                   	inc    %ecx
+    227f:	53                   	push   %ebx
+    2280:	44                   	inc    %esp
+    2281:	46                   	inc    %esi
+    2282:	47                   	inc    %edi
+    2283:	48                   	dec    %eax
+    2284:	4a                   	dec    %edx
+    2285:	4b                   	dec    %ebx
+    2286:	4c                   	dec    %esp
+    2287:	3a 40 0d             	cmp    0xd(%eax),%al
+    228a:	80 7e 5a 58          	cmpb   $0x58,0x5a(%esi)
+    228e:	43                   	inc    %ebx
+    228f:	56                   	push   %esi
+    2290:	42                   	inc    %edx
+    2291:	4e                   	dec    %esi
+    2292:	4d                   	dec    %ebp
+    2293:	3c 3e                	cmp    $0x3e,%al
+    2295:	3f                   	aas    
+    2296:	81 2a 82 20 84 00    	subl   $0x842082,(%edx)
+	...
+    22a4:	00 00                	add    %al,(%eax)
+    22a6:	00 c8                	add    %cl,%al
+    22a8:	c9                   	leave  
+    22a9:	c9                   	leave  
+    22aa:	2d ca cb cc 2b       	sub    $0x2bcccbca,%eax
+    22af:	cd ce                	int    $0xce
+    22b1:	cf                   	iret   
+    22b2:	00 00                	add    %al,(%eax)
+    22b4:	00 00                	add    %al,(%eax)
+    22b6:	7c 00                	jl     22b8 <g_nKeyCodesShift+0x58>
+	...
+
+000022e0 <g_nKeyboardBufferPos>:
+    22e0:	00 00                	add    %al,(%eax)
+	...
+
+000022e4 <g_nKeyboardBufferEnd>:
+    22e4:	00 00                	add    %al,(%eax)
+	...
+
+000022e8 <g_nThreadFocusID>:
+	...

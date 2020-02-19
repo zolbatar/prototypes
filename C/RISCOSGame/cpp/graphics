@@ -1,0 +1,354 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include "oslib/os.h"
+#include "oslib/osbyte.h"
+#include "types.h"
+#include "graphics.h"
+
+UINT bank_address[3];
+int max_banks = 3;
+int bank = 3;
+const int size = width * height / 4;
+
+// Clipping
+int minX = 10;
+int maxX = width - 11;
+int minY = 10;
+int maxY = height -11;
+
+void graphics_shadow_state_on() {
+	osbyte(osbyte_SHADOW_STATE, 0, 0);
+}
+
+void graphics_shadow_state_off() {
+	osbyte(osbyte_SHADOW_STATE, 1, 0);
+}
+
+void graphics_set_vdu_bank(int bank) {
+	osbyte(osbyte_OUTPUT_SCREEN_BANK, bank, 0); // OSByte 112
+}
+
+void graphics_set_display_bank(int bank) {
+	osbyte(osbyte_DISPLAY_SCREEN_BANK, bank, 0); // OSByte 113
+}
+
+void end_frame() {
+	osbyte(osbyte_AWAIT_VSYNC, 0, 0); // OSByte 19
+	graphics_set_display_bank(bank);
+	bank = (bank % max_banks) + 1;
+	graphics_set_vdu_bank(bank);
+	os_writec(os_VDU_HOME_TEXT_CURSOR);
+}
+
+void graphics_setup() {
+	static os_VDU_VAR_LIST(2) vars = { os_VDUVAR_DISPLAY_START, -1 };
+	int vals[1];
+
+	// Enable shadow mode
+	graphics_shadow_state_on();
+
+	// Change video mode
+//	osscreenmode_select_mode_with_mode_string("X320 Y256 C256");
+	osscreenmode_select_mode_with_mode_string("X640 Y480 C256");
+
+	// Cursor off
+	os_writec(os_VDU_MISC);
+	os_writec(1);
+	os_writec(0);
+	os_writec(0);
+	os_writec(0);
+	os_writec(0);
+	os_writec(0);
+	os_writec(0);
+	os_writec(0);
+	os_writec(0);
+
+	// Bank 3
+	graphics_set_display_bank(3);
+	graphics_set_vdu_bank(3);
+	os_read_vdu_variables((os_vdu_var_list *) &vars, (int *) &vals);
+	bank_address[2] = vals[0];
+
+	// Bank 2
+	graphics_set_display_bank(2);
+	graphics_set_vdu_bank(2);
+	os_read_vdu_variables((os_vdu_var_list *) &vars, (int *) &vals);
+	bank_address[1] = vals[0];
+
+	// Bank 1
+	graphics_set_display_bank(1);
+	graphics_set_vdu_bank(1);
+	os_read_vdu_variables((os_vdu_var_list *) &vars, (int *) &vals);
+	bank_address[0] = vals[0];
+
+	printf("Bank 0:%X\n", bank_address[0]);
+	printf("Bank 1:%X\n", bank_address[1]);
+	printf("Bank 2:%X\n", bank_address[2]);
+//	end_frame();
+}
+
+void graphics_end() {
+	graphics_shadow_state_off();
+	graphics_set_display_bank(1);
+	graphics_set_vdu_bank(1);
+
+	// Cursor on
+	os_writec(os_VDU_MISC);
+	os_writec(1);
+	os_writec(1);
+	os_writec(0);
+	os_writec(0);
+	os_writec(0);
+	os_writec(0);
+	os_writec(0);
+	os_writec(0);
+	os_writec(0);
+}
+
+UINT* get_bank_address() {
+	return (UINT *)(bank_address[bank - 1]);
+}
+
+BYTE* get_bank_address_byte() {
+	return (BYTE *)(bank_address[bank - 1]);
+}
+
+void clear_screen(BYTE colour) {
+	UINT *addr = get_bank_address();
+	UINT v = (colour) | (colour << 8) | (colour << 16) | (colour << 24);
+	for(int i = 0; i < size; i++) {
+		addr[i] = v;
+	}
+}
+
+void set_clip(int x1, int y1, int x2, int y2) {
+	minX = x1;
+	maxX = x2;
+	minY = y1;
+	maxY = y2;
+}
+
+void draw_horz_line(int x1, int x2, int y, BYTE colour) {
+
+	// Clip
+	if (y < minY) return;
+	if (y > maxY) return;
+	if (x1 < minX) x1 = minX;
+	if (x2 > maxX) x2 = maxX;
+
+	// Address of video memory
+	UINT *addr = get_bank_address();
+	BYTE *baddr = get_bank_address_byte();
+
+	// 4 byte word for colour
+	UINT v = (colour) | (colour << 8) | (colour << 16) | (colour << 24);
+
+	int offset = (y * width) + x1;
+	int width = x2 - x1;
+	if (width == 0) return;
+
+	// Do free byte pixels on left
+	int c = 4 - (x1 & 3);
+	if (c > width) c = width;
+	for(int i = 0; i <= c; i++) {
+		baddr[offset++] = colour;
+	}
+	width -= c;
+
+	// Use word write for speed on main section
+	c = width >> 2;
+	int o = offset >> 2;
+	for(int i = 0; i < c; i++) {
+		addr[o++] = v;
+	}
+	offset += c << 2;
+	width -= c << 2;
+	offset--;
+
+	// Do free byte pixels on right
+	for(int i = 0; i <= width; i++) {
+		baddr[offset++] = colour;
+	}
+}
+
+void draw_box(int x1, int y1, int x2, int y2, BYTE colour) {
+	for (int y = y1; y < y2; y++) {
+		draw_horz_line(x1, x2, y, colour);
+	}
+}
+
+void plot_pixel(int x, int y, BYTE colour) {
+	BYTE *baddr = get_bank_address_byte();
+	int offset = (y * width) + x;
+	baddr[offset] = colour;
+}
+
+void draw_line_raw(int x1, int y1, int x2, int y2, BYTE colour) {
+	int dx = abs(x2 - x1), sx = x1 < x2 ? 1 : -1;
+	int dy = abs(y2 - y1), sy = y1 < y2 ? 1 : -1;
+	int err = (dx > dy ? dx : -dy) / 2, e2;
+
+	while (true) {
+		plot_pixel(x1, y1, colour);
+		if (x1 == x2 && y1 == y2) return;
+		e2 = err;
+		if (e2 >-dx) { err -= dy; x1 += sx; }
+		if (e2 < dy) { err += dx; y1 += sy; }
+	}
+}
+
+typedef int OutCode;
+
+const int INSIDE = 0; // 0000
+const int LEFT = 1;   // 0001
+const int RIGHT = 2;  // 0010
+const int BOTTOM = 4; // 0100
+const int TOP = 8;    // 1000
+
+// Compute the bit code for a point (x, y) using the clip rectangle
+// bounded diagonally by (minX, minY), and (maxX, maxY)
+
+// ASSUME THAT maxX, minX, maxY and minY are global constants.
+
+OutCode ComputeOutCode(int x, int y)
+{
+	OutCode code;
+
+	code = INSIDE;          // initialised as being inside of [[clip window]]
+
+	if (x < minX)           // to the left of clip window
+		code |= LEFT;
+	else if (x > maxX)      // to the right of clip window
+		code |= RIGHT;
+	if (y < minY)           // below the clip window
+		code |= BOTTOM;
+	else if (y > maxY)      // above the clip window
+		code |= TOP;
+
+	return code;
+}
+
+// Cohen—Sutherland clipping algorithm clips a line from
+// P0 = (x0, y0) to P1 = (x1, y1) against a rectangle with
+// diagonal from (minX, minY) to (maxX, maxY).
+void draw_line(int x0, int y0, int x1, int y1, BYTE colour)
+{
+	// compute outcodes for P0, P1, and whatever point lies outside the clip rectangle
+	OutCode outcode0 = ComputeOutCode(x0, y0);
+	OutCode outcode1 = ComputeOutCode(x1, y1);
+	bool accept = false;
+
+	while (true) {
+		if (!(outcode0 | outcode1)) {
+			// bitwise OR is 0: both points inside window; trivially accept and exit loop
+			accept = true;
+			break;
+		} else if (outcode0 & outcode1) {
+			// bitwise AND is not 0: both points share an outside zone (LEFT, RIGHT, TOP,
+			// or BOTTOM), so both must be outside window; exit loop (accept is false)
+			break;
+		} else {
+			// failed both tests, so calculate the line segment to clip
+			// from an outside point to an intersection with clip edge
+			int x, y;
+
+			// At least one endpoint is outside the clip rectangle; pick it.
+			OutCode outcodeOut = outcode0 ? outcode0 : outcode1;
+
+			// Now find the intersection point;
+			// use formulas:
+			//   slope = (y1 - y0) / (x1 - x0)
+			//   x = x0 + (1 / slope) * (ym - y0), where ym is minY or maxY
+			//   y = y0 + slope * (xm - x0), where xm is minX or maxX
+			// No need to worry about divide-by-zero because, in each case, the
+			// outcode bit being tested guarantees the denominator is non-zero
+			if (outcodeOut & TOP) {           // point is above the clip window
+				x = x0 + (x1 - x0) * (maxY - y0) / (y1 - y0);
+				y = maxY;
+			} else if (outcodeOut & BOTTOM) { // point is below the clip window
+				x = x0 + (x1 - x0) * (minY - y0) / (y1 - y0);
+				y = minY;
+			} else if (outcodeOut & RIGHT) {  // point is to the right of clip window
+				y = y0 + (y1 - y0) * (maxX - x0) / (x1 - x0);
+				x = maxX;
+			} else if (outcodeOut & LEFT) {   // point is to the left of clip window
+				y = y0 + (y1 - y0) * (minX - x0) / (x1 - x0);
+				x = minX;
+			}
+
+			// Now we move outside point to intersection point to clip
+			// and get ready for next pass.
+			if (outcodeOut == outcode0) {
+				x0 = x;
+				y0 = y;
+				outcode0 = ComputeOutCode(x0, y0);
+			} else {
+				x1 = x;
+				y1 = y;
+				outcode1 = ComputeOutCode(x1, y1);
+			}
+		}
+	}
+
+	if (accept) {
+		draw_line_raw(x0, y0, x1, y1, colour);
+	}
+}
+
+// Store the min and max X co-ords to draw horizontal lines
+int polyMinX[height];
+int polyMaxX[height];
+
+void draw_polygon_line(int x1, int y1, int x2, int y2, int pminY, int pmaxY) {
+	int dx = abs(x2 - x1), sx = x1 < x2 ? 1 : -1;
+	int dy = abs(y2 - y1), sy = y1 < y2 ? 1 : -1;
+	int err = (dx > dy ? dx : -dy) / 2, e2;
+
+	while (true) {
+	    if (y1 >= pminY && y1 <= pmaxY) {
+			int yrel = y1 - pminY;
+			if (x1 < polyMinX[yrel]) polyMinX[yrel] = x1;
+			if (x1 > polyMaxX[yrel]) polyMaxX[yrel] = x1;
+		}
+		if (x1 == x2 && y1 == y2) return;
+		e2 = err;
+		if (e2 >-dx) { err -= dy; x1 += sx; }
+		if (e2 < dy) { err += dx; y1 += sy; }
+	}
+}
+
+void draw_polygon(int coords[], int size, BYTE colour) {
+
+	// Get Y limits
+	int pminY = height;
+	int pmaxY = 0;
+	int index = 1;
+	for (int i = 0; i < size; i++) {
+		if (coords[index] < pminY) pminY = coords[index];
+		if (coords[index] > pmaxY) pmaxY = coords[index];
+		index += 2;
+	}
+	if (pminY < minY) pminY = minY;
+	if (pmaxY > maxY) pmaxY = maxY;
+
+	// Work out total height
+	int heightPoly = pmaxY - pminY;
+	for (int i = 0; i <= heightPoly; i++) {
+		polyMinX[i] = width;
+		polyMaxX[i] = -1;
+	}
+
+	// Render each line in turn, saving the min and max X
+	index = 0;
+	for (int i = 0; i < size - 1; i++) {
+		draw_polygon_line(coords[index], coords[index + 1], coords[index + 2], coords[index + 3], pminY, pmaxY);
+		index += 2;
+	}
+    draw_polygon_line(coords[index], coords[index + 1], coords[0], coords[1], pminY, pmaxY);
+
+	int y = minY;
+	for (int i = 0; i <= heightPoly; i++) {
+		draw_horz_line(polyMinX[i], polyMaxX[i], y + pminY, colour);
+		y++;
+	}
+}

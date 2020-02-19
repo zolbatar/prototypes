@@ -1,0 +1,555 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdbool.h>
+#include "swis.h"
+#include "kernel.h"
+#include "types.h"
+#include "graphics.h"
+
+// VFP
+#define OS_VFPSupport_CreateContext 0x58EC1
+#define OS_VFPSupport_DestroyContext 0x58EC2
+UINT VFP_context;
+
+int screen_width;
+int screen_height;
+int x_origin;
+int y_origin;
+int size;
+
+// Fast line lookup
+int *line_address;
+int *line_address_16m;
+
+// Bank switching
+UINT bank_address[3];
+#define max_banks 3
+int bank = 1;
+
+// Clipping
+int minX;
+int maxX;
+int minY;
+int maxY;
+
+// Store the min and max X co-ords to draw horizontal lines on polygon, this is INEFFICIENT!!!
+int *poly_min_x;
+int *poly_max_x;
+
+void graphics_shadow_state_on() {
+	_kernel_osbyte(114, 0, 0);
+}
+
+void graphics_shadow_state_off() {
+	_kernel_osbyte(114, 1, 0);
+}
+
+void graphics_set_vdu_bank(int bank) {
+	_kernel_osbyte(112, bank, 0);
+}
+
+void graphics_set_display_bank(int bank) {
+	_kernel_osbyte(113, bank, 0);
+}
+
+void end_frame() {
+//	_kernel_osbyte(19, bank, 0);	// Await sync
+	graphics_set_display_bank(bank);
+	bank = (bank % max_banks) + 1;
+	graphics_set_vdu_bank(bank);
+	_kernel_oswrch(30);				// Cursor to home
+}
+
+void graphics_setup() {
+	int vars[2];
+	vars[0] = 149; // &95 = display start
+	vars[1] = -1;
+	int vals[1];
+	_kernel_swi_regs regs;
+
+	// Enable shadow mode
+	graphics_shadow_state_on();
+
+	// Change video mode
+	regs.r[0] = 15; regs.r[1] = (int) &"X1024 Y768 C16M";
+	_kernel_swi(OS_ScreenMode, &regs, &regs);
+
+	// Setup mode sized stuff
+	screen_width = 1024;
+	screen_height = 768;
+	x_origin = screen_width / 2;
+	y_origin = screen_height / 2;
+	size = screen_width * screen_height;
+	minX = 0;
+	maxX = screen_width - 1;
+	minY = 0;
+	maxY = screen_height - 1;
+	poly_min_x = malloc(sizeof(int) * screen_height);
+	poly_max_x = malloc(sizeof(int) * screen_height);
+
+	// Fast lookup of line addresses
+	printf("Screen: %d x %d\n", screen_width, screen_height);
+	line_address = malloc(sizeof(int) * screen_height);
+	line_address_16m = malloc(sizeof(int) * screen_height);
+	for (int i = 0; i < screen_height; i++) {
+		line_address[i] = i * screen_width;
+		line_address_16m[i] = (i * screen_width) << 2;
+	}
+
+	// Cursor off
+	_kernel_oswrch(23);
+	_kernel_oswrch(1);
+	_kernel_oswrch(0);
+	_kernel_oswrch(0);
+	_kernel_oswrch(0);
+	_kernel_oswrch(0);
+	_kernel_oswrch(0);
+	_kernel_oswrch(0);
+	_kernel_oswrch(0);
+	_kernel_oswrch(0);
+
+	// Bank 3
+	regs.r[0] = (int)vars; regs.r[1] = (int)vals;
+	if (max_banks >= 3) {
+		graphics_set_display_bank(3);
+		graphics_set_vdu_bank(3);
+		_kernel_swi(OS_ReadVduVariables, &regs, &regs);
+		bank_address[2] = vals[0];
+	}
+
+	// Bank 2
+	if (max_banks >= 2) {
+		graphics_set_display_bank(2);
+		graphics_set_vdu_bank(2);
+		_kernel_swi(OS_ReadVduVariables, &regs, &regs);
+		bank_address[1] = vals[0];
+	}
+
+	// Bank 1
+	graphics_set_display_bank(1);
+	graphics_set_vdu_bank(1);
+	_kernel_swi(OS_ReadVduVariables, &regs, &regs);
+	bank_address[0] = vals[0];
+
+	printf("Bank 0:%X\n", bank_address[0]);
+	if (max_banks >=2) printf("Bank 1:%X\n", bank_address[1]);
+	if (max_banks >=3) printf("Bank 2:%X\n", bank_address[2]);
+
+	// Create VFP context
+	regs.r[0] = 1 << 31;
+	regs.r[1] = 32;
+	regs.r[2] = 0;
+	regs.r[3] = 0;
+	_kernel_swi(OS_VFPSupport_CreateContext, &regs, &regs);
+	VFP_context = regs.r[0];
+	printf("VFP Context:%X\n", VFP_context);
+}
+
+void graphics_end() {
+	graphics_shadow_state_off();
+	graphics_set_display_bank(1);
+	graphics_set_vdu_bank(1);
+
+	// Cursor on
+	_kernel_oswrch(23);
+	_kernel_oswrch(1);
+	_kernel_oswrch(1);
+	_kernel_oswrch(0);
+	_kernel_oswrch(0);
+	_kernel_oswrch(0);
+	_kernel_oswrch(0);
+	_kernel_oswrch(0);
+	_kernel_oswrch(0);
+	_kernel_oswrch(0);
+
+	// Destroy VFP context
+	_kernel_swi_regs regs;
+	regs.r[0] = VFP_context;
+	regs.r[1] = 0;
+	_kernel_swi(OS_VFPSupport_DestroyContext, &regs, &regs);
+	printf("Destroying VFP Context:%X\n", VFP_context);
+}
+
+UINT* get_bank_address() {
+	return (UINT *)(bank_address[bank - 1]);
+}
+
+BYTE* get_bank_address_byte() {
+	return (BYTE *)(bank_address[bank - 1]);
+}
+
+void clear_screen(BYTE colour) {
+	UINT *addr = get_bank_address();
+	UINT v = (colour) | (colour << 8) | (colour << 16) | (colour << 24);
+	for(int i = 0; i < size; i++) {
+		addr[i] = v;
+	}
+}
+
+void clear_screen_16m(UINT colour) {
+	UINT *addr = get_bank_address();
+	for(int i = 0; i < size16m; i++) {
+		addr[i] = colour;
+	}
+}
+
+void set_clip(int x1, int y1, int x2, int y2) {
+	minX = x1;
+	maxX = x2;
+	minY = y1;
+	maxY = y2;
+}
+
+void draw_horz_line(int x1, int x2, int y, BYTE colour) {
+
+	// Quit if length 0
+	if (x1 >= x2) {
+		return;
+	}
+
+	// Clip
+	if (y < minY) return;
+	if (y > maxY) return;
+	if (x1 < minX) x1 = minX;
+	if (x2 > maxX) x2 = maxX;
+
+	// Address of video memory
+	UINT *addr = get_bank_address();
+	BYTE *baddr = get_bank_address_byte();
+
+	// 4 byte word for colour
+	UINT v = (colour) | (colour << 8) | (colour << 16) | (colour << 24);
+
+	int offset = line_address[y] + x1;
+	int width = x2 - x1;
+
+	// Do free byte pixels on left
+	int c = 4 - (x1 & 3);
+	if (c > width) c = width;
+	if (c > screen_width) c = screen_width;
+	for(int i = 0; i <= c; i++) {
+		baddr[offset++] = colour;
+	}
+	width -= c;
+
+	// Use word write for speed on main section
+	c = width >> 2;
+	int o = offset >> 2;
+	for(int i = 0; i < c; i++) {
+		addr[o++] = v;
+	}
+	offset += c << 2;
+	width -= c << 2;
+	offset--;
+
+	// Do free byte pixels on right
+	for(int i = 0; i <= width; i++) {
+		baddr[offset++] = colour;
+	}
+}
+
+void draw_horz_line_16m(int x1, int x2, int y, UINT colour) {
+	UINT *addr = get_bank_address();
+	int offset = line_address[y] + x1;
+
+	for (int x = x1; x < x2; x++) {
+		addr[offset++] = colour;
+	}
+}
+
+void draw_box(int x1, int y1, int x2, int y2, BYTE colour) {
+	for (int y = y1; y < y2; y++) {
+		draw_horz_line(x1, x2, y, colour);
+	}
+}
+
+void draw_box_16m(int x1, int y1, int x2, int y2, UINT colour) {
+	for (int y = y1; y < y2; y++) {
+		draw_horz_line_16m(x1, x2, y, colour);
+	}
+}
+
+void plot_pixel(int x, int y, BYTE colour) {
+	BYTE *baddr = get_bank_address_byte();
+	int offset = line_address[y] + x;
+	baddr[offset] = colour;
+}
+
+void plot_pixel_16m(int x, int y, UINT colour) {
+	UINT *addr = get_bank_address();
+	int offset = line_address[y] + x;
+	addr[offset] = colour;
+}
+
+void draw_line_raw(int x1, int y1, int x2, int y2, UINT colour) {
+	int dx = abs(x2 - x1), sx = x1 < x2 ? 1 : -1;
+	int dy = abs(y2 - y1), sy = y1 < y2 ? 1 : -1;
+	int err = (dx > dy ? dx : -dy) / 2, e2;
+
+	while (true) {
+		plot_pixel_16m(x1, y1, colour);
+		if (x1 == x2 && y1 == y2) return;
+		e2 = err;
+		if (e2 >-dx) { err -= dy; x1 += sx; }
+		if (e2 < dy) { err += dx; y1 += sy; }
+	}
+}
+
+typedef int OutCode;
+
+const int INSIDE = 0; // 0000
+const int LEFT = 1;   // 0001
+const int RIGHT = 2;  // 0010
+const int BOTTOM = 4; // 0100
+const int TOP = 8;    // 1000
+
+// Compute the bit code for a point (x, y) using the clip rectangle
+// bounded diagonally by (minX, minY), and (maxX, maxY)
+
+// ASSUME THAT maxX, minX, maxY and minY are global constants.
+
+OutCode ComputeOutCode(int x, int y)
+{
+	OutCode code;
+
+	code = INSIDE;          // initialised as being inside of [[clip window]]
+
+	if (x < minX)           // to the left of clip window
+		code |= LEFT;
+	else if (x > maxX)      // to the right of clip window
+		code |= RIGHT;
+	if (y < minY)           // below the clip window
+		code |= BOTTOM;
+	else if (y > maxY)      // above the clip window
+		code |= TOP;
+
+	return code;
+}
+
+// Cohen�Sutherland clipping algorithm clips a line from
+// P0 = (x0, y0) to P1 = (x1, y1) against a rectangle with
+// diagonal from (minX, minY) to (maxX, maxY).
+void draw_line(int x0, int y0, int x1, int y1, UINT colour)
+{
+	// compute outcodes for P0, P1, and whatever point lies outside the clip rectangle
+	OutCode outcode0 = ComputeOutCode(x0, y0);
+	OutCode outcode1 = ComputeOutCode(x1, y1);
+	bool accept = false;
+
+	while (true) {
+		if (!(outcode0 | outcode1)) {
+			// bitwise OR is 0: both points inside window; trivially accept and exit loop
+			accept = true;
+			break;
+		} else if (outcode0 & outcode1) {
+			// bitwise AND is not 0: both points share an outside zone (LEFT, RIGHT, TOP,
+			// or BOTTOM), so both must be outside window; exit loop (accept is false)
+			break;
+		} else {
+			// failed both tests, so calculate the line segment to clip
+			// from an outside point to an intersection with clip edge
+			int x, y;
+
+			// At least one endpoint is outside the clip rectangle; pick it.
+			OutCode outcodeOut = outcode0 ? outcode0 : outcode1;
+
+			// Now find the intersection point;
+			// use formulas:
+			//   slope = (y1 - y0) / (x1 - x0)
+			//   x = x0 + (1 / slope) * (ym - y0), where ym is minY or maxY
+			//   y = y0 + slope * (xm - x0), where xm is minX or maxX
+			// No need to worry about divide-by-zero because, in each case, the
+			// outcode bit being tested guarantees the denominator is non-zero
+			if (outcodeOut & TOP) {           // point is above the clip window
+				x = x0 + (x1 - x0) * (maxY - y0) / (y1 - y0);
+				y = maxY;
+			} else if (outcodeOut & BOTTOM) { // point is below the clip window
+				x = x0 + (x1 - x0) * (minY - y0) / (y1 - y0);
+				y = minY;
+			} else if (outcodeOut & RIGHT) {  // point is to the right of clip window
+				y = y0 + (y1 - y0) * (maxX - x0) / (x1 - x0);
+				x = maxX;
+			} else if (outcodeOut & LEFT) {   // point is to the left of clip window
+				y = y0 + (y1 - y0) * (minX - x0) / (x1 - x0);
+				x = minX;
+			} else {
+				// Unneeded, to avoid compiler warnings
+				x = 0;
+				y = 0;
+			}
+
+			// Now we move outside point to intersection point to clip
+			// and get ready for next pass.
+			if (outcodeOut == outcode0) {
+				x0 = x;
+				y0 = y;
+				outcode0 = ComputeOutCode(x0, y0);
+			} else {
+				x1 = x;
+				y1 = y;
+				outcode1 = ComputeOutCode(x1, y1);
+			}
+		}
+	}
+
+	if (accept) {
+		draw_line_raw(x0, y0, x1, y1, colour);
+	}
+}
+
+void draw_polygon_line(int x1, int y1, int x2, int y2, int pminY, int pmaxY) {
+	int dx = abs(x2 - x1), sx = x1 < x2 ? 1 : -1;
+	int dy = abs(y2 - y1), sy = y1 < y2 ? 1 : -1;
+	int err = (dx > dy ? dx : -dy) / 2, e2;
+
+	while (true) {
+	    if (y1 >= pminY && y1 <= pmaxY) {
+			int yrel = y1 - pminY;
+			if (x1 < poly_min_x[yrel]) poly_min_x[yrel] = x1;
+			if (x1 > poly_max_x[yrel]) poly_max_x[yrel] = x1;
+		}
+		if (x1 == x2 && y1 == y2) return;
+		e2 = err;
+		if (e2 >-dx) { err -= dy; x1 += sx; }
+		if (e2 < dy) { err += dx; y1 += sy; }
+	}
+}
+
+void draw_polygon(int coords[], int len, BYTE colour) {
+
+	// Get Y limits
+	int pminY = screen_height;
+	int pmaxY = 0;
+	int index = 1;
+	for (int i = 0; i < len; i++) {
+		if (coords[index] < pminY) pminY = coords[index];
+		if (coords[index] > pmaxY) pmaxY = coords[index];
+		index += 2;
+	}
+	if (pminY < minY) pminY = minY;
+	if (pmaxY > maxY) pmaxY = maxY;
+
+	// Work out total height
+	int heightPoly = pmaxY - pminY;
+	for (int i = 0; i <= heightPoly; i++) {
+		poly_min_x[i] = maxX;
+		poly_max_x[i] = -1;
+	}
+
+	// Render each line in turn, saving the min and max X
+	index = 0;
+	for (int i = 0; i < len - 1; i++) {
+		draw_polygon_line(coords[index], coords[index + 1], coords[index + 2], coords[index + 3], pminY, pmaxY);
+		index += 2;
+	}
+    draw_polygon_line(coords[index], coords[index + 1], coords[0], coords[1], pminY, pmaxY);
+
+	for (int i = 0; i <= heightPoly; i++) {
+		if (poly_min_x[i] != maxX && poly_max_x[i] != -1) {
+			draw_horz_line(poly_min_x[i], poly_max_x[i], minY + pminY + i, colour);
+		}
+	}
+}
+
+int orient2d(const point_2d *a, const point_2d *b, const point_2d *c) {
+	return (b->x - a->x)*(c->y - a->y) - (b->y - a->y)*(c->x - a->x);
+}
+
+void fast_draw_triangle(bool gouraud, const point_2d *v0, const point_2d *v1, const point_2d *v2,
+	UINT colour1, UINT colour2, UINT colour3) {
+
+	// Bounding box
+	int minXP = min3(v0->x, v1->x, v2->x);
+	int minYP = min3(v0->y, v1->y, v2->y);
+	int maxXP = max3(v0->x, v1->x, v2->x);
+	int maxYP = max3(v0->y, v1->y, v2->y);
+
+	// Zero size?
+	if (minXP == maxXP || minYP == maxYP) {
+		return;
+	}
+
+	// Clip to bounds
+	minXP = max2(minXP, minX);
+	minYP = max2(minYP, minY);
+	maxXP = min2(maxXP, maxX);
+	maxYP = min2(maxYP, maxY);
+
+	// Triangle setup
+	int A01 = v0->y - v1->y, B01 = v1->x - v0->x;
+	int A12 = v1->y - v2->y, B12 = v2->x - v1->x;
+	int A20 = v2->y - v0->y, B20 = v0->x - v2->x;
+
+	// Barycentric coordinates at minX/minY corner
+	point_2d p = { minXP, minYP };
+	int w0_row = orient2d(v1, v2, &p);
+	int w1_row = orient2d(v2, v0, &p);
+	int w2_row = orient2d(v0, v1, &p);
+
+	// Non gouraud? Merge colours
+	int r, g, b;
+	UINT col;
+	if (!gouraud) {
+		r =
+			((colour1 & 0xFF) * 0.33) +
+			((colour2 & 0xFF) * 0.33) +
+			((colour3 & 0xFF) * 0.33);
+		b =
+			(((colour1 & 0xFF00) >> 8) * 0.33) +
+			(((colour2 & 0xFF00) >> 8) * 0.33) +
+			(((colour3 & 0xFF00) >> 8) * 0.33);
+		g =
+			(((colour1 & 0xFF0000) >> 16) * 0.33) +
+			(((colour2 & 0xFF0000) >> 16) * 0.33) +
+			(((colour3 & 0xFF0000) >> 16) * 0.33);
+		col = (b << 16) + (g << 8) + r;
+	}
+
+	// Rasterise
+	for (p.y = minYP; p.y <= maxYP; p.y++) {
+		float sum = w0_row + w1_row + w2_row;
+
+		// Barycentric coordinates at start of row
+		int w0 = w0_row;
+		int w1 = w1_row;
+		int w2 = w2_row;
+
+		for (p.x = minXP; p.x <= maxXP; p.x++) {
+			bool test = (w0 | w1 | w2) >= 0;
+			if (test) {
+				if (gouraud) {
+					float frac1 = w0 / sum;
+					float frac2 = w1 / sum;
+					float frac3 = w2 / sum;
+					int r =
+						((colour1 & 0xFF) * frac1) +
+						((colour2 & 0xFF) * frac2) +
+						((colour3 & 0xFF) * frac3);
+					int b =
+						(((colour1 & 0xFF00) >> 8) * frac1) +
+						(((colour2 & 0xFF00) >> 8) * frac2) +
+						(((colour3 & 0xFF00) >> 8) * frac3);
+					int g =
+						(((colour1 & 0xFF0000) >> 16) * frac1) +
+						(((colour2 & 0xFF0000) >> 16) * frac2) +
+						(((colour3 & 0xFF0000) >> 16) * frac3);
+					UINT col = (b << 16) + (g << 8) + r;
+//					col = 0x00FF0000;
+					plot_pixel_16m(p.x, p.y, col);
+				} else {
+					plot_pixel_16m(p.x, p.y, col);
+				}
+			}
+
+			// One step to the right
+			w0 += A12;
+			w1 += A20;
+			w2 += A01;
+		}
+
+		// One row step
+		w0_row += B12;
+		w1_row += B20;
+		w2_row += B01;
+	}
+}

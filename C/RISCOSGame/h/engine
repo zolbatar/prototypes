@@ -1,0 +1,39 @@
+#ifndef H_ENGINE
+#define H_ENGINE
+
+#include "types.h"
+
+struct vertex_type {
+	float lx, ly, lz;	// Local
+	float wx, wy, wz;	// World
+	int sx, sy;			// Screen
+};
+
+struct line_type {
+	int start, end;		// Pointers to vertices for start and end
+};
+
+struct face_type {
+	int v1, v2, v3, colour;
+	float nx, ny, nz;	// Normal
+};
+
+ struct shape_type {
+	BYTE colour;
+	int number_of_vertices;
+	int number_of_lines;
+	int number_of_faces;
+	vertex_type *vertex;
+	line_type *line;
+	face_type *face;
+};
+
+void inittrans();
+void scale(float sf);
+void translate(int xt, int yt, int zt);
+void rotate(float ax, float ay, float az);
+void transform(shape_type *shape);
+void project(shape_type *shape, int distance);
+void draw_shape(shape_type *shape);
+
+#endif

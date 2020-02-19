@@ -1,0 +1,4 @@
+Manifest-Version: 1.0
+Permissions: sandbox
+Codebase: beezombie.com
+Application-Name: The Corolis Sector

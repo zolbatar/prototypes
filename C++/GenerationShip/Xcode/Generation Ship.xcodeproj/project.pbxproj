@@ -1,0 +1,614 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FB14F9D21A8608A800A1A4E4 /* ResourcePath.mm in Sources */ = {isa = PBXBuildFile; fileRef = FB14F9D11A8608A800A1A4E4 /* ResourcePath.mm */; };
+		FB83B3B41A860CEF00ACD0DD /* Square.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FB83B3B21A86095500ACD0DD /* Square.ttf */; };
+		FB83B3BC1A86104400ACD0DD /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = FB83B3BB1A86104400ACD0DD /* icon.png */; };
+		FB83B3BE1A86108C00ACD0DD /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FB83B3BD1A86108C00ACD0DD /* main.cpp */; };
+		FB856F931A878D9D00BB1C5D /* random.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FB856F911A878D9D00BB1C5D /* random.cpp */; };
+		FB856F961A87912A00BB1C5D /* galaxies.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FB856F941A87912A00BB1C5D /* galaxies.cpp */; };
+		FB856F991A879AA300BB1C5D /* maths.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FB856F971A879AA300BB1C5D /* maths.cpp */; };
+		FBFA22FD1A8631CE00044009 /* Galaxy10.png in Resources */ = {isa = PBXBuildFile; fileRef = FBFA22EF1A8631CE00044009 /* Galaxy10.png */; };
+		FBFA22FE1A8631CE00044009 /* Galaxy11.png in Resources */ = {isa = PBXBuildFile; fileRef = FBFA22F01A8631CE00044009 /* Galaxy11.png */; };
+		FBFA22FF1A8631CE00044009 /* Galaxy12.png in Resources */ = {isa = PBXBuildFile; fileRef = FBFA22F11A8631CE00044009 /* Galaxy12.png */; };
+		FBFA23001A8631CE00044009 /* Galaxy13.png in Resources */ = {isa = PBXBuildFile; fileRef = FBFA22F21A8631CE00044009 /* Galaxy13.png */; };
+		FBFA23011A8631CE00044009 /* Galaxy14.png in Resources */ = {isa = PBXBuildFile; fileRef = FBFA22F31A8631CE00044009 /* Galaxy14.png */; };
+		FBFA231C1A8632A000044009 /* Nebula1.png in Resources */ = {isa = PBXBuildFile; fileRef = FBFA23031A8632A000044009 /* Nebula1.png */; };
+		FBFA231D1A8632A000044009 /* Nebula2.png in Resources */ = {isa = PBXBuildFile; fileRef = FBFA23041A8632A000044009 /* Nebula2.png */; };
+		FBFA231E1A8632A000044009 /* Nebula3.png in Resources */ = {isa = PBXBuildFile; fileRef = FBFA23051A8632A000044009 /* Nebula3.png */; };
+		FBFA231F1A8632A000044009 /* Nebula4.png in Resources */ = {isa = PBXBuildFile; fileRef = FBFA23061A8632A000044009 /* Nebula4.png */; };
+		FBFA23201A8632A000044009 /* Nebula5.png in Resources */ = {isa = PBXBuildFile; fileRef = FBFA23071A8632A000044009 /* Nebula5.png */; };
+		FBFA23211A8632A000044009 /* Nebula6.png in Resources */ = {isa = PBXBuildFile; fileRef = FBFA23081A8632A000044009 /* Nebula6.png */; };
+		FBFA23221A8632A000044009 /* Nebula7.png in Resources */ = {isa = PBXBuildFile; fileRef = FBFA23091A8632A000044009 /* Nebula7.png */; };
+		FBFA23231A8632A000044009 /* Nebula8.png in Resources */ = {isa = PBXBuildFile; fileRef = FBFA230A1A8632A000044009 /* Nebula8.png */; };
+		FBFA23241A8632A000044009 /* Nebula9.png in Resources */ = {isa = PBXBuildFile; fileRef = FBFA230B1A8632A000044009 /* Nebula9.png */; };
+		FBFA23251A8632A000044009 /* Nebula10.png in Resources */ = {isa = PBXBuildFile; fileRef = FBFA230C1A8632A000044009 /* Nebula10.png */; };
+		FBFA23261A8632A000044009 /* Nebula11.png in Resources */ = {isa = PBXBuildFile; fileRef = FBFA230D1A8632A000044009 /* Nebula11.png */; };
+		FBFA23271A8632A000044009 /* Nebula12.png in Resources */ = {isa = PBXBuildFile; fileRef = FBFA230E1A8632A000044009 /* Nebula12.png */; };
+		FBFA23281A8632A000044009 /* Nebula13.png in Resources */ = {isa = PBXBuildFile; fileRef = FBFA230F1A8632A000044009 /* Nebula13.png */; };
+		FBFA23291A8632A000044009 /* Nebula14.png in Resources */ = {isa = PBXBuildFile; fileRef = FBFA23101A8632A000044009 /* Nebula14.png */; };
+		FBFA232A1A8632A000044009 /* Nebula15.png in Resources */ = {isa = PBXBuildFile; fileRef = FBFA23111A8632A000044009 /* Nebula15.png */; };
+		FBFA232B1A8632A000044009 /* Nebula16.png in Resources */ = {isa = PBXBuildFile; fileRef = FBFA23121A8632A000044009 /* Nebula16.png */; };
+		FBFA232C1A8632A000044009 /* Nebula17.png in Resources */ = {isa = PBXBuildFile; fileRef = FBFA23131A8632A000044009 /* Nebula17.png */; };
+		FBFA232D1A8632A000044009 /* Nebula18.png in Resources */ = {isa = PBXBuildFile; fileRef = FBFA23141A8632A000044009 /* Nebula18.png */; };
+		FBFA232E1A8632A000044009 /* Nebula19.png in Resources */ = {isa = PBXBuildFile; fileRef = FBFA23151A8632A000044009 /* Nebula19.png */; };
+		FBFA232F1A8632A000044009 /* Nebula20.png in Resources */ = {isa = PBXBuildFile; fileRef = FBFA23161A8632A000044009 /* Nebula20.png */; };
+		FBFA23301A8632A000044009 /* Nebula21.png in Resources */ = {isa = PBXBuildFile; fileRef = FBFA23171A8632A000044009 /* Nebula21.png */; };
+		FBFA23311A8632A000044009 /* Nebula22.png in Resources */ = {isa = PBXBuildFile; fileRef = FBFA23181A8632A000044009 /* Nebula22.png */; };
+		FBFA23321A8632A000044009 /* Nebula23.png in Resources */ = {isa = PBXBuildFile; fileRef = FBFA23191A8632A000044009 /* Nebula23.png */; };
+		FBFA23331A8632A000044009 /* Nebula24.png in Resources */ = {isa = PBXBuildFile; fileRef = FBFA231A1A8632A000044009 /* Nebula24.png */; };
+		FBFA23341A8632A000044009 /* Nebula25.png in Resources */ = {isa = PBXBuildFile; fileRef = FBFA231B1A8632A000044009 /* Nebula25.png */; };
+		FBFA233E1A8632E500044009 /* Galaxy1.png in Resources */ = {isa = PBXBuildFile; fileRef = FBFA23351A8632E500044009 /* Galaxy1.png */; };
+		FBFA233F1A8632E500044009 /* Galaxy2.png in Resources */ = {isa = PBXBuildFile; fileRef = FBFA23361A8632E500044009 /* Galaxy2.png */; };
+		FBFA23401A8632E500044009 /* Galaxy3.png in Resources */ = {isa = PBXBuildFile; fileRef = FBFA23371A8632E500044009 /* Galaxy3.png */; };
+		FBFA23411A8632E500044009 /* Galaxy4.png in Resources */ = {isa = PBXBuildFile; fileRef = FBFA23381A8632E500044009 /* Galaxy4.png */; };
+		FBFA23421A8632E500044009 /* Galaxy5.png in Resources */ = {isa = PBXBuildFile; fileRef = FBFA23391A8632E500044009 /* Galaxy5.png */; };
+		FBFA23431A8632E500044009 /* Galaxy6.png in Resources */ = {isa = PBXBuildFile; fileRef = FBFA233A1A8632E500044009 /* Galaxy6.png */; };
+		FBFA23441A8632E500044009 /* Galaxy7.png in Resources */ = {isa = PBXBuildFile; fileRef = FBFA233B1A8632E500044009 /* Galaxy7.png */; };
+		FBFA23451A8632E500044009 /* Galaxy8.png in Resources */ = {isa = PBXBuildFile; fileRef = FBFA233C1A8632E500044009 /* Galaxy8.png */; };
+		FBFA23461A8632E500044009 /* Galaxy9.png in Resources */ = {isa = PBXBuildFile; fileRef = FBFA233D1A8632E500044009 /* Galaxy9.png */; };
+		FBFA23491A86331900044009 /* assets.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FBFA23471A86331900044009 /* assets.cpp */; };
+		FBFA234A1A86350400044009 /* Music1.ogg in Resources */ = {isa = PBXBuildFile; fileRef = FB83B3C01A86111600ACD0DD /* Music1.ogg */; };
+		FBFA234D1A863CC400044009 /* game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FBFA234B1A863CC400044009 /* game.cpp */; };
+		FBFA23531A86581A00044009 /* soundtrack.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FBFA23511A86581A00044009 /* soundtrack.cpp */; };
+		FBFA23571A86A96600044009 /* galaxy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FBFA23551A86A96600044009 /* galaxy.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		FB14F9CC1A8608A800A1A4E4 /* Generation Ship.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Generation Ship.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB14F9D01A8608A800A1A4E4 /* Generation Ship-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Generation Ship-Info.plist"; sourceTree = "<group>"; };
+		FB14F9D11A8608A800A1A4E4 /* ResourcePath.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ResourcePath.mm; sourceTree = "<group>"; };
+		FB14F9D31A8608A800A1A4E4 /* ResourcePath.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ResourcePath.hpp; sourceTree = "<group>"; };
+		FB83B3B21A86095500ACD0DD /* Square.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Square.ttf; path = ../../Res/Fonts/Square.ttf; sourceTree = "<group>"; };
+		FB83B3BB1A86104400ACD0DD /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = ../../Res/Icon/icon.png; sourceTree = "<group>"; };
+		FB83B3BD1A86108C00ACD0DD /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = ../../Src/main.cpp; sourceTree = "<group>"; };
+		FB83B3C01A86111600ACD0DD /* Music1.ogg */ = {isa = PBXFileReference; lastKnownFileType = file; name = Music1.ogg; path = ../../Res/Music/Music1.ogg; sourceTree = "<group>"; };
+		FB856F911A878D9D00BB1C5D /* random.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = random.cpp; path = ../../Src/library/random.cpp; sourceTree = "<group>"; };
+		FB856F921A878D9D00BB1C5D /* random.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = random.h; path = ../../Src/library/random.h; sourceTree = "<group>"; };
+		FB856F941A87912A00BB1C5D /* galaxies.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = galaxies.cpp; path = ../../Src/render/galaxies.cpp; sourceTree = "<group>"; };
+		FB856F951A87912A00BB1C5D /* galaxies.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = galaxies.h; path = ../../Src/render/galaxies.h; sourceTree = "<group>"; };
+		FB856F971A879AA300BB1C5D /* maths.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = maths.cpp; path = ../../Src/library/maths.cpp; sourceTree = "<group>"; };
+		FB856F981A879AA300BB1C5D /* maths.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = maths.h; path = ../../Src/library/maths.h; sourceTree = "<group>"; };
+		FB856F9B1A8805CF00BB1C5D /* non_copyable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = non_copyable.h; path = ../../Src/library/non_copyable.h; sourceTree = "<group>"; };
+		FB856F9E1A88183200BB1C5D /* Generation Ship.profdata */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Generation Ship.profdata"; sourceTree = "<group>"; };
+		FBFA22EF1A8631CE00044009 /* Galaxy10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Galaxy10.png; sourceTree = "<group>"; };
+		FBFA22F01A8631CE00044009 /* Galaxy11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Galaxy11.png; sourceTree = "<group>"; };
+		FBFA22F11A8631CE00044009 /* Galaxy12.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Galaxy12.png; sourceTree = "<group>"; };
+		FBFA22F21A8631CE00044009 /* Galaxy13.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Galaxy13.png; sourceTree = "<group>"; };
+		FBFA22F31A8631CE00044009 /* Galaxy14.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Galaxy14.png; sourceTree = "<group>"; };
+		FBFA23031A8632A000044009 /* Nebula1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Nebula1.png; sourceTree = "<group>"; };
+		FBFA23041A8632A000044009 /* Nebula2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Nebula2.png; sourceTree = "<group>"; };
+		FBFA23051A8632A000044009 /* Nebula3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Nebula3.png; sourceTree = "<group>"; };
+		FBFA23061A8632A000044009 /* Nebula4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Nebula4.png; sourceTree = "<group>"; };
+		FBFA23071A8632A000044009 /* Nebula5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Nebula5.png; sourceTree = "<group>"; };
+		FBFA23081A8632A000044009 /* Nebula6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Nebula6.png; sourceTree = "<group>"; };
+		FBFA23091A8632A000044009 /* Nebula7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Nebula7.png; sourceTree = "<group>"; };
+		FBFA230A1A8632A000044009 /* Nebula8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Nebula8.png; sourceTree = "<group>"; };
+		FBFA230B1A8632A000044009 /* Nebula9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Nebula9.png; sourceTree = "<group>"; };
+		FBFA230C1A8632A000044009 /* Nebula10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Nebula10.png; sourceTree = "<group>"; };
+		FBFA230D1A8632A000044009 /* Nebula11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Nebula11.png; sourceTree = "<group>"; };
+		FBFA230E1A8632A000044009 /* Nebula12.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Nebula12.png; sourceTree = "<group>"; };
+		FBFA230F1A8632A000044009 /* Nebula13.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Nebula13.png; sourceTree = "<group>"; };
+		FBFA23101A8632A000044009 /* Nebula14.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Nebula14.png; sourceTree = "<group>"; };
+		FBFA23111A8632A000044009 /* Nebula15.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Nebula15.png; sourceTree = "<group>"; };
+		FBFA23121A8632A000044009 /* Nebula16.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Nebula16.png; sourceTree = "<group>"; };
+		FBFA23131A8632A000044009 /* Nebula17.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Nebula17.png; sourceTree = "<group>"; };
+		FBFA23141A8632A000044009 /* Nebula18.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Nebula18.png; sourceTree = "<group>"; };
+		FBFA23151A8632A000044009 /* Nebula19.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Nebula19.png; sourceTree = "<group>"; };
+		FBFA23161A8632A000044009 /* Nebula20.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Nebula20.png; sourceTree = "<group>"; };
+		FBFA23171A8632A000044009 /* Nebula21.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Nebula21.png; sourceTree = "<group>"; };
+		FBFA23181A8632A000044009 /* Nebula22.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Nebula22.png; sourceTree = "<group>"; };
+		FBFA23191A8632A000044009 /* Nebula23.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Nebula23.png; sourceTree = "<group>"; };
+		FBFA231A1A8632A000044009 /* Nebula24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Nebula24.png; sourceTree = "<group>"; };
+		FBFA231B1A8632A000044009 /* Nebula25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Nebula25.png; sourceTree = "<group>"; };
+		FBFA23351A8632E500044009 /* Galaxy1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Galaxy1.png; path = ../../Res/Images/Galaxy/Galaxy1.png; sourceTree = "<group>"; };
+		FBFA23361A8632E500044009 /* Galaxy2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Galaxy2.png; path = ../../Res/Images/Galaxy/Galaxy2.png; sourceTree = "<group>"; };
+		FBFA23371A8632E500044009 /* Galaxy3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Galaxy3.png; path = ../../Res/Images/Galaxy/Galaxy3.png; sourceTree = "<group>"; };
+		FBFA23381A8632E500044009 /* Galaxy4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Galaxy4.png; path = ../../Res/Images/Galaxy/Galaxy4.png; sourceTree = "<group>"; };
+		FBFA23391A8632E500044009 /* Galaxy5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Galaxy5.png; path = ../../Res/Images/Galaxy/Galaxy5.png; sourceTree = "<group>"; };
+		FBFA233A1A8632E500044009 /* Galaxy6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Galaxy6.png; path = ../../Res/Images/Galaxy/Galaxy6.png; sourceTree = "<group>"; };
+		FBFA233B1A8632E500044009 /* Galaxy7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Galaxy7.png; path = ../../Res/Images/Galaxy/Galaxy7.png; sourceTree = "<group>"; };
+		FBFA233C1A8632E500044009 /* Galaxy8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Galaxy8.png; path = ../../Res/Images/Galaxy/Galaxy8.png; sourceTree = "<group>"; };
+		FBFA233D1A8632E500044009 /* Galaxy9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Galaxy9.png; path = ../../Res/Images/Galaxy/Galaxy9.png; sourceTree = "<group>"; };
+		FBFA23471A86331900044009 /* assets.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = assets.cpp; path = ../../Src/assets/assets.cpp; sourceTree = "<group>"; };
+		FBFA23481A86331900044009 /* assets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = assets.h; path = ../../Src/assets/assets.h; sourceTree = "<group>"; };
+		FBFA234B1A863CC400044009 /* game.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = game.cpp; path = ../../Src/game/game.cpp; sourceTree = "<group>"; };
+		FBFA234C1A863CC400044009 /* game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = game.h; path = ../../Src/game/game.h; sourceTree = "<group>"; };
+		FBFA23511A86581A00044009 /* soundtrack.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = soundtrack.cpp; path = ../../Src/media/soundtrack.cpp; sourceTree = "<group>"; };
+		FBFA23521A86581A00044009 /* soundtrack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = soundtrack.h; path = ../../Src/media/soundtrack.h; sourceTree = "<group>"; };
+		FBFA23551A86A96600044009 /* galaxy.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = galaxy.cpp; path = ../../Src/render/galaxy.cpp; sourceTree = "<group>"; };
+		FBFA23561A86A96600044009 /* galaxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = galaxy.h; path = ../../Src/render/galaxy.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FB14F9C81A8608A800A1A4E4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FB14F9C21A8608A800A1A4E4 = {
+			isa = PBXGroup;
+			children = (
+				FB14F9CE1A8608A800A1A4E4 /* Generation Ship */,
+				FB14F9CD1A8608A800A1A4E4 /* Products */,
+				FB856F9D1A88183200BB1C5D /* OptimizationProfiles */,
+			);
+			sourceTree = "<group>";
+		};
+		FB14F9CD1A8608A800A1A4E4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FB14F9CC1A8608A800A1A4E4 /* Generation Ship.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FB14F9CE1A8608A800A1A4E4 /* Generation Ship */ = {
+			isa = PBXGroup;
+			children = (
+				FB856F901A878D5A00BB1C5D /* Library */,
+				FBFA23541A86846500044009 /* Render */,
+				FBFA23501A8657F100044009 /* Media */,
+				FBFA234F1A863CD600044009 /* Assets */,
+				FBFA234E1A863CCB00044009 /* Game */,
+				FB14F9D11A8608A800A1A4E4 /* ResourcePath.mm */,
+				FB14F9D31A8608A800A1A4E4 /* ResourcePath.hpp */,
+				FB83B3BD1A86108C00ACD0DD /* main.cpp */,
+				FB14F9D61A8608A800A1A4E4 /* Resources */,
+				FB14F9CF1A8608A800A1A4E4 /* Supporting Files */,
+			);
+			path = "Generation Ship";
+			sourceTree = "<group>";
+		};
+		FB14F9CF1A8608A800A1A4E4 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FB14F9D01A8608A800A1A4E4 /* Generation Ship-Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FB14F9D61A8608A800A1A4E4 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				FB83B3BF1A86110700ACD0DD /* Music */,
+				FB83B3BA1A86103B00ACD0DD /* Icon */,
+				FB83B3B71A860F4200ACD0DD /* Images */,
+				FB83B3B31A86095A00ACD0DD /* Fonts */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		FB83B3B31A86095A00ACD0DD /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				FB83B3B21A86095500ACD0DD /* Square.ttf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
+		FB83B3B71A860F4200ACD0DD /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				FBFA23021A86329700044009 /* Nebula */,
+				FBFA22E51A8631C000044009 /* Galaxy */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		FB83B3BA1A86103B00ACD0DD /* Icon */ = {
+			isa = PBXGroup;
+			children = (
+				FB83B3BB1A86104400ACD0DD /* icon.png */,
+			);
+			name = Icon;
+			sourceTree = "<group>";
+		};
+		FB83B3BF1A86110700ACD0DD /* Music */ = {
+			isa = PBXGroup;
+			children = (
+				FB83B3C01A86111600ACD0DD /* Music1.ogg */,
+			);
+			name = Music;
+			sourceTree = "<group>";
+		};
+		FB856F901A878D5A00BB1C5D /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				FB856F911A878D9D00BB1C5D /* random.cpp */,
+				FB856F921A878D9D00BB1C5D /* random.h */,
+				FB856F971A879AA300BB1C5D /* maths.cpp */,
+				FB856F981A879AA300BB1C5D /* maths.h */,
+				FB856F9B1A8805CF00BB1C5D /* non_copyable.h */,
+			);
+			name = Library;
+			sourceTree = "<group>";
+		};
+		FB856F9D1A88183200BB1C5D /* OptimizationProfiles */ = {
+			isa = PBXGroup;
+			children = (
+				FB856F9E1A88183200BB1C5D /* Generation Ship.profdata */,
+			);
+			path = OptimizationProfiles;
+			sourceTree = "<group>";
+		};
+		FBFA22E51A8631C000044009 /* Galaxy */ = {
+			isa = PBXGroup;
+			children = (
+				FBFA23351A8632E500044009 /* Galaxy1.png */,
+				FBFA23361A8632E500044009 /* Galaxy2.png */,
+				FBFA23371A8632E500044009 /* Galaxy3.png */,
+				FBFA23381A8632E500044009 /* Galaxy4.png */,
+				FBFA23391A8632E500044009 /* Galaxy5.png */,
+				FBFA233A1A8632E500044009 /* Galaxy6.png */,
+				FBFA233B1A8632E500044009 /* Galaxy7.png */,
+				FBFA233C1A8632E500044009 /* Galaxy8.png */,
+				FBFA233D1A8632E500044009 /* Galaxy9.png */,
+				FBFA22EF1A8631CE00044009 /* Galaxy10.png */,
+				FBFA22F01A8631CE00044009 /* Galaxy11.png */,
+				FBFA22F11A8631CE00044009 /* Galaxy12.png */,
+				FBFA22F21A8631CE00044009 /* Galaxy13.png */,
+				FBFA22F31A8631CE00044009 /* Galaxy14.png */,
+			);
+			name = Galaxy;
+			sourceTree = "<group>";
+		};
+		FBFA23021A86329700044009 /* Nebula */ = {
+			isa = PBXGroup;
+			children = (
+				FBFA23031A8632A000044009 /* Nebula1.png */,
+				FBFA23041A8632A000044009 /* Nebula2.png */,
+				FBFA23051A8632A000044009 /* Nebula3.png */,
+				FBFA23061A8632A000044009 /* Nebula4.png */,
+				FBFA23071A8632A000044009 /* Nebula5.png */,
+				FBFA23081A8632A000044009 /* Nebula6.png */,
+				FBFA23091A8632A000044009 /* Nebula7.png */,
+				FBFA230A1A8632A000044009 /* Nebula8.png */,
+				FBFA230B1A8632A000044009 /* Nebula9.png */,
+				FBFA230C1A8632A000044009 /* Nebula10.png */,
+				FBFA230D1A8632A000044009 /* Nebula11.png */,
+				FBFA230E1A8632A000044009 /* Nebula12.png */,
+				FBFA230F1A8632A000044009 /* Nebula13.png */,
+				FBFA23101A8632A000044009 /* Nebula14.png */,
+				FBFA23111A8632A000044009 /* Nebula15.png */,
+				FBFA23121A8632A000044009 /* Nebula16.png */,
+				FBFA23131A8632A000044009 /* Nebula17.png */,
+				FBFA23141A8632A000044009 /* Nebula18.png */,
+				FBFA23151A8632A000044009 /* Nebula19.png */,
+				FBFA23161A8632A000044009 /* Nebula20.png */,
+				FBFA23171A8632A000044009 /* Nebula21.png */,
+				FBFA23181A8632A000044009 /* Nebula22.png */,
+				FBFA23191A8632A000044009 /* Nebula23.png */,
+				FBFA231A1A8632A000044009 /* Nebula24.png */,
+				FBFA231B1A8632A000044009 /* Nebula25.png */,
+			);
+			name = Nebula;
+			sourceTree = "<group>";
+		};
+		FBFA234E1A863CCB00044009 /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				FBFA234B1A863CC400044009 /* game.cpp */,
+				FBFA234C1A863CC400044009 /* game.h */,
+			);
+			name = Game;
+			sourceTree = "<group>";
+		};
+		FBFA234F1A863CD600044009 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				FBFA23471A86331900044009 /* assets.cpp */,
+				FBFA23481A86331900044009 /* assets.h */,
+			);
+			name = Assets;
+			sourceTree = "<group>";
+		};
+		FBFA23501A8657F100044009 /* Media */ = {
+			isa = PBXGroup;
+			children = (
+				FBFA23511A86581A00044009 /* soundtrack.cpp */,
+				FBFA23521A86581A00044009 /* soundtrack.h */,
+			);
+			name = Media;
+			sourceTree = "<group>";
+		};
+		FBFA23541A86846500044009 /* Render */ = {
+			isa = PBXGroup;
+			children = (
+				FBFA23551A86A96600044009 /* galaxy.cpp */,
+				FBFA23561A86A96600044009 /* galaxy.h */,
+				FB856F941A87912A00BB1C5D /* galaxies.cpp */,
+				FB856F951A87912A00BB1C5D /* galaxies.h */,
+			);
+			name = Render;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FB14F9CB1A8608A800A1A4E4 /* Generation Ship */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FB14F9E11A8608A800A1A4E4 /* Build configuration list for PBXNativeTarget "Generation Ship" */;
+			buildPhases = (
+				FB14F9C71A8608A800A1A4E4 /* Sources */,
+				FB14F9C81A8608A800A1A4E4 /* Frameworks */,
+				FB14F9C91A8608A800A1A4E4 /* Resources */,
+				FB14F9CA1A8608A800A1A4E4 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Generation Ship";
+			productName = "Generation Ship";
+			productReference = FB14F9CC1A8608A800A1A4E4 /* Generation Ship.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FB14F9C31A8608A800A1A4E4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "Bee Zombie Games";
+				TargetAttributes = {
+					FB14F9CB1A8608A800A1A4E4 = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+				};
+			};
+			buildConfigurationList = FB14F9C61A8608A800A1A4E4 /* Build configuration list for PBXProject "Generation Ship" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = FB14F9C21A8608A800A1A4E4;
+			productRefGroup = FB14F9CD1A8608A800A1A4E4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FB14F9CB1A8608A800A1A4E4 /* Generation Ship */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FB14F9C91A8608A800A1A4E4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FBFA232E1A8632A000044009 /* Nebula19.png in Resources */,
+				FBFA23291A8632A000044009 /* Nebula14.png in Resources */,
+				FB83B3B41A860CEF00ACD0DD /* Square.ttf in Resources */,
+				FBFA23421A8632E500044009 /* Galaxy5.png in Resources */,
+				FBFA232B1A8632A000044009 /* Nebula16.png in Resources */,
+				FBFA22FF1A8631CE00044009 /* Galaxy12.png in Resources */,
+				FBFA23271A8632A000044009 /* Nebula12.png in Resources */,
+				FBFA23011A8631CE00044009 /* Galaxy14.png in Resources */,
+				FBFA23231A8632A000044009 /* Nebula8.png in Resources */,
+				FBFA231C1A8632A000044009 /* Nebula1.png in Resources */,
+				FBFA232D1A8632A000044009 /* Nebula18.png in Resources */,
+				FBFA231F1A8632A000044009 /* Nebula4.png in Resources */,
+				FBFA23281A8632A000044009 /* Nebula13.png in Resources */,
+				FBFA234A1A86350400044009 /* Music1.ogg in Resources */,
+				FBFA23261A8632A000044009 /* Nebula11.png in Resources */,
+				FBFA23221A8632A000044009 /* Nebula7.png in Resources */,
+				FBFA23301A8632A000044009 /* Nebula21.png in Resources */,
+				FBFA23001A8631CE00044009 /* Galaxy13.png in Resources */,
+				FBFA232C1A8632A000044009 /* Nebula17.png in Resources */,
+				FBFA23441A8632E500044009 /* Galaxy7.png in Resources */,
+				FBFA232F1A8632A000044009 /* Nebula20.png in Resources */,
+				FBFA23321A8632A000044009 /* Nebula23.png in Resources */,
+				FBFA23451A8632E500044009 /* Galaxy8.png in Resources */,
+				FBFA23251A8632A000044009 /* Nebula10.png in Resources */,
+				FBFA23241A8632A000044009 /* Nebula9.png in Resources */,
+				FBFA22FD1A8631CE00044009 /* Galaxy10.png in Resources */,
+				FBFA231E1A8632A000044009 /* Nebula3.png in Resources */,
+				FBFA23461A8632E500044009 /* Galaxy9.png in Resources */,
+				FBFA23411A8632E500044009 /* Galaxy4.png in Resources */,
+				FB83B3BC1A86104400ACD0DD /* icon.png in Resources */,
+				FBFA23431A8632E500044009 /* Galaxy6.png in Resources */,
+				FBFA233E1A8632E500044009 /* Galaxy1.png in Resources */,
+				FBFA23311A8632A000044009 /* Nebula22.png in Resources */,
+				FBFA23401A8632E500044009 /* Galaxy3.png in Resources */,
+				FBFA231D1A8632A000044009 /* Nebula2.png in Resources */,
+				FBFA232A1A8632A000044009 /* Nebula15.png in Resources */,
+				FBFA23201A8632A000044009 /* Nebula5.png in Resources */,
+				FBFA23331A8632A000044009 /* Nebula24.png in Resources */,
+				FBFA23341A8632A000044009 /* Nebula25.png in Resources */,
+				FBFA22FE1A8631CE00044009 /* Galaxy11.png in Resources */,
+				FBFA23211A8632A000044009 /* Nebula6.png in Resources */,
+				FBFA233F1A8632E500044009 /* Galaxy2.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		FB14F9CA1A8608A800A1A4E4 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# This shell script simply copies required SFML dylibs/frameworks into the application bundle frameworks folder.\n# If you're using static libraries (which is not recommended) you should remove this script from your project.\n\n# Are we building a project that uses frameworks or dylibs?\ncase \"$SFML_BINARY_TYPE\" in\n    DYLIBS)\n        frameworks=\"false\"\n        ;;\n    *)\n        frameworks=\"true\"\n        ;;\nesac\n\n# Echoes to stderr\nerror () # $* message to display\n{\n    echo $* 1>&2\n    exit 2\n}\n\nassert () # $1 is a boolean, $2...N is an error message\n{\n    if [ $# -lt 2 ]\n    then\n        error \"Internal error in assert : not enough args\"\n    fi\n\n    if [ $1 -ne 0 ]\n    then\n        shift\n        error \"$*\"\n    fi\n}\n\nforce_remove () # $@ is some paths\n{\n    test $# -ge 1\n    assert $? \"force_remove() requires at least one parameter\"\n    rm -fr $@\n    assert $? \"couldn't remove $@\"\n}\n\ncopy () # $1 is a source, $2 is a destination\n{\n    test $# -eq 2\n    assert $? \"copy() requires two parameters\"\n    ditto \"$1\" \"$2\"\n    assert $? \"couldn't copy $1 to $2\"\n}\n\nrequire () # $1 is a SFML module like 'system' or 'audio'\n{\n    dest=\"$BUILT_PRODUCTS_DIR/$PRODUCT_NAME.app/Contents/Frameworks\"\n\n    if [ -z \"$1\" ]\n    then\n        error \"require() requires one parameter!\"\n    else\n        # clean potentially old stuff\n        force_remove \"$dest/libsfml-$1\"*\n        force_remove \"$dest/sfml-$1.framework\"\n\n        # copy SFML libraries\n        if [ \"$frameworks\" = \"true\" ]\n        then\n            source=\"/Library/Frameworks/sfml-$1.framework\"\n            target=\"sfml-$1.framework\"\n        elif [ \"$SFML_LINK_DYLIBS_SUFFIX\" = \"-d\" ]\n        then\n            source=\"/usr/local/lib/libsfml-$1-d.dylib\"\n            target=\"`readlink $source`\"\n        else\n            source=\"/usr/local/lib/libsfml-$1.dylib\"\n            target=\"`readlink $source`\"\n        fi\n\n        copy \"$source\" \"$dest/$target\"\n\n        # copy extra dependencies\n        if [ \"$1\" = \"audio\" ]\n        then\n            # copy sndfile framework too\n            copy \"/Library/Frameworks/sndfile.framework\" \"$dest/sndfile.framework\"\n        elif [ \"$1\" = \"graphics\" ]\n        then\n            # copy freetype framework too\n            copy \"/Library/Frameworks/freetype.framework\" \"$dest/freetype.framework\"\n        fi\n    fi\n}\n\nif [ -n \"$SFML_SYSTEM\" ]\nthen\n    require \"system\"\nfi\n\nif [ -n \"$SFML_AUDIO\" ]\nthen\n    require \"audio\"\nfi\n\nif [ -n \"$SFML_NETWORK\" ]\nthen\n    require \"network\"\nfi\n\nif [ -n \"$SFML_WINDOW\" ]\nthen\n    require \"window\"\nfi\n\nif [ -n \"$SFML_GRAPHICS\" ]\nthen\n    require \"graphics\"\nfi\n\n                ";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FB14F9C71A8608A800A1A4E4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB856F991A879AA300BB1C5D /* maths.cpp in Sources */,
+				FBFA23491A86331900044009 /* assets.cpp in Sources */,
+				FBFA23571A86A96600044009 /* galaxy.cpp in Sources */,
+				FB856F931A878D9D00BB1C5D /* random.cpp in Sources */,
+				FB856F961A87912A00BB1C5D /* galaxies.cpp in Sources */,
+				FB83B3BE1A86108C00ACD0DD /* main.cpp in Sources */,
+				FB14F9D21A8608A800A1A4E4 /* ResourcePath.mm in Sources */,
+				FBFA234D1A863CC400044009 /* game.cpp in Sources */,
+				FBFA23531A86581A00044009 /* soundtrack.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		FB14F9DF1A8608A800A1A4E4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					i386,
+					x86_64,
+				);
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				FRAMEWORK_SEARCH_PATHS = (
+					/Library/Frameworks/,
+					"$(inherited)",
+				);
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				HEADER_SEARCH_PATHS = (
+					/usr/local/include/,
+					"$(inherited)",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					/usr/local/lib/,
+					"$(inherited)",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"$(SFML_SYSTEM)",
+					"$(SFML_WINDOW)",
+					"$(SFML_GRAPHICS)",
+					"$(SFML_AUDIO)",
+					"$(SFML_NETWORK)",
+				);
+				SFML_AUDIO = "$(SFML_LINK_PREFIX) sfml-audio$(SFML_LINK_SUFFIX)";
+				SFML_BINARY_TYPE = FRAMEWORKS;
+				SFML_GRAPHICS = "$(SFML_LINK_PREFIX) sfml-graphics$(SFML_LINK_SUFFIX)";
+				SFML_LINK_DYLIBS_PREFIX = "-l";
+				SFML_LINK_DYLIBS_SUFFIX = "";
+				SFML_LINK_FRAMEWORKS_PREFIX = "-framework";
+				SFML_LINK_FRAMEWORKS_SUFFIX = "";
+				SFML_LINK_PREFIX = "$(SFML_LINK_$(SFML_BINARY_TYPE)_PREFIX)";
+				SFML_LINK_SUFFIX = "$(SFML_LINK_$(SFML_BINARY_TYPE)_SUFFIX)";
+				SFML_NETWORK = "$(SFML_LINK_PREFIX) sfml-network$(SFML_LINK_SUFFIX)";
+				SFML_SYSTEM = "$(SFML_LINK_PREFIX) sfml-system$(SFML_LINK_SUFFIX)";
+				SFML_WINDOW = "$(SFML_LINK_PREFIX) sfml-window$(SFML_LINK_SUFFIX)";
+				SUPPORTED_PLATFORMS = macosx;
+			};
+			name = Debug;
+		};
+		FB14F9E01A8608A800A1A4E4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					i386,
+					x86_64,
+				);
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				FRAMEWORK_SEARCH_PATHS = (
+					/Library/Frameworks/,
+					"$(inherited)",
+				);
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				HEADER_SEARCH_PATHS = (
+					/usr/local/include/,
+					"$(inherited)",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					/usr/local/lib/,
+					"$(inherited)",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"$(SFML_SYSTEM)",
+					"$(SFML_WINDOW)",
+					"$(SFML_GRAPHICS)",
+					"$(SFML_AUDIO)",
+					"$(SFML_NETWORK)",
+				);
+				SFML_AUDIO = "$(SFML_LINK_PREFIX) sfml-audio$(SFML_LINK_SUFFIX)";
+				SFML_BINARY_TYPE = FRAMEWORKS;
+				SFML_GRAPHICS = "$(SFML_LINK_PREFIX) sfml-graphics$(SFML_LINK_SUFFIX)";
+				SFML_LINK_DYLIBS_PREFIX = "-l";
+				SFML_LINK_DYLIBS_SUFFIX = "";
+				SFML_LINK_FRAMEWORKS_PREFIX = "-framework";
+				SFML_LINK_FRAMEWORKS_SUFFIX = "";
+				SFML_LINK_PREFIX = "$(SFML_LINK_$(SFML_BINARY_TYPE)_PREFIX)";
+				SFML_LINK_SUFFIX = "$(SFML_LINK_$(SFML_BINARY_TYPE)_SUFFIX)";
+				SFML_NETWORK = "$(SFML_LINK_PREFIX) sfml-network$(SFML_LINK_SUFFIX)";
+				SFML_SYSTEM = "$(SFML_LINK_PREFIX) sfml-system$(SFML_LINK_SUFFIX)";
+				SFML_WINDOW = "$(SFML_LINK_PREFIX) sfml-window$(SFML_LINK_SUFFIX)";
+				SUPPORTED_PLATFORMS = macosx;
+			};
+			name = Release;
+		};
+		FB14F9E21A8608A800A1A4E4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "Generation Ship/Generation Ship-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		FB14F9E31A8608A800A1A4E4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_USE_OPTIMIZATION_PROFILE = YES;
+				INFOPLIST_FILE = "Generation Ship/Generation Ship-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FB14F9C61A8608A800A1A4E4 /* Build configuration list for PBXProject "Generation Ship" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FB14F9DF1A8608A800A1A4E4 /* Debug */,
+				FB14F9E01A8608A800A1A4E4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FB14F9E11A8608A800A1A4E4 /* Build configuration list for PBXNativeTarget "Generation Ship" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FB14F9E21A8608A800A1A4E4 /* Debug */,
+				FB14F9E31A8608A800A1A4E4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FB14F9C31A8608A800A1A4E4 /* Project object */;
+}

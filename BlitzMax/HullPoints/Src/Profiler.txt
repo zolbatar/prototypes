@@ -1,0 +1,57 @@
+Profiler Log V1.0
+---------------------
+Function:Buttons::CheckClick Calls:2 Total:0 Avg:0.00000000
+Total (Seconds):0.00000000
+Avg (Seconds):0.00000000
+---------------------
+Function:Buttons::Clicked Calls:2334 Total:15 Avg:0.00642673532
+Total (Seconds):0.0149999997
+Avg (Seconds):6.42673513e-06
+---------------------
+Function:Buttons::Create Calls:1 Total:164 Avg:164.000000
+Total (Seconds):0.164000005
+Avg (Seconds):0.164000005
+---------------------
+Function:Buttons::CreateButtonSet Calls:6 Total:161 Avg:26.8333340
+Total (Seconds):0.160999998
+Avg (Seconds):0.0268333331
+---------------------
+Function:Buttons::Render Calls:2334 Total:1498 Avg:0.641816616
+Total (Seconds):1.49800003
+Avg (Seconds):0.000641816645
+---------------------
+Function:Buttons::RenderButton Calls:378 Total:160 Avg:0.423280418
+Total (Seconds):0.159999996
+Avg (Seconds):0.000423280435
+---------------------
+Function:GFX::GetCachedFontHeight Calls:2 Total:0 Avg:0.00000000
+Total (Seconds):0.00000000
+Avg (Seconds):0.00000000
+---------------------
+Function:GFX::GetCachedFontWidth Calls:43992 Total:86 Avg:0.00195490080
+Total (Seconds):0.0860000029
+Avg (Seconds):1.95490088e-06
+---------------------
+Function:GFX::GetFontFromIndex Calls:96348 Total:101 Avg:0.00104828330
+Total (Seconds):0.101000004
+Avg (Seconds):1.04828325e-06
+---------------------
+Function:GFX::UIScanLines Calls:2879 Total:186 Avg:0.0646057650
+Total (Seconds):0.186000004
+Avg (Seconds):6.46057670e-05
+---------------------
+Function:GameData::Common Calls:1 Total:3645 Avg:3645.00000
+Total (Seconds):3.64499998
+Avg (Seconds):3.64499998
+---------------------
+Function:GameData::LoadGD Calls:1 Total:11 Avg:11.0000000
+Total (Seconds):0.0109999999
+Avg (Seconds):0.0109999999
+---------------------
+Function:GameData::LoadPlanetsStarsAsteroids Calls:1 Total:2347 Avg:2347.00000
+Total (Seconds):2.34699988
+Avg (Seconds):2.34699988
+---------------------
+Function:GameData::RenderStatus Calls:54 Total:421 Avg:7.79629612
+Total (Seconds):0.421000004
+Avg (Seconds):0.00779629638

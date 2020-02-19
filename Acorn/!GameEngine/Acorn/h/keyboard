@@ -1,0 +1,21 @@
+#ifndef H_KEYBOARD
+#define H_KEYBOARD
+#include <stdbool.h>
+#include "types.h"
+
+BYTE check_for_key();
+
+#define KEY_ESCAPE  112
+#define KEY_Q       16
+#define KEY_W       33
+#define KEY_E       34
+#define KEY_R       51
+#define KEY_LEFT    25
+#define KEY_RIGHT   121
+#define KEY_UP      57
+#define KEY_DOWN    41
+#define PAGE_UP     63
+#define PAGE_DOWN   78
+
+#endif
+

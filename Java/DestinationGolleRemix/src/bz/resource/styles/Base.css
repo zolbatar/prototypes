@@ -1,0 +1,17 @@
+@font-face {
+    font-family: SquareFont;
+    src: url('../fonts/Square.ttf');
+}
+
+@font-face {
+    font-family: RobotoCondensedRegular;
+    src: url('../fonts/RobotoCondensed-Regular.ttf');
+}
+
+.root {
+    -fx-font-smoothing-type: lcd;
+    -fx-font-family: "Roboto Condensed";
+    -fx-font-size: 15px;
+    -my-border: rgb(20,20,20);
+    -my-border-hover: rgb(150,150,150);
+}

@@ -1,0 +1,7 @@
+.DS_Store
+Src/.bmx
+Src/*.debug.app
+Src/Main.app/
+*.bmx.bak
+*.exe
+.bmx

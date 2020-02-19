@@ -1,0 +1,5 @@
+.root {
+    -fx-font-smoothing-type: lcd;
+    -fx-font-family: "Skyline";
+    -fx-font-size: 12px;
+}

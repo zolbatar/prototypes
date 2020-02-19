@@ -1,0 +1,84 @@
+.root {
+    -fx-font-smoothing-type: lcd;
+    -fx-font: 12px "SquareFont";
+    -my-base: #404040;
+    -my-base-light: #505050;
+    -my-base-bright: #606060;
+    -my-background: #202020;
+    -my-text-dark: rgb(160,160,160);
+    -my-text: rgb(220,220,220);
+    -my-text-hover: white;
+    -my-text-selected: yellow;;
+}
+
+// Progress bar
+.progress-bar > .track {
+    -fx-background-color: -my-background;
+}
+
+.progress-bar .bar { 
+    -fx-padding: 1px; 
+    -fx-background-color: cornflowerblue;
+    -fx-background-insets: 0; 
+}
+
+// Titled pane
+.titled-pane {
+    -fx-text-fill: -my-text-selected;
+    -fx-alignment: CENTER;
+}
+.titled-pane > *.title {
+    -fx-font-family: "SquareFont";
+    -fx-background-color: -my-base;
+}
+.titled-pane > *.content {
+   -fx-background-color: transparent;
+   -fx-box-border: transparent;
+}
+
+// Toolbar
+.tool-bar:horizontal {
+    -fx-background-color: transparent;
+}
+
+// Text
+.label-title {
+    -fx-font-size: 120px;
+    -fx-text-fill: yellow;
+}
+
+// Text
+.label-section {
+    -fx-font-size: 25px;
+    -fx-text-fill: yellow;
+}
+
+// Standard buttons
+.button, .toggle-button {
+    -fx-font: 12px "SquareFont";
+    -fx-text-fill: -my-text;
+    -fx-background-color: -my-base;
+}
+.button:hover, .toggle-button:hover {
+    -fx-text-fill: -my-text-hover;
+    -fx-background-color: -my-base-light;
+}
+.toggle-button:selected {
+    -fx-background-color: -my-base;
+    -fx-text-fill: -my-text-selected;
+}
+
+// Custom Buttons
+.buttonbig {
+    -fx-font-size: 40px;
+    -fx-pref-width: 700px;
+    -fx-pref-height: 60px;
+    -fx-max-height: 60px;
+    -fx-background-color: transparent;
+    -fx-text-fill: -my-text-dark;
+    -fx-padding: -1px;
+}
+.buttonbig:hover {
+    -fx-text-fill: -my-text-hover;
+    -fx-background-color: transparent;
+}

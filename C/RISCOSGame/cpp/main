@@ -1,0 +1,157 @@
+#include <stdlib.h>
+#include <stdio.h>
+#include <time.h>
+#include "graphics.h"
+#include "terrain.h"
+#include "palette.h"
+#include "engine.h"
+
+void performance_test();
+void spinning_cube();
+
+clock_t t;
+
+void time_start() {
+	t = clock();
+}
+
+void time_end() {
+	clock_t tt = clock() - t;
+	printf("Took %d - %f seconds to execute \n", tt, ((float)tt) / CLOCKS_PER_SEC);
+}
+
+int main() {
+
+	// Set things uo
+	graphics_setup();
+	generate_palette();
+	shape_type *terrain = generate_terrain();
+
+	// Loop
+	t = clock();
+	time_start();
+//	spinning_cube();
+	render_terrain(terrain);
+
+	// Shutdown
+	time_end();
+	graphics_end();
+}
+
+void performance_test() {
+	for (int i = 0; i < 1; i++) {
+		test_palette();
+		clear_screen(0);
+		set_clip(0, 0, 319, 255);
+		draw_box(0, 0, 319, 255, 8);
+		set_clip(10, 10, 309, 245);
+		for (int xx = 0; xx < 150; xx++) {
+			draw_horz_line(xx + 1, (xx << 1) + 1, xx, xx + 1);
+		}
+		for (int xx = 0; xx < 1000; xx++) {
+			draw_line(rand() % 319, rand() % 255, rand() % 319, rand() % 255, rand() % 255);
+		}
+
+		int coords[6] = { rand() % 319, rand() % 255, rand() % 319, rand() % 255, rand() % 360, rand() % 255 };
+		draw_polygon(coords, 3, rand() % 255);
+		int coords2[] = { 0, 0, 319, 120, 50, 255 };
+		draw_polygon(coords2, 3, rand() % 255);
+		end_frame();
+	}
+}
+
+void spinning_cube() {
+	vertex_type cube_vertices[] = {
+		-10,-10,10,	// 0
+		0,0,0,
+		0,0,
+		10,-10,10,	// 1
+		0,0,0,
+		0,0,
+		10,10,10,	// 2
+		0,0,0,
+		0,0,
+		-10,10,10,	// 3
+		0,0,0,
+		0,0,
+		-10,-10,-10,// 4
+		0,0,0,
+		0,0,
+		10,-10,-10,	// 5
+		0,0,0,
+		0,0,
+		10,10,-10,	// 6
+		0,0,0,
+		0,0,
+		-10,10,-10,	// 7
+		0,0,0,
+		0,0,
+	};
+
+	line_type cube_lines[] = {
+		0,1,
+		1,2,
+		2,3,
+		3,0,
+		4,5,
+		5,6,
+		6,7,
+		7,4,
+		0,4,
+		1,5,
+		2,6,
+		3,7,
+	};
+
+	face_type cube_faces[] = {
+		1,0,2,8 + 4,
+		0,0,0,
+		0,3,2,8 + 4,
+		0,0,0,
+		4,5,6,16 + 4,
+		0,0,0,
+		4,6,7,16 + 4,
+		0,0,0,
+		4,0,1,24 + 4,
+		0,0,0,
+		4,1,5,24 + 4,
+		0,0,0,
+		3,7,6,32 + 4,
+		0,0,0,
+		3,6,2,32 + 4,
+		0,0,0,
+		5,1,2,40 + 4,
+		0,0,0,
+		5,2,6,40 + 4,
+		0,0,0,
+		0,4,7,48 + 4,
+		0,0,0,
+		0,7,3,48 + 4,
+		0,0,0,
+	};
+
+	shape_type shape = {
+		255,
+		8,		// vertices
+		12,		// lines
+		12,		// faces
+		cube_vertices,
+		cube_lines,
+		cube_faces,
+	};
+
+	for (int i = 0; i < 1000; i++) {
+		float r = (float)i / 50.0;
+		clear_screen(0);
+		inittrans();
+		scale(2);
+		rotate(0.0, (float)i / 100, 0.0);
+		rotate(r, r, r);
+		translate(0, 0, 100);
+		transform(&shape);
+		project(&shape, 150);
+		draw_shape(&shape);
+		end_frame();
+//		getchar();
+	}
+}

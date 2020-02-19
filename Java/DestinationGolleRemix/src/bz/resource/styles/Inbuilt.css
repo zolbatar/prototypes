@@ -1,0 +1,98 @@
+.check-box {
+    -fx-base: rgb(60,60,60);
+    -fx-text-fill: rgb(220,220,220);
+}
+
+.radio-button {
+    -fx-text-fill: rgb(220,220,220);
+}
+
+.scroll-bar:vertical {
+    -fx-background-color: rgb(50,50,50);
+    -fx-focus-color: transparent;
+}
+.scroll-bar > .thumb {
+    -fx-background-color: rgb(65,65,65);
+}
+.scroll-bar:vertical > .thumb {
+    -fx-background-color: rgb(65,65,65);
+}
+
+.tab-pane *.tab-header-background {
+    -fx-background-color: transparent;
+}
+.tab-pane .tab {
+    -fx-background-color: rgb(50, 50, 50);
+    -fx-focus-color: transparent;
+}
+.tab .tab-label {
+    -fx-alignment: CENTER;
+    -fx-text-fill: rgb(220,220,220);
+}
+.tab:selected .tab-label {
+    -fx-alignment: CENTER;
+    -fx-text-fill: yellow;
+}
+.tab:hover .tab-label {
+    -fx-alignment: CENTER;
+    -fx-text-fill: white;
+}
+
+.titled-pane > *.title {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-background-color: -my-border, rgb(70,70,70);
+    -fx-background-insets: 0, 1;
+    -fx-background-radius: 1px, 1px;
+}
+.titled-pane > *.content {
+    -fx-background-color: rgba(60,60,60, 0.4);
+    -fx-box-border: transparent;
+}
+
+.tabfont {
+    -fx-text-fill: yellow;
+    -fx-fonts-size: 16px;
+}
+
+.tabfontSmall {
+    -fx-text-fill: yellow;
+    -fx-font-size: 14px;
+}
+
+.progress-bar .bar {
+    -fx-padding: 3px;
+    -fx-background-insets: 0;
+}
+
+.tool-bar:horizontal {
+    -fx-background-color: transparent;
+}
+
+
+.scroll-pane > .viewport {
+    -fx-background-color: transparent;
+}
+
+.button, .toggle-button {
+    -fx-base: rgb(70,70,70);
+    -fx-background-color: -my-border, -fx-base;
+    -fx-background-insets: 0, 1;
+    -fx-background-radius: 1px, 1px;
+    -fx-text-fill: rgb(220, 220, 220);
+}
+
+.button:hover, .toggle-button:hover {
+    -fx-background-color: -my-border-hover, -fx-base;
+    -fx-text-fill: white;
+}
+
+#button:hover {
+    -fx-text-fill: white;
+    -fx-background-color: -my-border-hover, -fx-base;
+}
+
+.toggle-button:selected {
+    -fx-background-color: -my-border-hover, -fx-base;
+    -fx-text-fill: yellow;
+}
