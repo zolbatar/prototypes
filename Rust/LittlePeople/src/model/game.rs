@@ -26,3 +26,7 @@ pub fn set_deltatime(world: &mut World, time: f64) {
     let mut delta = world.write_resource::<DeltaTime>();
     *delta = DeltaTime(time);
 }
+
+pub fn get_deltatime(d: &DeltaTime) -> f64 {
+    d.0
+}

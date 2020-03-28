@@ -1,5 +1,4 @@
 use crate::dispatcher::{create_dispatch, run_dispatch};
-use crate::model::game::DeltaTime;
 use crate::model::game::{register_resources, set_deltatime};
 use crate::model::world::create_world;
 use std::time::SystemTime;
@@ -16,7 +15,7 @@ fn main() {
 
     // Game loop
     let mut last_time = SystemTime::now();
-    for x in 0..10 {
+    for _ in 0..10 {
         let new_time = SystemTime::now();
         set_deltatime(
             &mut world,
