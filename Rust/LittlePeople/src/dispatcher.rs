@@ -1,10 +1,10 @@
-use crate::model::game::LittlePeople;
+use crate::systems::movement::Movement;
 use specs::prelude::*;
 use specs::{Dispatcher, DispatcherBuilder};
 
 pub fn create_dispatch() -> Dispatcher<'static, 'static> {
     let dispatcher = DispatcherBuilder::new()
-        .with(LittlePeople::init(), "little_people", &[])
+        .with(Movement::init(), "little_people", &[])
         .build();
     dispatcher
 }

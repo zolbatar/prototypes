@@ -9,6 +9,7 @@ use std::path;
 use std::time::SystemTime;
 
 struct LittlePeopleGraphicsState {
+    frames: u64,
     last_time: SystemTime,
     dispatcher: Dispatcher<'static, 'static>,
     world: World,
@@ -21,6 +22,7 @@ impl LittlePeopleGraphicsState {
         world: World,
     ) -> LittlePeopleGraphicsState {
         LittlePeopleGraphicsState {
+            frames: 0,
             last_time: SystemTime::now(),
             dispatcher,
             world,
@@ -42,6 +44,7 @@ impl EventHandler for LittlePeopleGraphicsState {
 
     fn draw(&mut self, ctx: &mut Context) -> GameResult<()> {
         graphics::clear(ctx, graphics::WHITE);
+        self.frames += 1;
         graphics::present(ctx)
     }
 }

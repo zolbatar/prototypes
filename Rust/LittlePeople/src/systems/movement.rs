@@ -1,9 +1,17 @@
-use crate::model::game::{get_deltatime, DeltaTime, LittlePeople};
+use crate::model::game::{get_deltatime, DeltaTime};
 use crate::model::position::{Destination, Position};
 use specs::join::Join;
 use specs::{Read, ReadStorage, System, WriteStorage};
 
-impl<'a> System<'a> for LittlePeople {
+pub struct Movement {}
+
+impl Movement {
+    pub fn init() -> Movement {
+        Movement {}
+    }
+}
+
+impl<'a> System<'a> for Movement {
     type SystemData = (
         Read<'a, DeltaTime>,
         ReadStorage<'a, Destination>,

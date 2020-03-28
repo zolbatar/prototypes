@@ -9,7 +9,6 @@ mod model;
 mod systems;
 
 fn main() {
-    // Init
     let mut world = create_world();
     register_resources(&mut world);
     let dispatcher = create_dispatch();
