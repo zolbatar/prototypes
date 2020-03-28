@@ -2,6 +2,7 @@ use crate::dispatcher::run_dispatch;
 use crate::model::game::set_deltatime;
 use ggez::event::{self, EventHandler};
 use ggez::{conf, graphics, Context, ContextBuilder, GameResult};
+use ggez::graphics::Color;
 use specs::prelude::*;
 use specs::Dispatcher;
 use std::env;
@@ -13,6 +14,7 @@ struct LittlePeopleGraphicsState {
     last_time: SystemTime,
     dispatcher: Dispatcher<'static, 'static>,
     world: World,
+    colour_background: Color,
 }
 
 impl LittlePeopleGraphicsState {
@@ -26,6 +28,7 @@ impl LittlePeopleGraphicsState {
             last_time: SystemTime::now(),
             dispatcher,
             world,
+            colour_background: Color::new(0.1, 0.1, 0.1, 1.0),
         }
     }
 }
@@ -43,7 +46,7 @@ impl EventHandler for LittlePeopleGraphicsState {
     }
 
     fn draw(&mut self, ctx: &mut Context) -> GameResult<()> {
-        graphics::clear(ctx, graphics::WHITE);
+        graphics::clear(ctx, self.colour_background);
         self.frames += 1;
         graphics::present(ctx)
     }
