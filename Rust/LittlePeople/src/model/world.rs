@@ -3,6 +3,7 @@ use crate::model::position::{Destination, Position};
 use specs::prelude::*;
 
 fn register_components(world: &mut World) {
+    // Register components
     world.register::<Person>();
     world.register::<Position>();
     world.register::<Destination>();
@@ -23,9 +24,3 @@ pub fn create_world() -> World {
 
     world
 }
-
-/*pub fn run_world(world: &mut World) {
-    let mut little_people = LittlePeople::init();
-    little_people.run_now(&world);
-    world.maintain();
-}*/

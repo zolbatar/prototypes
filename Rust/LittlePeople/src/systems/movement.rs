@@ -8,6 +8,7 @@ impl<'a> System<'a> for LittlePeople {
     fn run(&mut self, position: Self::SystemData) {
         use specs::Join;
 
+        dbg!(&self.frames);
         for position in position.join() {
             println!("Hello, {:?}", &position);
         }

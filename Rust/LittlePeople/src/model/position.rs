@@ -1,16 +1,14 @@
 use specs::{prelude::*, Component};
 
-const BLOCK_FRACTIONS: i32 = 8;
-
 #[derive(Component, Debug)]
 #[storage(VecStorage)]
 pub struct Position {
     x: i32,
     y: i32,
     z: i32,
-    fraction_x: i32,
-    fraction_y: i32,
-    fraction_z: i32,
+    fraction_x: f32,
+    fraction_y: f32,
+    fraction_z: f32,
 }
 
 impl Position {
@@ -19,9 +17,9 @@ impl Position {
             x,
             y,
             z,
-            fraction_x: BLOCK_FRACTIONS / 2,
-            fraction_y: BLOCK_FRACTIONS / 2,
-            fraction_z: 0,
+            fraction_x: 0.5,
+            fraction_y: 0.5,
+            fraction_z: 0.0,
         }
     }
 }
