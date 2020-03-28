@@ -23,3 +23,9 @@ pub fn create_world() -> World {
 
     world
 }
+
+/*pub fn run_world(world: &mut World) {
+    let mut little_people = LittlePeople::init();
+    little_people.run_now(&world);
+    world.maintain();
+}*/

@@ -2,7 +2,7 @@ use specs::{prelude::*, Component};
 
 const BLOCK_FRACTIONS: i32 = 8;
 
-#[derive(Component)]
+#[derive(Component, Debug)]
 #[storage(VecStorage)]
 pub struct Position {
     x: i32,
