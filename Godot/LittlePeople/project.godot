@@ -16,9 +16,15 @@ _global_script_class_icons={
 [application]
 
 config/name="Little People"
-run/main_scene="res://scenes/Main.tscn"
+run/main_scene="res://scenes/main.tscn"
 config/icon="res://icon.png"
+
+[display]
+
+window/size/width=2048
+window/size/height=1200
 
 [rendering]
 
+quality/driver/fallback_to_gles2=true
 environment/default_environment="res://default_env.tres"
