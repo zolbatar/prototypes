@@ -20,8 +20,8 @@ impl<'a> System<'a> for Movement {
 
     fn run(&mut self, data: Self::SystemData) {
         let (delta, destination, mut position) = data;
-        let delta = get_deltatime(&delta);
-        for (destination, position) in (&destination, &mut position).join() {
+        let _delta = get_deltatime(&delta);
+        for (_destination, position) in (&destination, &mut position).join() {
             println!("Hello, {:?}", &position);
         }
     }

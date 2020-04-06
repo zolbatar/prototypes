@@ -26,6 +26,7 @@ impl Position {
 
 #[derive(Component)]
 #[storage(VecStorage)]
+#[allow(dead_code)]
 pub struct Destination {
     x: i32,
     y: i32,

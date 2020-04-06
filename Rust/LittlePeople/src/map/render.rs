@@ -1,22 +1,12 @@
-use crate::map::model::{Map, MAP_SIZE, MAP_X, MAP_Y, MAP_Z, VOXEL_MAX};
+use crate::map::model::{Map, MAP_X, MAP_Y, MAP_Z};
 use ggez;
-use ggez::graphics::{draw, DrawMode, Mesh, MeshBuilder, WHITE};
+use ggez::graphics::{draw, DrawMode, MeshBuilder, WHITE};
 use ggez::nalgebra as na;
 use ggez::Context;
 
 const SPACING: f32 = 50.0;
 
 pub fn render_map(ctx: &mut Context, map: &Map, screen_width: usize, screen_height: usize) {
-    let circle = Mesh::new_circle(
-        ctx,
-        DrawMode::fill(),
-        na::Point2::new(0.0, 0.0),
-        2.0,
-        2.0,
-        WHITE,
-    )
-    .unwrap();
-
     // Calculate steps
     let angle = 30_f32.to_radians();
     let x_increment = SPACING * angle.cos();
@@ -30,7 +20,7 @@ pub fn render_map(ctx: &mut Context, map: &Map, screen_width: usize, screen_heig
         for z in 0..MAP_Z {
             for y in 0..MAP_Y {
                 let index = (x * MAP_Z) + (y * MAP_X * MAP_Z);
-                let voxel = map.voxels[index];
+                let _voxel = map.voxels[index];
 
                 // Position
                 let screen_x = x as f32 * x_increment + x_adjust;
