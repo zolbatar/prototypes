@@ -1,0 +1,1 @@
+/mnt/data/Development/repos/personal/prototypes/ProjectEuler/target/release/project_euler: /mnt/data/Development/repos/personal/prototypes/ProjectEuler/src/main.rs /mnt/data/Development/repos/personal/prototypes/ProjectEuler/src/primes.rs

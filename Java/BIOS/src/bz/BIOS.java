@@ -70,7 +70,8 @@ public class BIOS extends Application {
         panelACCrash = new PanelACCrash();
         
         // Start with AC
-        panel = panelACCrash;
+        panel = panelAC;
+//        panel = panelACCrash;
         panel.Init();
         
         // Update timer

@@ -191,7 +191,7 @@ public class RetroUI {
                     RandomContent();
                     resetFrame++;
                     break;
-                case 4:
+/*                case 4:
                     SetContent(3);
                     resetFrame++;
                     break;
@@ -210,7 +210,7 @@ public class RetroUI {
                 case 24:
                     resetting = false;
                     BIOS.GetPanel().PostReset();
-                    break;
+                    break;*/
                 default:
                     resetFrame++;
                     break;

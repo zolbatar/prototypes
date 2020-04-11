@@ -10,7 +10,7 @@ const VOXEL_START = VOXEL_SCENE_SIZE / 2 * VOXEL_SIZE * VOXEL_SIZE_MULTIPLY
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	create_terrain()
+	pass
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -51,3 +51,8 @@ func create_terrain():
 						VOXEL_START - z * VOXEL_SIZE * VOXEL_SIZE_MULTIPLY))
 					voxel.set_scale(Vector3(VOXEL_SIZE, VOXEL_SIZE, VOXEL_SIZE))
 					add_child(voxel)
+
+
+
+func _on_createTerrain_Button_pressed():
+	create_terrain()
