@@ -1,17 +1,23 @@
 use ggez;
+use ggez::conf::NumSamples;
 use ggez::event;
+use ggez::graphics::{set_canvas, Canvas, Font, Mesh, Scale, Text};
 use ggez::nalgebra as na;
-use ggez::{conf, graphics, Context, ContextBuilder, GameResult};
+use ggez::{conf, graphics, ContextBuilder};
 use std::env;
 use std::path;
 
 struct MainState {
     pos_x: f32,
+    font_sans: Font,
 }
 
 impl MainState {
-    fn new() -> ggez::GameResult<MainState> {
-        let s = MainState { pos_x: 0.0 };
+    fn new(ctx: &mut ggez::Context) -> ggez::GameResult<MainState> {
+        let s = MainState {
+            pos_x: 0.0,
+            font_sans: Font::new(ctx, "/fonts/Roboto-Regular.ttf").unwrap(),
+        };
         Ok(s)
     }
 }
@@ -23,9 +29,12 @@ impl event::EventHandler for MainState {
     }
 
     fn draw(&mut self, ctx: &mut ggez::Context) -> ggez::GameResult {
-        graphics::clear(ctx, [0.1, 0.2, 0.3, 1.0].into());
+        // Create a canvas to draw to, we do "magic" to make this look like an LCD
+        let canvas = Canvas::new(ctx, 400, 232, NumSamples::One).unwrap();
+        set_canvas(ctx, Some(&canvas));
+        graphics::clear(ctx, [0.0, 0.0, 0.0, 1.0].into());
 
-        let circle = graphics::Mesh::new_circle(
+        let circle = Mesh::new_circle(
             ctx,
             graphics::DrawMode::fill(),
             na::Point2::new(self.pos_x, 380.0),
@@ -34,6 +43,14 @@ impl event::EventHandler for MainState {
             graphics::WHITE,
         )?;
         graphics::draw(ctx, &circle, (na::Point2::new(0.0, 0.0),))?;
+        let mut text = Text::new("foo");
+        text.set_font(self.font_sans, Scale::uniform(30.0));
+        graphics::draw(ctx, &text, (na::Point2::new(0.0, 0.0),))?;
+
+        // Render this off-screen image
+        set_canvas(ctx, None);
+        dbg!(&canvas.image());
+        graphics::draw(ctx, &canvas, (na::Point2::new(0.0, 0.0),))?;
 
         graphics::present(ctx)?;
         Ok(())
@@ -61,9 +78,11 @@ pub fn main() {
                 .resizable(true)
                 .dimensions(screen_width as f32, screen_height as f32),
         )
-        .window_setup(conf::WindowSetup::default().title("BIOS").samples(
-            conf::NumSamples::from_u32(1).expect("Option msaa needs to be 1, 2, 4, 8 or 16!"),
-        ))
+        .window_setup(
+            conf::WindowSetup::default()
+                .title("BIOS")
+                .samples(conf::NumSamples::from_u32(1).unwrap()),
+        )
         .add_resource_path(resource_dir);
 
     // Build context
@@ -76,7 +95,7 @@ pub fn main() {
     println!("Renderer: {}", graphics::renderer_info(&ctx).unwrap());
 
     // Create game state
-    let mut state = MainState::new().unwrap();
+    let mut state = MainState::new(&mut ctx).unwrap();
 
     // Run!
     match event::run(&mut ctx, &mut event_loop, &mut state) {
