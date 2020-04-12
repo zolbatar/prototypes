@@ -30,9 +30,9 @@ impl event::EventHandler for MainState {
 
     fn draw(&mut self, ctx: &mut ggez::Context) -> ggez::GameResult {
         // Create a canvas to draw to, we do "magic" to make this look like an LCD
-        let canvas = Canvas::new(ctx, 400, 232, NumSamples::One).unwrap();
+        let canvas = Canvas::new(ctx, 280, 180, NumSamples::One).unwrap();
         set_canvas(ctx, Some(&canvas));
-        graphics::clear(ctx, [0.0, 0.0, 0.0, 1.0].into());
+        graphics::clear(ctx, [0.67, 0.75, 0.72, 1.0].into());
 
         let circle = Mesh::new_circle(
             ctx,
@@ -58,7 +58,7 @@ impl event::EventHandler for MainState {
 }
 
 pub fn main() {
-    let screen_width = 1024;
+    let screen_width = 1366;
     let screen_height = 768;
 
     // Set resources folder
