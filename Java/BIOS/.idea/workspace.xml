@@ -10,8 +10,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6f3fb840-5012-4a49-a882-c1ba3938d6bc" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Rust/bios/Panel.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Rust/bios/img-0000-vrf-controller-uty-rnryz2-01.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Rust/bios/src/main.rs" beforeDir="false" afterPath="$PROJECT_DIR$/../../Rust/bios/src/main.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Rust/bios/vivint_skycontrolpanel_1-100311233-orig.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +82,7 @@
       <workItem from="1586605021219" duration="1039000" />
       <workItem from="1586614949202" duration="533000" />
       <workItem from="1586621613352" duration="6489000" />
-      <workItem from="1586635773012" duration="3662000" />
+      <workItem from="1586635773012" duration="4285000" />
     </task>
     <servers />
   </component>
