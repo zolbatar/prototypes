@@ -31,8 +31,8 @@ impl event::EventHandler for MainState {
 
     fn draw(&mut self, ctx: &mut ggez::Context) -> ggez::GameResult {
         let canvas = create_lcd(ctx)?;
-        render_text(ctx, self.font_sans, "foo", 0.0, 0.0)?;
-        convert_and_render(&canvas, ctx)?;
+        render_text(ctx, self.font_sans, 100.0, "foo", 0.0, 0.0)?;
+        convert_and_render(canvas, ctx)?;
         Ok(())
     }
 }
