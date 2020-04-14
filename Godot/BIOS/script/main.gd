@@ -1,30 +1,40 @@
 extends Node2D
 
+const BLOCK_SIZE = 4;
+const AREA_X = 980;
+const AREA_Y = 556;
+const GRID_X = AREA_X / BLOCK_SIZE;
+const GRID_Y = AREA_Y / BLOCK_SIZE; 
+
 func _ready():
 	pass
 	
 func _process(delta):
+	print("process")
+	update()
 	pass
 	
 func _draw():
 	var texture = find_node("viewportAC").get_texture()
-	print(texture.get_height())
 
 	# Get pixels from panel
 	var image = texture.get_data()
 	var image_out = Image.new()
-	image_out.create(402, 248, false, Image.FORMAT_RGBA8)
+	image_out.create(AREA_X, AREA_Y, false, Image.FORMAT_RGBA8)
 	image.lock()
+	var bytes = image.get_data()
+	print(bytes.size())
+#	for b in bytes:
+#		print(b)
+#	print("end")
 	image_out.lock()
-	for y in range(0,83):
-		print(y * 3)
-		for x in range(0,134):
+	for y in range(0, GRID_Y):
+		for x in range(0, GRID_X):
 			var p = image.get_pixel(x, y)
-			var c = Color(0, 0, 0, 255)
-			image_out.set_pixel(x * 3, y * 3, c)
-			image_out.set_pixel(x * 3 + 1, y * 3, c)
-			image_out.set_pixel(x * 3, y * 3 + 1, c)
-			image_out.set_pixel(x * 3 + 1, y * 3 + 1, c)
+			var c = p#Color(0, 0, 0, 255)
+			for block_y in range(0, BLOCK_SIZE - 1):
+				for block_x in range(0, BLOCK_SIZE - 1):
+					image_out.set_pixel(x * BLOCK_SIZE + block_x, y * BLOCK_SIZE + block_y, c)
 	image.unlock()
 	image_out.unlock()
 	
