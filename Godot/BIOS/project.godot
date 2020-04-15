@@ -19,10 +19,16 @@ config/name="BIOS"
 run/main_scene="res://scenes/main.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+Globals="*res://script/Globals.gd"
+Rasterise="*res://script/Rasterise.gd"
+
 [display]
 
 window/size/width=1920
 window/size/height=1080
+window/size/resizable=false
 window/stretch/aspect="keep"
 
 [rendering]

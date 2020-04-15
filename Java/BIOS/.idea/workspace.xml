@@ -10,11 +10,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6f3fb840-5012-4a49-a882-c1ba3938d6bc" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/../../Godot/BIOS/project.godot" beforeDir="false" afterPath="$PROJECT_DIR$/../../Godot/BIOS/project.godot" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Godot/BIOS/scenes/main.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/../../Godot/BIOS/scenes/main.tscn" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Godot/BIOS/script/main.gd" beforeDir="false" afterPath="$PROJECT_DIR$/../../Godot/BIOS/script/main.gd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bz/ui/RetroUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bz/ui/RetroUI.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,6 +81,7 @@
       <workItem from="1586614949202" duration="533000" />
       <workItem from="1586621613352" duration="6489000" />
       <workItem from="1586635773012" duration="4965000" />
+      <workItem from="1586891968955" duration="636000" />
     </task>
     <servers />
   </component>
