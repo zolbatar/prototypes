@@ -3,24 +3,30 @@ extends Node2D
 func _ready():
 	pass
 	
-func _process(delta):
+func _process(_delta):
 	update()
 	
 func _draw():
-	var viewport = null
-	var tex = null
-	if Globals.screen == "RESET":
-		viewport = find_node("ViewportReset")
-		tex = viewport.get_texture()
-	elif Globals.screen == "AC":
-		viewport = find_node("ViewportAC")
-		tex = viewport.get_texture()
-	else:
-		print("Screen ", Globals.screen, " not found")
-
 	# Get pixels from panel
-	tex = Rasterise.rasterise(tex.get_data())
+	var viewport = get_viewport_for_screen()
+	var tex = Rasterise.rasterise(viewport.get_texture().get_data())
 	
 	# Update sprite to show panel
-	var sprite = find_node("panelSprite")
+	var sprite = find_node("SpritePanel")
 	sprite.set_texture(tex)
+
+func get_viewport_for_screen():
+	var viewport = null
+	if Globals.screen == "RESET":
+		viewport = find_node("ViewportReset")
+	elif Globals.screen == "AC":
+		viewport = find_node("ViewportAC")
+	else:
+		print("Screen ", Globals.screen, " not found")
+	return viewport
+
+func _input(event):
+	if event.is_action_type():
+		var x = event.get_position().x - 475;
+		var y = event.get_position().y - 225;
+		print(x, " ", y)

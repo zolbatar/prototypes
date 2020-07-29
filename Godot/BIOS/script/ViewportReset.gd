@@ -53,13 +53,13 @@ func _process(delta):
 	cum_time += delta
 
 func get_texture():
-	if cum_time < 0.5:
+	if cum_time < 0.25:
 		return texRandom
-	elif cum_time < 0.7:
+	elif cum_time < 0.4:
 		return texOn
-	elif cum_time < 0.8:
+	elif cum_time < 0.5:
 		return texOff
 	else:
-		Globals.screen = "AC"
+		Globals.screen = Globals.screen_after_reset
 		return texOff
 
