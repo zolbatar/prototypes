@@ -20,7 +20,7 @@ public:
   };
 
   enum {
-    RuleProg = 0, RuleStatement = 1, RuleStatementAssign = 2, RuleStatementMethodCall = 3, 
+    RuleProg = 0, RuleStatement = 1, RuleStatementAssign = 2, RuleStatementMethodCallUnary = 3, 
     RuleExpr = 4, RuleLiteral = 5, RuleIntegerLiteral = 6, RuleFloatLiteral = 7, 
     RuleStringLiteral = 8
   };
@@ -45,7 +45,7 @@ public:
   class ProgContext;
   class StatementContext;
   class StatementAssignContext;
-  class StatementMethodCallContext;
+  class StatementMethodCallUnaryContext;
   class ExprContext;
   class LiteralContext;
   class IntegerLiteralContext;
@@ -74,7 +74,7 @@ public:
     StatementContext(antlr4::ParserRuleContext *parent, size_t invokingState);
     virtual size_t getRuleIndex() const override;
     StatementAssignContext *statementAssign();
-    StatementMethodCallContext *statementMethodCall();
+    StatementMethodCallUnaryContext *statementMethodCallUnary();
 
 
     virtual std::any accept(antlr4::tree::ParseTreeVisitor *visitor) override;
@@ -98,9 +98,9 @@ public:
 
   StatementAssignContext* statementAssign();
 
-  class  StatementMethodCallContext : public antlr4::ParserRuleContext {
+  class  StatementMethodCallUnaryContext : public antlr4::ParserRuleContext {
   public:
-    StatementMethodCallContext(antlr4::ParserRuleContext *parent, size_t invokingState);
+    StatementMethodCallUnaryContext(antlr4::ParserRuleContext *parent, size_t invokingState);
     virtual size_t getRuleIndex() const override;
     ExprContext *expr();
     antlr4::tree::TerminalNode *IDENTIFIER();
@@ -110,7 +110,7 @@ public:
    
   };
 
-  StatementMethodCallContext* statementMethodCall();
+  StatementMethodCallUnaryContext* statementMethodCallUnary();
 
   class  ExprContext : public antlr4::ParserRuleContext {
   public:

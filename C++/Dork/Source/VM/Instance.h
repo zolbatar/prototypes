@@ -1,5 +1,5 @@
 #pragma once
-#include "Class.h"
+#include "Clazz.h"
 #include <cstdint>
 
 enum class Scope
@@ -11,12 +11,16 @@ enum class Scope
 class Instance
 {
  public:
-	Instance(std::shared_ptr<Class> clazz);
-	static Instance Integer(std::shared_ptr<Class> clazz, int64_t v);
-	static Instance Float(std::shared_ptr<Class> clazz, double v);
+	Instance(Clazz* clazz);
+	Clazz* GetClass()
+	{
+		return clazz;
+	}
+	static Instance Integer(Clazz* clazz, int64_t v);
+	static Instance Float(Clazz* clazz, double v);
 
  private:
-	std::shared_ptr<Class> clazz;
+	Clazz* clazz;
 	union
 	{
 		int64_t i_value;

@@ -26,7 +26,7 @@ class Compiler : DorkVisitor
 	std::any visitProg(DorkParser::ProgContext* context);
 	std::any visitStatement(DorkParser::StatementContext* context);
 	std::any visitStatementAssign(DorkParser::StatementAssignContext* context);
-	std::any visitStatementMethodCall(DorkParser::StatementMethodCallContext* context);
+	std::any visitStatementMethodCallUnary(DorkParser::StatementMethodCallUnaryContext* context);
 	std::any visitExpr(DorkParser::ExprContext* context);
 	std::any visitLiteral(DorkParser::LiteralContext* context);
 	std::any visitIntegerLiteral(DorkParser::IntegerLiteralContext* context);

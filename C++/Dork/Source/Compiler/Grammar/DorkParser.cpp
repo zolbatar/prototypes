@@ -43,8 +43,8 @@ void dorkParserInitialize() {
   assert(dorkParserStaticData == nullptr);
   auto staticData = std::make_unique<DorkParserStaticData>(
     std::vector<std::string>{
-      "prog", "statement", "statementAssign", "statementMethodCall", "expr", 
-      "literal", "integerLiteral", "floatLiteral", "stringLiteral"
+      "prog", "statement", "statementAssign", "statementMethodCallUnary", 
+      "expr", "literal", "integerLiteral", "floatLiteral", "stringLiteral"
     },
     std::vector<std::string>{
       "", "", "'''", "'!'", "'#'", "'$'", "':'", "','", "'%'", "'('", "')'", 
@@ -220,8 +220,8 @@ DorkParser::StatementAssignContext* DorkParser::StatementContext::statementAssig
   return getRuleContext<DorkParser::StatementAssignContext>(0);
 }
 
-DorkParser::StatementMethodCallContext* DorkParser::StatementContext::statementMethodCall() {
-  return getRuleContext<DorkParser::StatementMethodCallContext>(0);
+DorkParser::StatementMethodCallUnaryContext* DorkParser::StatementContext::statementMethodCallUnary() {
+  return getRuleContext<DorkParser::StatementMethodCallUnaryContext>(0);
 }
 
 
@@ -262,7 +262,7 @@ DorkParser::StatementContext* DorkParser::statement() {
     case 2: {
       enterOuterAlt(_localctx, 2);
       setState(29);
-      statementMethodCall();
+      statementMethodCallUnary();
       break;
     }
 
@@ -341,36 +341,36 @@ DorkParser::StatementAssignContext* DorkParser::statementAssign() {
   return _localctx;
 }
 
-//----------------- StatementMethodCallContext ------------------------------------------------------------------
+//----------------- StatementMethodCallUnaryContext ------------------------------------------------------------------
 
-DorkParser::StatementMethodCallContext::StatementMethodCallContext(ParserRuleContext *parent, size_t invokingState)
+DorkParser::StatementMethodCallUnaryContext::StatementMethodCallUnaryContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-DorkParser::ExprContext* DorkParser::StatementMethodCallContext::expr() {
+DorkParser::ExprContext* DorkParser::StatementMethodCallUnaryContext::expr() {
   return getRuleContext<DorkParser::ExprContext>(0);
 }
 
-tree::TerminalNode* DorkParser::StatementMethodCallContext::IDENTIFIER() {
+tree::TerminalNode* DorkParser::StatementMethodCallUnaryContext::IDENTIFIER() {
   return getToken(DorkParser::IDENTIFIER, 0);
 }
 
 
-size_t DorkParser::StatementMethodCallContext::getRuleIndex() const {
-  return DorkParser::RuleStatementMethodCall;
+size_t DorkParser::StatementMethodCallUnaryContext::getRuleIndex() const {
+  return DorkParser::RuleStatementMethodCallUnary;
 }
 
 
-std::any DorkParser::StatementMethodCallContext::accept(tree::ParseTreeVisitor *visitor) {
+std::any DorkParser::StatementMethodCallUnaryContext::accept(tree::ParseTreeVisitor *visitor) {
   if (auto parserVisitor = dynamic_cast<DorkVisitor*>(visitor))
-    return parserVisitor->visitStatementMethodCall(this);
+    return parserVisitor->visitStatementMethodCallUnary(this);
   else
     return visitor->visitChildren(this);
 }
 
-DorkParser::StatementMethodCallContext* DorkParser::statementMethodCall() {
-  StatementMethodCallContext *_localctx = _tracker.createInstance<StatementMethodCallContext>(_ctx, getState());
-  enterRule(_localctx, 6, DorkParser::RuleStatementMethodCall);
+DorkParser::StatementMethodCallUnaryContext* DorkParser::statementMethodCallUnary() {
+  StatementMethodCallUnaryContext *_localctx = _tracker.createInstance<StatementMethodCallUnaryContext>(_ctx, getState());
+  enterRule(_localctx, 6, DorkParser::RuleStatementMethodCallUnary);
 
 #if __cplusplus > 201703L
   auto onExit = finally([=, this] {

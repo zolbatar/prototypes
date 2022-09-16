@@ -6,14 +6,14 @@ prog
 
 statement
     : statementAssign
-    | statementMethodCall
+    | statementMethodCallUnary
     ;
 
 statementAssign
     : expr ASSIGN IDENTIFIER
     ;
 
-statementMethodCall
+statementMethodCallUnary
     : expr IDENTIFIER
     ;
 
