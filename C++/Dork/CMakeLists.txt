@@ -33,6 +33,6 @@ add_executable(Dork
 
         Source/Compiler/Grammar/DorkBaseVisitor.cpp Source/Compiler/Grammar/DorkLexer.cpp Source/Compiler/Grammar/DorkParser.cpp Source/Compiler/Grammar/DorkVisitor.cpp
 
-        Source/VM/VM.cpp Source/VM/Object.cpp)
+        Source/VM/VM.cpp Source/VM/Class.cpp Source/VM/Instance.cpp)
 
 target_link_libraries(${PROJECT_NAME} ${LIBS} ${LLVM_LIBS} ${ANTLR4_LIB} ${CONAN_LIBS})

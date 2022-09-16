@@ -9,8 +9,6 @@
 #include "CompilerErrorListener.h"
 #include "../VM/VM.h"
 
-extern VM vm;
-
 class Compiler : DorkVisitor
 {
  public:
@@ -21,6 +19,8 @@ class Compiler : DorkVisitor
 	{
 		throw DorkException(ExceptionType::PARSER, context->start->getLine(), context->start->getCharPositionInLine(), msg);
 	}
+
+	Scope scope = Scope::Global;
 
  protected:
 	std::any visitProg(DorkParser::ProgContext* context);

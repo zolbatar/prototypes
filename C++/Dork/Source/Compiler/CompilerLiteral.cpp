@@ -51,16 +51,16 @@ std::any Compiler::visitIntegerLiteral(DorkParser::IntegerLiteralContext* contex
 			ParserException("Invalid number", context);
 		}
 	}
-	return Object::CreateInteger(i);
+	return vm.Integer("", scope, i);
 }
 
 std::any Compiler::visitFloatLiteral(DorkParser::FloatLiteralContext* context)
 {
 	auto v = context->FLOATLITERAL()->getText();
-	double i;
+	double f;
 	try
 	{
-		i = std::stod(v);
+		f = std::stod(v);
 	}
 	catch (const std::invalid_argument&)
 	{
@@ -68,9 +68,9 @@ std::any Compiler::visitFloatLiteral(DorkParser::FloatLiteralContext* context)
 	}
 	if (context->MINUS() != nullptr)
 	{
-		i = -i;
+		f = -f;
 	}
-	return Object::CreateDouble(i);
+	return vm.Float("", scope, f);
 }
 
 std::any Compiler::visitStringLiteral(DorkParser::StringLiteralContext* context)
