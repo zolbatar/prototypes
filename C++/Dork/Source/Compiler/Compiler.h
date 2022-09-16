@@ -9,6 +9,12 @@
 #include "CompilerErrorListener.h"
 #include "../VM/VM.h"
 
+enum class CompileMode
+{
+	Immediate,
+	Class
+};
+
 class Compiler : DorkVisitor
 {
  public:
@@ -21,6 +27,8 @@ class Compiler : DorkVisitor
 	}
 
 	Scope scope = Scope::Global;
+	CompileMode mode = CompileMode::Immediate;
+	Method *imm_method;
 
  protected:
 	std::any visitProg(DorkParser::ProgContext* context);

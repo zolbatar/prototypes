@@ -7,6 +7,8 @@ set(CMAKE_OSX_ARCHITECTURES ${ARCHITECTURE})
 
 set(CMAKE_CXX_STANDARD 20)
 
+add_compile_options(-Wno-braced-scalar-init)
+
 include(${CMAKE_SOURCE_DIR}/conanbuildinfo.cmake)
 conan_basic_setup()
 

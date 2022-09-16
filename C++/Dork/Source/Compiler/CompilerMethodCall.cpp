@@ -12,5 +12,11 @@ std::any Compiler::visitStatementMethodCallUnary(DorkParser::StatementMethodCall
 		ParserException("Method '" + m + "' not implemented", context);
 	}
 
-	return NULL;
+	// Right type?
+	if (method->GetType() != BytecodeType::Unary)
+	{
+		ParserException("Method '" + m + "' mismatch of parameters", context);
+	}
+
+	return Bytecode{ method->GetType(), method->GetFunc(), std::vector<void*>({ o }) };
 }

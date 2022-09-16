@@ -1,20 +1,35 @@
 #pragma once
 #include <string>
-#include <functional>
+#include <vector>
+#include "Bytecode.h"
 
 class Method
 {
  public:
-	Method();
-	Method(bool subclass_responsibility);
-	Method(void* func);
+	Method(BytecodeType type);
+	Method(BytecodeType type, bool subclass_responsibility);
+	Method(BytecodeType type, void* func);
+	void AddCode(Bytecode&& code);
+	void Run();
+
+	BytecodeType GetType()
+	{
+		return type;
+	}
+
+	void* GetFunc()
+	{
+		return func;
+	}
 
 	bool NotImplemented()
 	{
 		return subclass_responsibility;
 	}
  private:
+	BytecodeType type;
 	bool subclass_responsibility = false;
-	void* unary_func;
+	void* func;
+	std::vector<Bytecode> bytecodes;
 };
 

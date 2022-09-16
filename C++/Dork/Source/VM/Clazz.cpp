@@ -24,12 +24,12 @@ Method* Clazz::GetMethod(std::string name)
 
 void Clazz::AddUnaryMethod(std::string name, void* func)
 {
-	methods.emplace(std::make_pair(name, Method(func)));
+	methods.emplace(std::make_pair(name, Method(BytecodeType::Unary, func)));
 }
 
 void Clazz::AddMethodSubclassResponsibility(std::string name)
 {
-	methods.emplace(std::make_pair(name, Method(true)));
+	methods.emplace(std::make_pair(name, Method(BytecodeType::Unknown, true)));
 }
 
 

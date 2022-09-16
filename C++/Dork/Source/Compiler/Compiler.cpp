@@ -18,7 +18,16 @@ Compiler::Compiler(std::istream* file)
 		parser.setBuildParseTree(true);
 		parser.getInterpreter<antlr4::atn::ParserATNSimulator>()->setPredictionMode(antlr4::atn::PredictionMode::SLL);
 		DorkParser::ProgContext* tree = parser.prog();
+
+		// Set mode to be IMMEDIATE
+		mode = CompileMode::Immediate;
+		imm_method = new Method(BytecodeType::Unknown);
+
+		// Parse and compile
 		visitProg(tree);
+
+		// Run!
+		imm_method->Run();
 	}
 	catch (DorkException& ex)
 	{

@@ -38,7 +38,7 @@ Instance* VM::Integer(std::string name, Scope scope, int64_t v)
 	{
 		case Scope::Global:
 			return AddGlobalInstance(i);
-		case Scope::Instance:
+		default:
 			assert(0);
 	}
 	return nullptr;
@@ -51,7 +51,7 @@ Instance* VM::Float(std::string name, Scope scope, double v)
 	{
 		case Scope::Global:
 			return AddGlobalInstance(i);
-		case Scope::Instance:
+		default:
 			assert(0);
 	}
 	return nullptr;
