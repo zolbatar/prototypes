@@ -4,6 +4,7 @@
 #include <imgui.h>
 #include "../../ImGuiBindings/imgui_impl_sdl.h"
 #include "../../ImGuiBindings/imgui_impl_opengl3.h"
+#include "../World/World.h"
 
 class UI
 {
@@ -18,6 +19,7 @@ class UI
 	void SetupOpenGL();
 	void SetupFPS();
 
+	World world;
 	std::string glsl_version;
 	SDL_GLContext gl_context;
 	float fps_values[64];

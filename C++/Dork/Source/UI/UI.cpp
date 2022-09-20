@@ -160,6 +160,7 @@ void UI::Loop()
 	bool window_output = true;
 	bool demo_output = false;
 	auto io = ImGui::GetIO();
+	world.Reset();
 	while (!done)
 	{
 		// Process SDL events like keyboard & mouse
@@ -192,7 +193,7 @@ void UI::Loop()
 		ImGui::Begin("Fullscreen", &window_output,
 			ImGuiWindowFlags_NoDecoration | ImGuiWindowFlags_NoMove | ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoSavedSettings |
 			ImGuiWindowFlags_NoBackground);
-		//Render();
+		world.Render();
 		ImGui::End();
 		ImGui::PopStyleVar();
 		ImGui::PopStyleVar();

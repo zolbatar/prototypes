@@ -9,6 +9,8 @@ conan_basic_setup()
 add_executable(Dork
         Source/main.cpp
         Source/UI/UI.cpp
+        Source/World/World.cpp Source/World/Physics.cpp Source/World/Entity.cpp Source/World/Shapes/Shape.cpp
+        Source/World/Shapes/
         ImGuiBindings/imgui_impl_opengl3.cpp ImGuiBindings/imgui_impl_sdl.cpp)
 target_link_libraries(${PROJECT_NAME} ${CONAN_LIBS})
 
