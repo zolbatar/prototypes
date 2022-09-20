@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="CMakePresetLoader"><![CDATA[{
+  "useNewFormat": true
+}]]></component>
+  <component name="CMakeReloadState">
+    <option name="reloaded" value="true" />
+  </component>
+  <component name="CMakeRunConfigurationManager">
     <generated>
       <config projectName="Dork" targetName="Dork" />
     </generated>
@@ -14,9 +23,12 @@
   <component name="ChangeListManager">
     <list default="true" id="9527e82f-f997-4d8c-a704-1f31adb623b4" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/UI/UI.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/UI/UI.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/UI/UI.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/UI/UI.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/World/Entity.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/World/Entity.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/World/Entity.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/World/Entity.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/World/Shapes/Shape.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/World/Shapes/Shape.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/World/World.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/World/World.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conan_imports_manifest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/conan_imports_manifest.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,6 +85,9 @@
   <component name="MacroExpansionManager">
     <option name="directoryName" value="0ou14ujy" />
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectId" id="2F1el8LfRuPPL7UkAe2GgKx4run" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
@@ -82,18 +97,17 @@
     <option name="showExcludedFiles" value="false" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="RunOnceActivity.cidr.known.project.marker" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="cf.first.check.clang-format" value="false" />
-    <property name="cidr.known.project.marker" value="true" />
-    <property name="cmake.loaded.for.project" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="CMakeSettings" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "last_opened_file_path": "/Users/daryl/GitHub/prototypes/C++/Dork"
+  }
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
@@ -104,9 +118,9 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
-        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
     <configuration name="Dork" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" WORKING_DIR="file://$PROJECT_DIR$/Dist" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Dork" TARGET_NAME="Dork" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Dork" RUN_TARGET_NAME="Dork">
@@ -114,9 +128,9 @@
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
-        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
   </component>
@@ -129,6 +143,7 @@
       <option name="presentableId" value="Default" />
       <updated>1663664166011</updated>
       <workItem from="1663664168011" duration="14155000" />
+      <workItem from="1663685735328" duration="3888000" />
     </task>
     <servers />
   </component>
@@ -148,5 +163,16 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/Source/World/Physics.cpp</url>
+          <line>24</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

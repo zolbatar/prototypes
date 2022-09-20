@@ -1,17 +1,15 @@
 #include "World.h"
 #include "Entity.h"
 
-size_t Entity::index = 0;
-std::map<size_t, Entity> Entity::entities;
+std::list<Entity> Entity::entities;
 
-size_t Entity::AddEntity(Entity&& s)
+Entity* Entity::CreateEntity(World* world, Shape* shape, b2Vec2 pos)
 {
-	std::cout << "Create entity: " << index << std::endl;
-	entities.emplace(std::make_pair(index++, std::move(s)));
-	return index - 1;
+	entities.push_back(Entity(world, shape, pos));
+	return &entities.back();
 }
 
-std::map<size_t, Entity>* Entity::GetEntities()
+std::list<Entity>* Entity::GetEntities()
 {
 	return &entities;
 }

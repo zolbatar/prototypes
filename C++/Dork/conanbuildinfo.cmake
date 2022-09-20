@@ -38,14 +38,14 @@ endmacro()
 #################
 ###  SDL
 #################
-set(CONAN_SDL_ROOT "/Users/daryl/.conan/data/sdl/2.24.0/_/_/package/c2ec0e1bccc154a799897996586929f7a13febfd")
-set(CONAN_INCLUDE_DIRS_SDL "/Users/daryl/.conan/data/sdl/2.24.0/_/_/package/c2ec0e1bccc154a799897996586929f7a13febfd/include"
-			"/Users/daryl/.conan/data/sdl/2.24.0/_/_/package/c2ec0e1bccc154a799897996586929f7a13febfd/include/SDL2")
-set(CONAN_LIB_DIRS_SDL "/Users/daryl/.conan/data/sdl/2.24.0/_/_/package/c2ec0e1bccc154a799897996586929f7a13febfd/lib")
-set(CONAN_BIN_DIRS_SDL "/Users/daryl/.conan/data/sdl/2.24.0/_/_/package/c2ec0e1bccc154a799897996586929f7a13febfd/bin")
+set(CONAN_SDL_ROOT "/Users/daryl/.conan/data/sdl/2.24.0/_/_/package/383a52eb9fb719799eefd9cf57e64f85afca4823")
+set(CONAN_INCLUDE_DIRS_SDL "/Users/daryl/.conan/data/sdl/2.24.0/_/_/package/383a52eb9fb719799eefd9cf57e64f85afca4823/include"
+			"/Users/daryl/.conan/data/sdl/2.24.0/_/_/package/383a52eb9fb719799eefd9cf57e64f85afca4823/include/SDL2")
+set(CONAN_LIB_DIRS_SDL "/Users/daryl/.conan/data/sdl/2.24.0/_/_/package/383a52eb9fb719799eefd9cf57e64f85afca4823/lib")
+set(CONAN_BIN_DIRS_SDL "/Users/daryl/.conan/data/sdl/2.24.0/_/_/package/383a52eb9fb719799eefd9cf57e64f85afca4823/bin")
 set(CONAN_RES_DIRS_SDL )
 set(CONAN_SRC_DIRS_SDL )
-set(CONAN_BUILD_DIRS_SDL "/Users/daryl/.conan/data/sdl/2.24.0/_/_/package/c2ec0e1bccc154a799897996586929f7a13febfd/")
+set(CONAN_BUILD_DIRS_SDL "/Users/daryl/.conan/data/sdl/2.24.0/_/_/package/383a52eb9fb719799eefd9cf57e64f85afca4823/")
 set(CONAN_FRAMEWORK_DIRS_SDL )
 set(CONAN_LIBS_SDL SDL2main SDL2)
 set(CONAN_PKG_LIBS_SDL SDL2main SDL2)
@@ -77,13 +77,13 @@ set(CONAN_LIBS_SDL ${CONAN_PKG_LIBS_SDL} ${CONAN_SYSTEM_LIBS_SDL} ${CONAN_FRAMEW
 #################
 ###  BOX2D
 #################
-set(CONAN_BOX2D_ROOT "/Users/daryl/.conan/data/box2d/2.4.1/_/_/package/a5a7be92da8b4dc36184c70b590ca63ae91ebb88")
-set(CONAN_INCLUDE_DIRS_BOX2D "/Users/daryl/.conan/data/box2d/2.4.1/_/_/package/a5a7be92da8b4dc36184c70b590ca63ae91ebb88/include")
-set(CONAN_LIB_DIRS_BOX2D "/Users/daryl/.conan/data/box2d/2.4.1/_/_/package/a5a7be92da8b4dc36184c70b590ca63ae91ebb88/lib")
+set(CONAN_BOX2D_ROOT "/Users/daryl/.conan/data/box2d/2.4.1/_/_/package/d807749d60b62b9be75e90d4e9db2893d0314632")
+set(CONAN_INCLUDE_DIRS_BOX2D "/Users/daryl/.conan/data/box2d/2.4.1/_/_/package/d807749d60b62b9be75e90d4e9db2893d0314632/include")
+set(CONAN_LIB_DIRS_BOX2D "/Users/daryl/.conan/data/box2d/2.4.1/_/_/package/d807749d60b62b9be75e90d4e9db2893d0314632/lib")
 set(CONAN_BIN_DIRS_BOX2D )
 set(CONAN_RES_DIRS_BOX2D )
 set(CONAN_SRC_DIRS_BOX2D )
-set(CONAN_BUILD_DIRS_BOX2D "/Users/daryl/.conan/data/box2d/2.4.1/_/_/package/a5a7be92da8b4dc36184c70b590ca63ae91ebb88/")
+set(CONAN_BUILD_DIRS_BOX2D "/Users/daryl/.conan/data/box2d/2.4.1/_/_/package/d807749d60b62b9be75e90d4e9db2893d0314632/")
 set(CONAN_FRAMEWORK_DIRS_BOX2D )
 set(CONAN_LIBS_BOX2D box2d)
 set(CONAN_PKG_LIBS_BOX2D box2d)
@@ -115,13 +115,13 @@ set(CONAN_LIBS_BOX2D ${CONAN_PKG_LIBS_BOX2D} ${CONAN_SYSTEM_LIBS_BOX2D} ${CONAN_
 #################
 ###  IMGUI
 #################
-set(CONAN_IMGUI_ROOT "/Users/daryl/.conan/data/imgui/1.88/_/_/package/a5a7be92da8b4dc36184c70b590ca63ae91ebb88")
-set(CONAN_INCLUDE_DIRS_IMGUI "/Users/daryl/.conan/data/imgui/1.88/_/_/package/a5a7be92da8b4dc36184c70b590ca63ae91ebb88/include")
-set(CONAN_LIB_DIRS_IMGUI "/Users/daryl/.conan/data/imgui/1.88/_/_/package/a5a7be92da8b4dc36184c70b590ca63ae91ebb88/lib")
-set(CONAN_BIN_DIRS_IMGUI "/Users/daryl/.conan/data/imgui/1.88/_/_/package/a5a7be92da8b4dc36184c70b590ca63ae91ebb88/bin")
-set(CONAN_RES_DIRS_IMGUI "/Users/daryl/.conan/data/imgui/1.88/_/_/package/a5a7be92da8b4dc36184c70b590ca63ae91ebb88/res")
-set(CONAN_SRC_DIRS_IMGUI "/Users/daryl/.conan/data/imgui/1.88/_/_/package/a5a7be92da8b4dc36184c70b590ca63ae91ebb88/res/bindings")
-set(CONAN_BUILD_DIRS_IMGUI "/Users/daryl/.conan/data/imgui/1.88/_/_/package/a5a7be92da8b4dc36184c70b590ca63ae91ebb88/")
+set(CONAN_IMGUI_ROOT "/Users/daryl/.conan/data/imgui/1.88/_/_/package/d807749d60b62b9be75e90d4e9db2893d0314632")
+set(CONAN_INCLUDE_DIRS_IMGUI "/Users/daryl/.conan/data/imgui/1.88/_/_/package/d807749d60b62b9be75e90d4e9db2893d0314632/include")
+set(CONAN_LIB_DIRS_IMGUI "/Users/daryl/.conan/data/imgui/1.88/_/_/package/d807749d60b62b9be75e90d4e9db2893d0314632/lib")
+set(CONAN_BIN_DIRS_IMGUI "/Users/daryl/.conan/data/imgui/1.88/_/_/package/d807749d60b62b9be75e90d4e9db2893d0314632/bin")
+set(CONAN_RES_DIRS_IMGUI "/Users/daryl/.conan/data/imgui/1.88/_/_/package/d807749d60b62b9be75e90d4e9db2893d0314632/res")
+set(CONAN_SRC_DIRS_IMGUI "/Users/daryl/.conan/data/imgui/1.88/_/_/package/d807749d60b62b9be75e90d4e9db2893d0314632/res/bindings")
+set(CONAN_BUILD_DIRS_IMGUI "/Users/daryl/.conan/data/imgui/1.88/_/_/package/d807749d60b62b9be75e90d4e9db2893d0314632/")
 set(CONAN_FRAMEWORK_DIRS_IMGUI )
 set(CONAN_LIBS_IMGUI imgui)
 set(CONAN_PKG_LIBS_IMGUI imgui)
@@ -229,13 +229,13 @@ set(CONAN_LIBS_OPENGL ${CONAN_PKG_LIBS_OPENGL} ${CONAN_SYSTEM_LIBS_OPENGL} ${CON
 #################
 ###  LIBICONV
 #################
-set(CONAN_LIBICONV_ROOT "/Users/daryl/.conan/data/libiconv/1.17/_/_/package/deff546af87401b558d0514205987d78de43cd78")
-set(CONAN_INCLUDE_DIRS_LIBICONV "/Users/daryl/.conan/data/libiconv/1.17/_/_/package/deff546af87401b558d0514205987d78de43cd78/include")
-set(CONAN_LIB_DIRS_LIBICONV "/Users/daryl/.conan/data/libiconv/1.17/_/_/package/deff546af87401b558d0514205987d78de43cd78/lib")
-set(CONAN_BIN_DIRS_LIBICONV "/Users/daryl/.conan/data/libiconv/1.17/_/_/package/deff546af87401b558d0514205987d78de43cd78/bin")
+set(CONAN_LIBICONV_ROOT "/Users/daryl/.conan/data/libiconv/1.17/_/_/package/82146580b4483a8651b14897b7c57cead95f4235")
+set(CONAN_INCLUDE_DIRS_LIBICONV "/Users/daryl/.conan/data/libiconv/1.17/_/_/package/82146580b4483a8651b14897b7c57cead95f4235/include")
+set(CONAN_LIB_DIRS_LIBICONV "/Users/daryl/.conan/data/libiconv/1.17/_/_/package/82146580b4483a8651b14897b7c57cead95f4235/lib")
+set(CONAN_BIN_DIRS_LIBICONV "/Users/daryl/.conan/data/libiconv/1.17/_/_/package/82146580b4483a8651b14897b7c57cead95f4235/bin")
 set(CONAN_RES_DIRS_LIBICONV )
 set(CONAN_SRC_DIRS_LIBICONV )
-set(CONAN_BUILD_DIRS_LIBICONV "/Users/daryl/.conan/data/libiconv/1.17/_/_/package/deff546af87401b558d0514205987d78de43cd78/")
+set(CONAN_BUILD_DIRS_LIBICONV "/Users/daryl/.conan/data/libiconv/1.17/_/_/package/82146580b4483a8651b14897b7c57cead95f4235/")
 set(CONAN_FRAMEWORK_DIRS_LIBICONV )
 set(CONAN_LIBS_LIBICONV iconv charset)
 set(CONAN_PKG_LIBS_LIBICONV iconv charset)
@@ -269,12 +269,12 @@ set(CONAN_LIBS_LIBICONV ${CONAN_PKG_LIBS_LIBICONV} ${CONAN_SYSTEM_LIBS_LIBICONV}
 set(CONAN_PACKAGE_NAME None)
 set(CONAN_PACKAGE_VERSION None)
 
-set(CONAN_SETTINGS_ARCH "x86_64")
-set(CONAN_SETTINGS_ARCH_BUILD "x86_64")
+set(CONAN_SETTINGS_ARCH "armv8")
+set(CONAN_SETTINGS_ARCH_BUILD "armv8")
 set(CONAN_SETTINGS_BUILD_TYPE "Release")
-set(CONAN_SETTINGS_COMPILER "clang")
+set(CONAN_SETTINGS_COMPILER "apple-clang")
 set(CONAN_SETTINGS_COMPILER_LIBCXX "libc++")
-set(CONAN_SETTINGS_COMPILER_VERSION "14")
+set(CONAN_SETTINGS_COMPILER_VERSION "14.0")
 set(CONAN_SETTINGS_OS "Macos")
 set(CONAN_SETTINGS_OS_BUILD "Macos")
 
@@ -286,20 +286,20 @@ set(CONAN_CMD_SHARED_LINKER_FLAGS ${CONAN_SHARED_LINKER_FLAGS})
 set(CONAN_CMD_C_FLAGS ${CONAN_C_FLAGS})
 # Defining accumulated conan variables for all deps
 
-set(CONAN_INCLUDE_DIRS "/Users/daryl/.conan/data/sdl/2.24.0/_/_/package/c2ec0e1bccc154a799897996586929f7a13febfd/include"
-			"/Users/daryl/.conan/data/sdl/2.24.0/_/_/package/c2ec0e1bccc154a799897996586929f7a13febfd/include/SDL2"
-			"/Users/daryl/.conan/data/box2d/2.4.1/_/_/package/a5a7be92da8b4dc36184c70b590ca63ae91ebb88/include"
-			"/Users/daryl/.conan/data/imgui/1.88/_/_/package/a5a7be92da8b4dc36184c70b590ca63ae91ebb88/include"
+set(CONAN_INCLUDE_DIRS "/Users/daryl/.conan/data/sdl/2.24.0/_/_/package/383a52eb9fb719799eefd9cf57e64f85afca4823/include"
+			"/Users/daryl/.conan/data/sdl/2.24.0/_/_/package/383a52eb9fb719799eefd9cf57e64f85afca4823/include/SDL2"
+			"/Users/daryl/.conan/data/box2d/2.4.1/_/_/package/d807749d60b62b9be75e90d4e9db2893d0314632/include"
+			"/Users/daryl/.conan/data/imgui/1.88/_/_/package/d807749d60b62b9be75e90d4e9db2893d0314632/include"
 			"/Users/daryl/.conan/data/glm/0.9.9.8/_/_/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/include"
-			"/Users/daryl/.conan/data/libiconv/1.17/_/_/package/deff546af87401b558d0514205987d78de43cd78/include" ${CONAN_INCLUDE_DIRS})
-set(CONAN_LIB_DIRS "/Users/daryl/.conan/data/sdl/2.24.0/_/_/package/c2ec0e1bccc154a799897996586929f7a13febfd/lib"
-			"/Users/daryl/.conan/data/box2d/2.4.1/_/_/package/a5a7be92da8b4dc36184c70b590ca63ae91ebb88/lib"
-			"/Users/daryl/.conan/data/imgui/1.88/_/_/package/a5a7be92da8b4dc36184c70b590ca63ae91ebb88/lib"
-			"/Users/daryl/.conan/data/libiconv/1.17/_/_/package/deff546af87401b558d0514205987d78de43cd78/lib" ${CONAN_LIB_DIRS})
-set(CONAN_BIN_DIRS "/Users/daryl/.conan/data/sdl/2.24.0/_/_/package/c2ec0e1bccc154a799897996586929f7a13febfd/bin"
-			"/Users/daryl/.conan/data/imgui/1.88/_/_/package/a5a7be92da8b4dc36184c70b590ca63ae91ebb88/bin"
-			"/Users/daryl/.conan/data/libiconv/1.17/_/_/package/deff546af87401b558d0514205987d78de43cd78/bin" ${CONAN_BIN_DIRS})
-set(CONAN_RES_DIRS "/Users/daryl/.conan/data/imgui/1.88/_/_/package/a5a7be92da8b4dc36184c70b590ca63ae91ebb88/res" ${CONAN_RES_DIRS})
+			"/Users/daryl/.conan/data/libiconv/1.17/_/_/package/82146580b4483a8651b14897b7c57cead95f4235/include" ${CONAN_INCLUDE_DIRS})
+set(CONAN_LIB_DIRS "/Users/daryl/.conan/data/sdl/2.24.0/_/_/package/383a52eb9fb719799eefd9cf57e64f85afca4823/lib"
+			"/Users/daryl/.conan/data/box2d/2.4.1/_/_/package/d807749d60b62b9be75e90d4e9db2893d0314632/lib"
+			"/Users/daryl/.conan/data/imgui/1.88/_/_/package/d807749d60b62b9be75e90d4e9db2893d0314632/lib"
+			"/Users/daryl/.conan/data/libiconv/1.17/_/_/package/82146580b4483a8651b14897b7c57cead95f4235/lib" ${CONAN_LIB_DIRS})
+set(CONAN_BIN_DIRS "/Users/daryl/.conan/data/sdl/2.24.0/_/_/package/383a52eb9fb719799eefd9cf57e64f85afca4823/bin"
+			"/Users/daryl/.conan/data/imgui/1.88/_/_/package/d807749d60b62b9be75e90d4e9db2893d0314632/bin"
+			"/Users/daryl/.conan/data/libiconv/1.17/_/_/package/82146580b4483a8651b14897b7c57cead95f4235/bin" ${CONAN_BIN_DIRS})
+set(CONAN_RES_DIRS "/Users/daryl/.conan/data/imgui/1.88/_/_/package/d807749d60b62b9be75e90d4e9db2893d0314632/res" ${CONAN_RES_DIRS})
 set(CONAN_FRAMEWORK_DIRS  ${CONAN_FRAMEWORK_DIRS})
 set(CONAN_LIBS SDL2main SDL2 box2d imgui iconv charset ${CONAN_LIBS})
 set(CONAN_PKG_LIBS SDL2main SDL2 box2d imgui iconv charset ${CONAN_PKG_LIBS})
@@ -308,12 +308,12 @@ set(CONAN_FRAMEWORKS CoreVideo CoreAudio AudioToolbox AVFoundation Foundation Qu
 set(CONAN_FRAMEWORKS_FOUND "")  # Will be filled later
 set(CONAN_DEFINES "-DGL_SILENCE_DEPRECATION=1" ${CONAN_DEFINES})
 set(CONAN_BUILD_MODULES_PATHS  ${CONAN_BUILD_MODULES_PATHS})
-set(CONAN_CMAKE_MODULE_PATH "/Users/daryl/.conan/data/sdl/2.24.0/_/_/package/c2ec0e1bccc154a799897996586929f7a13febfd/"
-			"/Users/daryl/.conan/data/box2d/2.4.1/_/_/package/a5a7be92da8b4dc36184c70b590ca63ae91ebb88/"
-			"/Users/daryl/.conan/data/imgui/1.88/_/_/package/a5a7be92da8b4dc36184c70b590ca63ae91ebb88/"
+set(CONAN_CMAKE_MODULE_PATH "/Users/daryl/.conan/data/sdl/2.24.0/_/_/package/383a52eb9fb719799eefd9cf57e64f85afca4823/"
+			"/Users/daryl/.conan/data/box2d/2.4.1/_/_/package/d807749d60b62b9be75e90d4e9db2893d0314632/"
+			"/Users/daryl/.conan/data/imgui/1.88/_/_/package/d807749d60b62b9be75e90d4e9db2893d0314632/"
 			"/Users/daryl/.conan/data/glm/0.9.9.8/_/_/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/"
 			"/Users/daryl/.conan/data/opengl/system/_/_/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/"
-			"/Users/daryl/.conan/data/libiconv/1.17/_/_/package/deff546af87401b558d0514205987d78de43cd78/" ${CONAN_CMAKE_MODULE_PATH})
+			"/Users/daryl/.conan/data/libiconv/1.17/_/_/package/82146580b4483a8651b14897b7c57cead95f4235/" ${CONAN_CMAKE_MODULE_PATH})
 
 set(CONAN_CXX_FLAGS " ${CONAN_CXX_FLAGS}")
 set(CONAN_SHARED_LINKER_FLAGS "-Wl,-weak_framework,CoreHaptics ${CONAN_SHARED_LINKER_FLAGS}")

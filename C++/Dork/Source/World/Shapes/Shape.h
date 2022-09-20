@@ -8,25 +8,24 @@
 
 class Shape
 {
- public:
+public:
 	~Shape()
 	{
-		delete shape;
+		if (shape != nullptr)
+			delete shape;
 	}
 
-	static Shape Cube(World* world, float size)
+	static void Cube(World* world, Shape* shape, float size)
 	{
-		Shape s;
 		auto ss = new b2PolygonShape();
 		ss->SetAsBox(size, size);
-		s.SetShape(ss);
-		return s;
+		shape->SetShape(ss);
 	}
 
-	static void AddShape(std::string name, Shape&& s)
+	static Shape* CreateShape(std::string name)
 	{
-		std::cout << "Create shape: " << name << std::endl;
-		shapes.emplace(std::make_pair(name, std::move(s)));
+		shapes.emplace(std::make_pair(name, Shape()));
+		return &shapes.find(name)->second;
 	}
 
 	static Shape* FindShape(std::string name)
@@ -44,7 +43,7 @@ class Shape
 		this->shape = shape;
 	}
 
- private:
+private:
 	static std::map<std::string, Shape> shapes;
-	b2Shape* shape;
+	b2Shape* shape = nullptr;
 };

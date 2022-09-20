@@ -88,11 +88,11 @@ void UI::_CreateWindow()
 		window_flags = (SDL_WindowFlags)(SDL_WINDOW_OPENGL | SDL_WINDOW_FULLSCREEN_DESKTOP | SDL_WINDOW_ALLOW_HIGHDPI);
 		//window_flags = (SDL_WindowFlags) (SDL_WINDOW_OPENGL | SDL_WINDOW_FULLSCREEN | SDL_WINDOW_ALLOW_HIGHDPI);
 		window = SDL_CreateWindow("Daric",
-			SDL_WINDOWPOS_CENTERED,
-			SDL_WINDOWPOS_CENTERED,
-			desktop_screen_width,
-			desktop_screen_height,
-			window_flags);
+				SDL_WINDOWPOS_CENTERED,
+				SDL_WINDOWPOS_CENTERED,
+				desktop_screen_width,
+				desktop_screen_height,
+				window_flags);
 	}
 	else
 	{
@@ -105,11 +105,11 @@ void UI::_CreateWindow()
 #endif
 		window_flags = (SDL_WindowFlags)(SDL_WINDOW_OPENGL | SDL_WINDOW_ALLOW_HIGHDPI);
 		window = SDL_CreateWindow("Daric",
-			SDL_WINDOWPOS_CENTERED,
-			SDL_WINDOWPOS_CENTERED,
-			desktop_screen_width,
-			desktop_screen_height,
-			window_flags);
+				SDL_WINDOWPOS_CENTERED,
+				SDL_WINDOWPOS_CENTERED,
+				desktop_screen_width,
+				desktop_screen_height,
+				window_flags);
 	}
 	if (window == nullptr)
 	{
@@ -191,8 +191,8 @@ void UI::Loop()
 		ImGui::SetNextWindowPos(main_viewport->Pos);
 		ImGui::SetNextWindowSize(main_viewport->Size);
 		ImGui::Begin("Fullscreen", &window_output,
-			ImGuiWindowFlags_NoDecoration | ImGuiWindowFlags_NoMove | ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoSavedSettings |
-			ImGuiWindowFlags_NoBackground);
+				ImGuiWindowFlags_NoDecoration | ImGuiWindowFlags_NoMove | ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoSavedSettings |
+						ImGuiWindowFlags_NoBackground);
 		world.Render();
 		ImGui::End();
 		ImGui::PopStyleVar();
@@ -202,7 +202,7 @@ void UI::Loop()
 		ImGui::SetNextWindowPos(ImVec2(desktop_screen_width - 100, desktop_screen_height - 100));
 		ImGui::SetNextWindowSize(ImVec2(100, 50));
 		ImGui::Begin("Fullscreen", &window_output,
-			ImGuiWindowFlags_NoDecoration | ImGuiWindowFlags_NoMove | ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoSavedSettings);
+				ImGuiWindowFlags_NoDecoration | ImGuiWindowFlags_NoMove | ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoSavedSettings);
 		ImGui::PlotHistogram("FPS", fps_values, IM_ARRAYSIZE(fps_values), 0, NULL, 0.0f, 100.0f, ImVec2(100, 50.0f));
 		ImGui::TextUnformatted(fps_text.c_str());
 		ImGui::End();
