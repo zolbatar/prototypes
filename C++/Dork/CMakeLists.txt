@@ -3,4 +3,16 @@ project(Dork)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(Dork Source/main.cpp)
+include(${CMAKE_SOURCE_DIR}/conanbuildinfo.cmake)
+conan_basic_setup()
+
+add_executable(Dork
+        Source/main.cpp
+        Source/UI/UI.cpp
+        ImGuiBindings/imgui_impl_opengl3.cpp ImGuiBindings/imgui_impl_sdl.cpp)
+target_link_libraries(${PROJECT_NAME} ${CONAN_LIBS})
+
+get_property(dirs DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY INCLUDE_DIRECTORIES)
+foreach (dir ${dirs})
+    message(STATUS "dir='${dir}'")
+endforeach ()

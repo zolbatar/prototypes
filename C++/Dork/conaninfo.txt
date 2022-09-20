@@ -1,0 +1,56 @@
+[settings]
+    arch=x86_64
+    build_type=Release
+    compiler=clang
+    compiler.libcxx=libc++
+    compiler.version=14
+    os=Macos
+
+[requires]
+    box2d/2.Y.Z
+    glm/0.9.9.8
+    imgui/1.Y.Z
+    opengl/system
+    sdl/2.Y.Z
+
+[options]
+
+
+[full_settings]
+    arch=x86_64
+    arch_build=x86_64
+    build_type=Release
+    compiler=clang
+    compiler.libcxx=libc++
+    compiler.version=14
+    os=Macos
+    os_build=Macos
+
+[full_requires]
+    box2d/2.4.1:a5a7be92da8b4dc36184c70b590ca63ae91ebb88
+    glm/0.9.9.8:5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9
+    imgui/1.88:a5a7be92da8b4dc36184c70b590ca63ae91ebb88
+    libiconv/1.17:deff546af87401b558d0514205987d78de43cd78
+    opengl/system:5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9
+    sdl/2.24.0:c2ec0e1bccc154a799897996586929f7a13febfd
+
+[full_options]
+    box2d:fPIC=True
+    box2d:shared=False
+    imgui:fPIC=True
+    imgui:shared=False
+    libiconv:fPIC=True
+    libiconv:shared=False
+    sdl:fPIC=True
+    sdl:iconv=True
+    sdl:opengl=True
+    sdl:opengles=True
+    sdl:sdl2main=True
+    sdl:shared=False
+    sdl:vulkan=True
+
+[recipe_hash]
+
+
+[env]
+
