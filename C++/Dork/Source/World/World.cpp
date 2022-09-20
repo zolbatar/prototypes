@@ -1,6 +1,6 @@
 #include "World.h"
 #include "Entity.h"
-#include "Shapes/Shape.h"
+#include "Shape.h"
 
 World* world;
 
@@ -8,11 +8,11 @@ void World::Reset()
 {
 	auto shape = Shape::CreateShape("Cube");
 	shape->Cube(this, shape, 1.0f);
-	Entity::CreateEntity(this, shape, b2Vec2(0.0f, 4.0f));
+	Entity::CreateEntity(this, shape, b2Vec2(0.0f, 400.0f));
 	clock = std::chrono::steady_clock::now();
 }
 
-void World::Render()
+void World::Animate()
 {
 	auto now = std::chrono::steady_clock::now();
 	millis += std::chrono::duration_cast<std::chrono::milliseconds>(now - clock).count();
@@ -21,14 +21,13 @@ void World::Render()
 		phys.Simulate();
 		millis -= millis_per_step;
 	}
+	clock = now;
+}
 
+void World::Render(const ImGuiViewport* main_viewport)
+{
 	for (auto& entity : *Entity::GetEntities())
 	{
-		auto body = entity.GetBody();
-		auto position = body->GetPosition();
-		float angle = body->GetAngle();
-		printf("%4.2f %4.2f %4.2f\n", position.x, position.y, angle);
+		entity.Render(main_viewport);
 	}
-
-	clock = now;
 }

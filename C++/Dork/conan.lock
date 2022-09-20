@@ -16,7 +16,7 @@
    "1": {
     "ref": "sdl/2.24.0",
     "options": "fPIC=True\niconv=True\nopengl=True\nopengles=True\nsdl2main=True\nshared=False\nvulkan=True\nlibiconv:fPIC=True\nlibiconv:shared=False",
-    "package_id": "383a52eb9fb719799eefd9cf57e64f85afca4823",
+    "package_id": "c2ec0e1bccc154a799897996586929f7a13febfd",
     "prev": "0",
     "requires": [
      "2"
@@ -26,21 +26,21 @@
    "2": {
     "ref": "libiconv/1.17",
     "options": "fPIC=True\nshared=False",
-    "package_id": "82146580b4483a8651b14897b7c57cead95f4235",
+    "package_id": "deff546af87401b558d0514205987d78de43cd78",
     "prev": "0",
     "context": "host"
    },
    "3": {
     "ref": "box2d/2.4.1",
     "options": "fPIC=True\nshared=False",
-    "package_id": "d807749d60b62b9be75e90d4e9db2893d0314632",
+    "package_id": "a5a7be92da8b4dc36184c70b590ca63ae91ebb88",
     "prev": "0",
     "context": "host"
    },
    "4": {
     "ref": "imgui/1.88",
     "options": "fPIC=True\nshared=False",
-    "package_id": "d807749d60b62b9be75e90d4e9db2893d0314632",
+    "package_id": "a5a7be92da8b4dc36184c70b590ca63ae91ebb88",
     "prev": "0",
     "context": "host"
    },
@@ -62,5 +62,5 @@
   "revisions_enabled": false
  },
  "version": "0.4",
- "profile_host": "[settings]\narch=armv8\narch_build=armv8\nbuild_type=Release\ncompiler=apple-clang\ncompiler.libcxx=libc++\ncompiler.version=14.0\nos=Macos\nos_build=Macos\n[options]\n[build_requires]\n[env]\n"
+ "profile_host": "[settings]\narch=x86_64\narch_build=x86_64\nbuild_type=Release\ncompiler=clang\ncompiler.libcxx=libc++\ncompiler.version=14\nos=Macos\nos_build=Macos\n[options]\n[build_requires]\n[env]\n"
 }

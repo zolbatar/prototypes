@@ -36,3 +36,12 @@ b2Body* Entity::GetBody()
 {
 	return body;
 }
+
+void Entity::Render(const ImGuiViewport* main_viewport)
+{
+	auto body = GetBody();
+	auto position = body->GetPosition();
+	float angle = body->GetAngle();
+	auto shape = body->GetFixtureList()->GetShape();
+	printf("%4.2f %4.2f %4.2f %p\n", position.x, position.y, angle, shape);
+}
