@@ -27,7 +27,7 @@ public:
     return visitChildren(ctx);
   }
 
-  virtual std::any visitStatementMethodCallUnary(DorkParser::StatementMethodCallUnaryContext *ctx) override {
+  virtual std::any visitStatementUnary(DorkParser::StatementUnaryContext *ctx) override {
     return visitChildren(ctx);
   }
 

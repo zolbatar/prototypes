@@ -14,3 +14,4 @@ start
     doSomething: 50 50 -> b;
     line: 100 100 500 500;
     5 + 5 print.
+    "Count" + 5 str print.

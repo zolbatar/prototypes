@@ -43,40 +43,41 @@ void dorkParserInitialize() {
   assert(dorkParserStaticData == nullptr);
   auto staticData = std::make_unique<DorkParserStaticData>(
     std::vector<std::string>{
-      "prog", "statement", "statementAssign", "statementMethodCallUnary", 
-      "expr", "literal", "integerLiteral", "floatLiteral", "stringLiteral"
+      "prog", "statement", "statementAssign", "statementUnary", "expr", 
+      "literal", "integerLiteral", "floatLiteral", "stringLiteral"
     },
     std::vector<std::string>{
-      "", "", "'''", "'!'", "'#'", "'$'", "':'", "','", "'%'", "'('", "')'", 
-      "'['", "']'", "';'", "'_'", "'.'", "'{'", "'}'", "'+'", "'-'", "'->'"
+      "", "", "'''", "';'", "'_'", "'.'", "'+'", "'%'", "'-'", "'->'"
     },
     std::vector<std::string>{
-      "", "COMMENT", "TICK", "PLING", "HASH", "DOLLAR", "COLON", "COMMA", 
-      "PERCENT", "LPAREN", "RPAREN", "SOPEN", "SCLOSE", "SEMICOLON", "UNDERSCORE", 
-      "DOT", "COPEN", "CCLOSE", "PLUS", "MINUS", "ASSIGN", "STRINGLITERAL", 
-      "HEXNUMBER", "BINARYNUMBER", "INTEGERLITERAL", "FLOATLITERAL", "IDENTIFIER", 
-      "WS"
+      "", "COMMENT", "TICK", "SEMICOLON", "UNDERSCORE", "DOT", "PLUS", "PERCENT", 
+      "MINUS", "ASSIGN", "BINARYPART", "BINARY", "STRINGLITERAL", "HEXNUMBER", 
+      "BINARYNUMBER", "INTEGERLITERAL", "FLOATLITERAL", "IDENTIFIER", "WS"
     }
   );
   static const int32_t serializedATNSegment[] = {
-  	4,1,27,62,2,0,7,0,2,1,7,1,2,2,7,2,2,3,7,3,2,4,7,4,2,5,7,5,2,6,7,6,2,7,
-  	7,7,2,8,7,8,1,0,1,0,1,0,5,0,22,8,0,10,0,12,0,25,9,0,1,0,1,0,1,1,1,1,3,
-  	1,31,8,1,1,2,1,2,1,2,1,2,1,3,1,3,1,3,1,4,1,4,1,5,1,5,1,5,3,5,45,8,5,1,
-  	6,1,6,1,6,3,6,50,8,6,1,6,3,6,53,8,6,1,7,3,7,56,8,7,1,7,1,7,1,8,1,8,1,
-  	8,0,0,9,0,2,4,6,8,10,12,14,16,0,1,1,0,18,19,60,0,23,1,0,0,0,2,30,1,0,
-  	0,0,4,32,1,0,0,0,6,36,1,0,0,0,8,39,1,0,0,0,10,44,1,0,0,0,12,52,1,0,0,
-  	0,14,55,1,0,0,0,16,59,1,0,0,0,18,19,3,2,1,0,19,20,5,15,0,0,20,22,1,0,
-  	0,0,21,18,1,0,0,0,22,25,1,0,0,0,23,21,1,0,0,0,23,24,1,0,0,0,24,26,1,0,
-  	0,0,25,23,1,0,0,0,26,27,5,0,0,1,27,1,1,0,0,0,28,31,3,4,2,0,29,31,3,6,
-  	3,0,30,28,1,0,0,0,30,29,1,0,0,0,31,3,1,0,0,0,32,33,3,8,4,0,33,34,5,20,
-  	0,0,34,35,5,26,0,0,35,5,1,0,0,0,36,37,3,8,4,0,37,38,5,26,0,0,38,7,1,0,
-  	0,0,39,40,3,10,5,0,40,9,1,0,0,0,41,45,3,12,6,0,42,45,3,14,7,0,43,45,3,
-  	16,8,0,44,41,1,0,0,0,44,42,1,0,0,0,44,43,1,0,0,0,45,11,1,0,0,0,46,53,
-  	5,22,0,0,47,53,5,23,0,0,48,50,7,0,0,0,49,48,1,0,0,0,49,50,1,0,0,0,50,
-  	51,1,0,0,0,51,53,5,24,0,0,52,46,1,0,0,0,52,47,1,0,0,0,52,49,1,0,0,0,53,
-  	13,1,0,0,0,54,56,7,0,0,0,55,54,1,0,0,0,55,56,1,0,0,0,56,57,1,0,0,0,57,
-  	58,5,25,0,0,58,15,1,0,0,0,59,60,5,21,0,0,60,17,1,0,0,0,6,23,30,44,49,
-  	52,55
+  	4,1,18,74,2,0,7,0,2,1,7,1,2,2,7,2,2,3,7,3,2,4,7,4,2,5,7,5,2,6,7,6,2,7,
+  	7,7,2,8,7,8,1,0,1,0,1,0,5,0,22,8,0,10,0,12,0,25,9,0,1,0,1,0,1,1,1,1,1,
+  	1,3,1,32,8,1,1,2,1,2,1,2,1,2,1,3,1,3,1,3,1,4,1,4,1,4,1,4,1,4,1,4,1,4,
+  	1,4,5,4,49,8,4,10,4,12,4,52,9,4,1,5,1,5,1,5,3,5,57,8,5,1,6,1,6,1,6,3,
+  	6,62,8,6,1,6,3,6,65,8,6,1,7,3,7,68,8,7,1,7,1,7,1,8,1,8,1,8,0,1,8,9,0,
+  	2,4,6,8,10,12,14,16,0,1,2,0,6,6,8,8,75,0,23,1,0,0,0,2,31,1,0,0,0,4,33,
+  	1,0,0,0,6,37,1,0,0,0,8,40,1,0,0,0,10,56,1,0,0,0,12,64,1,0,0,0,14,67,1,
+  	0,0,0,16,71,1,0,0,0,18,19,3,2,1,0,19,20,5,5,0,0,20,22,1,0,0,0,21,18,1,
+  	0,0,0,22,25,1,0,0,0,23,21,1,0,0,0,23,24,1,0,0,0,24,26,1,0,0,0,25,23,1,
+  	0,0,0,26,27,5,0,0,1,27,1,1,0,0,0,28,32,3,4,2,0,29,32,3,6,3,0,30,32,3,
+  	8,4,0,31,28,1,0,0,0,31,29,1,0,0,0,31,30,1,0,0,0,32,3,1,0,0,0,33,34,3,
+  	8,4,0,34,35,5,9,0,0,35,36,5,17,0,0,36,5,1,0,0,0,37,38,3,8,4,0,38,39,5,
+  	17,0,0,39,7,1,0,0,0,40,41,6,4,-1,0,41,42,3,10,5,0,42,50,1,0,0,0,43,44,
+  	10,2,0,0,44,45,5,11,0,0,45,49,3,8,4,3,46,47,10,3,0,0,47,49,5,17,0,0,48,
+  	43,1,0,0,0,48,46,1,0,0,0,49,52,1,0,0,0,50,48,1,0,0,0,50,51,1,0,0,0,51,
+  	9,1,0,0,0,52,50,1,0,0,0,53,57,3,12,6,0,54,57,3,14,7,0,55,57,3,16,8,0,
+  	56,53,1,0,0,0,56,54,1,0,0,0,56,55,1,0,0,0,57,11,1,0,0,0,58,65,5,13,0,
+  	0,59,65,5,14,0,0,60,62,7,0,0,0,61,60,1,0,0,0,61,62,1,0,0,0,62,63,1,0,
+  	0,0,63,65,5,15,0,0,64,58,1,0,0,0,64,59,1,0,0,0,64,61,1,0,0,0,65,13,1,
+  	0,0,0,66,68,7,0,0,0,67,66,1,0,0,0,67,68,1,0,0,0,68,69,1,0,0,0,69,70,5,
+  	16,0,0,70,15,1,0,0,0,71,72,5,12,0,0,72,17,1,0,0,0,8,23,31,48,50,56,61,
+  	64,67
   };
   staticData->serializedATN = antlr4::atn::SerializedATNView(serializedATNSegment, sizeof(serializedATNSegment) / sizeof(serializedATNSegment[0]));
 
@@ -220,8 +221,12 @@ DorkParser::StatementAssignContext* DorkParser::StatementContext::statementAssig
   return getRuleContext<DorkParser::StatementAssignContext>(0);
 }
 
-DorkParser::StatementMethodCallUnaryContext* DorkParser::StatementContext::statementMethodCallUnary() {
-  return getRuleContext<DorkParser::StatementMethodCallUnaryContext>(0);
+DorkParser::StatementUnaryContext* DorkParser::StatementContext::statementUnary() {
+  return getRuleContext<DorkParser::StatementUnaryContext>(0);
+}
+
+DorkParser::ExprContext* DorkParser::StatementContext::expr() {
+  return getRuleContext<DorkParser::ExprContext>(0);
 }
 
 
@@ -249,7 +254,7 @@ DorkParser::StatementContext* DorkParser::statement() {
     exitRule();
   });
   try {
-    setState(30);
+    setState(31);
     _errHandler->sync(this);
     switch (getInterpreter<atn::ParserATNSimulator>()->adaptivePredict(_input, 1, _ctx)) {
     case 1: {
@@ -262,7 +267,14 @@ DorkParser::StatementContext* DorkParser::statement() {
     case 2: {
       enterOuterAlt(_localctx, 2);
       setState(29);
-      statementMethodCallUnary();
+      statementUnary();
+      break;
+    }
+
+    case 3: {
+      enterOuterAlt(_localctx, 3);
+      setState(30);
+      expr(0);
       break;
     }
 
@@ -324,11 +336,11 @@ DorkParser::StatementAssignContext* DorkParser::statementAssign() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(32);
-    expr();
     setState(33);
-    match(DorkParser::ASSIGN);
+    expr(0);
     setState(34);
+    match(DorkParser::ASSIGN);
+    setState(35);
     match(DorkParser::IDENTIFIER);
    
   }
@@ -341,36 +353,36 @@ DorkParser::StatementAssignContext* DorkParser::statementAssign() {
   return _localctx;
 }
 
-//----------------- StatementMethodCallUnaryContext ------------------------------------------------------------------
+//----------------- StatementUnaryContext ------------------------------------------------------------------
 
-DorkParser::StatementMethodCallUnaryContext::StatementMethodCallUnaryContext(ParserRuleContext *parent, size_t invokingState)
+DorkParser::StatementUnaryContext::StatementUnaryContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-DorkParser::ExprContext* DorkParser::StatementMethodCallUnaryContext::expr() {
+DorkParser::ExprContext* DorkParser::StatementUnaryContext::expr() {
   return getRuleContext<DorkParser::ExprContext>(0);
 }
 
-tree::TerminalNode* DorkParser::StatementMethodCallUnaryContext::IDENTIFIER() {
+tree::TerminalNode* DorkParser::StatementUnaryContext::IDENTIFIER() {
   return getToken(DorkParser::IDENTIFIER, 0);
 }
 
 
-size_t DorkParser::StatementMethodCallUnaryContext::getRuleIndex() const {
-  return DorkParser::RuleStatementMethodCallUnary;
+size_t DorkParser::StatementUnaryContext::getRuleIndex() const {
+  return DorkParser::RuleStatementUnary;
 }
 
 
-std::any DorkParser::StatementMethodCallUnaryContext::accept(tree::ParseTreeVisitor *visitor) {
+std::any DorkParser::StatementUnaryContext::accept(tree::ParseTreeVisitor *visitor) {
   if (auto parserVisitor = dynamic_cast<DorkVisitor*>(visitor))
-    return parserVisitor->visitStatementMethodCallUnary(this);
+    return parserVisitor->visitStatementUnary(this);
   else
     return visitor->visitChildren(this);
 }
 
-DorkParser::StatementMethodCallUnaryContext* DorkParser::statementMethodCallUnary() {
-  StatementMethodCallUnaryContext *_localctx = _tracker.createInstance<StatementMethodCallUnaryContext>(_ctx, getState());
-  enterRule(_localctx, 6, DorkParser::RuleStatementMethodCallUnary);
+DorkParser::StatementUnaryContext* DorkParser::statementUnary() {
+  StatementUnaryContext *_localctx = _tracker.createInstance<StatementUnaryContext>(_ctx, getState());
+  enterRule(_localctx, 6, DorkParser::RuleStatementUnary);
 
 #if __cplusplus > 201703L
   auto onExit = finally([=, this] {
@@ -381,9 +393,9 @@ DorkParser::StatementMethodCallUnaryContext* DorkParser::statementMethodCallUnar
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(36);
-    expr();
     setState(37);
+    expr(0);
+    setState(38);
     match(DorkParser::IDENTIFIER);
    
   }
@@ -406,6 +418,22 @@ DorkParser::LiteralContext* DorkParser::ExprContext::literal() {
   return getRuleContext<DorkParser::LiteralContext>(0);
 }
 
+std::vector<DorkParser::ExprContext *> DorkParser::ExprContext::expr() {
+  return getRuleContexts<DorkParser::ExprContext>();
+}
+
+DorkParser::ExprContext* DorkParser::ExprContext::expr(size_t i) {
+  return getRuleContext<DorkParser::ExprContext>(i);
+}
+
+tree::TerminalNode* DorkParser::ExprContext::BINARY() {
+  return getToken(DorkParser::BINARY, 0);
+}
+
+tree::TerminalNode* DorkParser::ExprContext::IDENTIFIER() {
+  return getToken(DorkParser::IDENTIFIER, 0);
+}
+
 
 size_t DorkParser::ExprContext::getRuleIndex() const {
   return DorkParser::RuleExpr;
@@ -419,29 +447,84 @@ std::any DorkParser::ExprContext::accept(tree::ParseTreeVisitor *visitor) {
     return visitor->visitChildren(this);
 }
 
+
 DorkParser::ExprContext* DorkParser::expr() {
-  ExprContext *_localctx = _tracker.createInstance<ExprContext>(_ctx, getState());
-  enterRule(_localctx, 8, DorkParser::RuleExpr);
+   return expr(0);
+}
+
+DorkParser::ExprContext* DorkParser::expr(int precedence) {
+  ParserRuleContext *parentContext = _ctx;
+  size_t parentState = getState();
+  DorkParser::ExprContext *_localctx = _tracker.createInstance<ExprContext>(_ctx, parentState);
+  DorkParser::ExprContext *previousContext = _localctx;
+  (void)previousContext; // Silence compiler, in case the context is not used by generated code.
+  size_t startState = 8;
+  enterRecursionRule(_localctx, 8, DorkParser::RuleExpr, precedence);
+
+    
 
 #if __cplusplus > 201703L
   auto onExit = finally([=, this] {
 #else
   auto onExit = finally([=] {
 #endif
-    exitRule();
+    unrollRecursionContexts(parentContext);
   });
   try {
+    size_t alt;
     enterOuterAlt(_localctx, 1);
-    setState(39);
+    setState(41);
     literal();
-   
+    _ctx->stop = _input->LT(-1);
+    setState(50);
+    _errHandler->sync(this);
+    alt = getInterpreter<atn::ParserATNSimulator>()->adaptivePredict(_input, 3, _ctx);
+    while (alt != 2 && alt != atn::ATN::INVALID_ALT_NUMBER) {
+      if (alt == 1) {
+        if (!_parseListeners.empty())
+          triggerExitRuleEvent();
+        previousContext = _localctx;
+        setState(48);
+        _errHandler->sync(this);
+        switch (getInterpreter<atn::ParserATNSimulator>()->adaptivePredict(_input, 2, _ctx)) {
+        case 1: {
+          _localctx = _tracker.createInstance<ExprContext>(parentContext, parentState);
+          pushNewRecursionContext(_localctx, startState, RuleExpr);
+          setState(43);
+
+          if (!(precpred(_ctx, 2))) throw FailedPredicateException(this, "precpred(_ctx, 2)");
+          setState(44);
+          match(DorkParser::BINARY);
+          setState(45);
+          expr(3);
+          break;
+        }
+
+        case 2: {
+          _localctx = _tracker.createInstance<ExprContext>(parentContext, parentState);
+          pushNewRecursionContext(_localctx, startState, RuleExpr);
+          setState(46);
+
+          if (!(precpred(_ctx, 3))) throw FailedPredicateException(this, "precpred(_ctx, 3)");
+          setState(47);
+          match(DorkParser::IDENTIFIER);
+          break;
+        }
+
+        default:
+          break;
+        } 
+      }
+      setState(52);
+      _errHandler->sync(this);
+      alt = getInterpreter<atn::ParserATNSimulator>()->adaptivePredict(_input, 3, _ctx);
+    }
   }
   catch (RecognitionException &e) {
     _errHandler->reportError(this, e);
     _localctx->exception = std::current_exception();
     _errHandler->recover(this, _localctx->exception);
   }
-
   return _localctx;
 }
 
@@ -488,26 +571,26 @@ DorkParser::LiteralContext* DorkParser::literal() {
     exitRule();
   });
   try {
-    setState(44);
+    setState(56);
     _errHandler->sync(this);
-    switch (getInterpreter<atn::ParserATNSimulator>()->adaptivePredict(_input, 2, _ctx)) {
+    switch (getInterpreter<atn::ParserATNSimulator>()->adaptivePredict(_input, 4, _ctx)) {
     case 1: {
       enterOuterAlt(_localctx, 1);
-      setState(41);
+      setState(53);
       integerLiteral();
       break;
     }
 
     case 2: {
       enterOuterAlt(_localctx, 2);
-      setState(42);
+      setState(54);
       floatLiteral();
       break;
     }
 
     case 3: {
       enterOuterAlt(_localctx, 3);
-      setState(43);
+      setState(55);
       stringLiteral();
       break;
     }
@@ -578,19 +661,19 @@ DorkParser::IntegerLiteralContext* DorkParser::integerLiteral() {
     exitRule();
   });
   try {
-    setState(52);
+    setState(64);
     _errHandler->sync(this);
     switch (_input->LA(1)) {
       case DorkParser::HEXNUMBER: {
         enterOuterAlt(_localctx, 1);
-        setState(46);
+        setState(58);
         match(DorkParser::HEXNUMBER);
         break;
       }
 
       case DorkParser::BINARYNUMBER: {
         enterOuterAlt(_localctx, 2);
-        setState(47);
+        setState(59);
         match(DorkParser::BINARYNUMBER);
         break;
       }
@@ -599,14 +682,14 @@ DorkParser::IntegerLiteralContext* DorkParser::integerLiteral() {
       case DorkParser::MINUS:
       case DorkParser::INTEGERLITERAL: {
         enterOuterAlt(_localctx, 3);
-        setState(49);
+        setState(61);
         _errHandler->sync(this);
 
         _la = _input->LA(1);
         if (_la == DorkParser::PLUS
 
         || _la == DorkParser::MINUS) {
-          setState(48);
+          setState(60);
           _la = _input->LA(1);
           if (!(_la == DorkParser::PLUS
 
@@ -618,7 +701,7 @@ DorkParser::IntegerLiteralContext* DorkParser::integerLiteral() {
             consume();
           }
         }
-        setState(51);
+        setState(63);
         match(DorkParser::INTEGERLITERAL);
         break;
       }
@@ -682,14 +765,14 @@ DorkParser::FloatLiteralContext* DorkParser::floatLiteral() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(55);
+    setState(67);
     _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == DorkParser::PLUS
 
     || _la == DorkParser::MINUS) {
-      setState(54);
+      setState(66);
       _la = _input->LA(1);
       if (!(_la == DorkParser::PLUS
 
@@ -701,7 +784,7 @@ DorkParser::FloatLiteralContext* DorkParser::floatLiteral() {
         consume();
       }
     }
-    setState(57);
+    setState(69);
     match(DorkParser::FLOATLITERAL);
    
   }
@@ -750,7 +833,7 @@ DorkParser::StringLiteralContext* DorkParser::stringLiteral() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(59);
+    setState(71);
     match(DorkParser::STRINGLITERAL);
    
   }
@@ -761,6 +844,27 @@ DorkParser::StringLiteralContext* DorkParser::stringLiteral() {
   }
 
   return _localctx;
+}
+
+bool DorkParser::sempred(RuleContext *context, size_t ruleIndex, size_t predicateIndex) {
+  switch (ruleIndex) {
+    case 4: return exprSempred(antlrcpp::downCast<ExprContext *>(context), predicateIndex);
+
+  default:
+    break;
+  }
+  return true;
+}
+
+bool DorkParser::exprSempred(ExprContext *_localctx, size_t predicateIndex) {
+  switch (predicateIndex) {
+    case 0: return precpred(_ctx, 2);
+    case 1: return precpred(_ctx, 3);
+
+  default:
+    break;
+  }
+  return true;
 }
 
 void DorkParser::initialize() {

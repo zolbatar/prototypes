@@ -25,7 +25,7 @@ public:
 
     virtual std::any visitStatementAssign(DorkParser::StatementAssignContext *context) = 0;
 
-    virtual std::any visitStatementMethodCallUnary(DorkParser::StatementMethodCallUnaryContext *context) = 0;
+    virtual std::any visitStatementUnary(DorkParser::StatementUnaryContext *context) = 0;
 
     virtual std::any visitExpr(DorkParser::ExprContext *context) = 0;
 

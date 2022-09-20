@@ -1,6 +1,5 @@
 [requires]
-sdl/2.24.0
-box2d/2.4.1
+antlr4-cppruntime/4.10.1
 
 [generators]
 cmake

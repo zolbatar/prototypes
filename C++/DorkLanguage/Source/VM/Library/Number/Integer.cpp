@@ -2,7 +2,6 @@
 
 Instance* Integer_print(Instance* instance)
 {
-	int a = 1;
 	return instance;
 }
 

@@ -12,15 +12,14 @@
 class  DorkParser : public antlr4::Parser {
 public:
   enum {
-    COMMENT = 1, TICK = 2, PLING = 3, HASH = 4, DOLLAR = 5, COLON = 6, COMMA = 7, 
-    PERCENT = 8, LPAREN = 9, RPAREN = 10, SOPEN = 11, SCLOSE = 12, SEMICOLON = 13, 
-    UNDERSCORE = 14, DOT = 15, COPEN = 16, CCLOSE = 17, PLUS = 18, MINUS = 19, 
-    ASSIGN = 20, STRINGLITERAL = 21, HEXNUMBER = 22, BINARYNUMBER = 23, 
-    INTEGERLITERAL = 24, FLOATLITERAL = 25, IDENTIFIER = 26, WS = 27
+    COMMENT = 1, TICK = 2, SEMICOLON = 3, UNDERSCORE = 4, DOT = 5, PLUS = 6, 
+    PERCENT = 7, MINUS = 8, ASSIGN = 9, BINARYPART = 10, BINARY = 11, STRINGLITERAL = 12, 
+    HEXNUMBER = 13, BINARYNUMBER = 14, INTEGERLITERAL = 15, FLOATLITERAL = 16, 
+    IDENTIFIER = 17, WS = 18
   };
 
   enum {
-    RuleProg = 0, RuleStatement = 1, RuleStatementAssign = 2, RuleStatementMethodCallUnary = 3, 
+    RuleProg = 0, RuleStatement = 1, RuleStatementAssign = 2, RuleStatementUnary = 3, 
     RuleExpr = 4, RuleLiteral = 5, RuleIntegerLiteral = 6, RuleFloatLiteral = 7, 
     RuleStringLiteral = 8
   };
@@ -45,7 +44,7 @@ public:
   class ProgContext;
   class StatementContext;
   class StatementAssignContext;
-  class StatementMethodCallUnaryContext;
+  class StatementUnaryContext;
   class ExprContext;
   class LiteralContext;
   class IntegerLiteralContext;
@@ -74,7 +73,8 @@ public:
     StatementContext(antlr4::ParserRuleContext *parent, size_t invokingState);
     virtual size_t getRuleIndex() const override;
     StatementAssignContext *statementAssign();
-    StatementMethodCallUnaryContext *statementMethodCallUnary();
+    StatementUnaryContext *statementUnary();
+    ExprContext *expr();
 
 
     virtual std::any accept(antlr4::tree::ParseTreeVisitor *visitor) override;
@@ -98,9 +98,9 @@ public:
 
   StatementAssignContext* statementAssign();
 
-  class  StatementMethodCallUnaryContext : public antlr4::ParserRuleContext {
+  class  StatementUnaryContext : public antlr4::ParserRuleContext {
   public:
-    StatementMethodCallUnaryContext(antlr4::ParserRuleContext *parent, size_t invokingState);
+    StatementUnaryContext(antlr4::ParserRuleContext *parent, size_t invokingState);
     virtual size_t getRuleIndex() const override;
     ExprContext *expr();
     antlr4::tree::TerminalNode *IDENTIFIER();
@@ -110,13 +110,17 @@ public:
    
   };
 
-  StatementMethodCallUnaryContext* statementMethodCallUnary();
+  StatementUnaryContext* statementUnary();
 
   class  ExprContext : public antlr4::ParserRuleContext {
   public:
     ExprContext(antlr4::ParserRuleContext *parent, size_t invokingState);
     virtual size_t getRuleIndex() const override;
     LiteralContext *literal();
+    std::vector<ExprContext *> expr();
+    ExprContext* expr(size_t i);
+    antlr4::tree::TerminalNode *BINARY();
+    antlr4::tree::TerminalNode *IDENTIFIER();
 
 
     virtual std::any accept(antlr4::tree::ParseTreeVisitor *visitor) override;
@@ -124,7 +128,7 @@ public:
   };
 
   ExprContext* expr();
-
+  ExprContext* expr(int precedence);
   class  LiteralContext : public antlr4::ParserRuleContext {
   public:
     LiteralContext(antlr4::ParserRuleContext *parent, size_t invokingState);
@@ -185,6 +189,10 @@ public:
 
   StringLiteralContext* stringLiteral();
 
+
+  bool sempred(antlr4::RuleContext *_localctx, size_t ruleIndex, size_t predicateIndex) override;
+
+  bool exprSempred(ExprContext *_localctx, size_t predicateIndex);
 
   // By default the static state used to implement the parser is lazily initialized during the first
   // call to the constructor. You can call this function if you wish to initialize the static state

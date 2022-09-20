@@ -6,19 +6,22 @@ prog
 
 statement
     : statementAssign
-    | statementMethodCallUnary
+    | statementUnary
+    | expr
     ;
 
 statementAssign
     : expr ASSIGN IDENTIFIER
     ;
 
-statementMethodCallUnary
+statementUnary
     : expr IDENTIFIER
     ;
 
 expr
-    : literal
+    : expr IDENTIFIER
+    | expr BINARY expr
+    | literal
     ;
 
 // Literals
@@ -45,26 +48,15 @@ stringLiteral
 COMMENT         : TICK ~ [\r\n]* ;
 
 TICK            : '\'' ;
-PLING           : '!' ;
-HASH            : '#' ;
-DOLLAR          : '$' ;
-COLON           : ':' ;
-COMMA           : ',' ;
-PERCENT         : '%' ;
-LPAREN          : '(' ;
-RPAREN          : ')' ;
-SOPEN           : '[' ;
-SCLOSE          : ']' ;
 SEMICOLON       : ';' ;
 UNDERSCORE      : '_' ;
 DOT             : '.' ;
-COPEN           : '{' ;
-CCLOSE          : '}' ;
-
 PLUS            : '+' ;
+PERCENT         : '%' ;
 MINUS           : '-' ;
-
 ASSIGN          : '->' ;
+BINARYPART      : ('+' | '-' | '|' | '/' | '\\' | '*' | '~' | '<' | '>' | '=' | '@' | '%' | '&' | '?' | '!' | ',') ;
+BINARY          : BINARYPART BINARYPART? ;
 
 // Literals
 STRINGLITERAL   : '"' ~ ["\r\n]* '"' ;

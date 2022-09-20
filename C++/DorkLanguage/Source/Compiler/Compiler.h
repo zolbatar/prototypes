@@ -28,13 +28,25 @@ class Compiler : DorkVisitor
 
 	Scope scope = Scope::Global;
 	CompileMode mode = CompileMode::Immediate;
-	Method *imm_method;
+	Method* imm_method;
+
+	void AddCode(Bytecode&& s)
+	{
+		switch (mode)
+		{
+			case CompileMode::Immediate:
+				imm_method->AddCode(std::move(s));
+				break;
+			default:
+				assert(0);
+		}
+	}
 
  protected:
 	std::any visitProg(DorkParser::ProgContext* context);
 	std::any visitStatement(DorkParser::StatementContext* context);
 	std::any visitStatementAssign(DorkParser::StatementAssignContext* context);
-	std::any visitStatementMethodCallUnary(DorkParser::StatementMethodCallUnaryContext* context);
+	std::any visitStatementUnary(DorkParser::StatementUnaryContext* context);
 	std::any visitExpr(DorkParser::ExprContext* context);
 	std::any visitLiteral(DorkParser::LiteralContext* context);
 	std::any visitIntegerLiteral(DorkParser::IntegerLiteralContext* context);
